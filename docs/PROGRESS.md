@@ -104,3 +104,27 @@ bunu `WebApplicationFactory` ile in-process doğrulayacak.
 (%92 geçme oranlı rastgele üretim). Bu yüzden uç durum olmayan birçok öğrencide gerçek bir
 `LOWER_SEMESTER_PRIORITY` uyarısı ya da önkoşul hatası çıkıyor. Kural doğru çalışıyor; bu, veri
 üretiminin gerçekçilik sınırı. Aşama 11'de uç durum raporu hazırlanırken bu fazlalık ayrıca ele alınacak.
+
+## Aşama 6 — Frontend iskeleti, giriş, panel düzeni
+
+- Durum: tamamlandı
+- `frontend/`: Vite + React 19 + TypeScript. Tek ek bağımlılık `react-router-dom`; stil saf CSS
+  (token'lı, koyu tema desteği, Tailwind/UI kiti yok).
+- `api/client.ts`: tek fetch sarmalayıcı. JWT'yi ekler, sunucunun Türkçe `message` alanını gösterir,
+  durum koduna göre Türkçe yedek mesajlar (401/403/404/502), ağ hatasında "Sunucuya ulaşılamıyor".
+  Süresi dolan oturumda (401) otomatik çıkış.
+- `auth/AuthContext.tsx`: giriş/çıkış, oturum `localStorage`'da, süresi dolmuş oturum yüklenmez.
+- `RequireAuth`: giriş zorunluluğu + rol kısıtı (yetkisiz rol → ana sayfa).
+- `Layout`: kenar menü (role göre süzülür), üst çubukta kullanıcı + rol rozeti + çıkış; 800 px altında
+  menü çekmeceye dönüşür (mobilde bozulmaz).
+- Ortak durum bileşenleri: yükleniyor / hata (tekrar dene) / boş. `useAsync` kancası bunları sürer.
+- Sayfalar: giriş (demo hesaplar tek tıkla), genel bakış (danışman/yönetici: öğrenci, hatalı kayıt,
+  karar bekleyen sayıları + önce bakılacaklar; öğrenci: dönem, GANO, AKTS, danışman kararı — gerçek API
+  verisi), henüz yapılmamış modüller için "Yakında" yer tutucuları (hangi aşamada geleceğini söyler), 404.
+- Geliştirmede `/api` istekleri Vite proxy ile `http://localhost:5154`'e yönlenir (CORS gerekmez);
+  adres `VITE_API_TARGET` ile değişir.
+- `tsc -b`, `oxlint` (0 uyarı) ve `vite build` temiz. Canlı doğrulama: mock OBİS + API + Vite birlikte
+  çalıştırıldı; proxy üzerinden giriş (200), yanlış şifre (401, Türkçe mesaj), SPA yönlendirmesi (200).
+
+**Bilinen eksik:** Arayüz bir tarayıcıda gözle kontrol edilmedi (bu ortamda tarayıcı aracı yoktu);
+düzen/renk doğrulaması Aşama 7'de ders kaydı ekranıyla birlikte yapılacak.

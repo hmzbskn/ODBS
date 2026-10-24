@@ -111,3 +111,16 @@ düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
   durumları olabilir); bulgular karar kaydıyla birlikte ekranda görünür.
 - **Seed düzeltmesi:** Uç durumlar için ortak şubeleri değiştirmek yerine öğrenciye özel "C" şubesi
   eklenir (bkz. PROGRESS.md Aşama 5). Seed üretimi artık tekrarlanabilir.
+
+## 2026-10-24 — Aşama 6: frontend kararları
+
+- **Saf CSS + tek ek paket (`react-router-dom`):** "Gereksiz paket ekleme" kuralı. Recharts yalnızca
+  Aşama 9'da grafikler için eklenecek.
+- **Oturum `localStorage`'da:** Sayfa yenilemede girişin korunması için. XSS riskine karşı bu bir
+  bitirme projesi için kabul edildi; üretimde httpOnly cookie + refresh token önerilir (rapora not).
+- **Vite proxy, CORS yok:** Geliştirmede ön yüz ve API aynı origin'den görünür; API'ye CORS eklenmedi.
+  Üretimde ön yüz statik olarak API ile aynı alan adından sunulmalı ya da CORS bilinçli açılmalı.
+- **Rota yetkisi ön yüzde de var ama güvenlik sınırı değil:** Gerçek yetki kontrolü backend'de
+  (`[Authorize(Roles)]` + `IStudentAccessGuard`); ön yüz yalnızca kullanıcıya gereksiz sayfayı göstermez.
+- **Yer tutucu sayfalar:** Menü baştan tam görünür ("Yakında" etiketiyle); modül hazır oldukça kendi
+  route'u yer tutucunun önüne eklenir.
