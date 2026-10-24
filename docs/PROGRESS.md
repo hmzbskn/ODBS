@@ -146,3 +146,45 @@ düzen/renk doğrulaması Aşama 7'de ders kaydı ekranıyla birlikte yapılacak
   genel bakış → liste → detay → not zorunluluğu (not boşken buton kapalı) → düzeltme isteme → öğrenci
   hesabında kararın görünmesi → 390 px mobil görünüm (yatay taşma yok, menü çekmecesi açılıyor).
   Konsol hatası yok. `tsc -b`, `oxlint` (0 uyarı) ve `vite build` temiz; backend 72/72 test yeşil.
+
+## Aşama 8 — Anket ve ihtiyaç puanlama (backend + frontend + testler)
+
+- Durum: tamamlandı
+- **Anket oluşturma:** başlık, açıklama, başlangıç/bitiş tarihi, hedef (tüm öğrencilerim ya da tek sınıf),
+  4 soru tipi (tek seçim, çoklu seçim, sayı, metin), zorunluluk, soru sırası. Doğrulamalar sunucuda
+  (en az bir soru, seçim sorusunda 2-20 seçenek, tekrar eden soru/seçenek metni yok, tarih sırası...).
+- **KVKK:** öğrenci formunda aydınlatma metni + açık rıza kutusu gösterilir; rıza işaretlenmeden
+  gönder düğmesi kapalıdır ve sunucu da rızasız gönderimi reddeder (400). Rıza zamanı kaydedilir.
+- **Puanlama:** soru puanı = (seçilen seçeneklerin puanı toplamı ya da girilen sayı) x soru ağırlığı;
+  ağırlık/puan negatif olabilir. Puan her seferinde cevaplardan canlı hesaplanır; "Puanlama" sekmesinde
+  ağırlık ve puanlar sonradan değiştirilince mevcut yanıtlar hemen yeniden puanlanır. Öğrenciye puanlar ve
+  ağırlıklar hiçbir yanıtta gönderilmez (testle doğrulandı).
+- **Sonuçlar:** puana göre sıralı liste (eşitlikte aynı sıra), her öğrencinin puanının soru soru kırılımı
+  (toplam = kırılım toplamı), "ilk N öğrenciyi seç" ve "puanı X ve üstündekileri seç", destek türü atama /
+  kaldırma (Yemek kartı, Burs...), CSV dışa aktarma (UTF-8 BOM, Türkçe Excel uyumlu, CSV enjeksiyon koruması).
+- **CSV içe aktarma:** şablon indirme, `Öğrenci No` + soru sütunları, çoklu seçimde `|` ayırıcı, satır
+  bazlı hata raporu (hedef kitlede olmayan öğrenci, tekrar, geçersiz seçenek/sayı, zorunlu boş). Geçerli
+  satırlar alınır, hatalılar atlanıp raporlanır. KVKK onay kutusu zorunludur; içe aktarılan yanıtlar
+  "CSV" etiketiyle işaretlenir.
+- **Gizlilik:** yanıtları yalnızca anketin sahibi danışman ve yönetici görür (başka danışman 403, hedefte
+  olmayan öğrenci 404). İstatistik ekranı anonimdir: kimlik ve serbest metin içermez.
+- Yanıt almış anket silinemez (409). Aynı öğrenci aynı ankete iki kez yanıt veremez (409; veritabanında
+  `(SurveyId, StudentNo)` tekil indeksi eşzamanlı çift gönderimi de engeller).
+- Migration `Faz8SurveyScoring`: soru ağırlığı/zorunluluk, seçenek puanı ve toplam puan `double`,
+  tekil indeksler.
+- Testler: toplam 135 (bu aşamada +63): puanlama ve CSV birim testleri, API testleri (oluşturma doğrulamaları,
+  başka danışmanın erişimi, hedef kitle, kapalı/planlanmış anket, KVKK rızası, çift gönderim, geçersiz
+  cevaplar, sıralama ve kırılım, yeniden puanlama, destek ataması, dışa aktarma, anonim istatistik, içe aktarma
+  hata raporu, silme kuralı).
+- Canlı doğrulama (gerçek tarayıcı, gerçek SQLite + migration): danışman anketi oluşturur → iki öğrenci
+  (390 px mobil görünümde) rıza vererek yanıtlar → sıralama ve kırılım → ilk 1 öğrenciye "Yemek kartı"
+  atanır → CSV iner (BOM, 3 satır) → puanlama değişince 16 yerine 56 görünür → şablon indirilir, CSV içe
+  aktarılır (1 satır alındı, 2 hata raporlandı) → istatistik → öğrenci `/anketler` yönetim sayfasına
+  giremez. Konsol hatası yok.
+
+### Aşama 8'de bulunup düzeltilenler
+
+1. `useAsync` yenilemede içeriği "Yükleniyor"a çevirip sayfa durumunu (başarı mesajı, kaydırma) siliyordu.
+   Artık yalnızca girdiler değişince yükleniyor gösterilir; `retry` ile yenilemede mevcut veri kalır
+   (Aşama 7 karar panelindeki sıçrama da bununla düzeldi).
+2. Rıza ifadesi ayrı bir uç nokta yerine form yanıtında gelir; metin ön yüzde kopyalanmaz.

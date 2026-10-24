@@ -1,4 +1,4 @@
-import type { DayName, IssueSeverity, RegistrationDecision } from '../api/types'
+import type { DayName, IssueSeverity, QuestionType, RegistrationDecision, SurveyStatus } from '../api/types'
 
 export const DECISION_LABELS: Record<RegistrationDecision, string> = {
   Pending: 'Karar bekliyor',
@@ -29,4 +29,17 @@ export const DAY_LABELS: Record<DayName, string> = {
   Friday: 'Cuma',
   Saturday: 'Cumartesi',
   Sunday: 'Pazar',
+}
+
+export const SURVEY_STATUS_LABELS: Record<SurveyStatus, string> = {
+  Planned: 'Planlandı',
+  Open: 'Açık',
+  Closed: 'Kapandı',
+}
+
+export const QUESTION_TYPE_LABELS: Record<QuestionType, string> = {
+  SingleChoice: 'Tek seçim',
+  MultiChoice: 'Çoklu seçim',
+  Number: 'Sayı',
+  Text: 'Metin',
 }

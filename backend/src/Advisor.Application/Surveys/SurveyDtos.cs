@@ -39,7 +39,9 @@ public record FormOptionDto(Guid Id, string Text);
 
 public record FormQuestionDto(Guid Id, string Text, QuestionType Type, bool Required, List<FormOptionDto> Options);
 
-public record SurveyForm(Guid Id, string Title, string? Description, DateOnly EndDate, string ConsentText, List<FormQuestionDto> Questions);
+public record SurveyForm(
+    Guid Id, string Title, string? Description, DateOnly EndDate, string ConsentText, string ConsentStatement,
+    List<FormQuestionDto> Questions);
 
 public record AnswerInput(Guid QuestionId, List<Guid>? OptionIds, double? Number, string? Text);
 

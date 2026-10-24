@@ -84,10 +84,6 @@ public class SurveysController : ControllerBase
     [Authorize(Roles = nameof(UserRole.Ogrenci))]
     public async Task<ActionResult<SurveyForm>> Form(Guid id, CancellationToken ct) => Ok(await _surveys.GetFormAsync(id, ct));
 
-    [HttpGet("consent-statement")]
-    [Authorize(Roles = nameof(UserRole.Ogrenci))]
-    public IActionResult ConsentStatement() => Ok(new { statement = ConsentText.Statement });
-
     [HttpPost("{id:guid}/submit")]
     [Authorize(Roles = nameof(UserRole.Ogrenci))]
     public async Task<IActionResult> Submit(Guid id, SubmitRequest request, CancellationToken ct)

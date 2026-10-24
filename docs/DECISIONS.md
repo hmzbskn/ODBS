@@ -134,3 +134,29 @@ düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
   öğrenciye kapalı" der; bu, görüşme notları içindir. Kayıt kararındaki not ise öğrenciye iletilmek
   üzere yazılır, bu yüzden öğrenci yalnızca son kararı ve notunu görür.
 - **Hata seviyeli kayıt onaylanabilir:** Engelleme yerine uyarı metni gösterilir (bkz. Aşama 5 kararı).
+
+## 2026-10-24 — Aşama 8: anket ve puanlama kararları
+
+- **Excel (.xlsx) içe aktarma yok, yalnızca CSV:** Prompt "CSV/Excel" der; .xlsx okumak yeni bir paket
+  (ör. ClosedXML/EPPlus) gerektirir ve "gereksiz paket ekleme" kuralına aykırıdır. Excel kullanıcıları
+  "CSV (noktalı virgülle ayrılmış)" olarak kaydeder; ayırıcı (`;`, `,`, sekme) otomatik bulunur. Dışa aktarma
+  Excel'de doğrudan açılır (UTF-8 BOM).
+- **Puan saklanmaz, canlı hesaplanır:** Ağırlıklar sonradan değişebildiği için puanı veritabanında tutmak
+  eskimiş değer riski doğurur. Yalnızca destek atama anındaki puan denetim izi olarak `NeedScoreResult`'ta
+  saklanır.
+- **Sayı sorusu puanı = değer x ağırlık (doğrusal):** Basit ve açıklanabilir. Aralık bazlı puanlama
+  (ör. gelir 0-20 bin = 10 puan) için tek seçim sorusu kullanılır; sayı sorusu kardeş sayısı gibi doğrusal
+  durumlar içindir.
+- **Hedef kitle:** danışmanın kendi öğrencileri, isteğe bağlı tek sınıf süzgeci. Yönetici anketi tüm
+  öğrencilere gider. Serbest öğrenci listesi seçimi kapsam dışı bırakıldı.
+- **Tarih penceresi Türkiye saatiyle (UTC+3, yaz saati yok) günlük hesaplanır;** `TimeProvider` ile test
+  edilebilir. Bitiş günü dahildir.
+- **Serbest metin cevapları anonim istatistikte gösterilmez:** metin kişiyi tanımlayabilir; istatistikte
+  yalnızca kaç kişinin yanıtladığı yer alır. Metni danışman, öğrencinin puan kırılımında görür.
+- **İçe aktarılan sonuçta rıza:** Satır bazında rıza yoktur; danışman toplu onay kutusuyla verilerin açık
+  rızayla toplandığını beyan eder (reddedilirse içe aktarma yapılmaz). Bu beyan satırlara `ConsentAccepted`
+  olarak işlenir. Gerçek kullanımda dayanak belgeler ayrıca saklanmalıdır (rapora not).
+- **KVKK metni örnek/kurgusaldır** (`ConsentText.cs`); hukuk birimi onayından geçmeden gerçek kullanımda
+  kullanılmamalıdır.
+- **Yanıt almış anket silinemez:** Silme istenirse KVKK kapsamında veri silme süreci ayrıca tasarlanmalı
+  (bu proje kapsamı dışı).

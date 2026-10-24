@@ -9,6 +9,11 @@ import { LoginPage } from './pages/LoginPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { RegistrationDetailPage } from './pages/RegistrationDetailPage'
 import { RegistrationsPage } from './pages/RegistrationsPage'
+import { StudentSurveyFormPage } from './pages/StudentSurveyFormPage'
+import { StudentSurveysPage } from './pages/StudentSurveysPage'
+import { SurveyBuilderPage } from './pages/SurveyBuilderPage'
+import { SurveyDetailPage } from './pages/SurveyDetailPage'
+import { SurveysPage } from './pages/SurveysPage'
 
 export default function App() {
   return (
@@ -22,9 +27,14 @@ export default function App() {
               <Route element={<RequireAuth roles={['Admin', 'Danisman']} />}>
                 <Route path="/kayitlar" element={<RegistrationsPage />} />
                 <Route path="/kayitlar/:studentNo" element={<RegistrationDetailPage />} />
+                <Route path="/anketler" element={<SurveysPage />} />
+                <Route path="/anketler/yeni" element={<SurveyBuilderPage />} />
+                <Route path="/anketler/:id" element={<SurveyDetailPage />} />
               </Route>
               <Route element={<RequireAuth roles={['Ogrenci']} />}>
                 <Route path="/kayitlarim" element={<RegistrationDetailPage />} />
+                <Route path="/anketlerim" element={<StudentSurveysPage />} />
+                <Route path="/anketlerim/:id" element={<StudentSurveyFormPage />} />
               </Route>
               {/* Yer tutucu sayfalar: modül hazır oldukça kendi route'larıyla değiştirilir. */}
               {NAV_ITEMS.filter((n) => n.soonPhase).map((n) => (

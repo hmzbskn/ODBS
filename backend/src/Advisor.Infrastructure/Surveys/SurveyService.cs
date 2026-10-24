@@ -464,7 +464,7 @@ public class SurveyService
             .OrderBy(q => q.Order)
             .Select(q => new FormQuestionDto(q.Id, q.Text, q.Type, q.Required, q.Options.Select(o => new FormOptionDto(o.Id, o.Text)).ToList()))
             .ToList();
-        return new SurveyForm(survey.Id, survey.Title, survey.Description, DateOnly.FromDateTime(survey.EndDate), ConsentText.Text, questions);
+        return new SurveyForm(survey.Id, survey.Title, survey.Description, DateOnly.FromDateTime(survey.EndDate), ConsentText.Text, ConsentText.Statement, questions);
     }
 
     public async Task SubmitAsync(Guid id, SubmitRequest request, CancellationToken ct)
