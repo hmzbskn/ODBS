@@ -89,3 +89,8 @@ public record CourseSuccess(string CourseCode, string CourseName, int Attempts, 
 public record DashboardResponse(
     int StudentCount, double AverageGpa, RiskDistribution Risk,
     List<TermGpaPoint> GpaTrend, List<CourseSuccess> CourseSuccess, int GraduationCandidates);
+
+/// <summary>Duyuru hedefleme gibi süzgeçler için öğrencinin özet profili.</summary>
+public record StudentProfile(
+    string StudentNo, string FullName, int ClassYear, double Gpa, bool HasGpa,
+    RiskLevel Risk, int RiskScore, int InternshipDays, bool InternshipComplete);

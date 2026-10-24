@@ -37,6 +37,9 @@ namespace Advisor.Infrastructure.Persistence.Migrations
                     b.Property<int?>("FilterClassYear")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool?>("FilterInternshipComplete")
+                        .HasColumnType("INTEGER");
+
                     b.Property<double?>("FilterMaxGpa")
                         .HasColumnType("REAL");
 
@@ -55,7 +58,7 @@ namespace Advisor.Infrastructure.Persistence.Migrations
                     b.ToTable("Announcements");
                 });
 
-            modelBuilder.Entity("Advisor.Domain.Entities.AnnouncementRead", b =>
+            modelBuilder.Entity("Advisor.Domain.Entities.AnnouncementRecipient", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -64,7 +67,7 @@ namespace Advisor.Infrastructure.Persistence.Migrations
                     b.Property<Guid>("AnnouncementId")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("ReadAt")
+                    b.Property<DateTime?>("ReadAt")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("StudentNo")
@@ -73,9 +76,10 @@ namespace Advisor.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AnnouncementId");
+                    b.HasIndex("AnnouncementId", "StudentNo")
+                        .IsUnique();
 
-                    b.ToTable("AnnouncementReads");
+                    b.ToTable("AnnouncementRecipients");
                 });
 
             modelBuilder.Entity("Advisor.Domain.Entities.AppUser", b =>
@@ -265,6 +269,12 @@ namespace Advisor.Infrastructure.Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AdvisorNote")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AttachmentContentType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AttachmentFileName")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AttachmentPath")
@@ -476,10 +486,10 @@ namespace Advisor.Infrastructure.Persistence.Migrations
                     b.ToTable("SurveyResponses");
                 });
 
-            modelBuilder.Entity("Advisor.Domain.Entities.AnnouncementRead", b =>
+            modelBuilder.Entity("Advisor.Domain.Entities.AnnouncementRecipient", b =>
                 {
                     b.HasOne("Advisor.Domain.Entities.Announcement", "Announcement")
-                        .WithMany("Reads")
+                        .WithMany("Recipients")
                         .HasForeignKey("AnnouncementId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -544,7 +554,7 @@ namespace Advisor.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("Advisor.Domain.Entities.Announcement", b =>
                 {
-                    b.Navigation("Reads");
+                    b.Navigation("Recipients");
                 });
 
             modelBuilder.Entity("Advisor.Domain.Entities.Survey", b =>

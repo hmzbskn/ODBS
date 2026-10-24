@@ -40,7 +40,8 @@ public class MeetingNote
     public DateTime CreatedAt { get; set; }
 }
 
-/// <summary>Danışmanın filtreli hedef kitleye gönderdiği duyuru.</summary>
+/// <summary>Danışmanın filtreli hedef kitleye gönderdiği duyuru. Filtreler gönderim anındaki halleriyle saklanır
+/// (hangi kritere göre kimlere gittiği sonradan açıklanabilsin diye).</summary>
 public class Announcement
 {
     public Guid Id { get; set; }
@@ -49,22 +50,26 @@ public class Announcement
     public required string Body { get; set; }
     public DateTime CreatedAt { get; set; }
 
-    // Basit filtre kriterleri — null ise o kritere bakılmaz.
+    // Filtre kriterleri: null ise o kritere bakılmaz.
     public int? FilterClassYear { get; set; }
     public double? FilterMinGpa { get; set; }
     public double? FilterMaxGpa { get; set; }
     public RiskLevel? FilterRiskLevel { get; set; }
 
-    public List<AnnouncementRead> Reads { get; set; } = new();
+    /// <summary>true: stajı tamamlayanlar, false: tamamlamayanlar, null: fark etmez.</summary>
+    public bool? FilterInternshipComplete { get; set; }
+
+    public List<AnnouncementRecipient> Recipients { get; set; } = new();
 }
 
-public class AnnouncementRead
+/// <summary>Duyurunun bir öğrenciye gönderilmiş kopyası; <see cref="ReadAt"/> boşsa öğrenci henüz okumamıştır.</summary>
+public class AnnouncementRecipient
 {
     public Guid Id { get; set; }
     public Guid AnnouncementId { get; set; }
     public Announcement? Announcement { get; set; }
     public required string StudentNo { get; set; }
-    public DateTime ReadAt { get; set; }
+    public DateTime? ReadAt { get; set; }
 }
 
 /// <summary>Öğrencinin açtığı talep/dilekçe.</summary>
@@ -74,7 +79,11 @@ public class PetitionRequest
     public required string StudentNo { get; set; }
     public PetitionType Type { get; set; }
     public required string Description { get; set; }
+    /// <summary>Dosya deposundaki saklama adı (rastgele); özgün ad ve tür ayrı alanlarda tutulur.</summary>
     public string? AttachmentPath { get; set; }
+
+    public string? AttachmentFileName { get; set; }
+    public string? AttachmentContentType { get; set; }
     public PetitionStatus Status { get; set; } = PetitionStatus.Beklemede;
     public string? AdvisorNote { get; set; }
     public string? HandledByAdvisorId { get; set; }

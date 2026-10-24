@@ -27,7 +27,7 @@ public class AdvisorDbContext : DbContext
     public DbSet<Appointment> Appointments => Set<Appointment>();
     public DbSet<MeetingNote> MeetingNotes => Set<MeetingNote>();
     public DbSet<Announcement> Announcements => Set<Announcement>();
-    public DbSet<AnnouncementRead> AnnouncementReads => Set<AnnouncementRead>();
+    public DbSet<AnnouncementRecipient> AnnouncementRecipients => Set<AnnouncementRecipient>();
     public DbSet<PetitionRequest> PetitionRequests => Set<PetitionRequest>();
     public DbSet<Notification> Notifications => Set<Notification>();
 
@@ -57,9 +57,11 @@ public class AdvisorDbContext : DbContext
             e.HasMany(r => r.Answers).WithOne(a => a.Response).HasForeignKey(a => a.ResponseId);
         });
 
+        modelBuilder.Entity<AnnouncementRecipient>().HasIndex(r => new { r.AnnouncementId, r.StudentNo }).IsUnique();
+
         modelBuilder.Entity<Announcement>(e =>
         {
-            e.HasMany(a => a.Reads).WithOne(r => r.Announcement).HasForeignKey(r => r.AnnouncementId);
+            e.HasMany(a => a.Recipients).WithOne(r => r.Announcement).HasForeignKey(r => r.AnnouncementId);
         });
 
         modelBuilder.Entity<Appointment>(e =>

@@ -17,9 +17,29 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 namespace Advisor.Tests;
 
 /// <summary>Seed verisi + sabit saat: Pazartesi 26 Ekim 2026, 12:00 (Türkiye saati) = 09:00 UTC.</summary>
+/// <summary>Testlerde diske yazmayan dosya deposu.</summary>
+public class MemoryFileStore : Advisor.Application.Communication.IFileStore
+{
+    public Dictionary<string, byte[]> Stored { get; } = new();
+
+    public async Task<string> SaveAsync(Stream content, string extension, CancellationToken ct = default)
+    {
+        using var ms = new MemoryStream();
+        await content.CopyToAsync(ms, ct);
+        var name = $"{Guid.NewGuid():N}{extension}";
+        Stored[name] = ms.ToArray();
+        return name;
+    }
+
+    public Task<Stream?> OpenAsync(string storedName, CancellationToken ct = default) =>
+        Task.FromResult<Stream?>(Stored.TryGetValue(storedName, out var bytes) ? new MemoryStream(bytes) : null);
+}
+
 public class CommApiFactory : WebApplicationFactory<Program>
 {
     private readonly string _dbName = Guid.NewGuid().ToString();
+
+    public MemoryFileStore Files { get; } = new();
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
@@ -32,6 +52,9 @@ public class CommApiFactory : WebApplicationFactory<Program>
 
             services.RemoveAll<IObisClient>();
             services.AddSingleton<IObisClient, SeedObisClient>();
+
+            services.RemoveAll<Advisor.Application.Communication.IFileStore>();
+            services.AddSingleton<Advisor.Application.Communication.IFileStore>(Files);
 
             services.RemoveAll<TimeProvider>();
             services.AddSingleton<TimeProvider>(new FixedTimeProvider(new DateTimeOffset(2026, 10, 26, 9, 0, 0, TimeSpan.Zero)));

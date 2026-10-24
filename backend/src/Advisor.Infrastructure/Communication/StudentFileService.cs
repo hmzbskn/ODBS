@@ -40,6 +40,7 @@ public class StudentFileService
         var notes = await _db.MeetingNotes.Where(n => n.StudentNo == studentNo).OrderByDescending(n => n.CreatedAt).ToListAsync(ct);
         var appointments = await _db.Appointments.Include(a => a.Slot).Where(a => a.StudentNo == studentNo).ToListAsync(ct);
         var petitions = await _db.PetitionRequests.Where(p => p.StudentNo == studentNo).ToListAsync(ct);
+        var received = await _db.AnnouncementRecipients.Include(r => r.Announcement).Where(r => r.StudentNo == studentNo).ToListAsync(ct);
 
         var timeline = new List<TimelineItem>();
         timeline.AddRange(notes.Select(n => new TimelineItem("Note", n.CreatedAt, "Görüşme notu", n.Content, n.Id)));
@@ -49,6 +50,10 @@ public class StudentFileService
             AppointmentStatusLabel(a.Status) + (string.IsNullOrWhiteSpace(a.CancellationReason) ? string.Empty : $" · {a.CancellationReason}"), a.Id)));
         timeline.AddRange(petitions.Select(p => new TimelineItem(
             "Petition", p.CreatedAt, $"Talep: {PetitionTypeLabel(p.Type)}", $"{PetitionStatusLabel(p.Status)} · {Truncate(p.Description, 160)}", p.Id)));
+
+        timeline.AddRange(received.Select(r => new TimelineItem(
+            "Announcement", r.Announcement!.CreatedAt, $"Duyuru: {r.Announcement.Title}",
+            r.ReadAt is null ? "Okunmadı" : "Okundu", r.Announcement.Id)));
 
         return new StudentFile(
             studentNo, $"{student.FirstName} {student.LastName}", student.ClassYear,

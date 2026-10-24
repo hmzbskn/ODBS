@@ -1,3 +1,4 @@
+using Advisor.Application.Communication;
 using Advisor.Application.Obis;
 using Advisor.Infrastructure.Auth;
 using Advisor.Infrastructure.Communication;
@@ -28,6 +29,11 @@ public static class DependencyInjection
         services.AddScoped<SurveyService>();
         services.AddScoped<AppointmentService>();
         services.AddScoped<StudentFileService>();
+        services.AddScoped<AnnouncementService>();
+        services.AddScoped<InboxService>();
+        services.AddScoped<PetitionService>();
+        services.Configure<UploadOptions>(configuration.GetSection(UploadOptions.SectionName));
+        services.TryAddSingleton<IFileStore, LocalFileStore>();
 
         return services;
     }

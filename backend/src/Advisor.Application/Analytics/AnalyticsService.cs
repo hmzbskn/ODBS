@@ -12,6 +12,7 @@ public interface IAnalyticsService
     Task<GraduationAnalysis> GetGraduationAsync(string studentNo, CancellationToken ct = default);
     Task<List<RiskRow>> GetRiskListAsync(IReadOnlyList<ObisStudent> scope, CancellationToken ct = default);
     Task<DashboardResponse> GetDashboardAsync(IReadOnlyList<ObisStudent> scope, CancellationToken ct = default);
+    Task<List<StudentProfile>> GetProfilesAsync(IReadOnlyList<ObisStudent> scope, CancellationToken ct = default);
 }
 
 /// <summary>Risk, mezuniyet ve panel hesaplarını OBİS verisinden üretir. Erişim denetimi çağıran
@@ -72,6 +73,21 @@ public class AnalyticsService : IAnalyticsService
             })
             .OrderByDescending(r => r.Score)
             .ThenBy(r => r.StudentNo, StringComparer.Ordinal)
+            .ToList();
+    }
+
+    public async Task<List<StudentProfile>> GetProfilesAsync(IReadOnlyList<ObisStudent> scope, CancellationToken ct = default)
+    {
+        var all = await LoadManyAsync(scope, ct);
+        var curriculum = await _obis.GetCurriculumAsync(ct);
+        return all
+            .Select(d =>
+            {
+                var a = Assess(d);
+                return new StudentProfile(
+                    d.Student.StudentNo, FullName(d.Student), d.Student.ClassYear, Gpa(d), d.Transcript.Count > 0,
+                    a.Level, a.Score, d.InternshipDays, d.InternshipDays >= curriculum.InternshipDaysRequirement);
+            })
             .ToList();
     }
 
