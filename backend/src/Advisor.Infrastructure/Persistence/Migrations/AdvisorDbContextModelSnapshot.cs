@@ -220,10 +220,13 @@ namespace Advisor.Infrastructure.Persistence.Migrations
                     b.Property<Guid>("SurveyId")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("TotalScore")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("TotalScore")
+                        .HasColumnType("REAL");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("SurveyId", "StudentNo")
+                        .IsUnique();
 
                     b.ToTable("NeedScoreResults");
                 });
@@ -392,6 +395,9 @@ namespace Advisor.Infrastructure.Persistence.Migrations
                     b.Property<int>("Order")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("Required")
+                        .HasColumnType("INTEGER");
+
                     b.Property<Guid>("SurveyId")
                         .HasColumnType("TEXT");
 
@@ -401,6 +407,9 @@ namespace Advisor.Infrastructure.Persistence.Migrations
 
                     b.Property<int>("Type")
                         .HasColumnType("INTEGER");
+
+                    b.Property<double>("Weight")
+                        .HasColumnType("REAL");
 
                     b.HasKey("Id");
 
@@ -418,8 +427,8 @@ namespace Advisor.Infrastructure.Persistence.Migrations
                     b.Property<Guid>("QuestionId")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Score")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Score")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("Text")
                         .IsRequired()
@@ -459,7 +468,8 @@ namespace Advisor.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SurveyId");
+                    b.HasIndex("SurveyId", "StudentNo")
+                        .IsUnique();
 
                     b.ToTable("SurveyResponses");
                 });

@@ -28,6 +28,12 @@ public class SurveyQuestion
     public QuestionType Type { get; set; }
     public int Order { get; set; }
 
+    /// <summary>Soru ağırlığı (çarpan). Seçim sorularında seçilen seçeneklerin puanı, sayı sorularında
+    /// girilen değer bu çarpanla çarpılır. Negatif olabilir (ör. gelir arttıkça ihtiyaç azalır).</summary>
+    public double Weight { get; set; } = 1;
+
+    public bool Required { get; set; } = true;
+
     public List<SurveyQuestionOption> Options { get; set; } = new();
 }
 
@@ -39,7 +45,7 @@ public class SurveyQuestionOption
     public Guid QuestionId { get; set; }
     public SurveyQuestion? Question { get; set; }
     public required string Text { get; set; }
-    public int Score { get; set; }
+    public double Score { get; set; }
 }
 
 /// <summary>Bir öğrencinin bir ankete verdiği tüm cevapların zarfı. KVKK açık rıza
@@ -76,13 +82,14 @@ public class SurveyAnswer
     public string? TextValue { get; set; }
 }
 
-/// <summary>Bir anketin bir öğrenci için hesaplanmış ihtiyaç puanı sonucu.</summary>
+/// <summary>Bir anketin bir öğrenci için danışmanın verdiği destek kararı. Puanın kendisi her
+/// seferinde cevaplardan canlı hesaplanır; burada atama anındaki puan denetim izi olarak saklanır.</summary>
 public class NeedScoreResult
 {
     public Guid Id { get; set; }
     public Guid SurveyId { get; set; }
     public required string StudentNo { get; set; }
-    public int TotalScore { get; set; }
+    public double TotalScore { get; set; }
     public DateTime ComputedAt { get; set; }
     public string? SupportAssigned { get; set; }
 }

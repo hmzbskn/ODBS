@@ -1,3 +1,5 @@
+using Advisor.Application.Common;
+
 namespace Advisor.Api.Auth;
 
 /// <summary>Yakalanmamış hataları Türkçe, tek biçimli bir JSON gövdeye çevirir; iç hata
@@ -18,6 +20,10 @@ public class ExceptionMiddleware
         try
         {
             await _next(context);
+        }
+        catch (AppException ex)
+        {
+            await Write(context, ex.StatusCode, ex.Message);
         }
         catch (HttpRequestException ex)
         {

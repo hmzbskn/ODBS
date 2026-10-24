@@ -44,6 +44,9 @@ public class AdvisorDbContext : DbContext
             e.HasMany(s => s.Responses).WithOne(r => r.Survey).HasForeignKey(r => r.SurveyId);
         });
 
+        modelBuilder.Entity<SurveyResponse>().HasIndex(r => new { r.SurveyId, r.StudentNo }).IsUnique();
+        modelBuilder.Entity<NeedScoreResult>().HasIndex(r => new { r.SurveyId, r.StudentNo }).IsUnique();
+
         modelBuilder.Entity<SurveyQuestion>(e =>
         {
             e.HasMany(q => q.Options).WithOne(o => o.Question).HasForeignKey(o => o.QuestionId);

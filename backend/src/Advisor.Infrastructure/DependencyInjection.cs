@@ -2,9 +2,11 @@ using Advisor.Application.Obis;
 using Advisor.Infrastructure.Auth;
 using Advisor.Infrastructure.Obis;
 using Advisor.Infrastructure.Persistence;
+using Advisor.Infrastructure.Surveys;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Advisor.Infrastructure;
 
@@ -21,6 +23,8 @@ public static class DependencyInjection
 
         services.Configure<JwtOptions>(configuration.GetSection(JwtOptions.SectionName));
         services.AddScoped<AuthService>();
+        services.TryAddSingleton(TimeProvider.System);
+        services.AddScoped<SurveyService>();
 
         return services;
     }
