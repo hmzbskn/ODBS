@@ -188,3 +188,45 @@ düzen/renk doğrulaması Aşama 7'de ders kaydı ekranıyla birlikte yapılacak
    Artık yalnızca girdiler değişince yükleniyor gösterilir; `retry` ile yenilemede mevcut veri kalır
    (Aşama 7 karar panelindeki sıçrama da bununla düzeldi).
 2. Rıza ifadesi ayrı bir uç nokta yerine form yanıtında gelir; metin ön yüzde kopyalanmaz.
+
+## Aşama 9 — Erken uyarı, mezuniyet analizi ve danışman paneli grafikleri
+
+- Durum: tamamlandı
+- **Risk puanı (kurala dayalı, 0-100):** göstergeler ayrı ve açıklamalıdır; toplam puan 100 ile sınırlanır,
+  seviye Düşük (<30) / Orta (30-59) / Yüksek (>=60). Göstergeler: düşük GANO (<2.00: 35) ve sınırda GANO
+  (<2.30: 15); son iki dönem ortalaması arasında düşüş (>=0.5: 20, >=1.0: 30); aynı dersten tekrar tekrar
+  kalma (ders başına 15, en çok 30) ve art arda iki dönem ders kalma (10); mevcut dönem devamsızlığı
+  (%20 üstü: 20, %30 ve üstü: 40); normal süreyi (8 dönem) aşma (10'dan başlar, dönem başına +5) ve azami
+  süreye (14 dönem) yaklaşma (40). Tüm eşikler `appsettings.json > RiskRules` ile değişir.
+- **Mezuniyet analizi:** zorunlu dersler (tamamlanmayanlar Kaldı / Alınmadı / Bu dönem alıyor olarak ayrılır),
+  seçmeli kredi, toplam AKTS ilerlemesi (%), staj günü (OBİS'ten), asgari GANO, eksik koşul listesi ve tahmini
+  kalan dönem. **Projeksiyon:** "bu dönem aldığı dersleri geçerse mezuniyet koşulları tamamlanır mı?"
+  (`ProjectedCanGraduate`) ve geçse bile kalacak eksikler.
+- **Danışman paneli (Recharts):** öğrenci sayısı, ortalama GANO, yüksek riskli sayısı, mezuniyete en çok 1
+  dönem kalan sayısı; risk dağılımı (halka), dönem bazlı ortalama GANO (çizgi), başarı oranı en düşük 12 ders
+  (çubuk, yüzde etiketli) ve "önce bakılması gerekenler". Grafikler CSS değişkenleriyle renklendiği için koyu
+  temada da çalışır; Recharts tembel yüklenir (yalnızca danışman paneli indirir).
+- **Sayfalar:** `/risk` (puana göre sıralı liste, seviye ve ad/numara süzgeci, göstergeler özet), `/risk/:no`
+  (puan çubuğu, gerekçeli göstergeler + mezuniyet analizi), `/mezuniyet` (öğrencinin kendi analizi).
+  Risk yalnızca danışman/yönetici içindir; öğrenci yalnızca kendi mezuniyet analizini görebilir.
+- **API:** `GET /api/analytics/dashboard`, `/risk`, `/students/{no}/risk`, `/students/{no}/graduation`
+  (danışman yalnızca kendi öğrencileri; kapsam sunucuda belirlenir).
+- **Mock OBİS:** `GET /api/students/{no}/internship` (tamamlanan staj günü) eklendi; `IObisClient.GetInternshipAsync`.
+- Testler: toplam 199 (bu aşamada +64): her risk göstergesi için sınır ve ayar testleri, mezuniyet koşulları ve
+  projeksiyon, seed uç durumları (EDGE-04 yüksek risk, EDGE-07 sert düşüş, EDGE-08 süre aşımı, EDGE-09 az kalan,
+  EDGE-10 devamsızlık), panel tutarlılığı, API yetkileri (öğrenci risk göremez, başka danışman 403, 404 mesajı).
+- Canlı doğrulama (gerçek tarayıcı): panel + 3 grafik, risk listesi ve seviye süzgeci, risk detayı, EDGE-09 mezuniyet
+  projeksiyonu, öğrenci kendi mezuniyet analizi, öğrencinin `/risk`'e girememesi, 390 px mobil (yatay taşma yok).
+  Konsol hatası yok.
+
+### Aşama 9'da bulunup düzeltilen seed sorunları
+
+1. **Müfredat sayıları tutarsızdı:** `TotalEctsRequirement=240` iken zorunlu dersler 192 AKTS, tüm seçmeliler 50
+   AKTS (en çok 242) idi; mezuniyet pratikte erişilemezdi. Müfredat artık 212 AKTS (192 + dönem başına bir seçmeli
+   x 4) ve 12 seçmeli kredi (4 x 3).
+2. **EDGE-09 "az kalan" değildi:** önceki dönemlerden kalınmış 3 ders tekrar alınmadığı için eksik çok görünüyordu.
+   Bu öğrencinin kalınmış dersleri geçilmiş sayıldı; artık yalnızca bu dönemin dersleri kalıyor.
+3. **EDGE-04 yeterince riskli değildi:** GANO 2.24 idi. Artık ilk iki dönemde ders kalmış (GANO < 2.0), art arda iki
+   dönem başarısız ve bir derste devamsızlık sınırı aşılmış (demoda tek "Yüksek" riskli öğrenci).
+4. **Staj verisi yoktu:** OBİS'e staj endpoint'i ve seed verisi eklendi (rastgele akışın sonunda üretildi; mevcut hiçbir
+   veri değişmedi, yalnızca yukarıdaki iki öğrencinin ve müfredatın değişikliği var).

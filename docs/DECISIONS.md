@@ -160,3 +160,24 @@ düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
   kullanılmamalıdır.
 - **Yanıt almış anket silinemez:** Silme istenirse KVKK kapsamında veri silme süreci ayrıca tasarlanmalı
   (bu proje kapsamı dışı).
+
+## 2026-10-24 — Aşama 9: erken uyarı ve mezuniyet kararları
+
+- **Makine öğrenmesi yok, kural tabanlı puan:** Prompt "kurala dayalı risk puanı, her gösterge ayrı ve açıklamalı"
+  der. Danışman puanın gerekçesini görür, eşikler ayarlanabilir; küçük bir veri setinde ML anlamsız ve açıklanamaz olurdu.
+- **Dönem ortalaması düşüşü yalnızca son iki dönemi karşılaştırır** ("son iki dönemde GANO düşüşü" ifadesinin yorumu).
+  Dönem ortalaması kredi ağırlıklıdır, tekrarlar dahil o dönemin satırlarından hesaplanır.
+- **"Üst üste kalınan dersler" iki gösterge:** (a) aynı dersten en az iki kez kalma, (b) art arda iki dönemde en az
+  birer ders kalma. İkisi de seed'de ve gerçek hayatta ayrı sinyallerdir.
+- **Devamsızlık yalnızca mevcut dönemde, %30 sınır / %20 uyarı:** Geçmiş dönemlerin devamsızlığı zaten sonuçlanmıştır.
+  Sınır üniversiteye göre değişir; `AbsenceLimitRate` ayarlanabilir.
+- **Azami süre 14 dönem (7 yıl), normal 8:** Türkiye'deki lisans programlarının genel uygulaması varsayıldı; ayarlanabilir.
+- **Zorunlu dersler için "bu dönem alıyor" durumu eksik sayılır ama etiketlenir;** ayrıca projeksiyon ayrı hesaplanır.
+  Böylece "az kalan" öğrenci "mezun olamaz" diye alarm üretmez, ama "şu an mezun değil" gerçeği de saklanmaz.
+- **Staj durumu OBİS'ten gelir** (`/api/students/{no}/internship`, tamamlanan gün). Alternatif olarak STJ101 dersine
+  bakmak yanlış olurdu: o ders "Staj I Hazırlık" dersidir, stajın kendisi değildir.
+- **Seçmeli krediler Credit'ten, toplam AKTS Ects'ten hesaplanır;** müfredat sabitleri bu ayrımı gözeterek 12 kredi / 212 AKTS yapıldı.
+- **Risk yalnızca personele açık:** Öğrenciye kendi "risk puanı"nı göstermek damgalayıcı olabilir; öğrenci kendi
+  mezuniyet analizini görür (prompt'taki gereksinim), risk göstergelerini görmez.
+- **Panel kapsamı sunucuda belirlenir:** istemci öğrenci listesi göndermez; danışman yalnızca kendi öğrencilerini görür.
+- **Grafik kütüphanesi Recharts** (prompt'ta öngörüldü) ve **tembel yüklenir:** ilk yükleme 323 kB, grafikler ayrı 407 kB parça.

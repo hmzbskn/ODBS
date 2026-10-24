@@ -9,6 +9,8 @@
   --primary-text: #ffffff;
   --danger: #b42318;
   --danger-bg: #fdecea;
+  --ok: #1a6b3a;
+  --ok-bg: #e3f6ea;
   --warn: #8a5a00;
   --warn-bg: #fff3d6;
   --sidebar-bg: #14213d;
@@ -34,6 +36,8 @@
     --primary-text: #0b1226;
     --danger: #ff8a80;
     --danger-bg: #3a1c1c;
+    --ok: #7ee0a4;
+    --ok-bg: #17352a;
     --warn: #ffcb66;
     --warn-bg: #3a2f14;
     --sidebar-bg: #0a1020;
@@ -489,16 +493,9 @@ a.btn {
 }
 
 .badge-ok {
-  background: #e3f6ea;
-  color: #1a6b3a;
+  background: var(--ok-bg);
+  color: var(--ok);
   border-color: transparent;
-}
-
-@media (prefers-color-scheme: dark) {
-  .badge-ok {
-    background: #17352a;
-    color: #7ee0a4;
-  }
 }
 
 .badge-muted-dark {
@@ -650,16 +647,9 @@ a.btn {
   margin: 0.5rem 0;
   padding: 0.6rem 0.75rem;
   border-radius: 8px;
-  background: #e3f6ea;
-  color: #1a6b3a;
+  background: var(--ok-bg);
+  color: var(--ok);
   font-size: 0.9rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  .form-ok {
-    background: #17352a;
-    color: #7ee0a4;
-  }
 }
 
 .scoring-q {
@@ -784,6 +774,121 @@ a.btn {
 
 .req {
   color: var(--danger);
+}
+
+/* ---- risk, mezuniyet, grafikler ---- */
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.chart-note {
+  text-align: center;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.section-title {
+  margin: 1.5rem 0 0.75rem;
+}
+
+.score-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.score-track {
+  display: block;
+  width: 90px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.stat .score-track {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.score-fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.score-dusuk {
+  background: var(--ok);
+}
+
+.score-orta {
+  background: var(--warn);
+}
+
+.score-yuksek {
+  background: var(--danger);
+}
+
+.progress {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+  margin-top: 0.4rem;
+}
+
+.progress-fill {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+}
+
+.grad-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.grad-card {
+  margin-bottom: 0;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.grad-card strong {
+  font-size: 1.4rem;
+}
+
+.verdict {
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+}
+
+.verdict-ok {
+  background: var(--ok-bg);
+  color: var(--ok);
+}
+
+.verdict-soon {
+  background: var(--warn-bg);
+  color: var(--warn);
+}
+
+.verdict-no {
+  background: var(--bg);
+  border-color: var(--border);
+}
+
+.blockers {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.35rem;
 }
 
 /* ---- durumlar ---- */

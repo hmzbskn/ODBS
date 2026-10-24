@@ -1,10 +1,18 @@
+import { lazy, Suspense } from 'react'
 import { api } from '../api/client'
-import type { AdvisorStudentList, RegistrationDetail } from '../api/types'
+import type { DashboardResponse, RegistrationDetail, RiskRow } from '../api/types'
 import { useAuth } from '../auth/AuthContext'
+import { Link } from 'react-router-dom'
 import { EmptyState, ErrorState, Loading } from '../components/Feedback'
 import { DECISION_LABELS } from '../components/labels'
+import { RiskBadge } from '../components/RiskBadge'
 import { formatGpa } from '../components/format'
 import { useAsync } from '../components/useAsync'
+
+// Recharts büyük bir pakettir; yalnızca grafik gösteren danışman paneli yüklesin diye tembel yüklenir.
+const RiskDistributionChart = lazy(() => import('../components/DashboardCharts').then((m) => ({ default: m.RiskDistributionChart })))
+const GpaTrendChart = lazy(() => import('../components/DashboardCharts').then((m) => ({ default: m.GpaTrendChart })))
+const CourseSuccessChart = lazy(() => import('../components/DashboardCharts').then((m) => ({ default: m.CourseSuccessChart })))
 
 export function DashboardPage() {
   const { user } = useAuth()
@@ -23,63 +31,90 @@ export function DashboardPage() {
 }
 
 function StaffSummary() {
-  const { state, retry } = useAsync(() => api.get<AdvisorStudentList>('/api/registrations/students'), [])
+  const dash = useAsync(() => api.get<DashboardResponse>('/api/analytics/dashboard'), [])
+  const risk = useAsync(() => api.get<RiskRow[]>('/api/analytics/risk'), [])
 
-  if (state.status === 'loading') return <Loading label="Öğrenci kayıtları OBİS'ten alınıyor…" />
-  if (state.status === 'error') return <ErrorState message={state.message} onRetry={retry} />
+  if (dash.state.status === 'loading') return <Loading label="Öğrenci verileri OBİS'ten alınıyor…" />
+  if (dash.state.status === 'error') return <ErrorState message={dash.state.message} onRetry={dash.retry} />
 
-  const students = state.data.students
-  if (students.length === 0) {
+  const d = dash.state.data
+  if (d.studentCount === 0) {
     return <EmptyState title="Öğrenci bulunamadı">Size bağlı öğrenci kaydı yok.</EmptyState>
   }
 
-  const withErrors = students.filter((s) => s.errorCount > 0)
-  const pending = students.filter((s) => s.decision === 'Pending')
-  const topIssues = [...students]
-    .filter((s) => s.errorCount + s.warningCount > 0)
-    .sort((a, b) => b.errorCount - a.errorCount || b.warningCount - a.warningCount)
-    .slice(0, 5)
+  const attention = risk.state.status === 'ready' ? risk.state.data.filter((r) => r.level !== 'Dusuk').slice(0, 5) : []
 
   return (
     <>
       <div className="stat-grid">
-        <Stat label="Öğrenci" value={students.length} />
-        <Stat label="Hatalı kayıt" value={withErrors.length} tone={withErrors.length > 0 ? 'danger' : undefined} />
-        <Stat label="Karar bekleyen" value={pending.length} />
+        <Stat label="Öğrenci" value={d.studentCount} />
+        <Stat label="Ortalama GANO" value={formatGpa(d.averageGpa)} />
+        <Stat label="Yüksek riskli" value={d.risk.high} tone={d.risk.high > 0 ? 'danger' : undefined} />
+        <Stat label="Mezuniyete en çok 1 dönem kalan" value={d.graduationCandidates} />
+      </div>
+
+      <div className="chart-grid">
+        <section className="card">
+          <h2>Risk dağılımı</h2>
+          <Suspense fallback={<Loading label="Grafik yükleniyor…" />}>
+            <RiskDistributionChart risk={d.risk} />
+          </Suspense>
+        </section>
+        <section className="card">
+          <h2>Dönem bazlı ortalama GANO</h2>
+          <Suspense fallback={<Loading label="Grafik yükleniyor…" />}>
+            <GpaTrendChart trend={d.gpaTrend} />
+          </Suspense>
+        </section>
       </div>
 
       <section className="card">
-        <h2>Önce bakılması gerekenler</h2>
-        {topIssues.length === 0 ? (
-          <p className="muted">Hata ya da uyarı içeren kayıt yok.</p>
-        ) : (
-          <div className="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Öğrenci</th>
-                  <th>Dönem</th>
-                  <th>Hata</th>
-                  <th>Uyarı</th>
-                  <th>Karar</th>
-                </tr>
-              </thead>
-              <tbody>
-                {topIssues.map((s) => (
-                  <tr key={s.studentNo}>
-                    <td>
-                      {s.fullName} <span className="muted">({s.studentNo})</span>
-                    </td>
-                    <td>{s.term}</td>
-                    <td>{s.errorCount > 0 ? <span className="badge badge-danger">{s.errorCount}</span> : '-'}</td>
-                    <td>{s.warningCount > 0 ? <span className="badge badge-warn">{s.warningCount}</span> : '-'}</td>
-                    <td>{DECISION_LABELS[s.decision]}</td>
+        <h2>Başarı oranı en düşük dersler</h2>
+        <Suspense fallback={<Loading label="Grafik yükleniyor…" />}>
+          <CourseSuccessChart courses={d.courseSuccess} />
+        </Suspense>
+      </section>
+
+      <section className="card">
+        <div className="page-head">
+          <h2>Önce bakılması gerekenler</h2>
+          <Link to="/risk">Tüm liste</Link>
+        </div>
+        {risk.state.status === 'loading' && <Loading />}
+        {risk.state.status === 'error' && <ErrorState message={risk.state.message} onRetry={risk.retry} />}
+        {risk.state.status === 'ready' &&
+          (attention.length === 0 ? (
+            <p className="muted">Orta ya da yüksek riskli öğrenci yok.</p>
+          ) : (
+            <div className="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Öğrenci</th>
+                    <th>Risk puanı</th>
+                    <th>Seviye</th>
+                    <th>Göstergeler</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
+                </thead>
+                <tbody>
+                  {attention.map((r) => (
+                    <tr key={r.studentNo}>
+                      <td>
+                        <Link to={`/risk/${r.studentNo}`}>{r.fullName}</Link> <span className="muted">({r.studentNo})</span>
+                      </td>
+                      <td>
+                        <strong>{r.score}</strong>
+                      </td>
+                      <td>
+                        <RiskBadge level={r.level} />
+                      </td>
+                      <td className="wrap-cell">{r.indicatorTitles.join(' · ')}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ))}
       </section>
     </>
   )

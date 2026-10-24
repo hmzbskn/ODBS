@@ -1,4 +1,4 @@
-import type { DayName, IssueSeverity, QuestionType, RegistrationDecision, SurveyStatus } from '../api/types'
+import type { DayName, IssueSeverity, MissingStatus, QuestionType, RegistrationDecision, RiskLevel, SurveyStatus } from '../api/types'
 
 export const DECISION_LABELS: Record<RegistrationDecision, string> = {
   Pending: 'Karar bekliyor',
@@ -42,4 +42,16 @@ export const QUESTION_TYPE_LABELS: Record<QuestionType, string> = {
   MultiChoice: 'Çoklu seçim',
   Number: 'Sayı',
   Text: 'Metin',
+}
+
+export const RISK_LEVEL_LABELS: Record<RiskLevel, string> = {
+  Dusuk: 'Düşük',
+  Orta: 'Orta',
+  Yuksek: 'Yüksek',
+}
+
+export const MISSING_STATUS_LABELS: Record<MissingStatus, string> = {
+  Failed: 'Kaldı',
+  NotTaken: 'Alınmadı',
+  InProgress: 'Bu dönem alıyor',
 }

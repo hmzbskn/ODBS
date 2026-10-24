@@ -234,3 +234,80 @@ export interface SurveyForm {
     options: { id: string; text: string }[]
   }[]
 }
+
+// ---- erken uyarı ve mezuniyet ----
+
+export type RiskLevel = 'Dusuk' | 'Orta' | 'Yuksek'
+
+export interface RiskIndicator {
+  code: string
+  title: string
+  points: number
+  explanation: string
+}
+
+export interface RiskRow {
+  studentNo: string
+  fullName: string
+  classYear: number
+  gpa: number
+  term: number
+  score: number
+  level: RiskLevel
+  indicatorTitles: string[]
+}
+
+export interface RiskDetail {
+  studentNo: string
+  fullName: string
+  classYear: number
+  gpa: number
+  term: number
+  score: number
+  level: RiskLevel
+  indicators: RiskIndicator[]
+}
+
+export type MissingStatus = 'Failed' | 'NotTaken' | 'InProgress'
+
+export interface MissingCourse {
+  courseCode: string
+  courseName: string
+  term: number
+  ects: number
+  status: MissingStatus
+}
+
+export interface GraduationAnalysis {
+  studentNo: string
+  fullName: string
+  currentTerm: number
+  gpa: number
+  minGpa: number
+  gpaOk: boolean
+  earnedEcts: number
+  requiredEcts: number
+  ectsProgressPercent: number
+  mandatoryTotal: number
+  mandatoryPassed: number
+  missingMandatory: MissingCourse[]
+  electiveEarnedCredits: number
+  electiveRequiredCredits: number
+  passedElectives: { courseCode: string; courseName: string; credit: number; ects: number }[]
+  internshipDays: number
+  internshipRequiredDays: number
+  canGraduate: boolean
+  blockers: string[]
+  projectedCanGraduate: boolean
+  projectedBlockers: string[]
+  estimatedRemainingTerms: number
+}
+
+export interface DashboardResponse {
+  studentCount: number
+  averageGpa: number
+  risk: { low: number; medium: number; high: number }
+  gpaTrend: { term: number; averageGpa: number; studentCount: number }[]
+  courseSuccess: { courseCode: string; courseName: string; attempts: number; passed: number; successRate: number }[]
+  graduationCandidates: number
+}
