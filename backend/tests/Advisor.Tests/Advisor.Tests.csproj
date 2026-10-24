@@ -26,6 +26,7 @@
     <ProjectReference Include="..\..\src\Advisor.Application\Advisor.Application.csproj" />
     <ProjectReference Include="..\..\src\Advisor.Infrastructure\Advisor.Infrastructure.csproj" />
     <ProjectReference Include="..\..\src\Advisor.Api\Advisor.Api.csproj" />
+    <ProjectReference Include="..\..\src\Obis.MockApi\Obis.MockApi.csproj" />
   </ItemGroup>
 
 </Project>

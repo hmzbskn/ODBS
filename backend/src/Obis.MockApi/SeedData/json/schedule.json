@@ -1,0 +1,602 @@
+[
+  {
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-101"
+  },
+  {
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Section": "B",
+    "Day": "Wednesday",
+    "StartTime": "11:00:00",
+    "EndTime": "13:00:00",
+    "Room": "D-108"
+  },
+  {
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Section": "A",
+    "Day": "Tuesday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-102"
+  },
+  {
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Section": "A",
+    "Day": "Wednesday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-103"
+  },
+  {
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Section": "A",
+    "Day": "Thursday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-104"
+  },
+  {
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-101"
+  },
+  {
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Section": "B",
+    "Day": "Tuesday",
+    "StartTime": "11:00:00",
+    "EndTime": "13:00:00",
+    "Room": "D-112"
+  },
+  {
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
+    "Room": "D-106"
+  },
+  {
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-101"
+  },
+  {
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Section": "B",
+    "Day": "Wednesday",
+    "StartTime": "11:00:00",
+    "EndTime": "13:00:00",
+    "Room": "D-108"
+  },
+  {
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Section": "A",
+    "Day": "Tuesday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-102"
+  },
+  {
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Section": "A",
+    "Day": "Wednesday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-103"
+  },
+  {
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Section": "A",
+    "Day": "Thursday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-104"
+  },
+  {
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Section": "A",
+    "Day": "Friday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-105"
+  },
+  {
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Section": "B",
+    "Day": "Tuesday",
+    "StartTime": "11:00:00",
+    "EndTime": "13:00:00",
+    "Room": "D-112"
+  },
+  {
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
+    "Room": "D-106"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-101"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Section": "A",
+    "Day": "Tuesday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-102"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Section": "B",
+    "Day": "Thursday",
+    "StartTime": "11:00:00",
+    "EndTime": "13:00:00",
+    "Room": "D-109"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Section": "A",
+    "Day": "Wednesday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-103"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Section": "B",
+    "Day": "Friday",
+    "StartTime": "11:00:00",
+    "EndTime": "13:00:00",
+    "Room": "D-110"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Section": "A",
+    "Day": "Thursday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-104"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Section": "B",
+    "Day": "Monday",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
+    "Room": "D-111"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Section": "A",
+    "Day": "Friday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-105"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "11:00:00",
+    "EndTime": "13:00:00",
+    "Room": "D-106"
+  },
+  {
+    "Term": 4,
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-101"
+  },
+  {
+    "Term": 4,
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Section": "A",
+    "Day": "Tuesday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-102"
+  },
+  {
+    "Term": 4,
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Section": "A",
+    "Day": "Wednesday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-103"
+  },
+  {
+    "Term": 4,
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Section": "B",
+    "Day": "Friday",
+    "StartTime": "11:00:00",
+    "EndTime": "13:00:00",
+    "Room": "D-110"
+  },
+  {
+    "Term": 4,
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Section": "A",
+    "Day": "Thursday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-104"
+  },
+  {
+    "Term": 4,
+    "CourseCode": "MAT202",
+    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "Section": "A",
+    "Day": "Friday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-105"
+  },
+  {
+    "Term": 4,
+    "CourseCode": "STJ101",
+    "CourseName": "Staj I Haz\u0131rl\u0131k",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
+    "Room": "D-106"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "BLM301",
+    "CourseName": "\u0130\u015Fletim Sistemleri",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-101"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "BLM302",
+    "CourseName": "Bilgisayar A\u011Flar\u0131",
+    "Section": "A",
+    "Day": "Tuesday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-102"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "BLM303",
+    "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
+    "Section": "A",
+    "Day": "Wednesday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-103"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "BLM304",
+    "CourseName": "Otomata Teorisi",
+    "Section": "A",
+    "Day": "Thursday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-104"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "BLM351",
+    "CourseName": "Mobil Uygulama Geli\u015Ftirme",
+    "Section": "A",
+    "Day": "Friday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-105"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "BLM352",
+    "CourseName": "Web Programlama",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
+    "Room": "D-106"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "ENG201",
+    "CourseName": "Teknik \u0130ngilizce",
+    "Section": "A",
+    "Day": "Tuesday",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
+    "Room": "D-107"
+  },
+  {
+    "Term": 6,
+    "CourseCode": "BLM305",
+    "CourseName": "Mikroi\u015Flemciler",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-101"
+  },
+  {
+    "Term": 6,
+    "CourseCode": "BLM306",
+    "CourseName": "Yapay Zekaya Giri\u015F",
+    "Section": "A",
+    "Day": "Tuesday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-102"
+  },
+  {
+    "Term": 6,
+    "CourseCode": "BLM307",
+    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
+    "Section": "A",
+    "Day": "Wednesday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-103"
+  },
+  {
+    "Term": 6,
+    "CourseCode": "BLM308",
+    "CourseName": "\u00C7izge Teorisi",
+    "Section": "A",
+    "Day": "Thursday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-104"
+  },
+  {
+    "Term": 6,
+    "CourseCode": "BLM353",
+    "CourseName": "Bulut Bili\u015Fime Giri\u015F",
+    "Section": "A",
+    "Day": "Friday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-105"
+  },
+  {
+    "Term": 6,
+    "CourseCode": "BLM354",
+    "CourseName": "Oyun Programlama",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
+    "Room": "D-106"
+  },
+  {
+    "Term": 6,
+    "CourseCode": "ISL201",
+    "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
+    "Section": "A",
+    "Day": "Tuesday",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
+    "Room": "D-107"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "BLM401",
+    "CourseName": "Derleyici Tasar\u0131m\u0131",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-101"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "BLM402",
+    "CourseName": "Bilgisayar Grafikleri",
+    "Section": "A",
+    "Day": "Tuesday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-102"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "BLM403",
+    "CourseName": "Bitirme Projesi I",
+    "Section": "A",
+    "Day": "Wednesday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-103"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "BLM451",
+    "CourseName": "Makine \u00D6\u011Frenmesine Giri\u015F",
+    "Section": "A",
+    "Day": "Thursday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-104"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "BLM452",
+    "CourseName": "Siber G\u00FCvenli\u011Fe Giri\u015F",
+    "Section": "A",
+    "Day": "Friday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-105"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "BLM453",
+    "CourseName": "Da\u011F\u0131t\u0131k Sistemler",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
+    "Room": "D-106"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "EKO101",
+    "CourseName": "Ekonomi",
+    "Section": "A",
+    "Day": "Tuesday",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
+    "Room": "D-107"
+  },
+  {
+    "Term": 8,
+    "CourseCode": "BLM404",
+    "CourseName": "Bitirme Projesi II",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-101"
+  },
+  {
+    "Term": 8,
+    "CourseCode": "BLM405",
+    "CourseName": "Yaz\u0131l\u0131m Kalite G\u00FCvencesi",
+    "Section": "A",
+    "Day": "Tuesday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-102"
+  },
+  {
+    "Term": 8,
+    "CourseCode": "BLM406",
+    "CourseName": "Paralel Hesaplama",
+    "Section": "A",
+    "Day": "Wednesday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-103"
+  },
+  {
+    "Term": 8,
+    "CourseCode": "BLM454",
+    "CourseName": "Do\u011Fal Dil \u0130\u015Fleme",
+    "Section": "A",
+    "Day": "Thursday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-104"
+  },
+  {
+    "Term": 8,
+    "CourseCode": "BLM455",
+    "CourseName": "G\u00F6m\u00FCl\u00FC Sistemler",
+    "Section": "A",
+    "Day": "Friday",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-105"
+  },
+  {
+    "Term": 8,
+    "CourseCode": "BLM456",
+    "CourseName": "Blok Zinciri Teknolojileri",
+    "Section": "A",
+    "Day": "Monday",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
+    "Room": "D-106"
+  },
+  {
+    "Term": 8,
+    "CourseCode": "GIR101",
+    "CourseName": "Giri\u015Fimcilik",
+    "Section": "A",
+    "Day": "Tuesday",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
+    "Room": "D-107"
+  }
+]

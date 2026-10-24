@@ -1,0 +1,544 @@
+[
+  {
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 1,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "Term": 1,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 1,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 1,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 1,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "Term": 1,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 2,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "MAT101"
+    ]
+  },
+  {
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "Term": 2,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "FIZ101"
+    ]
+  },
+  {
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 2,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM101"
+    ]
+  },
+  {
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 2,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "TUR101"
+    ]
+  },
+  {
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 2,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "ING101"
+    ]
+  },
+  {
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 2,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 3,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM103"
+    ]
+  },
+  {
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 3,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM103"
+    ]
+  },
+  {
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 3,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "MAT102"
+    ]
+  },
+  {
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 3,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "FIZ102"
+    ]
+  },
+  {
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 3,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Credit": 1,
+    "Ects": 1,
+    "Term": 3,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 4,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM201"
+    ]
+  },
+  {
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 4,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM203"
+    ]
+  },
+  {
+    "CourseCode": "MAT202",
+    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 4,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "MAT102"
+    ]
+  },
+  {
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 4,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM201"
+    ]
+  },
+  {
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "AIT101"
+    ]
+  },
+  {
+    "CourseCode": "STJ101",
+    "CourseName": "Staj I Haz\u0131rl\u0131k",
+    "Credit": 1,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "BLM301",
+    "CourseName": "\u0130\u015Fletim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 5,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM205"
+    ]
+  },
+  {
+    "CourseCode": "BLM302",
+    "CourseName": "Bilgisayar A\u011Flar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 5,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM205"
+    ]
+  },
+  {
+    "CourseCode": "BLM303",
+    "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 5,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM202"
+    ]
+  },
+  {
+    "CourseCode": "BLM304",
+    "CourseName": "Otomata Teorisi",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 5,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM204"
+    ]
+  },
+  {
+    "CourseCode": "ENG201",
+    "CourseName": "Teknik \u0130ngilizce",
+    "Credit": 2,
+    "Ects": 3,
+    "Term": 5,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "ING102"
+    ]
+  },
+  {
+    "CourseCode": "BLM351",
+    "CourseName": "Mobil Uygulama Geli\u015Ftirme",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": [
+      "BLM202"
+    ]
+  },
+  {
+    "CourseCode": "BLM352",
+    "CourseName": "Web Programlama",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": [
+      "BLM202"
+    ]
+  },
+  {
+    "CourseCode": "BLM305",
+    "CourseName": "Mikroi\u015Flemciler",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 6,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM205"
+    ]
+  },
+  {
+    "CourseCode": "BLM306",
+    "CourseName": "Yapay Zekaya Giri\u015F",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 6,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM204"
+    ]
+  },
+  {
+    "CourseCode": "BLM307",
+    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "BLM308",
+    "CourseName": "\u00C7izge Teorisi",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 6,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM304"
+    ]
+  },
+  {
+    "CourseCode": "ISL201",
+    "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "Term": 6,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "BLM353",
+    "CourseName": "Bulut Bili\u015Fime Giri\u015F",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": [
+      "BLM302"
+    ]
+  },
+  {
+    "CourseCode": "BLM354",
+    "CourseName": "Oyun Programlama",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": [
+      "BLM202"
+    ]
+  },
+  {
+    "CourseCode": "BLM401",
+    "CourseName": "Derleyici Tasar\u0131m\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 7,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM304"
+    ]
+  },
+  {
+    "CourseCode": "BLM402",
+    "CourseName": "Bilgisayar Grafikleri",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 7,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM202"
+    ]
+  },
+  {
+    "CourseCode": "BLM403",
+    "CourseName": "Bitirme Projesi I",
+    "Credit": 2,
+    "Ects": 6,
+    "Term": 7,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM303"
+    ]
+  },
+  {
+    "CourseCode": "EKO101",
+    "CourseName": "Ekonomi",
+    "Credit": 2,
+    "Ects": 3,
+    "Term": 7,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "BLM451",
+    "CourseName": "Makine \u00D6\u011Frenmesine Giri\u015F",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": [
+      "BLM306"
+    ]
+  },
+  {
+    "CourseCode": "BLM452",
+    "CourseName": "Siber G\u00FCvenli\u011Fe Giri\u015F",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": [
+      "BLM302"
+    ]
+  },
+  {
+    "CourseCode": "BLM453",
+    "CourseName": "Da\u011F\u0131t\u0131k Sistemler",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": [
+      "BLM301"
+    ]
+  },
+  {
+    "CourseCode": "BLM404",
+    "CourseName": "Bitirme Projesi II",
+    "Credit": 4,
+    "Ects": 8,
+    "Term": 8,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM403"
+    ]
+  },
+  {
+    "CourseCode": "BLM405",
+    "CourseName": "Yaz\u0131l\u0131m Kalite G\u00FCvencesi",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 8,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM303"
+    ]
+  },
+  {
+    "CourseCode": "BLM406",
+    "CourseName": "Paralel Hesaplama",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 8,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "BLM305"
+    ]
+  },
+  {
+    "CourseCode": "GIR101",
+    "CourseName": "Giri\u015Fimcilik",
+    "Credit": 2,
+    "Ects": 3,
+    "Term": 8,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "BLM454",
+    "CourseName": "Do\u011Fal Dil \u0130\u015Fleme",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 8,
+    "IsMandatory": false,
+    "Prerequisites": [
+      "BLM306"
+    ]
+  },
+  {
+    "CourseCode": "BLM455",
+    "CourseName": "G\u00F6m\u00FCl\u00FC Sistemler",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 8,
+    "IsMandatory": false,
+    "Prerequisites": [
+      "BLM305"
+    ]
+  },
+  {
+    "CourseCode": "BLM456",
+    "CourseName": "Blok Zinciri Teknolojileri",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 8,
+    "IsMandatory": false,
+    "Prerequisites": []
+  }
+]

@@ -44,3 +44,30 @@ mode" sınıflandırıcısı) zaman zaman yanıt vermedi; proje dizini
 `.claude/settings.local.json` → `permissions.additionalDirectories`'e eklenerek
 Write/Edit araçlarının bu dizinde çalışabilmesi sağlandı. Bu, HamzaOS vault'unun kendi
 ayar dosyası, proje kodunun bir parçası değil.
+
+## 2026-10-24 — Mock OBİS: seed üretimi ve ek bağımlılık
+
+**Karar:** Seed verisi `Obis.MockApi` içinde `SeedGenerator` ile sabit seed (1337)
+kullanılarak programatik üretildi, `dotnet run -- --generate-seed` ile bir kez
+çalıştırılıp `SeedData/json/*.json` dosyalarına yazıldı. Normal API çalışma zamanı
+bu JSON dosyalarını okur (`SeedIo.Load`), yeniden üretmez — prompt'un "JSON seed
+verisinden besleniyor" ifadesine birebir uyar, aynı zamanda üretim kodu da repoda
+şeffaf kalır.
+
+**Ek bağımlılık:** `BCrypt.Net-Next` (Advisor.Infrastructure) — demo hesap şifrelerini
+düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
+
+**Uç durum öğrencileri (bkz. `Obis.MockApi/SeedData/json/edge-cases.json`):**
+
+| Etiket | Öğrenci No | Senaryo |
+| --- | --- | --- |
+| EDGE-01 | 20241011 | Saat çakışması (MAT101/A tekrar + BLM301/A aynı gün/saat) |
+| EDGE-02 | 20251006 | Önkoşul ihlali (BLM103 kalmış, BLM201'e kayıtlı) |
+| EDGE-03 | 20241012 | Alttan ders önceliği (FIZ102 kalmış, dönem5 dersleri alıyor) |
+| EDGE-04 | 20251007 | Kredi/AKTS limiti aşımı (düşük GANO + 3 ekstra ders) |
+| EDGE-05 | 20231016 | Sınav çakışması (BLM203 ve BLM401 final'leri aynı an) |
+| EDGE-06 | 20231017 | Tekrar alma (BLM201'i AA ile geçmiş, yine kayıtlı) |
+| EDGE-07 | 20241013 | GANO düşüşü (dönem3 AA ortalama → dönem4 DD ortalama) |
+| EDGE-08 | 20231018 | Azami süreye yaklaşma (dönem9'da, 3 ders tekrarı) |
+| EDGE-09 | 20231019 | Mezuniyete az kalan (dönem8, 5 dersten sadece 2'si eksik) |
+| EDGE-10 | 20251008 | Devamsızlık sınırına yaklaşma (14 oturumdan 10'u, ~%29) |

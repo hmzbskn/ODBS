@@ -1,0 +1,632 @@
+[
+  {
+    "StudentNo": "20261001",
+    "FirstName": "Can",
+    "LastName": "\u015Eahin",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261002",
+    "FirstName": "Selin",
+    "LastName": "Acar",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261003",
+    "FirstName": "Hakan",
+    "LastName": "Keskin",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261004",
+    "FirstName": "Duygu",
+    "LastName": "Y\u0131ld\u0131z",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261005",
+    "FirstName": "Bar\u0131\u015F",
+    "LastName": "K\u0131l\u0131\u00E7",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251006",
+    "FirstName": "Selin",
+    "LastName": "K\u0131l\u0131\u00E7",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.78,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251007",
+    "FirstName": "Sude",
+    "LastName": "Kaya",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.24,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251008",
+    "FirstName": "Hakan",
+    "LastName": "Y\u0131lmaz",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.43,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251009",
+    "FirstName": "Berk",
+    "LastName": "Keskin",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.95,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251010",
+    "FirstName": "Esra",
+    "LastName": "Y\u0131lmaz",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.7,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241011",
+    "FirstName": "Buse",
+    "LastName": "Ate\u015F",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.84,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241012",
+    "FirstName": "Duygu",
+    "LastName": "\u015Eahin",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.94,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241013",
+    "FirstName": "Volkan",
+    "LastName": "Kurt",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.45,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241014",
+    "FirstName": "Kerem",
+    "LastName": "\u015Eahin",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.82,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241015",
+    "FirstName": "Hakan",
+    "LastName": "Ate\u015F",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.9,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231016",
+    "FirstName": "Caner",
+    "LastName": "Polat",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.94,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231017",
+    "FirstName": "Kaan",
+    "LastName": "Aksoy",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.96,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231018",
+    "FirstName": "Yusuf",
+    "LastName": "Karaca",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.77,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231019",
+    "FirstName": "O\u011Fuz",
+    "LastName": "Erdo\u011Fan",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 3.06,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231020",
+    "FirstName": "Selin",
+    "LastName": "\u015Eahin",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 3.17,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231021",
+    "FirstName": "Sena",
+    "LastName": "\u00C7elik",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV1",
+    "Gpa": 2.96,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261022",
+    "FirstName": "Fatma",
+    "LastName": "G\u00FCne\u015F",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261023",
+    "FirstName": "Melis",
+    "LastName": "Arslan",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261024",
+    "FirstName": "Can",
+    "LastName": "\u00C7etin",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261025",
+    "FirstName": "Sude",
+    "LastName": "Acar",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261026",
+    "FirstName": "Volkan",
+    "LastName": "Ayd\u0131n",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251027",
+    "FirstName": "Deniz",
+    "LastName": "Uysal",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 2.47,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251028",
+    "FirstName": "Sena",
+    "LastName": "\u00D6zdemir",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 3.22,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251029",
+    "FirstName": "Emre",
+    "LastName": "Arslan",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 3.12,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251030",
+    "FirstName": "Zeynep",
+    "LastName": "Korkmaz",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 3.14,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251031",
+    "FirstName": "P\u0131nar",
+    "LastName": "Ate\u015F",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 3.09,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241032",
+    "FirstName": "Gizem",
+    "LastName": "Erdo\u011Fan",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 3.32,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241033",
+    "FirstName": "P\u0131nar",
+    "LastName": "Y\u0131ld\u0131r\u0131m",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 3.33,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241034",
+    "FirstName": "Onur",
+    "LastName": "Do\u011Fan",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 3.21,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241035",
+    "FirstName": "Nazl\u0131",
+    "LastName": "\u00C7elik",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 2.95,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241036",
+    "FirstName": "Yusuf",
+    "LastName": "\u00D6zdemir",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 2.97,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231037",
+    "FirstName": "Tolga",
+    "LastName": "Bulut",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 3,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231038",
+    "FirstName": "Fatma",
+    "LastName": "K\u0131l\u0131\u00E7",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 2.76,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231039",
+    "FirstName": "Caner",
+    "LastName": "Korkmaz",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 3.11,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231040",
+    "FirstName": "Deniz",
+    "LastName": "Aksoy",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 3,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231041",
+    "FirstName": "Burak",
+    "LastName": "Kaya",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 2.98,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231042",
+    "FirstName": "Onur",
+    "LastName": "Acar",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV2",
+    "Gpa": 2.81,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261043",
+    "FirstName": "Mustafa",
+    "LastName": "Ko\u00E7",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261044",
+    "FirstName": "Onur",
+    "LastName": "Kaya",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261045",
+    "FirstName": "Asl\u0131",
+    "LastName": "\u00C7elik",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261046",
+    "FirstName": "O\u011Fuz",
+    "LastName": "Ayd\u0131n",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20261047",
+    "FirstName": "Serkan",
+    "LastName": "Kaya",
+    "ClassYear": 1,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 0,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251048",
+    "FirstName": "Melis",
+    "LastName": "Erdo\u011Fan",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 3.03,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251049",
+    "FirstName": "Ay\u015Fe",
+    "LastName": "\u00C7elik",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 3.18,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251050",
+    "FirstName": "Esra",
+    "LastName": "Keskin",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 2.85,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251051",
+    "FirstName": "Hakan",
+    "LastName": "Polat",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 3.27,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20251052",
+    "FirstName": "Buse",
+    "LastName": "\u00C7etin",
+    "ClassYear": 2,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 2.57,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241053",
+    "FirstName": "Umut",
+    "LastName": "Erdo\u011Fan",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 2.71,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241054",
+    "FirstName": "Nazl\u0131",
+    "LastName": "\u015Een",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 3.17,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241055",
+    "FirstName": "Sena",
+    "LastName": "Y\u0131ld\u0131r\u0131m",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 3.02,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241056",
+    "FirstName": "Elif",
+    "LastName": "Ko\u00E7",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 3.27,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20241057",
+    "FirstName": "P\u0131nar",
+    "LastName": "Kurt",
+    "ClassYear": 3,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 2.79,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231058",
+    "FirstName": "Kerem",
+    "LastName": "Kaya",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 2.5,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231059",
+    "FirstName": "Onur",
+    "LastName": "K\u0131l\u0131\u00E7",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 3.03,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231060",
+    "FirstName": "Tolga",
+    "LastName": "\u00C7etin",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 2.75,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231061",
+    "FirstName": "Serkan",
+    "LastName": "\u00C7elik",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 2.94,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231062",
+    "FirstName": "\u00C7a\u011Fan",
+    "LastName": "Karaca",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 2.8,
+    "Status": "Aktif"
+  },
+  {
+    "StudentNo": "20231063",
+    "FirstName": "Emre",
+    "LastName": "Y\u0131lmaz",
+    "ClassYear": 4,
+    "Department": "Bilgisayar M\u00FChendisli\u011Fi",
+    "AdvisorId": "ADV3",
+    "Gpa": 3.14,
+    "Status": "Aktif"
+  }
+]

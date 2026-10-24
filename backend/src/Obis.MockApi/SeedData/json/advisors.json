@@ -1,0 +1,20 @@
+[
+  {
+    "AdvisorId": "ADV1",
+    "FirstName": "Elif",
+    "LastName": "Y\u0131ld\u0131z",
+    "Title": "Dr. \u00D6\u011Fr. \u00DCyesi"
+  },
+  {
+    "AdvisorId": "ADV2",
+    "FirstName": "Mehmet",
+    "LastName": "Arslan",
+    "Title": "Do\u00E7. Dr."
+  },
+  {
+    "AdvisorId": "ADV3",
+    "FirstName": "Zeynep",
+    "LastName": "Kara",
+    "Title": "Dr. \u00D6\u011Fr. \u00DCyesi"
+  }
+]
