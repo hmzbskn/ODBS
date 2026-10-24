@@ -71,3 +71,18 @@ düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
 | EDGE-08 | 20231018 | Azami süreye yaklaşma (dönem9'da, 3 ders tekrarı) |
 | EDGE-09 | 20231019 | Mezuniyete az kalan (dönem8, 5 dersten sadece 2'si eksik) |
 | EDGE-10 | 20251008 | Devamsızlık sınırına yaklaşma (14 oturumdan 10'u, ~%29) |
+
+## 2026-10-24 — Aşama 4: kimlik doğrulama kararları
+
+- **Varsayılan-reddet:** `FallbackPolicy = RequireAuthenticatedUser`. Yeni bir endpoint
+  unutularak açık kalamaz; herkese açık olan `[AllowAnonymous]` ile açıkça işaretlenir.
+- **Sahiplik kontrolü tek yerde:** `IStudentAccessGuard`. Danışman-öğrenci eşlemesi JWT'ye
+  gömülmez, her istekte OBİS'ten (önbellekli) doğrulanır; danışman ataması değişirse eski
+  token'la erişim sürmez.
+- **Refresh token yok:** 120 dk'lık tek access token. Bitirme projesi kapsamı için yeterli.
+- **Test projesi net10.0'a alındı:** Makinede yalnızca .NET 10 çalışma zamanı var; `Mvc.Testing 8.x`
+  TestServer'ı System.Text.Json 10 ile uyumsuz (`PipeWriter.UnflushedBytes` hatası). Test projesi
+  `net10.0` + `Mvc.Testing 10.*` kullanır; uygulama projeleri `net8.0` hedefinde kalır.
+- Testler `Testing` ortamında çalışır (Swagger yalnızca `Development`'ta açık).
+- Demo şifresi tüm hesaplar için aynı (`Demo123!`); yalnızca geliştirme amaçlı. Gerçek ortamda
+  `Jwt:SigningKey` ortam değişkeniyle verilmeli, demo seeder kapatılmalı.

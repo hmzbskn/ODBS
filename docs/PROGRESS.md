@@ -37,3 +37,25 @@ duman testinden geçirilmedi (CLI izin katmanı bu oturumda `dotnet run` gibi a�
 dinleyen komutları engelliyordu — bkz. docs/DECISIONS.md). Program.cs derleniyor ve
 mantık JSON üzerinden statik olarak doğrulandı; entegrasyon testleri (Aşama 5/11)
 bunu `WebApplicationFactory` ile in-process doğrulayacak.
+
+## Aşama 3 — Domain modelleri, veritabanı, IObisClient adapter'ı
+
+- Durum: tamamlandı (commit `99fb938`)
+- Domain entity'leri (kullanıcı, kayıt onayı, anket, randevu/görüşme/duyuru/talep),
+  `AdvisorDbContext` (SQLite) + `InitialCreate` migration, `IObisClient` / `HttpObisClient`
+  (önbellekli HTTP istemcisi). OBİS verisi ana veritabanında tutulmaz.
+
+## Aşama 4 — Kimlik doğrulama, roller, demo hesaplar
+
+- Durum: tamamlandı
+- JWT (HS256) giriş: `POST /api/auth/login`, `GET /api/auth/me`. Şifreler BCrypt ile saklanır.
+- Roller: Admin, Danisman, Ogrenci. Varsayılan yetkilendirme politikası **her endpoint için
+  giriş ister**; açık olanlar `[AllowAnonymous]` ile işaretlenir (şimdilik yalnızca login).
+- `ICurrentUser` (JWT claim'lerinden) ve `IStudentAccessGuard`: admin hepsini, öğrenci yalnızca
+  kendini, danışman yalnızca OBİS'te kendisine bağlı öğrencileri görür. Sonraki aşamalardaki
+  tüm öğrenci endpoint'leri bu guard'ı kullanacak.
+- Global exception middleware: Türkçe, tek biçimli JSON hata gövdesi; OBİS erişim hatası 502.
+- Demo hesaplar uygulama açılışında (kullanıcı tablosu boşsa) oluşturulur; bkz. README.
+- Swagger'da Bearer yetkilendirme butonu var.
+- 10 yeni test (giriş, 401/403, rol ayrımı, danışman/öğrenci sahiplik sınırı, seeder idempotent).
+  Toplam build+test yeşil (11/11).

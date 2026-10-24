@@ -1,4 +1,5 @@
 using Advisor.Application.Obis;
+using Advisor.Infrastructure.Auth;
 using Advisor.Infrastructure.Obis;
 using Advisor.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,9 @@ public static class DependencyInjection
         services.AddMemoryCache();
         services.Configure<ObisOptions>(configuration.GetSection(ObisOptions.SectionName));
         services.AddHttpClient<IObisClient, HttpObisClient>();
+
+        services.Configure<JwtOptions>(configuration.GetSection(JwtOptions.SectionName));
+        services.AddScoped<AuthService>();
 
         return services;
     }
