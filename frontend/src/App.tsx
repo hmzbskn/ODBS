@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { AuthProvider } from './auth/AuthContext'
 import { Layout } from './components/Layout'
-import { NAV_ITEMS } from './components/nav'
 import { RequireAuth } from './components/RequireAuth'
-import { ComingSoonPage } from './pages/ComingSoonPage'
 import { DashboardPage } from './pages/DashboardPage'
 import { LoginPage } from './pages/LoginPage'
 import { NotFoundPage } from './pages/NotFoundPage'
+import { AnnouncementsPage } from './pages/AnnouncementsPage'
 import { AppointmentsPage } from './pages/AppointmentsPage'
 import { GraduationPage } from './pages/GraduationPage'
+import { PetitionsPage } from './pages/PetitionsPage'
 import { RegistrationDetailPage } from './pages/RegistrationDetailPage'
 import { RegistrationsPage } from './pages/RegistrationsPage'
 import { RiskDetailPage } from './pages/RiskDetailPage'
@@ -30,6 +30,8 @@ export default function App() {
             <Route element={<Layout />}>
               <Route index element={<DashboardPage />} />
               <Route path="/randevular" element={<AppointmentsPage />} />
+              <Route path="/duyurular" element={<AnnouncementsPage />} />
+              <Route path="/talepler" element={<PetitionsPage />} />
               <Route element={<RequireAuth roles={['Admin', 'Danisman']} />}>
                 <Route path="/ogrenci/:studentNo" element={<StudentFilePage />} />
                 <Route path="/kayitlar" element={<RegistrationsPage />} />
@@ -46,12 +48,6 @@ export default function App() {
                 <Route path="/anketlerim" element={<StudentSurveysPage />} />
                 <Route path="/anketlerim/:id" element={<StudentSurveyFormPage />} />
               </Route>
-              {/* Yer tutucu sayfalar: modül hazır oldukça kendi route'larıyla değiştirilir. */}
-              {NAV_ITEMS.filter((n) => n.soonPhase).map((n) => (
-                <Route key={n.to} element={<RequireAuth roles={n.roles} />}>
-                  <Route path={n.to} element={<ComingSoonPage />} />
-                </Route>
-              ))}
               <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Route>

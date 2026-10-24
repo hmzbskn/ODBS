@@ -383,3 +383,70 @@ export interface StudentFile {
   timeline: TimelineItem[]
   notes: Note[]
 }
+
+// ---- duyuru, gelen kutusu, talep ----
+
+export interface AnnouncementFilter {
+  classYear: number | null
+  minGpa: number | null
+  maxGpa: number | null
+  riskLevel: RiskLevel | null
+  internshipComplete: boolean | null
+}
+
+export interface RecipientPreview {
+  studentNo: string
+  fullName: string
+  classYear: number
+  gpa: number | null
+  risk: RiskLevel
+  internshipDays: number
+}
+
+export interface AudiencePreview {
+  count: number
+  students: RecipientPreview[]
+}
+
+export interface AnnouncementSummary {
+  id: string
+  title: string
+  body: string
+  createdAt: string
+  advisorId: string
+  filter: AnnouncementFilter
+  recipientCount: number
+  readCount: number
+}
+
+export interface AnnouncementDetail {
+  summary: AnnouncementSummary
+  recipients: { studentNo: string; fullName: string; readAt: string | null }[]
+}
+
+export interface InboxItem {
+  id: string
+  kind: 'Announcement' | 'Notification'
+  title: string
+  body: string
+  sender: string | null
+  createdAt: string
+  read: boolean
+}
+
+export type PetitionType = 'DersEkleBirak' | 'KayitDondurma' | 'Muafiyet' | 'Diger'
+export type PetitionStatus = 'Beklemede' | 'Inceleniyor' | 'Onaylandi' | 'Reddedildi'
+
+export interface Petition {
+  id: string
+  studentNo: string
+  studentName: string
+  type: PetitionType
+  description: string
+  status: PetitionStatus
+  advisorNote: string | null
+  hasAttachment: boolean
+  attachmentFileName: string | null
+  createdAt: string
+  updatedAt: string | null
+}

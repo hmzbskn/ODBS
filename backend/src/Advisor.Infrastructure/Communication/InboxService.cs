@@ -35,7 +35,7 @@ public class InboxService
         var items = recipients.Select(r => new InboxItem(
                 r.Announcement!.Id, "Announcement", r.Announcement.Title, r.Announcement.Body,
                 advisors.GetValueOrDefault(r.Announcement.AdvisorId, "Yönetim"), r.Announcement.CreatedAt, r.ReadAt != null))
-            .Concat(notifications.Select(n => new InboxItem(n.Id, "Notification", "Bildirim", n.Message, null, n.CreatedAt, n.ReadAt != null)))
+            .Concat(notifications.Select(n => new InboxItem(n.Id, "Notification", "Sistem bildirimi", n.Message, null, n.CreatedAt, n.ReadAt != null)))
             .OrderByDescending(i => i.CreatedAt)
             .ToList();
         return items;

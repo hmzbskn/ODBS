@@ -1,11 +1,33 @@
-import { useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { api } from '../api/client'
 import { useAuth } from '../auth/AuthContext'
+import { INBOX_CHANGED } from './inboxEvents'
 import { NAV_ITEMS, ROLE_LABELS } from './nav'
 
 export function Layout() {
   const { user, logout } = useAuth()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [unread, setUnread] = useState(0)
+  const location = useLocation()
+  const isStudent = user?.role === 'Ogrenci'
+
+  // Öğrencinin okunmamış bildirim sayısı: sayfa değişince ve okundu durumu değişince yenilenir.
+  useEffect(() => {
+    if (!isStudent) return
+    let cancelled = false
+    const load = () =>
+      api
+        .get<{ count: number }>('/api/inbox/unread-count')
+        .then((r) => !cancelled && setUnread(r.count))
+        .catch(() => undefined)
+    void load()
+    window.addEventListener(INBOX_CHANGED, load)
+    return () => {
+      cancelled = true
+      window.removeEventListener(INBOX_CHANGED, load)
+    }
+  }, [isStudent, location.pathname])
 
   if (!user) return null
   const items = NAV_ITEMS.filter((item) => item.roles.includes(user.role))
@@ -25,7 +47,11 @@ export function Layout() {
               <li key={item.to}>
                 <NavLink to={item.to} end={item.to === '/'} className="nav-link" onClick={() => setMenuOpen(false)}>
                   <span>{item.label}</span>
-                  {item.soonPhase && <span className="badge badge-muted">Yakında</span>}
+                  {item.to === '/duyurular' && unread > 0 && (
+                    <span className="badge badge-count" aria-label={`${unread} okunmamış`}>
+                      {unread}
+                    </span>
+                  )}
                 </NavLink>
               </li>
             ))}

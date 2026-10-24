@@ -230,3 +230,39 @@ düzen/renk doğrulaması Aşama 7'de ders kaydı ekranıyla birlikte yapılacak
    dönem başarısız ve bir derste devamsızlık sınırı aşılmış (demoda tek "Yüksek" riskli öğrenci).
 4. **Staj verisi yoktu:** OBİS'e staj endpoint'i ve seed verisi eklendi (rastgele akışın sonunda üretildi; mevcut hiçbir
    veri değişmedi, yalnızca yukarıdaki iki öğrencinin ve müfredatın değişikliği var).
+
+## Aşama 10 — İletişim ve talepler
+
+- Durum: tamamlandı
+- **Randevu:** danışman haftalık görüşme saatleri tanımlar (hafta içi, 08:00-20:00, 10-120 dk, çakışma yok);
+  öğrenci yalnızca KENDİ danışmanının saatlerinden önümüzdeki 28 gün için randevu alır (en az 60 dk önceden,
+  en fazla 2 aktif randevu). Dolu saat tekrar alınamaz: kod kontrolüne ek olarak veritabanında kısmi tekil indeks
+  (`SlotId, Date` — yalnızca planlı randevular) eşzamanlı çift rezervasyonu engeller. İki taraf da iptal edebilir
+  (başlamış/geçmiş randevu iptal edilemez); danışman iptalinde öğrenciye gerekçeli bildirim gider. Danışman,
+  gerçekleşmiş randevuyu "tamamlandı" işaretler. Kullanılan saat kuralı Türkiye saatidir (`TrTime`).
+- **Görüşme notları ve öğrenci dosyası:** danışman her öğrenci için not ekler/siler; zaman çizelgesi notları,
+  randevuları, talepleri ve alınan duyuruları birleştirip yeniden eskiye sıralar. Notlar öğrenciye KAPALIDIR
+  (öğrencinin erişebildiği hiçbir uçta görünmez, testle doğrulandı). Yönetici okur ama not ekleyemez.
+- **Filtreli duyuru:** sınıf, GANO aralığı, risk seviyesi ve staj durumuyla hedef kitle; gönderimden önce
+  "hedef kitleyi göster" (sayı + öğrenci listesi) zorunludur, filtre değişince önizleme geçersiz olur. Her öğrenci için
+  ayrı alıcı kaydı tutulur; danışman kimin okuyup okumadığını görür. Boş kitleye gönderim reddedilir.
+- **Gelen kutusu (öğrenci):** duyurular ve sistem bildirimleri (randevu iptali, talep durumu) tek listede, okundu
+  durumuyla; menüde okunmamış sayacı; "tümünü okundu say". Başkasının duyurusu/bildirimi okundu yapılamaz (404).
+- **Talep/dilekçe:** tür (ders ekle-bırak, kayıt dondurma, muafiyet, diğer), açıklama (10-2000), isteğe bağlı ek.
+  Durum akışı Beklemede → İnceleniyor → Onaylandı/Reddedildi; sonuçlanan talep değişmez (409); reddederken gerekçe
+  zorunlu; her durum değişikliği öğrenciye bildirim gönderir. En fazla 5 açık talep.
+- **Ek dosya güvenliği:** izinli uzantılar (pdf, png, jpg, jpeg, docx), en fazla 5 MB, dosya imzası (sihirli bayt)
+  uzantıyla uyuşmalı ("belge.pdf" adlı çalıştırılabilir reddedilir), özgün ad yol/denetim karakterlerinden
+  arındırılır, diskte rastgele adla saklanır (yol gezintisi mümkün değil), indirme her zaman `attachment` +
+  `nosniff`, erişim yalnızca sahibi/danışmanı/yönetici.
+- **Arayüz:** `/randevular` (danışman: saat yönetimi + yaklaşan/geçmiş randevular; öğrenci: boş saatler + randevularım),
+  `/ogrenci/:no` (not + zaman çizelgesi), `/duyurular` (danışman: oluşturma + okundu durumu; öğrenci: gelen kutusu),
+  `/talepler` (öğrenci: form + takip; danışman: inceleme ve karar). Artık hiçbir modül "Yakında" değildir; yer tutucu
+  mekanizması kaldırıldı.
+- Migration'lar: `Faz10Appointments` (kısmi tekil indeks), `Faz10Communications` (AnnouncementRecipient, filtre ve ek alanları).
+- Testler: toplam 299 (bu aşamada +100): randevu kuralları ve yarış koşulu koruması, not gizliliği, süzgeç ve okundu
+  durumu, ek doğrulayıcı (imza, uzantı, boyut, ad temizleme), durum akışı ve yetki matrisi.
+- Canlı doğrulama (gerçek tarayıcı + SQLite + disk deposu): duyuru önizleme zorunluluğu, öğrencide menü sayacı ve okundu
+  olunca sıfırlanması, `.exe` reddi (Türkçe hata), PDF ekli talep, danışmanın eki indirmesi (içerik birebir),
+  not olmadan "Reddet" kapalı, İncelemeye al → Onayla, öğrencide yanıt notu ve 2 bildirim, danışmanda "1 / 5 okudu",
+  öğrencinin personel sayfalarına girememesi, mobil.

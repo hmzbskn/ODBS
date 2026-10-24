@@ -181,3 +181,27 @@ düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
   mezuniyet analizini görür (prompt'taki gereksinim), risk göstergelerini görmez.
 - **Panel kapsamı sunucuda belirlenir:** istemci öğrenci listesi göndermez; danışman yalnızca kendi öğrencilerini görür.
 - **Grafik kütüphanesi Recharts** (prompt'ta öngörüldü) ve **tembel yüklenir:** ilk yükleme 323 kB, grafikler ayrı 407 kB parça.
+
+## 2026-10-24 — Aşama 10: iletişim kararları
+
+- **Randevu "slot + tarih" modeli:** Danışman haftalık tekrar eden saatler tanımlar; rezervasyon belirli bir tarihe
+  yapılır. Böylece her hafta saat yeniden girilmez, geçmiş randevular da silinen/değişen saatlerden etkilenmez
+  (kullanılmış saat silinince pasife alınır, kaybolmaz).
+- **Randevu sınırları (sabit):** 28 gün ufuk, 60 dk asgari önceden bildirim, 2 aktif randevu. Randevu kaparak
+  başkalarını engellemeyi önler; ayarlanabilir yapmaya gerek görülmedi (bitirme projesi kapsamı).
+- **Çifte rezervasyon iki katmanlı engellenir:** uygulama kontrolü + SQLite kısmi tekil indeks. Yalnızca uygulama kontrolü
+  eşzamanlı iki istekte yetmez.
+- **Notlar öğrenciye kapalı, ders kaydı kararındaki not açık:** Prompt "görüşme notları öğrenciye kapalı" der. Ders kaydında
+  "düzeltme iste" notu ve talep yanıt notu ise öğrenciye iletilmek üzere yazıldığından öğrenci görür.
+- **Yönetici not yazmaz:** Notun yazarı olan danışman kimliği anlamlıdır; yönetici denetim amaçlı yalnızca okur ve silebilir.
+- **Duyuruda önizleme zorunlu:** Yanlış filtreyle yüzlerce öğrenciye istenmeyen duyuru gitmesini önler. Filtre kriterleri
+  gönderim anındaki haliyle saklanır; sonradan "bu kimlere neden gitti" açıklanabilir.
+- **GANO filtresi, notlandırılmış dersi olmayanı dışlar:** GANO'su 0 görünen birinci sınıf öğrencisi "GANO ≤ 2.5" filtresine
+  yanlışlıkla girmesin diye.
+- **Alıcı tablosu okundu durumunu da taşır** (`AnnouncementRecipient.ReadAt`); ayrı bir "okundu" tablosu yoktur.
+- **Dosya deposu bir arayüz arkasında (`IFileStore`):** Şimdilik yerel disk (`Uploads:Path`); üretimde nesne depolamaya geçiş
+  yalnızca yeni bir implementasyondur. Klasör `.gitignore`'dadır. Virüs taraması kapsam dışıdır (rapora not).
+- **Ek türü istemciye değil sunucuya güvenilerek belirlenir:** `Content-Type` başlığı istemciden gelir ve sahtelenebilir;
+  tür, doğrulanmış uzantı ve dosya imzasından üretilir.
+- **Sonuçlanan talep değişmez:** Karar geri alınabilseydi öğrenciye gönderilen bildirimle çelişirdi; hata düzeltmesi için yeni
+  talep açılır.

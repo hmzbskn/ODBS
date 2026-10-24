@@ -4,8 +4,6 @@ export interface NavItem {
   to: string
   label: string
   roles: Role[]
-  /** Modülün geliştirileceği aşama; doluysa menüde "Yakında" etiketi çıkar. */
-  soonPhase?: number
 }
 
 const STAFF: Role[] = ['Admin', 'Danisman']
@@ -19,8 +17,8 @@ export const NAV_ITEMS: NavItem[] = [
   { to: '/risk', label: 'Risk ve Mezuniyet', roles: STAFF },
   { to: '/mezuniyet', label: 'Mezuniyet Analizim', roles: ['Ogrenci'] },
   { to: '/randevular', label: 'Randevular', roles: ['Admin', 'Danisman', 'Ogrenci'] },
-  { to: '/duyurular', label: 'Duyurular', roles: ['Admin', 'Danisman', 'Ogrenci'], soonPhase: 10 },
-  { to: '/talepler', label: 'Talepler', roles: ['Admin', 'Danisman', 'Ogrenci'], soonPhase: 10 },
+  { to: '/duyurular', label: 'Duyurular', roles: ['Admin', 'Danisman', 'Ogrenci'] },
+  { to: '/talepler', label: 'Talepler', roles: ['Admin', 'Danisman', 'Ogrenci'] },
 ]
 
 export const ROLE_LABELS: Record<Role, string> = {

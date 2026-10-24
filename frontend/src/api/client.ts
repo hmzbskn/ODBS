@@ -36,7 +36,8 @@ const FALLBACK_MESSAGES: Record<number, string> = {
 
 async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
   const headers = new Headers(init.headers)
-  if (init.body !== undefined) headers.set('Content-Type', 'application/json')
+  // FormData için Content-Type'ı tarayıcı (sınır değeriyle birlikte) kendisi ayarlar.
+  if (init.body !== undefined && !(init.body instanceof FormData)) headers.set('Content-Type', 'application/json')
   const token = readStoredToken()
   if (token) headers.set('Authorization', `Bearer ${token}`)
 
@@ -101,6 +102,7 @@ export const api = {
   get: <T>(path: string) => request<T>(path),
   post: <T>(path: string, body?: unknown) =>
     request<T>(path, { method: 'POST', body: body === undefined ? undefined : JSON.stringify(body) }),
+  postForm: <T>(path: string, form: FormData) => request<T>(path, { method: 'POST', body: form }),
   put: <T>(path: string, body: unknown) => request<T>(path, { method: 'PUT', body: JSON.stringify(body) }),
   delete: <T>(path: string) => request<T>(path, { method: 'DELETE' }),
   download,
