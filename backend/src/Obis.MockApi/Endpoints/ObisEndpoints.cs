@@ -14,6 +14,11 @@ public static class ObisEndpoints
 
         group.MapGet("/students", (SeedBundle db) => db.Students);
 
+        // Prompt'ta açıkça listelenmemiş ama seed verisinde zaten var olan danışman
+        // bilgisi için küçük bir ek endpoint (bkz. docs/DECISIONS.md) — ana uygulama
+        // danışman adını OBİS'ten çekebilsin, ayrıca kopyalamak zorunda kalmasın.
+        group.MapGet("/advisors", (SeedBundle db) => db.Advisors);
+
         group.MapGet("/students/{no}", (string no, SeedBundle db) =>
         {
             var student = db.Students.FirstOrDefault(s => s.StudentNo == no);

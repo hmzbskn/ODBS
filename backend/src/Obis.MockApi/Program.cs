@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Obis.MockApi.Endpoints;
 using Obis.MockApi.SeedData;
 
@@ -23,6 +24,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.ConfigureHttpJsonOptions(options =>
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 builder.Services.AddSingleton(_ => SeedIo.Load(builder.Environment.ContentRootPath));
 
 var app = builder.Build();
