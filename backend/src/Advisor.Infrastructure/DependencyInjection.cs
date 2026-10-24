@@ -1,5 +1,6 @@
 using Advisor.Application.Obis;
 using Advisor.Infrastructure.Auth;
+using Advisor.Infrastructure.Communication;
 using Advisor.Infrastructure.Obis;
 using Advisor.Infrastructure.Persistence;
 using Advisor.Infrastructure.Surveys;
@@ -25,6 +26,8 @@ public static class DependencyInjection
         services.AddScoped<AuthService>();
         services.TryAddSingleton(TimeProvider.System);
         services.AddScoped<SurveyService>();
+        services.AddScoped<AppointmentService>();
+        services.AddScoped<StudentFileService>();
 
         return services;
     }

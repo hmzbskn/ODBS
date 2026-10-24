@@ -143,7 +143,9 @@ namespace Advisor.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SlotId");
+                    b.HasIndex("SlotId", "Date")
+                        .IsUnique()
+                        .HasFilter("\"Status\" = 0");
 
                     b.ToTable("Appointments");
                 });

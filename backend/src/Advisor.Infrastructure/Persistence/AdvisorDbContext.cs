@@ -65,6 +65,9 @@ public class AdvisorDbContext : DbContext
         modelBuilder.Entity<Appointment>(e =>
         {
             e.HasOne(a => a.Slot).WithMany().HasForeignKey(a => a.SlotId);
+
+            // Aynı saat/tarih için aynı anda yalnızca bir aktif randevu (iptal edilenler çakışmaz).
+            e.HasIndex(a => new { a.SlotId, a.Date }).IsUnique().HasFilter("\"Status\" = 0");
         });
     }
 }
