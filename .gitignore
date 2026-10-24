@@ -31,3 +31,6 @@ Thumbs.db
 # Env / secrets
 **/appsettings.Development.local.json
 **/.env.local
+
+# start-all betikleri
+.run/

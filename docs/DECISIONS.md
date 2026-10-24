@@ -216,3 +216,14 @@ düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
 - **Hız sınırı yerleşik `RateLimiter` ile:** Ek paket yok. Anahtarı IP; kullanıcı adı başına kilitleme eklenmedi (hesap kilitleme,
   saldırganın gerçek kullanıcıyı kilitlemesine izin veren bir hizmet reddi vektörü olabilir).
 - **CORS eklenmedi:** Ön yüz aynı origin'den (geliştirmede Vite proxy, üretimde ters proxy) çağırır; çapraz kaynak izni gereksiz saldırı yüzeyi olurdu.
+
+## 2026-10-24 — Aşama 12: dokümantasyon ve çalıştırma kararları
+
+- **İki betik ailesi (PowerShell + Bash):** Geliştirme ortamı Windows, ama proje değerlendiren kişinin makinesi bilinmiyor; ikisi de aynı davranışı
+  verir ve ikisi de çalıştırılarak doğrulandı. Docker eklenmedi (ek bağımlılık ve kurulum yükü; bitirme projesi için gereksiz).
+- **Betikler `dotnet run --no-build` + önceden `dotnet build` kullanır:** Üç süreç aynı derleme çıktısını kullansın, paralel `dotnet run` derlemeleri
+  birbirinin dosyalarını kilitlemesin.
+- **Ekran görüntüleri depoda (1.7 MB):** README ve rapor için gerçek uygulamadan alınmış görüntüler, depoyla birlikte versiyonlanır; bir arayüz
+  değişikliğinde yeniden üretilebilir (betik repoda değil: geçici Playwright bağımlılığı projeye eklenmedi).
+- **Mermaid'in "doğrulanarak" yazılması:** Diyagram söz dizimi hataları görsel olarak sessizce bozuk gösterilir; bu yüzden gerçek motorla ayrıştırma
+  ve çizme denendi.

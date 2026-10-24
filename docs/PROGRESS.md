@@ -296,3 +296,75 @@ düzen/renk doğrulaması Aşama 7'de ders kaydı ekranıyla birlikte yapılacak
 - Token'ı geri çağırma (logout sonrası geçersiz kılma) ve refresh token yoktur; token süresi 120 dk.
 - Yüklenen dosyalar virüs taramasından geçmez; yalnızca tür/imza/boyut denetimi vardır.
 - Frontend üretim derlemesi (`frontend/dist`) API tarafından sunulmaz; ters proxy ya da statik barındırma gerekir.
+
+## Aşama 12 — Dokümantasyon ve tek komutla çalıştırma
+
+- Durum: tamamlandı
+- **Tek komutla çalıştırma:** `start-all.ps1` (Windows) ve `start-all.sh` (Linux/macOS/Git Bash): gereksinimleri kontrol eder, ilk çalıştırmada
+  `npm install` yapar, backend'i derler, Mock OBİS + API + frontend'i arka planda başlatır, hazır olana kadar bekler, adresleri ve demo
+  hesapları yazdırır. `stop-all.*` süreçleri alt süreçleriyle durdurur. Her iki betik de gerçekten çalıştırılarak doğrulandı (soğuk başlangıç
+  yaklaşık 5 sn, giriş isteği Vite proxy üzerinden 200; durdurma sonrası dinleyen port yok). Test sırasında yakalanan hata: PowerShell'de
+  `$Args` otomatik değişken olduğu için parametre adı olarak kullanılamaz (`$ArgList` yapıldı).
+- **README.md:** hızlı başlangıç, demo hesaplar, modül ve ekran açıklamaları (21 gerçek ekran görüntüsü), uç durum → ekran haritası, elle
+  çalıştırma, testler, yapılandırma anahtarları, üretime alma notları, proje yapısı, bilinen sınırlamalar.
+- **docs/ARCHITECTURE.md:** 9 Mermaid diyagramı (sistem, katmanlar, adapter, kural motoru sınıf + sıra diyagramı, yetkilendirme akışı,
+  ER, test stratejisi, dağıtım), modül ve veri akışı tablosu, güvenlik modeli, tasarım gerekçeleri ve **"Gerçek OBİS'e geçiş"** kontrol listesi.
+  Diyagramların söz dizimi gerçek bir Mermaid motoruyla doğrulandı; bu doğrulama iki bozuk diyagramı yakaladı (sıralı diyagramda `;` ifade
+  ayırıcıdır, ER diyagramında ASCII dışı etiketler tırnaklanmalıdır) ve düzeltildi. Artık 9/9 diyagram geçerli ve çiziliyor.
+- **Ekran görüntüleri** (`docs/screenshots/`, 1.7 MB): başlat betiğiyle ayağa kaldırılan gerçek uygulamadan, API ile üretilen demo veriyle
+  (anket + CSV içe aktarma, randevu, not, duyuru, talep) tarayıcıdan alındı.
+
+---
+
+# Final özet
+
+## Neler tamamlandı
+
+12 aşamanın tamamı bitti; her aşama derlenip test edilerek ayrı commit'lendi.
+
+* **Altyapı:** katmanlı .NET 8 backend (Domain / Application / Infrastructure / Api), bağımsız Mock OBİS API'si (63 öğrenci, 52 derslik müfredat,
+  10 bilinçli uç durum, deterministik seed), `IObisClient` adapter'ı, SQLite + EF Core migration'ları, JWT kimlik doğrulama, 3 rol, demo hesaplar,
+  global exception middleware (Türkçe hata mesajları), Swagger.
+* **Modül 1 — Ders kaydı doğrulama:** 6 kurallı, genişletilebilir motor (saat çakışması, önkoşul, alttan ders önceliği, AKTS/GANO limiti, sınav
+  çakışması, tekrar alma); danışman ekranı (liste, haftalık program, çakışanlar kırmızı, onayla / düzeltme iste); karar geçmişi.
+* **Modül 2 — Anket ve ihtiyaç puanlama:** 4 soru tipi, KVKK açık rıza zorunluluğu, canlı puanlama (soru ağırlığı × seçenek puanı), şeffaf kırılım,
+  ilk N / eşik seçimi, destek ataması, CSV içe/dışa aktarma (satır hata raporu), anonim istatistik, gizlilik.
+* **Modül 3 — Erken uyarı ve mezuniyet:** açıklamalı kurala dayalı risk puanı, mezuniyet analizi + "bu dönem geçerse" projeksiyonu, danışman paneli
+  (Recharts: risk dağılımı, dönem GANO eğilimi, en zor dersler).
+* **Modül 4 — İletişim ve talepler:** randevu (yarış koşuluna dayanıklı), görüşme notları (öğrenciye kapalı) ve zaman çizelgesi, filtreli duyuru
+  (önizleme, okundu durumu), öğrenci bildirim kutusu, talep/dilekçe akışı ve güvenli dosya eki.
+* **Kalite:** 333 backend testi (birim, seed uç durumları, API, gerçek OBİS HTTP sözleşmesiyle tam yığın, otomatik yetki taraması, Swagger, sertleştirme);
+  frontend `tsc`, `oxlint` (0 uyarı), `vite build` temiz; her arayüz aşaması gerçek tarayıcıda (masaüstü + 390 px mobil) uçtan uca gezildi.
+* **Güvenlik:** varsayılan-reddet politikası + rol + sahiplik, giriş hız sınırı, üretimde zayıf anahtar/demo hesap kapıları, dosya imzası doğrulaması,
+  CSV enjeksiyonu koruması, güvenlik başlıkları.
+
+## Süreçte bulunup düzeltilen önemli hatalar
+
+* Mock OBİS seed'i: uç durum kodu ortak şubelerin saatini tüm öğrenciler için değiştiriyordu; `string.GetHashCode()` yüzünden seed tekrarlanabilir değildi;
+  müfredat sayıları tutarsızdı (mezuniyet erişilemezdi); EDGE-04/EDGE-09 gerçekten uç durum değildi; staj verisi yoktu.
+* `HttpObisClient` metin olarak gelen enum'ları çözemiyordu (yalnızca canlı HTTP testinde görülebilen hata; şimdi otomatik teste bağlı).
+* `useAsync` yenilemede ekranı silip başarı mesajlarını yok ediyordu.
+* Mermaid diyagramları, başlatma betiği ve çeşitli test varsayımları (sabit saat, paylaşılan fixture durumu) doğrulama sırasında yakalanıp düzeltildi.
+
+## Bilinen eksikler ve sınırlamalar
+
+* Excel (.xlsx) içe aktarma yok, yalnızca CSV (ek paket eklememek için).
+* Token iptali ve refresh token yok; token 120 dk geçerli. Hesap yönetimi (şifre değiştirme, kullanıcı ekleme) arayüzü yok; hesaplar seed'den gelir.
+* Yüklenen dosyalara virüs taraması yok; dosya deposu yerel disk.
+* Bildirimler yalnızca uygulama içi (e-posta/SMS yok). KVKK metni örnek/kurgusaldır.
+* Mock OBİS baseline öğrencilerinin bir kısmı kaldıkları dersi tekrar almadan ilerler: uç durum olmayan öğrencilerde de doğru "alttan ders" uyarısı çıkar.
+* Aynı anda çok sayıda öğrenciyi toplu hesaplayan ekranlar (panel, risk listesi, duyuru önizleme) her öğrenci için OBİS çağrısı yapar; binlerce öğrencide
+  ön hesaplama ya da toplu OBİS uç noktaları gerekir.
+* Ters proxy arkasında `UseForwardedHeaders` eklenmeden giriş hız sınırı tüm istemcileri tek IP görür.
+
+## Gerçek OBİS API'sine geçişte değişmesi gerekenler
+
+Ayrıntılı kontrol listesi: [ARCHITECTURE.md → Gerçek OBİS'e geçiş](ARCHITECTURE.md#gerçek-obise-geçiş). Özet:
+
+1. `IObisClient` için gerçek OBİS protokolüne/kimliğine uygun yeni bir implementasyon (alan eşlemeleriyle) ve DI kaydının değiştirilmesi;
+   `Application`, `Domain`, controller'lar, servisler ve frontend **değişmez**.
+2. `Obis:BaseUrl` ve kimlik bilgileri (gizli yapılandırma), önbellek süresi.
+3. Staj günü, devamsızlık ve şube/saat verisinin gerçek OBİS'teki karşılıklarının netleştirilmesi (mock'ta basitleştirilmiştir).
+4. Eşiklerin (GANO bantları, AKTS limitleri, azami süre, devamsızlık sınırı, müfredat sayıları) üniversite yönetmeliğine göre ayarlanması.
+5. Hesapların kurumsal kimlik sağlayıcıdan (SSO/LDAP) gelmesi ve `LinkedStudentNo`/`LinkedAdvisorId` eşlemesi.
+6. Ölçek için toplu uç noktalar ya da arka plan ön hesaplaması.
