@@ -1,5 +1,6 @@
 using System.Text;
 using Advisor.Api.Auth;
+using Advisor.Application.Analytics;
 using Advisor.Application.Auth;
 using Advisor.Application.Registration;
 using Advisor.Infrastructure;
@@ -37,6 +38,9 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddRegistrationRules(
     builder.Configuration.GetSection(RegistrationRuleOptions.SectionName).Get<RegistrationRuleOptions>()
     ?? new RegistrationRuleOptions());
+
+builder.Services.AddAnalytics(
+    builder.Configuration.GetSection(RiskOptions.SectionName).Get<RiskOptions>() ?? new RiskOptions());
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentUser, CurrentUser>();

@@ -290,14 +290,6 @@
   {
     "StudentNo": "20251007",
     "Term": 3,
-    "CourseCode": "BLM201",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20251007",
-    "Term": 3,
     "CourseCode": "BLM202",
     "TotalSessions": 14,
     "AttendedSessions": 13,
@@ -2870,6 +2862,14 @@
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20251007",
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "TotalSessions": 14,
+    "AttendedSessions": 9,
+    "AbsenceRate": 0.36
   },
   {
     "StudentNo": "20231019",

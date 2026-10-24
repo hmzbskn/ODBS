@@ -14,5 +14,6 @@ public interface IObisClient
     Task<List<ObisScheduleSlot>> GetScheduleAsync(int? term = null, CancellationToken ct = default);
     Task<List<ObisExamSlot>> GetExamsAsync(int? term = null, CancellationToken ct = default);
     Task<ObisCurriculum> GetCurriculumAsync(CancellationToken ct = default);
+    Task<ObisInternship> GetInternshipAsync(string studentNo, CancellationToken ct = default);
     Task<List<ObisAdvisor>> GetAdvisorsAsync(CancellationToken ct = default);
 }

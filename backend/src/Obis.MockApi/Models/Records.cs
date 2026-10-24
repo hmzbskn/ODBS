@@ -31,3 +31,6 @@ public record AttendanceRecord(
         ? 0
         : Math.Round((double)(TotalSessions - AttendedSessions) / TotalSessions, 2);
 }
+
+/// <summary>Bir öğrencinin OBİS'e işlenmiş tamamlanan staj gün sayısı.</summary>
+public record InternshipRecord(string StudentNo, int CompletedDays);

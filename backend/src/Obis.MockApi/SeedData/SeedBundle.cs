@@ -14,6 +14,7 @@ public record SeedBundle(
     List<TranscriptEntry> Transcripts,
     List<RegistrationEntry> Registrations,
     List<AttendanceRecord> Attendance,
+    List<InternshipRecord> Internships,
     List<EdgeCaseNote> EdgeCases);
 
 /// <summary>Hangi öğrenci numarasının hangi bilinçli uç durumu temsil ettiğinin kaydı —

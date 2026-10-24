@@ -31,6 +31,7 @@ public static class SeedIo
         WriteFile(dir, "transcripts.json", bundle.Transcripts);
         WriteFile(dir, "registrations.json", bundle.Registrations);
         WriteFile(dir, "attendance.json", bundle.Attendance);
+        WriteFile(dir, "internships.json", bundle.Internships);
         WriteFile(dir, "edge-cases.json", bundle.EdgeCases);
     }
 
@@ -48,6 +49,7 @@ public static class SeedIo
             ReadFile<List<Models.TranscriptEntry>>(dir, "transcripts.json"),
             ReadFile<List<Models.RegistrationEntry>>(dir, "registrations.json"),
             ReadFile<List<Models.AttendanceRecord>>(dir, "attendance.json"),
+            ReadFile<List<Models.InternshipRecord>>(dir, "internships.json"),
             ReadFile<List<EdgeCaseNote>>(dir, "edge-cases.json"));
     }
 

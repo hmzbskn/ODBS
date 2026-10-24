@@ -83,6 +83,9 @@ public class HttpObisClient : IObisClient
     public Task<ObisCurriculum> GetCurriculumAsync(CancellationToken ct = default) =>
         GetCachedAsync("obis:curriculum", "/api/curriculum", ct, new ObisCurriculum("", new(), 0, 0, 0));
 
+    public Task<ObisInternship> GetInternshipAsync(string studentNo, CancellationToken ct = default) =>
+        GetCachedAsync($"obis:internship:{studentNo}", $"/api/students/{studentNo}/internship", ct, new ObisInternship(studentNo, 0));
+
     public Task<List<ObisAdvisor>> GetAdvisorsAsync(CancellationToken ct = default) =>
         GetCachedAsync("obis:advisors", "/api/advisors", ct, new List<ObisAdvisor>());
 

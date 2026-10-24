@@ -32,6 +32,7 @@ internal class FakeObisClient : IObisClient
     public Task<List<ObisScheduleSlot>> GetScheduleAsync(int? term = null, CancellationToken ct = default) => throw new NotSupportedException();
     public Task<List<ObisExamSlot>> GetExamsAsync(int? term = null, CancellationToken ct = default) => throw new NotSupportedException();
     public Task<ObisCurriculum> GetCurriculumAsync(CancellationToken ct = default) => throw new NotSupportedException();
+    public Task<ObisInternship> GetInternshipAsync(string studentNo, CancellationToken ct = default) => throw new NotSupportedException();
     public Task<List<ObisAdvisor>> GetAdvisorsAsync(CancellationToken ct = default) => throw new NotSupportedException();
 }
 

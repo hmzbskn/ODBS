@@ -6,6 +6,8 @@ namespace Advisor.Application.Obis;
 // şekilde bağımlı değil (ProjectReference yok), sadece HTTP üzerinden JSON alır.
 // Gerçek OBİS'e geçişte burası değişmez, sadece IObisClient implementasyonu değişir.
 
+public record ObisInternship(string StudentNo, int CompletedDays);
+
 public record ObisAdvisor(string AdvisorId, string FirstName, string LastName, string Title);
 
 public record ObisStudent(

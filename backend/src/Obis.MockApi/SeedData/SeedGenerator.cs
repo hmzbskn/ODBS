@@ -83,7 +83,10 @@ public static class SeedGenerator
             .Select(p => new EdgeCaseNote(p.StudentNo, p.EdgeCaseTag!))
             .ToList();
 
-        return new SeedBundle(advisors, students, courses, curriculum, schedule, exams, transcripts, registrations, attendance, edgeCases);
+        // Staj verisi, rastgele akışın EN SONUNDA üretilir: önceki hiçbir çıktıyı (transkript, kayıt...) değiştirmez.
+        var internships = BuildInternships(plans, rnd);
+
+        return new SeedBundle(advisors, students, courses, curriculum, schedule, exams, transcripts, registrations, attendance, internships, edgeCases);
     }
 
     private static List<AdvisorInfo> BuildAdvisors() =>
@@ -317,10 +320,42 @@ public static class SeedGenerator
         return Math.Round(totalPoints / totalCredit, 2);
     }
 
+    /// <summary>Tamamlanan staj günleri: 1-2. sınıf henüz staj yapmadı; 3. sınıfta yarısı tamamlamış;
+    /// 4. sınıfın çoğu tamamlamış. Uç durumlar: EDGE-09 (mezuniyete az kalan) tamamlamış, EDGE-08 (azami süre) yarım.</summary>
+    private static List<InternshipRecord> BuildInternships(List<StudentPlan> plans, Random rnd)
+    {
+        var records = new List<InternshipRecord>();
+        foreach (var p in plans.OrderBy(p => p.StudentNo, StringComparer.Ordinal))
+        {
+            int days;
+            if (p.EdgeCaseTag is { } tag && tag.StartsWith("EDGE-09", StringComparison.Ordinal))
+            {
+                days = 40;
+            }
+            else if (p.EdgeCaseTag is { } tag8 && tag8.StartsWith("EDGE-08", StringComparison.Ordinal))
+            {
+                days = 20;
+            }
+            else
+            {
+                days = p.ClassYear switch
+                {
+                    <= 2 => 0,
+                    3 => new[] { 0, 20, 40, 40 }[rnd.Next(4)],
+                    _ => new[] { 20, 40, 40, 40, 40 }[rnd.Next(5)],
+                };
+            }
+
+            records.Add(new InternshipRecord(p.StudentNo, days));
+        }
+
+        return records;
+    }
+
     private static CurriculumInfo BuildCurriculum(List<CourseInfo> courses)
     {
         var mandatory = courses.Where(c => c.IsMandatory).Select(c => c.CourseCode).ToList();
-        return new CurriculumInfo(Department, mandatory, ElectiveCreditRequirement: 6, TotalEctsRequirement: 240, InternshipDaysRequirement: 40);
+        return new CurriculumInfo(Department, mandatory, ElectiveCreditRequirement: 12, TotalEctsRequirement: 212, InternshipDaysRequirement: 40);
     }
 
     private static void ApplyEdgeCases(
@@ -368,6 +403,10 @@ public static class SeedGenerator
         var s4 = byClass[2][1];
         s4.EdgeCaseTag = "EDGE-04 kredi-limiti";
         LowerGpaByFailingMany(transcripts, s4.StudentNo, s4.CurrentTerm);
+        // Aynı öğrenci bu dönem bir dersten devamsızlık sınırını da aşmış (14 oturumdan 9'una girmiş, %36).
+        var s4Course = coursesByTerm[s4.CurrentTerm].First(c => c.IsMandatory).CourseCode;
+        attendance.RemoveAll(a => a.StudentNo == s4.StudentNo && a.CourseCode == s4Course);
+        attendance.Add(new AttendanceRecord(s4.StudentNo, s4.CurrentTerm, s4Course, 14, 9));
         foreach (var extra in new[] { "BLM301", "BLM302", "BLM303" })
         {
             EnsureRegistered(registrations, s4.StudentNo, s4.CurrentTerm, extra, "A", "Beklemede");
@@ -433,6 +472,9 @@ public static class SeedGenerator
             attendance.RemoveAll(a => a.StudentNo == s9.StudentNo && a.Term == 8 && a.CourseCode == courseCode);
         }
 
+        // Geçmişte kalınmış dersler de geçilmiş sayılır: gerçekten yalnızca bu dönemin dersleri kalsın.
+        PassAllFailed(transcripts, s9.StudentNo);
+
         // EDGE-10: Devamsızlık sınırına yaklaşma — sınıf2 öğrencisinin bu dönem bir dersten
         // devamsızlığı %28'e yaklaşmış (14 oturumdan 10'una girmiş).
         var s10 = byClass[2][2];
@@ -472,15 +514,32 @@ public static class SeedGenerator
         }
     }
 
+    /// <summary>İlk iki dönemin ilk dörder dersini FF yapar: GANO 2.00'ın altına iner ve art arda iki dönem
+    /// ders kalınmış olur (erken uyarı: düşük GANO + üst üste kalma).</summary>
     private static void LowerGpaByFailingMany(List<TranscriptEntry> transcripts, string studentNo, int currentTerm)
     {
-        var count = 0;
-        for (var i = 0; i < transcripts.Count && count < 3; i++)
+        foreach (var term in new[] { 1, 2 }.Where(t => t < currentTerm))
         {
-            if (transcripts[i].StudentNo == studentNo && transcripts[i].Term < currentTerm)
+            var count = 0;
+            for (var i = 0; i < transcripts.Count && count < 4; i++)
             {
-                transcripts[i] = transcripts[i] with { LetterGrade = "FF", Passed = false };
-                count++;
+                if (transcripts[i].StudentNo == studentNo && transcripts[i].Term == term)
+                {
+                    transcripts[i] = transcripts[i] with { LetterGrade = "FF", Passed = false };
+                    count++;
+                }
+            }
+        }
+    }
+
+    /// <summary>Öğrencinin kalınmış tüm derslerini CC ile geçilmiş yapar (EDGE-09: geçmişi temiz, gerçekten "az kalan").</summary>
+    private static void PassAllFailed(List<TranscriptEntry> transcripts, string studentNo)
+    {
+        for (var i = 0; i < transcripts.Count; i++)
+        {
+            if (transcripts[i].StudentNo == studentNo && !transcripts[i].Passed)
+            {
+                transcripts[i] = transcripts[i] with { LetterGrade = "CC", Passed = true };
             }
         }
     }

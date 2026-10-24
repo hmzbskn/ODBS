@@ -156,8 +156,8 @@
     "CourseName": "T\u00FCrk Dili I",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
+    "LetterGrade": "FF",
+    "Passed": false
   },
   {
     "StudentNo": "20251007",
@@ -186,8 +186,8 @@
     "CourseName": "Matematik II",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
+    "LetterGrade": "FF",
+    "Passed": false
   },
   {
     "StudentNo": "20251007",
@@ -196,8 +196,8 @@
     "CourseName": "Fizik II",
     "Credit": 4,
     "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
+    "LetterGrade": "FF",
+    "Passed": false
   },
   {
     "StudentNo": "20251007",
@@ -206,8 +206,8 @@
     "CourseName": "Programlama I",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
+    "LetterGrade": "FF",
+    "Passed": false
   },
   {
     "StudentNo": "20251007",
@@ -216,8 +216,8 @@
     "CourseName": "T\u00FCrk Dili II",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "CC",
-    "Passed": true
+    "LetterGrade": "FF",
+    "Passed": false
   },
   {
     "StudentNo": "20251007",
@@ -2906,8 +2906,8 @@
     "CourseName": "Programlamaya Giri\u015F",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "FD",
-    "Passed": false
+    "LetterGrade": "CC",
+    "Passed": true
   },
   {
     "StudentNo": "20231019",
@@ -2926,8 +2926,8 @@
     "CourseName": "\u0130ngilizce I",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "FF",
-    "Passed": false
+    "LetterGrade": "CC",
+    "Passed": true
   },
   {
     "StudentNo": "20231019",
@@ -3066,8 +3066,8 @@
     "CourseName": "Algoritma Analizi",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "FD",
-    "Passed": false
+    "LetterGrade": "CC",
+    "Passed": true
   },
   {
     "StudentNo": "20231019",

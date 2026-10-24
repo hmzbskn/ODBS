@@ -1,3 +1,4 @@
+using Obis.MockApi.Models;
 using Obis.MockApi.SeedData;
 
 namespace Obis.MockApi.Endpoints;
@@ -70,6 +71,17 @@ public static class ObisEndpoints
             }
 
             return Results.Ok(rows.OrderBy(a => a.Term).ThenBy(a => a.CourseCode).ToList());
+        });
+
+        group.MapGet("/students/{no}/internship", (string no, SeedBundle db) =>
+        {
+            if (!StudentExists(db, no))
+            {
+                return Results.NotFound();
+            }
+
+            var record = db.Internships.FirstOrDefault(i => i.StudentNo == no) ?? new InternshipRecord(no, 0);
+            return Results.Ok(record);
         });
 
         group.MapGet("/courses", (SeedBundle db) => db.Courses.OrderBy(c => c.Term).ThenBy(c => c.CourseCode));

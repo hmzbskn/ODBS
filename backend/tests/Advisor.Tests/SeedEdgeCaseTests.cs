@@ -46,6 +46,8 @@ internal class SeedObisClient : IObisClient
     public Task<List<ObisExamSlot>> GetExamsAsync(int? term = null, CancellationToken ct = default) => Task.FromResult(Load<ObisExamSlot>("exams.json"));
     public Task<ObisCurriculum> GetCurriculumAsync(CancellationToken ct = default) =>
         Task.FromResult(JsonSerializer.Deserialize<ObisCurriculum>(File.ReadAllText(Path.Combine(_dir, "curriculum.json")), Json)!);
+    public Task<ObisInternship> GetInternshipAsync(string studentNo, CancellationToken ct = default) =>
+        Task.FromResult(Load<ObisInternship>("internships.json").FirstOrDefault(i => i.StudentNo == studentNo) ?? new ObisInternship(studentNo, 0));
     public Task<List<ObisAdvisor>> GetAdvisorsAsync(CancellationToken ct = default) => Task.FromResult(Load<ObisAdvisor>("advisors.json"));
 }
 
