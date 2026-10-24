@@ -86,3 +86,28 @@ düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
 - Testler `Testing` ortamında çalışır (Swagger yalnızca `Development`'ta açık).
 - Demo şifresi tüm hesaplar için aynı (`Demo123!`); yalnızca geliştirme amaçlı. Gerçek ortamda
   `Jwt:SigningKey` ortam değişkeniyle verilmeli, demo seeder kapatılmalı.
+
+## 2026-10-24 — Aşama 5: kural motoru kararları
+
+- **Kurallar saf ve bağlam tabanlı:** `RegistrationContext` tek girdi; kural OBİS'e gitmez. Bu, birim
+  testlerin ağsız ve küçük elle kurulmuş verilerle yazılabilmesini sağlar.
+- **Dönem kesiti:** Bir dönem doğrulanırken yalnızca o dönemden ÖNCEKİ transkript kullanılır. Aksi halde
+  geçmiş dönemler doğrulanırken (dönem seçimi ekranı) sonradan geçilen dersler önkoşul sayılırdı.
+- **Önkoşul = geçilmiş:** Aynı dönemde birlikte alınan önkoşul geçilmiş sayılmaz (Hata).
+- **Alttan ders önceliği = Uyarı (Hata değil):** Üniversite yönetmeliği bilinmediği için engelleyici
+  yapılmadı; danışman karar verir. Yalnızca zorunlu dersler kapsanır (müfredat listesi). Güz/bahar
+  dönemi uyumu (alt dönem dersinin hangi yarıyılda açıldığı) dikkate alınmadı.
+- **Kredi sınırı AKTS üzerinden:** GANO < 2.00 → 24, 2.00-2.99 → 31, ≥ 3.00 → 37 AKTS. 31 değeri seed'deki
+  normal yüke (en çok 31 AKTS) göre kalibre edildi; hepsi `appsettings.json`'dan değişir. Geçmişi olmayan
+  (ilk dönem) öğrenciye normal sınır uygulanır.
+- **GANO transkriptten hesaplanır**, OBİS `Gpa` alanından değil: geçmiş dönemleri doğrularken o döneme
+  kadarki GANO gerekir. Hesap OBİS değerleriyle 63 öğrencide birebir eşleşiyor.
+- **Tekrar alma = Bilgi, eşik BB:** Daha düşük notla geçilmiş dersi tekrar almak (not yükseltme) normal
+  kabul edilir, uyarı üretilmez.
+- **Sınav çakışması tür ayırmaz:** Farklı derslerin ara sınav/final'i çakışırsa da bulgu üretilir.
+- **Karar geçmişi tutulur:** `RegistrationReview` her kararda yeni satır eklenir (güncelleme yok); en son
+  kayıt geçerli karar sayılır. Denetim izi ve "önce düzeltme istedi, sonra onayladı" akışı için.
+- **Hatalı kaydı onaylamak engellenmedi:** Danışman, Hata seviyesi bulgu olsa bile onaylayabilir (istisna
+  durumları olabilir); bulgular karar kaydıyla birlikte ekranda görünür.
+- **Seed düzeltmesi:** Uç durumlar için ortak şubeleri değiştirmek yerine öğrenciye özel "C" şubesi
+  eklenir (bkz. PROGRESS.md Aşama 5). Seed üretimi artık tekrarlanabilir.

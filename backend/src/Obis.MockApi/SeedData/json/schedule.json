@@ -14,10 +14,10 @@
     "CourseCode": "BLM101",
     "CourseName": "Programlamaya Giri\u015F",
     "Section": "B",
-    "Day": "Wednesday",
+    "Day": "Tuesday",
     "StartTime": "11:00:00",
     "EndTime": "13:00:00",
-    "Room": "D-108"
+    "Room": "D-114"
   },
   {
     "Term": 1,
@@ -54,20 +54,20 @@
     "CourseCode": "MAT101",
     "CourseName": "Matematik I",
     "Section": "A",
-    "Day": "Monday",
+    "Day": "Friday",
     "StartTime": "09:00:00",
     "EndTime": "11:00:00",
-    "Room": "D-101"
+    "Room": "D-105"
   },
   {
     "Term": 1,
     "CourseCode": "MAT101",
     "CourseName": "Matematik I",
     "Section": "B",
-    "Day": "Tuesday",
+    "Day": "Wednesday",
     "StartTime": "11:00:00",
     "EndTime": "13:00:00",
-    "Room": "D-112"
+    "Room": "D-115"
   },
   {
     "Term": 1,
@@ -94,10 +94,10 @@
     "CourseCode": "BLM103",
     "CourseName": "Programlama I",
     "Section": "B",
-    "Day": "Wednesday",
+    "Day": "Tuesday",
     "StartTime": "11:00:00",
     "EndTime": "13:00:00",
-    "Room": "D-108"
+    "Room": "D-114"
   },
   {
     "Term": 2,
@@ -144,10 +144,10 @@
     "CourseCode": "MAT102",
     "CourseName": "Matematik II",
     "Section": "B",
-    "Day": "Tuesday",
+    "Day": "Wednesday",
     "StartTime": "11:00:00",
     "EndTime": "13:00:00",
-    "Room": "D-112"
+    "Room": "D-115"
   },
   {
     "Term": 2,
@@ -184,10 +184,10 @@
     "CourseCode": "BLM201",
     "CourseName": "Veri Yap\u0131lar\u0131",
     "Section": "B",
-    "Day": "Thursday",
+    "Day": "Tuesday",
     "StartTime": "11:00:00",
     "EndTime": "13:00:00",
-    "Room": "D-109"
+    "Room": "D-114"
   },
   {
     "Term": 3,
@@ -204,10 +204,10 @@
     "CourseCode": "BLM202",
     "CourseName": "Nesne Y\u00F6nelimli Programlama",
     "Section": "B",
-    "Day": "Friday",
+    "Day": "Wednesday",
     "StartTime": "11:00:00",
     "EndTime": "13:00:00",
-    "Room": "D-110"
+    "Room": "D-115"
   },
   {
     "Term": 3,
@@ -224,10 +224,10 @@
     "CourseCode": "BLM203",
     "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
     "Section": "B",
-    "Day": "Monday",
+    "Day": "Thursday",
     "StartTime": "11:00:00",
     "EndTime": "12:30:00",
-    "Room": "D-111"
+    "Room": "D-116"
   },
   {
     "Term": 3,
@@ -284,10 +284,10 @@
     "CourseCode": "BLM205",
     "CourseName": "Bilgisayar Organizasyonu",
     "Section": "B",
-    "Day": "Friday",
+    "Day": "Tuesday",
     "StartTime": "11:00:00",
     "EndTime": "13:00:00",
-    "Room": "D-110"
+    "Room": "D-114"
   },
   {
     "Term": 4,
@@ -598,5 +598,25 @@
     "StartTime": "11:00:00",
     "EndTime": "12:30:00",
     "Room": "D-107"
+  },
+  {
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Section": "C",
+    "Day": "Monday",
+    "StartTime": "09:00:00",
+    "EndTime": "11:00:00",
+    "Room": "D-101"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Section": "C",
+    "Day": "Wednesday",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
+    "Room": "D-104"
   }
 ]

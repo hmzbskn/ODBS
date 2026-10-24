@@ -35,6 +35,15 @@ internal class FakeObisClient : IObisClient
     public Task<List<ObisAdvisor>> GetAdvisorsAsync(CancellationToken ct = default) => throw new NotSupportedException();
 }
 
+internal static class TestJson
+{
+    /// <summary>API enum'ları metin olarak döndürür.</summary>
+    public static readonly System.Text.Json.JsonSerializerOptions Options = new(System.Text.Json.JsonSerializerDefaults.Web)
+    {
+        Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+    };
+}
+
 public class AuthFactory : WebApplicationFactory<Program>
 {
     private readonly string _dbName = Guid.NewGuid().ToString();
@@ -67,7 +76,7 @@ public class AuthTests : IClassFixture<AuthFactory>
         var client = Client();
         var res = await client.PostAsJsonAsync("/api/auth/login", new LoginRequest(username, password));
         res.EnsureSuccessStatusCode();
-        var body = await res.Content.ReadFromJsonAsync<LoginResponse>();
+        var body = await res.Content.ReadFromJsonAsync<LoginResponse>(TestJson.Options);
         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", body!.AccessToken);
         return client;
     }
@@ -97,7 +106,7 @@ public class AuthTests : IClassFixture<AuthFactory>
     public async Task Me_ReturnsLinkedIdentity()
     {
         var client = await LoginAs("danisman1");
-        var me = await client.GetFromJsonAsync<UserInfo>("/api/auth/me");
+        var me = await client.GetFromJsonAsync<UserInfo>("/api/auth/me", TestJson.Options);
         Assert.Equal("ADV1", me!.LinkedAdvisorId);
     }
 

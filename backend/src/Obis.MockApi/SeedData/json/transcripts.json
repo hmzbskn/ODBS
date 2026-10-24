@@ -2452,8 +2452,8 @@
   {
     "StudentNo": "20231017",
     "Term": 5,
-    "CourseCode": "BLM352",
-    "CourseName": "Web Programlama",
+    "CourseCode": "BLM351",
+    "CourseName": "Mobil Uygulama Geli\u015Ftirme",
     "Credit": 3,
     "Ects": 5,
     "LetterGrade": "BB",
@@ -2512,370 +2512,370 @@
   {
     "StudentNo": "20231017",
     "Term": 6,
+    "CourseCode": "BLM354",
+    "CourseName": "Oyun Programlama",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 3,
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 3,
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 3,
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 3,
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Credit": 1,
+    "Ects": 1,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 4,
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 4,
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 4,
+    "CourseCode": "MAT202",
+    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 4,
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 4,
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 4,
+    "CourseCode": "STJ101",
+    "CourseName": "Staj I Haz\u0131rl\u0131k",
+    "Credit": 1,
+    "Ects": 2,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 5,
+    "CourseCode": "BLM301",
+    "CourseName": "\u0130\u015Fletim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 5,
+    "CourseCode": "BLM302",
+    "CourseName": "Bilgisayar A\u011Flar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 5,
+    "CourseCode": "BLM303",
+    "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 5,
+    "CourseCode": "BLM304",
+    "CourseName": "Otomata Teorisi",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 5,
+    "CourseCode": "ENG201",
+    "CourseName": "Teknik \u0130ngilizce",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 5,
+    "CourseCode": "BLM352",
+    "CourseName": "Web Programlama",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 6,
+    "CourseCode": "BLM305",
+    "CourseName": "Mikroi\u015Flemciler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 6,
+    "CourseCode": "BLM306",
+    "CourseName": "Yapay Zekaya Giri\u015F",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 6,
+    "CourseCode": "BLM307",
+    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 6,
+    "CourseCode": "BLM308",
+    "CourseName": "\u00C7izge Teorisi",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 6,
+    "CourseCode": "ISL201",
+    "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 6,
     "CourseCode": "BLM353",
     "CourseName": "Bulut Bili\u015Fime Giri\u015F",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 3,
-    "CourseCode": "BLM201",
-    "CourseName": "Veri Yap\u0131lar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 3,
-    "CourseCode": "BLM202",
-    "CourseName": "Nesne Y\u00F6nelimli Programlama",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 3,
-    "CourseCode": "MAT201",
-    "CourseName": "Diferansiyel Denklemler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 3,
-    "CourseCode": "BLM203",
-    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 3,
-    "CourseCode": "AIT101",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 3,
-    "CourseCode": "ISG101",
-    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
-    "Credit": 1,
-    "Ects": 1,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 4,
-    "CourseCode": "BLM204",
-    "CourseName": "Algoritma Analizi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 4,
-    "CourseCode": "BLM205",
-    "CourseName": "Bilgisayar Organizasyonu",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 4,
-    "CourseCode": "MAT202",
-    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 4,
-    "CourseCode": "BLM206",
-    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 4,
-    "CourseCode": "AIT102",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 4,
-    "CourseCode": "STJ101",
-    "CourseName": "Staj I Haz\u0131rl\u0131k",
-    "Credit": 1,
-    "Ects": 2,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 5,
-    "CourseCode": "BLM301",
-    "CourseName": "\u0130\u015Fletim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 5,
-    "CourseCode": "BLM302",
-    "CourseName": "Bilgisayar A\u011Flar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 5,
-    "CourseCode": "BLM303",
-    "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 5,
-    "CourseCode": "BLM304",
-    "CourseName": "Otomata Teorisi",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 5,
-    "CourseCode": "ENG201",
-    "CourseName": "Teknik \u0130ngilizce",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 5,
-    "CourseCode": "BLM351",
-    "CourseName": "Mobil Uygulama Geli\u015Ftirme",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 6,
-    "CourseCode": "BLM305",
-    "CourseName": "Mikroi\u015Flemciler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 6,
-    "CourseCode": "BLM306",
-    "CourseName": "Yapay Zekaya Giri\u015F",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 6,
-    "CourseCode": "BLM307",
-    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 6,
-    "CourseCode": "BLM308",
-    "CourseName": "\u00C7izge Teorisi",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 6,
-    "CourseCode": "ISL201",
-    "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 6,
-    "CourseCode": "BLM354",
-    "CourseName": "Oyun Programlama",
-    "Credit": 3,
-    "Ects": 5,
     "LetterGrade": "AA",
     "Passed": true
   },
@@ -3532,8 +3532,8 @@
   {
     "StudentNo": "20231020",
     "Term": 5,
-    "CourseCode": "BLM351",
-    "CourseName": "Mobil Uygulama Geli\u015Ftirme",
+    "CourseCode": "BLM352",
+    "CourseName": "Web Programlama",
     "Credit": 3,
     "Ects": 5,
     "LetterGrade": "BB",
@@ -3592,8 +3592,8 @@
   {
     "StudentNo": "20231020",
     "Term": 6,
-    "CourseCode": "BLM354",
-    "CourseName": "Oyun Programlama",
+    "CourseCode": "BLM353",
+    "CourseName": "Bulut Bili\u015Fime Giri\u015F",
     "Credit": 3,
     "Ects": 5,
     "LetterGrade": "CB",
@@ -6772,1086 +6772,6 @@
   {
     "StudentNo": "20231039",
     "Term": 5,
-    "CourseCode": "BLM352",
-    "CourseName": "Web Programlama",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231039",
-    "Term": 6,
-    "CourseCode": "BLM305",
-    "CourseName": "Mikroi\u015Flemciler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231039",
-    "Term": 6,
-    "CourseCode": "BLM306",
-    "CourseName": "Yapay Zekaya Giri\u015F",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231039",
-    "Term": 6,
-    "CourseCode": "BLM307",
-    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231039",
-    "Term": 6,
-    "CourseCode": "BLM308",
-    "CourseName": "\u00C7izge Teorisi",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231039",
-    "Term": 6,
-    "CourseCode": "ISL201",
-    "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231039",
-    "Term": 6,
-    "CourseCode": "BLM353",
-    "CourseName": "Bulut Bili\u015Fime Giri\u015F",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 3,
-    "CourseCode": "BLM201",
-    "CourseName": "Veri Yap\u0131lar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 3,
-    "CourseCode": "BLM202",
-    "CourseName": "Nesne Y\u00F6nelimli Programlama",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 3,
-    "CourseCode": "MAT201",
-    "CourseName": "Diferansiyel Denklemler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 3,
-    "CourseCode": "BLM203",
-    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 3,
-    "CourseCode": "AIT101",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 3,
-    "CourseCode": "ISG101",
-    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
-    "Credit": 1,
-    "Ects": 1,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 4,
-    "CourseCode": "BLM204",
-    "CourseName": "Algoritma Analizi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 4,
-    "CourseCode": "BLM205",
-    "CourseName": "Bilgisayar Organizasyonu",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 4,
-    "CourseCode": "MAT202",
-    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 4,
-    "CourseCode": "BLM206",
-    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 4,
-    "CourseCode": "AIT102",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 4,
-    "CourseCode": "STJ101",
-    "CourseName": "Staj I Haz\u0131rl\u0131k",
-    "Credit": 1,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 5,
-    "CourseCode": "BLM301",
-    "CourseName": "\u0130\u015Fletim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 5,
-    "CourseCode": "BLM302",
-    "CourseName": "Bilgisayar A\u011Flar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 5,
-    "CourseCode": "BLM303",
-    "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 5,
-    "CourseCode": "BLM304",
-    "CourseName": "Otomata Teorisi",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 5,
-    "CourseCode": "ENG201",
-    "CourseName": "Teknik \u0130ngilizce",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 5,
-    "CourseCode": "BLM352",
-    "CourseName": "Web Programlama",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 6,
-    "CourseCode": "BLM305",
-    "CourseName": "Mikroi\u015Flemciler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 6,
-    "CourseCode": "BLM306",
-    "CourseName": "Yapay Zekaya Giri\u015F",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 6,
-    "CourseCode": "BLM307",
-    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 6,
-    "CourseCode": "BLM308",
-    "CourseName": "\u00C7izge Teorisi",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 6,
-    "CourseCode": "ISL201",
-    "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231040",
-    "Term": 6,
-    "CourseCode": "BLM353",
-    "CourseName": "Bulut Bili\u015Fime Giri\u015F",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 3,
-    "CourseCode": "BLM201",
-    "CourseName": "Veri Yap\u0131lar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 3,
-    "CourseCode": "BLM202",
-    "CourseName": "Nesne Y\u00F6nelimli Programlama",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 3,
-    "CourseCode": "MAT201",
-    "CourseName": "Diferansiyel Denklemler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 3,
-    "CourseCode": "BLM203",
-    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 3,
-    "CourseCode": "AIT101",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 3,
-    "CourseCode": "ISG101",
-    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
-    "Credit": 1,
-    "Ects": 1,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 4,
-    "CourseCode": "BLM204",
-    "CourseName": "Algoritma Analizi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 4,
-    "CourseCode": "BLM205",
-    "CourseName": "Bilgisayar Organizasyonu",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 4,
-    "CourseCode": "MAT202",
-    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 4,
-    "CourseCode": "BLM206",
-    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 4,
-    "CourseCode": "AIT102",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 4,
-    "CourseCode": "STJ101",
-    "CourseName": "Staj I Haz\u0131rl\u0131k",
-    "Credit": 1,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 5,
-    "CourseCode": "BLM301",
-    "CourseName": "\u0130\u015Fletim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 5,
-    "CourseCode": "BLM302",
-    "CourseName": "Bilgisayar A\u011Flar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 5,
-    "CourseCode": "BLM303",
-    "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 5,
-    "CourseCode": "BLM304",
-    "CourseName": "Otomata Teorisi",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 5,
-    "CourseCode": "ENG201",
-    "CourseName": "Teknik \u0130ngilizce",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 5,
-    "CourseCode": "BLM352",
-    "CourseName": "Web Programlama",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 6,
-    "CourseCode": "BLM305",
-    "CourseName": "Mikroi\u015Flemciler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 6,
-    "CourseCode": "BLM306",
-    "CourseName": "Yapay Zekaya Giri\u015F",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 6,
-    "CourseCode": "BLM307",
-    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 6,
-    "CourseCode": "BLM308",
-    "CourseName": "\u00C7izge Teorisi",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 6,
-    "CourseCode": "ISL201",
-    "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231041",
-    "Term": 6,
-    "CourseCode": "BLM353",
-    "CourseName": "Bulut Bili\u015Fime Giri\u015F",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 3,
-    "CourseCode": "BLM201",
-    "CourseName": "Veri Yap\u0131lar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 3,
-    "CourseCode": "BLM202",
-    "CourseName": "Nesne Y\u00F6nelimli Programlama",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 3,
-    "CourseCode": "MAT201",
-    "CourseName": "Diferansiyel Denklemler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 3,
-    "CourseCode": "BLM203",
-    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 3,
-    "CourseCode": "AIT101",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 3,
-    "CourseCode": "ISG101",
-    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
-    "Credit": 1,
-    "Ects": 1,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 4,
-    "CourseCode": "BLM204",
-    "CourseName": "Algoritma Analizi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 4,
-    "CourseCode": "BLM205",
-    "CourseName": "Bilgisayar Organizasyonu",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 4,
-    "CourseCode": "MAT202",
-    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 4,
-    "CourseCode": "BLM206",
-    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 4,
-    "CourseCode": "AIT102",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 4,
-    "CourseCode": "STJ101",
-    "CourseName": "Staj I Haz\u0131rl\u0131k",
-    "Credit": 1,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 5,
-    "CourseCode": "BLM301",
-    "CourseName": "\u0130\u015Fletim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 5,
-    "CourseCode": "BLM302",
-    "CourseName": "Bilgisayar A\u011Flar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 5,
-    "CourseCode": "BLM303",
-    "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 5,
-    "CourseCode": "BLM304",
-    "CourseName": "Otomata Teorisi",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 5,
-    "CourseCode": "ENG201",
-    "CourseName": "Teknik \u0130ngilizce",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231042",
-    "Term": 5,
     "CourseCode": "BLM351",
     "CourseName": "Mobil Uygulama Geli\u015Ftirme",
     "Credit": 3,
@@ -7860,27 +6780,27 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231042",
+    "StudentNo": "20231039",
     "Term": 6,
     "CourseCode": "BLM305",
     "CourseName": "Mikroi\u015Flemciler",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "BA",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231042",
+    "StudentNo": "20231039",
     "Term": 6,
     "CourseCode": "BLM306",
     "CourseName": "Yapay Zekaya Giri\u015F",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
+    "LetterGrade": "FD",
+    "Passed": false
   },
   {
-    "StudentNo": "20231042",
+    "StudentNo": "20231039",
     "Term": 6,
     "CourseCode": "BLM307",
     "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
@@ -7890,27 +6810,27 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231042",
+    "StudentNo": "20231039",
     "Term": 6,
     "CourseCode": "BLM308",
     "CourseName": "\u00C7izge Teorisi",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "BB",
+    "LetterGrade": "CB",
     "Passed": true
   },
   {
-    "StudentNo": "20231042",
+    "StudentNo": "20231039",
     "Term": 6,
     "CourseCode": "ISL201",
     "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
     "Credit": 2,
     "Ects": 3,
-    "LetterGrade": "BB",
-    "Passed": true
+    "LetterGrade": "FD",
+    "Passed": false
   },
   {
-    "StudentNo": "20231042",
+    "StudentNo": "20231039",
     "Term": 6,
     "CourseCode": "BLM354",
     "CourseName": "Oyun Programlama",
@@ -7920,287 +6840,47 @@
     "Passed": true
   },
   {
-    "StudentNo": "20251048",
+    "StudentNo": "20231040",
     "Term": 1,
     "CourseCode": "MAT101",
     "CourseName": "Matematik I",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "BA",
+    "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20251048",
+    "StudentNo": "20231040",
     "Term": 1,
     "CourseCode": "FIZ101",
     "CourseName": "Fizik I",
     "Credit": 4,
     "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251048",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251048",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
     "LetterGrade": "CC",
     "Passed": true
   },
   {
-    "StudentNo": "20251048",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251048",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251048",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251048",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20251048",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251048",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251048",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251048",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251049",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251049",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251049",
+    "StudentNo": "20231040",
     "Term": 1,
     "CourseCode": "BLM101",
     "CourseName": "Programlamaya Giri\u015F",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "AA",
+    "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20251049",
+    "StudentNo": "20231040",
     "Term": 1,
     "CourseCode": "TUR101",
     "CourseName": "T\u00FCrk Dili I",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251049",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251049",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
     "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20251049",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251049",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251049",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251049",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251049",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251049",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251050",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251050",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20251050",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251050",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251050",
+    "StudentNo": "20231040",
     "Term": 1,
     "CourseCode": "ING101",
     "CourseName": "\u0130ngilizce I",
@@ -8210,27 +6890,27 @@
     "Passed": true
   },
   {
-    "StudentNo": "20251050",
+    "StudentNo": "20231040",
     "Term": 1,
     "CourseCode": "BLM102",
     "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
     "Credit": 2,
     "Ects": 3,
-    "LetterGrade": "CC",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20251050",
+    "StudentNo": "20231040",
     "Term": 2,
     "CourseCode": "MAT102",
     "CourseName": "Matematik II",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "AA",
+    "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20251050",
+    "StudentNo": "20231040",
     "Term": 2,
     "CourseCode": "FIZ102",
     "CourseName": "Fizik II",
@@ -8240,127 +6920,7 @@
     "Passed": true
   },
   {
-    "StudentNo": "20251050",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251050",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251050",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251050",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251051",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251051",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251051",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251051",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251051",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251051",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251051",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251051",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251051",
+    "StudentNo": "20231040",
     "Term": 2,
     "CourseCode": "BLM103",
     "CourseName": "Programlama I",
@@ -8370,147 +6930,27 @@
     "Passed": true
   },
   {
-    "StudentNo": "20251051",
+    "StudentNo": "20231040",
     "Term": 2,
     "CourseCode": "TUR102",
     "CourseName": "T\u00FCrk Dili II",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251051",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20251051",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
     "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20251052",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20251052",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251052",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251052",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20251052",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251052",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251052",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251052",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251052",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251052",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20251052",
+    "StudentNo": "20231040",
     "Term": 2,
     "CourseCode": "ING102",
     "CourseName": "\u0130ngilizce II",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "BB",
+    "LetterGrade": "BA",
     "Passed": true
   },
   {
-    "StudentNo": "20251052",
+    "StudentNo": "20231040",
     "Term": 2,
     "CourseCode": "KIM101",
     "CourseName": "Kimya",
@@ -8520,137 +6960,17 @@
     "Passed": true
   },
   {
-    "StudentNo": "20241053",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
+    "StudentNo": "20231040",
     "Term": 3,
     "CourseCode": "BLM201",
     "CourseName": "Veri Yap\u0131lar\u0131",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "BB",
+    "LetterGrade": "BA",
     "Passed": true
   },
   {
-    "StudentNo": "20241053",
+    "StudentNo": "20231040",
     "Term": 3,
     "CourseCode": "BLM202",
     "CourseName": "Nesne Y\u00F6nelimli Programlama",
@@ -8660,967 +6980,7 @@
     "Passed": true
   },
   {
-    "StudentNo": "20241053",
-    "Term": 3,
-    "CourseCode": "MAT201",
-    "CourseName": "Diferansiyel Denklemler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 3,
-    "CourseCode": "BLM203",
-    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 3,
-    "CourseCode": "AIT101",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 3,
-    "CourseCode": "ISG101",
-    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
-    "Credit": 1,
-    "Ects": 1,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 4,
-    "CourseCode": "BLM204",
-    "CourseName": "Algoritma Analizi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 4,
-    "CourseCode": "BLM205",
-    "CourseName": "Bilgisayar Organizasyonu",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 4,
-    "CourseCode": "MAT202",
-    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 4,
-    "CourseCode": "BLM206",
-    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 4,
-    "CourseCode": "AIT102",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 4,
-    "CourseCode": "STJ101",
-    "CourseName": "Staj I Haz\u0131rl\u0131k",
-    "Credit": 1,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 3,
-    "CourseCode": "BLM201",
-    "CourseName": "Veri Yap\u0131lar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 3,
-    "CourseCode": "BLM202",
-    "CourseName": "Nesne Y\u00F6nelimli Programlama",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 3,
-    "CourseCode": "MAT201",
-    "CourseName": "Diferansiyel Denklemler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 3,
-    "CourseCode": "BLM203",
-    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 3,
-    "CourseCode": "AIT101",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 3,
-    "CourseCode": "ISG101",
-    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
-    "Credit": 1,
-    "Ects": 1,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 4,
-    "CourseCode": "BLM204",
-    "CourseName": "Algoritma Analizi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 4,
-    "CourseCode": "BLM205",
-    "CourseName": "Bilgisayar Organizasyonu",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 4,
-    "CourseCode": "MAT202",
-    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 4,
-    "CourseCode": "BLM206",
-    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 4,
-    "CourseCode": "AIT102",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 4,
-    "CourseCode": "STJ101",
-    "CourseName": "Staj I Haz\u0131rl\u0131k",
-    "Credit": 1,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 3,
-    "CourseCode": "BLM201",
-    "CourseName": "Veri Yap\u0131lar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 3,
-    "CourseCode": "BLM202",
-    "CourseName": "Nesne Y\u00F6nelimli Programlama",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 3,
-    "CourseCode": "MAT201",
-    "CourseName": "Diferansiyel Denklemler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 3,
-    "CourseCode": "BLM203",
-    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 3,
-    "CourseCode": "AIT101",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 3,
-    "CourseCode": "ISG101",
-    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
-    "Credit": 1,
-    "Ects": 1,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 4,
-    "CourseCode": "BLM204",
-    "CourseName": "Algoritma Analizi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 4,
-    "CourseCode": "BLM205",
-    "CourseName": "Bilgisayar Organizasyonu",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 4,
-    "CourseCode": "MAT202",
-    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 4,
-    "CourseCode": "BLM206",
-    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 4,
-    "CourseCode": "AIT102",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 4,
-    "CourseCode": "STJ101",
-    "CourseName": "Staj I Haz\u0131rl\u0131k",
-    "Credit": 1,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 3,
-    "CourseCode": "BLM201",
-    "CourseName": "Veri Yap\u0131lar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 3,
-    "CourseCode": "BLM202",
-    "CourseName": "Nesne Y\u00F6nelimli Programlama",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 3,
-    "CourseCode": "MAT201",
-    "CourseName": "Diferansiyel Denklemler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 3,
-    "CourseCode": "BLM203",
-    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 3,
-    "CourseCode": "AIT101",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 3,
-    "CourseCode": "ISG101",
-    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
-    "Credit": 1,
-    "Ects": 1,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 4,
-    "CourseCode": "BLM204",
-    "CourseName": "Algoritma Analizi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 4,
-    "CourseCode": "BLM205",
-    "CourseName": "Bilgisayar Organizasyonu",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 4,
-    "CourseCode": "MAT202",
-    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 4,
-    "CourseCode": "BLM206",
-    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 4,
-    "CourseCode": "AIT102",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 4,
-    "CourseCode": "STJ101",
-    "CourseName": "Staj I Haz\u0131rl\u0131k",
-    "Credit": 1,
-    "Ects": 2,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 3,
-    "CourseCode": "BLM201",
-    "CourseName": "Veri Yap\u0131lar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 3,
-    "CourseCode": "BLM202",
-    "CourseName": "Nesne Y\u00F6nelimli Programlama",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
+    "StudentNo": "20231040",
     "Term": 3,
     "CourseCode": "MAT201",
     "CourseName": "Diferansiyel Denklemler",
@@ -9630,267 +6990,27 @@
     "Passed": true
   },
   {
-    "StudentNo": "20241057",
+    "StudentNo": "20231040",
     "Term": 3,
     "CourseCode": "BLM203",
     "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "BB",
+    "LetterGrade": "BA",
     "Passed": true
   },
   {
-    "StudentNo": "20241057",
+    "StudentNo": "20231040",
     "Term": 3,
     "CourseCode": "AIT101",
     "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 3,
-    "CourseCode": "ISG101",
-    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
-    "Credit": 1,
-    "Ects": 1,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 4,
-    "CourseCode": "BLM204",
-    "CourseName": "Algoritma Analizi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 4,
-    "CourseCode": "BLM205",
-    "CourseName": "Bilgisayar Organizasyonu",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 4,
-    "CourseCode": "MAT202",
-    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 4,
-    "CourseCode": "BLM206",
-    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 4,
-    "CourseCode": "AIT102",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20241057",
-    "Term": 4,
-    "CourseCode": "STJ101",
-    "CourseName": "Staj I Haz\u0131rl\u0131k",
-    "Credit": 1,
-    "Ects": 2,
     "LetterGrade": "BA",
     "Passed": true
   },
   {
-    "StudentNo": "20231058",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 3,
-    "CourseCode": "BLM201",
-    "CourseName": "Veri Yap\u0131lar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 3,
-    "CourseCode": "BLM202",
-    "CourseName": "Nesne Y\u00F6nelimli Programlama",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 3,
-    "CourseCode": "MAT201",
-    "CourseName": "Diferansiyel Denklemler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 3,
-    "CourseCode": "BLM203",
-    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 3,
-    "CourseCode": "AIT101",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231058",
+    "StudentNo": "20231040",
     "Term": 3,
     "CourseCode": "ISG101",
     "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
@@ -9900,7 +7020,7 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231058",
+    "StudentNo": "20231040",
     "Term": 4,
     "CourseCode": "BLM204",
     "CourseName": "Algoritma Analizi",
@@ -9910,417 +7030,57 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231058",
+    "StudentNo": "20231040",
     "Term": 4,
     "CourseCode": "BLM205",
     "CourseName": "Bilgisayar Organizasyonu",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 4,
-    "CourseCode": "MAT202",
-    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 4,
-    "CourseCode": "BLM206",
-    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 4,
-    "CourseCode": "AIT102",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 4,
-    "CourseCode": "STJ101",
-    "CourseName": "Staj I Haz\u0131rl\u0131k",
-    "Credit": 1,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 5,
-    "CourseCode": "BLM301",
-    "CourseName": "\u0130\u015Fletim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 5,
-    "CourseCode": "BLM302",
-    "CourseName": "Bilgisayar A\u011Flar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 5,
-    "CourseCode": "BLM303",
-    "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 5,
-    "CourseCode": "BLM304",
-    "CourseName": "Otomata Teorisi",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 5,
-    "CourseCode": "ENG201",
-    "CourseName": "Teknik \u0130ngilizce",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 5,
-    "CourseCode": "BLM351",
-    "CourseName": "Mobil Uygulama Geli\u015Ftirme",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 6,
-    "CourseCode": "BLM305",
-    "CourseName": "Mikroi\u015Flemciler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 6,
-    "CourseCode": "BLM306",
-    "CourseName": "Yapay Zekaya Giri\u015F",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 6,
-    "CourseCode": "BLM307",
-    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 6,
-    "CourseCode": "BLM308",
-    "CourseName": "\u00C7izge Teorisi",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 6,
-    "CourseCode": "ISL201",
-    "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 6,
-    "CourseCode": "BLM354",
-    "CourseName": "Oyun Programlama",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 1,
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 1,
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 1,
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 1,
-    "CourseCode": "TUR101",
-    "CourseName": "T\u00FCrk Dili I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 1,
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 1,
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 2,
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
     "Credit": 4,
     "Ects": 6,
     "LetterGrade": "FF",
     "Passed": false
   },
   {
-    "StudentNo": "20231059",
-    "Term": 2,
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 2,
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 3,
-    "CourseCode": "BLM201",
-    "CourseName": "Veri Yap\u0131lar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 3,
-    "CourseCode": "BLM202",
-    "CourseName": "Nesne Y\u00F6nelimli Programlama",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 3,
-    "CourseCode": "MAT201",
-    "CourseName": "Diferansiyel Denklemler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 3,
-    "CourseCode": "BLM203",
-    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 3,
-    "CourseCode": "AIT101",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 3,
-    "CourseCode": "ISG101",
-    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
-    "Credit": 1,
-    "Ects": 1,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 4,
-    "CourseCode": "BLM204",
-    "CourseName": "Algoritma Analizi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 4,
-    "CourseCode": "BLM205",
-    "CourseName": "Bilgisayar Organizasyonu",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 4,
     "CourseCode": "MAT202",
     "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "CB",
+    "LetterGrade": "BA",
     "Passed": true
   },
   {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 4,
     "CourseCode": "BLM206",
     "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "BA",
+    "LetterGrade": "CC",
     "Passed": true
   },
   {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 4,
     "CourseCode": "AIT102",
     "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "CC",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 4,
     "CourseCode": "STJ101",
     "CourseName": "Staj I Haz\u0131rl\u0131k",
     "Credit": 1,
     "Ects": 2,
-    "LetterGrade": "AA",
+    "LetterGrade": "BA",
     "Passed": true
   },
   {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 5,
     "CourseCode": "BLM301",
     "CourseName": "\u0130\u015Fletim Sistemleri",
@@ -10330,17 +7090,17 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 5,
     "CourseCode": "BLM302",
     "CourseName": "Bilgisayar A\u011Flar\u0131",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "BB",
+    "LetterGrade": "CC",
     "Passed": true
   },
   {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 5,
     "CourseCode": "BLM303",
     "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
@@ -10350,7 +7110,7 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 5,
     "CourseCode": "BLM304",
     "CourseName": "Otomata Teorisi",
@@ -10360,87 +7120,87 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 5,
     "CourseCode": "ENG201",
     "CourseName": "Teknik \u0130ngilizce",
     "Credit": 2,
     "Ects": 3,
-    "LetterGrade": "CB",
+    "LetterGrade": "BA",
     "Passed": true
   },
   {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 5,
     "CourseCode": "BLM352",
     "CourseName": "Web Programlama",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "AA",
+    "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 6,
     "CourseCode": "BLM305",
     "CourseName": "Mikroi\u015Flemciler",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "BA",
+    "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 6,
     "CourseCode": "BLM306",
     "CourseName": "Yapay Zekaya Giri\u015F",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231040",
+    "Term": 6,
+    "CourseCode": "BLM307",
+    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231040",
+    "Term": 6,
+    "CourseCode": "BLM308",
+    "CourseName": "\u00C7izge Teorisi",
     "Credit": 3,
     "Ects": 5,
     "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231059",
-    "Term": 6,
-    "CourseCode": "BLM307",
-    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 6,
-    "CourseCode": "BLM308",
-    "CourseName": "\u00C7izge Teorisi",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 6,
     "CourseCode": "ISL201",
     "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
     "Credit": 2,
     "Ects": 3,
-    "LetterGrade": "CC",
+    "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20231059",
+    "StudentNo": "20231040",
     "Term": 6,
     "CourseCode": "BLM353",
     "CourseName": "Bulut Bili\u015Fime Giri\u015F",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "CC",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 1,
     "CourseCode": "MAT101",
     "CourseName": "Matematik I",
@@ -10450,47 +7210,47 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 1,
     "CourseCode": "FIZ101",
     "CourseName": "Fizik I",
     "Credit": 4,
     "Ects": 5,
-    "LetterGrade": "CB",
+    "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 1,
     "CourseCode": "BLM101",
     "CourseName": "Programlamaya Giri\u015F",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "FD",
-    "Passed": false
+    "LetterGrade": "BB",
+    "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 1,
     "CourseCode": "TUR101",
     "CourseName": "T\u00FCrk Dili I",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "BB",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 1,
     "CourseCode": "ING101",
     "CourseName": "\u0130ngilizce I",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "CC",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 1,
     "CourseCode": "BLM102",
     "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
@@ -10500,177 +7260,177 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 2,
     "CourseCode": "MAT102",
     "CourseName": "Matematik II",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "BA",
+    "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 2,
     "CourseCode": "FIZ102",
     "CourseName": "Fizik II",
     "Credit": 4,
     "Ects": 5,
-    "LetterGrade": "CB",
+    "LetterGrade": "BA",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 2,
     "CourseCode": "BLM103",
     "CourseName": "Programlama I",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231060",
-    "Term": 2,
-    "CourseCode": "TUR102",
-    "CourseName": "T\u00FCrk Dili II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231060",
-    "Term": 2,
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231060",
-    "Term": 2,
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
-    "Credit": 3,
-    "Ects": 4,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231060",
-    "Term": 3,
-    "CourseCode": "BLM201",
-    "CourseName": "Veri Yap\u0131lar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231060",
-    "Term": 3,
-    "CourseCode": "BLM202",
-    "CourseName": "Nesne Y\u00F6nelimli Programlama",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231060",
-    "Term": 3,
-    "CourseCode": "MAT201",
-    "CourseName": "Diferansiyel Denklemler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231060",
-    "Term": 3,
-    "CourseCode": "BLM203",
-    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231060",
-    "Term": 3,
-    "CourseCode": "AIT101",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231060",
-    "Term": 3,
-    "CourseCode": "ISG101",
-    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
-    "Credit": 1,
-    "Ects": 1,
-    "LetterGrade": "BB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231060",
-    "Term": 4,
-    "CourseCode": "BLM204",
-    "CourseName": "Algoritma Analizi",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FD",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231060",
-    "Term": 4,
-    "CourseCode": "BLM205",
-    "CourseName": "Bilgisayar Organizasyonu",
     "Credit": 4,
     "Ects": 6,
     "LetterGrade": "BA",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
-    "Term": 4,
-    "CourseCode": "MAT202",
-    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "StudentNo": "20231041",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "FD",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231041",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231041",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231041",
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231041",
+    "Term": 3,
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231041",
+    "Term": 3,
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231041",
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
     "Credit": 3,
     "Ects": 5,
     "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
-    "Term": 4,
-    "CourseCode": "BLM206",
-    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231060",
-    "Term": 4,
-    "CourseCode": "AIT102",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "StudentNo": "20231041",
+    "Term": 3,
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
     "Credit": 2,
     "Ects": 2,
     "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
+    "Term": 3,
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Credit": 1,
+    "Ects": 1,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231041",
+    "Term": 4,
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231041",
+    "Term": 4,
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231041",
+    "Term": 4,
+    "CourseCode": "MAT202",
+    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231041",
+    "Term": 4,
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231041",
+    "Term": 4,
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231041",
     "Term": 4,
     "CourseCode": "STJ101",
     "CourseName": "Staj I Haz\u0131rl\u0131k",
@@ -10680,27 +7440,27 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 5,
     "CourseCode": "BLM301",
     "CourseName": "\u0130\u015Fletim Sistemleri",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "BB",
+    "LetterGrade": "CC",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 5,
     "CourseCode": "BLM302",
     "CourseName": "Bilgisayar A\u011Flar\u0131",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "FD",
-    "Passed": false
+    "LetterGrade": "AA",
+    "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 5,
     "CourseCode": "BLM303",
     "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
@@ -10710,17 +7470,17 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 5,
     "CourseCode": "BLM304",
     "CourseName": "Otomata Teorisi",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "CB",
-    "Passed": true
+    "LetterGrade": "FF",
+    "Passed": false
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 5,
     "CourseCode": "ENG201",
     "CourseName": "Teknik \u0130ngilizce",
@@ -10730,7 +7490,7 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 5,
     "CourseCode": "BLM351",
     "CourseName": "Mobil Uygulama Geli\u015Ftirme",
@@ -10740,27 +7500,27 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 6,
     "CourseCode": "BLM305",
     "CourseName": "Mikroi\u015Flemciler",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "CC",
+    "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 6,
     "CourseCode": "BLM306",
     "CourseName": "Yapay Zekaya Giri\u015F",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "AA",
+    "LetterGrade": "CB",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 6,
     "CourseCode": "BLM307",
     "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
@@ -10770,47 +7530,47 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 6,
     "CourseCode": "BLM308",
     "CourseName": "\u00C7izge Teorisi",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "BB",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 6,
     "CourseCode": "ISL201",
     "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
     "Credit": 2,
     "Ects": 3,
-    "LetterGrade": "AA",
+    "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20231060",
+    "StudentNo": "20231041",
     "Term": 6,
     "CourseCode": "BLM354",
     "CourseName": "Oyun Programlama",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
+    "LetterGrade": "FF",
+    "Passed": false
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 1,
     "CourseCode": "MAT101",
     "CourseName": "Matematik I",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "BB",
+    "LetterGrade": "CC",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 1,
     "CourseCode": "FIZ101",
     "CourseName": "Fizik I",
@@ -10820,47 +7580,47 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 1,
     "CourseCode": "BLM101",
     "CourseName": "Programlamaya Giri\u015F",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "AA",
-    "Passed": true
+    "LetterGrade": "FF",
+    "Passed": false
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 1,
     "CourseCode": "TUR101",
     "CourseName": "T\u00FCrk Dili I",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "BA",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 1,
     "CourseCode": "ING101",
     "CourseName": "\u0130ngilizce I",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "BB",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 1,
     "CourseCode": "BLM102",
     "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
     "Credit": 2,
     "Ects": 3,
-    "LetterGrade": "BB",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 2,
     "CourseCode": "MAT102",
     "CourseName": "Matematik II",
@@ -10870,57 +7630,57 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 2,
     "CourseCode": "FIZ102",
     "CourseName": "Fizik II",
     "Credit": 4,
     "Ects": 5,
-    "LetterGrade": "BA",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 2,
     "CourseCode": "BLM103",
     "CourseName": "Programlama I",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "BA",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 2,
     "CourseCode": "TUR102",
     "CourseName": "T\u00FCrk Dili II",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
+    "LetterGrade": "FD",
+    "Passed": false
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 2,
     "CourseCode": "ING102",
     "CourseName": "\u0130ngilizce II",
     "Credit": 2,
     "Ects": 2,
-    "LetterGrade": "BA",
+    "LetterGrade": "CB",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 2,
     "CourseCode": "KIM101",
     "CourseName": "Kimya",
     "Credit": 3,
     "Ects": 4,
-    "LetterGrade": "BB",
-    "Passed": true
+    "LetterGrade": "FF",
+    "Passed": false
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 3,
     "CourseCode": "BLM201",
     "CourseName": "Veri Yap\u0131lar\u0131",
@@ -10930,67 +7690,67 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 3,
     "CourseCode": "BLM202",
     "CourseName": "Nesne Y\u00F6nelimli Programlama",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231061",
-    "Term": 3,
-    "CourseCode": "MAT201",
-    "CourseName": "Diferansiyel Denklemler",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231061",
-    "Term": 3,
-    "CourseCode": "BLM203",
-    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
-    "Credit": 3,
-    "Ects": 5,
-    "LetterGrade": "CC",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231061",
-    "Term": 3,
-    "CourseCode": "AIT101",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231061",
-    "Term": 3,
-    "CourseCode": "ISG101",
-    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
-    "Credit": 1,
-    "Ects": 1,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231061",
-    "Term": 4,
-    "CourseCode": "BLM204",
-    "CourseName": "Algoritma Analizi",
     "Credit": 4,
     "Ects": 6,
     "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
+    "Term": 3,
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231042",
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231042",
+    "Term": 3,
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231042",
+    "Term": 3,
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Credit": 1,
+    "Ects": 1,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231042",
+    "Term": 4,
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231042",
     "Term": 4,
     "CourseCode": "BLM205",
     "CourseName": "Bilgisayar Organizasyonu",
@@ -11000,67 +7760,67 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 4,
     "CourseCode": "MAT202",
     "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "AA",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231061",
-    "Term": 4,
-    "CourseCode": "BLM206",
-    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "LetterGrade": "CB",
-    "Passed": true
-  },
-  {
-    "StudentNo": "20231061",
-    "Term": 4,
-    "CourseCode": "AIT102",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
-    "Credit": 2,
-    "Ects": 2,
-    "LetterGrade": "FF",
-    "Passed": false
-  },
-  {
-    "StudentNo": "20231061",
-    "Term": 4,
-    "CourseCode": "STJ101",
-    "CourseName": "Staj I Haz\u0131rl\u0131k",
-    "Credit": 1,
-    "Ects": 2,
     "LetterGrade": "CC",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
-    "Term": 5,
-    "CourseCode": "BLM301",
-    "CourseName": "\u0130\u015Fletim Sistemleri",
+    "StudentNo": "20231042",
+    "Term": 4,
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
     "Credit": 4,
     "Ects": 6,
     "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
+    "Term": 4,
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "FD",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231042",
+    "Term": 4,
+    "CourseCode": "STJ101",
+    "CourseName": "Staj I Haz\u0131rl\u0131k",
+    "Credit": 1,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231042",
     "Term": 5,
-    "CourseCode": "BLM302",
-    "CourseName": "Bilgisayar A\u011Flar\u0131",
+    "CourseCode": "BLM301",
+    "CourseName": "\u0130\u015Fletim Sistemleri",
     "Credit": 4,
     "Ects": 6,
     "LetterGrade": "CB",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
+    "Term": 5,
+    "CourseCode": "BLM302",
+    "CourseName": "Bilgisayar A\u011Flar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231042",
     "Term": 5,
     "CourseCode": "BLM303",
     "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
@@ -11070,87 +7830,87 @@
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 5,
     "CourseCode": "BLM304",
     "CourseName": "Otomata Teorisi",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "BB",
-    "Passed": true
+    "LetterGrade": "FD",
+    "Passed": false
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 5,
     "CourseCode": "ENG201",
     "CourseName": "Teknik \u0130ngilizce",
     "Credit": 2,
     "Ects": 3,
-    "LetterGrade": "BA",
+    "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 5,
     "CourseCode": "BLM352",
     "CourseName": "Web Programlama",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "CB",
+    "LetterGrade": "BA",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 6,
     "CourseCode": "BLM305",
     "CourseName": "Mikroi\u015Flemciler",
     "Credit": 4,
     "Ects": 6,
-    "LetterGrade": "AA",
+    "LetterGrade": "BA",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 6,
     "CourseCode": "BLM306",
     "CourseName": "Yapay Zekaya Giri\u015F",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "BB",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 6,
     "CourseCode": "BLM307",
     "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
     "Credit": 3,
     "Ects": 4,
-    "LetterGrade": "BB",
+    "LetterGrade": "AA",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 6,
     "CourseCode": "BLM308",
     "CourseName": "\u00C7izge Teorisi",
     "Credit": 3,
     "Ects": 5,
-    "LetterGrade": "AA",
+    "LetterGrade": "BB",
     "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 6,
     "CourseCode": "ISL201",
     "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
     "Credit": 2,
     "Ects": 3,
-    "LetterGrade": "FD",
-    "Passed": false
+    "LetterGrade": "BB",
+    "Passed": true
   },
   {
-    "StudentNo": "20231061",
+    "StudentNo": "20231042",
     "Term": 6,
     "CourseCode": "BLM353",
     "CourseName": "Bulut Bili\u015Fime Giri\u015F",
@@ -11160,6 +7920,3246 @@
     "Passed": true
   },
   {
+    "StudentNo": "20251048",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251048",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251048",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251048",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251048",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251048",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251048",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251048",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20251048",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251048",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251048",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251048",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251049",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251049",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251049",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251049",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251049",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251049",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251049",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251049",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251049",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251049",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251049",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251049",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251050",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251050",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20251050",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251050",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251050",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251050",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251050",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251050",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251050",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251050",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251050",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251050",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251051",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251051",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251051",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251051",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251051",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251051",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251051",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251051",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251051",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251051",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251051",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "FD",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20251051",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251052",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FD",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20251052",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251052",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251052",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20251052",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251052",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251052",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251052",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251052",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251052",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251052",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20251052",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 3,
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 3,
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 3,
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 3,
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Credit": 1,
+    "Ects": 1,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 4,
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 4,
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 4,
+    "CourseCode": "MAT202",
+    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 4,
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 4,
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241053",
+    "Term": 4,
+    "CourseCode": "STJ101",
+    "CourseName": "Staj I Haz\u0131rl\u0131k",
+    "Credit": 1,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 3,
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 3,
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 3,
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 3,
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Credit": 1,
+    "Ects": 1,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 4,
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 4,
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 4,
+    "CourseCode": "MAT202",
+    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 4,
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 4,
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 4,
+    "CourseCode": "STJ101",
+    "CourseName": "Staj I Haz\u0131rl\u0131k",
+    "Credit": 1,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 3,
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 3,
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 3,
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 3,
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Credit": 1,
+    "Ects": 1,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 4,
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 4,
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 4,
+    "CourseCode": "MAT202",
+    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 4,
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 4,
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 4,
+    "CourseCode": "STJ101",
+    "CourseName": "Staj I Haz\u0131rl\u0131k",
+    "Credit": 1,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 3,
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 3,
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 3,
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 3,
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Credit": 1,
+    "Ects": 1,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 4,
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 4,
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 4,
+    "CourseCode": "MAT202",
+    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 4,
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 4,
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 4,
+    "CourseCode": "STJ101",
+    "CourseName": "Staj I Haz\u0131rl\u0131k",
+    "Credit": 1,
+    "Ects": 2,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "FD",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 3,
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 3,
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 3,
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 3,
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Credit": 1,
+    "Ects": 1,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 4,
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 4,
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 4,
+    "CourseCode": "MAT202",
+    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 4,
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 4,
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20241057",
+    "Term": 4,
+    "CourseCode": "STJ101",
+    "CourseName": "Staj I Haz\u0131rl\u0131k",
+    "Credit": 1,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "FD",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 3,
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 3,
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 3,
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "FD",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 3,
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Credit": 1,
+    "Ects": 1,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 4,
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 4,
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 4,
+    "CourseCode": "MAT202",
+    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 4,
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 4,
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 4,
+    "CourseCode": "STJ101",
+    "CourseName": "Staj I Haz\u0131rl\u0131k",
+    "Credit": 1,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 5,
+    "CourseCode": "BLM301",
+    "CourseName": "\u0130\u015Fletim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 5,
+    "CourseCode": "BLM302",
+    "CourseName": "Bilgisayar A\u011Flar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FD",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 5,
+    "CourseCode": "BLM303",
+    "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 5,
+    "CourseCode": "BLM304",
+    "CourseName": "Otomata Teorisi",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 5,
+    "CourseCode": "ENG201",
+    "CourseName": "Teknik \u0130ngilizce",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 5,
+    "CourseCode": "BLM352",
+    "CourseName": "Web Programlama",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 6,
+    "CourseCode": "BLM305",
+    "CourseName": "Mikroi\u015Flemciler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 6,
+    "CourseCode": "BLM306",
+    "CourseName": "Yapay Zekaya Giri\u015F",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 6,
+    "CourseCode": "BLM307",
+    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 6,
+    "CourseCode": "BLM308",
+    "CourseName": "\u00C7izge Teorisi",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 6,
+    "CourseCode": "ISL201",
+    "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 6,
+    "CourseCode": "BLM353",
+    "CourseName": "Bulut Bili\u015Fime Giri\u015F",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 3,
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 3,
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 3,
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 3,
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Credit": 1,
+    "Ects": 1,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 4,
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 4,
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 4,
+    "CourseCode": "MAT202",
+    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 4,
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 4,
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 4,
+    "CourseCode": "STJ101",
+    "CourseName": "Staj I Haz\u0131rl\u0131k",
+    "Credit": 1,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 5,
+    "CourseCode": "BLM301",
+    "CourseName": "\u0130\u015Fletim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 5,
+    "CourseCode": "BLM302",
+    "CourseName": "Bilgisayar A\u011Flar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 5,
+    "CourseCode": "BLM303",
+    "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 5,
+    "CourseCode": "BLM304",
+    "CourseName": "Otomata Teorisi",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 5,
+    "CourseCode": "ENG201",
+    "CourseName": "Teknik \u0130ngilizce",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 5,
+    "CourseCode": "BLM351",
+    "CourseName": "Mobil Uygulama Geli\u015Ftirme",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 6,
+    "CourseCode": "BLM305",
+    "CourseName": "Mikroi\u015Flemciler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 6,
+    "CourseCode": "BLM306",
+    "CourseName": "Yapay Zekaya Giri\u015F",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 6,
+    "CourseCode": "BLM307",
+    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 6,
+    "CourseCode": "BLM308",
+    "CourseName": "\u00C7izge Teorisi",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 6,
+    "CourseCode": "ISL201",
+    "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 6,
+    "CourseCode": "BLM354",
+    "CourseName": "Oyun Programlama",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FD",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 3,
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FD",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 3,
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 3,
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 3,
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Credit": 1,
+    "Ects": 1,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 4,
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FD",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 4,
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 4,
+    "CourseCode": "MAT202",
+    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 4,
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 4,
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 4,
+    "CourseCode": "STJ101",
+    "CourseName": "Staj I Haz\u0131rl\u0131k",
+    "Credit": 1,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 5,
+    "CourseCode": "BLM301",
+    "CourseName": "\u0130\u015Fletim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 5,
+    "CourseCode": "BLM302",
+    "CourseName": "Bilgisayar A\u011Flar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FD",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 5,
+    "CourseCode": "BLM303",
+    "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 5,
+    "CourseCode": "BLM304",
+    "CourseName": "Otomata Teorisi",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 5,
+    "CourseCode": "ENG201",
+    "CourseName": "Teknik \u0130ngilizce",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 5,
+    "CourseCode": "BLM352",
+    "CourseName": "Web Programlama",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 6,
+    "CourseCode": "BLM305",
+    "CourseName": "Mikroi\u015Flemciler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 6,
+    "CourseCode": "BLM306",
+    "CourseName": "Yapay Zekaya Giri\u015F",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 6,
+    "CourseCode": "BLM307",
+    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 6,
+    "CourseCode": "BLM308",
+    "CourseName": "\u00C7izge Teorisi",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 6,
+    "CourseCode": "ISL201",
+    "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231060",
+    "Term": 6,
+    "CourseCode": "BLM353",
+    "CourseName": "Bulut Bili\u015Fime Giri\u015F",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 1,
+    "CourseCode": "FIZ101",
+    "CourseName": "Fizik I",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 1,
+    "CourseCode": "BLM101",
+    "CourseName": "Programlamaya Giri\u015F",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 1,
+    "CourseCode": "TUR101",
+    "CourseName": "T\u00FCrk Dili I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 1,
+    "CourseCode": "ING101",
+    "CourseName": "\u0130ngilizce I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 1,
+    "CourseCode": "BLM102",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 2,
+    "CourseCode": "MAT102",
+    "CourseName": "Matematik II",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 2,
+    "CourseCode": "FIZ102",
+    "CourseName": "Fizik II",
+    "Credit": 4,
+    "Ects": 5,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 2,
+    "CourseCode": "BLM103",
+    "CourseName": "Programlama I",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 2,
+    "CourseCode": "TUR102",
+    "CourseName": "T\u00FCrk Dili II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 2,
+    "CourseCode": "ING102",
+    "CourseName": "\u0130ngilizce II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 2,
+    "CourseCode": "KIM101",
+    "CourseName": "Kimya",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 3,
+    "CourseCode": "BLM201",
+    "CourseName": "Veri Yap\u0131lar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 3,
+    "CourseCode": "BLM202",
+    "CourseName": "Nesne Y\u00F6nelimli Programlama",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 3,
+    "CourseCode": "MAT201",
+    "CourseName": "Diferansiyel Denklemler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 3,
+    "CourseCode": "AIT101",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 3,
+    "CourseCode": "ISG101",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
+    "Credit": 1,
+    "Ects": 1,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 4,
+    "CourseCode": "BLM204",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 4,
+    "CourseCode": "BLM205",
+    "CourseName": "Bilgisayar Organizasyonu",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 4,
+    "CourseCode": "MAT202",
+    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 4,
+    "CourseCode": "BLM206",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 4,
+    "CourseCode": "AIT102",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
+    "Credit": 2,
+    "Ects": 2,
+    "LetterGrade": "FF",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 4,
+    "CourseCode": "STJ101",
+    "CourseName": "Staj I Haz\u0131rl\u0131k",
+    "Credit": 1,
+    "Ects": 2,
+    "LetterGrade": "CC",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 5,
+    "CourseCode": "BLM301",
+    "CourseName": "\u0130\u015Fletim Sistemleri",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 5,
+    "CourseCode": "BLM302",
+    "CourseName": "Bilgisayar A\u011Flar\u0131",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 5,
+    "CourseCode": "BLM303",
+    "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 5,
+    "CourseCode": "BLM304",
+    "CourseName": "Otomata Teorisi",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 5,
+    "CourseCode": "ENG201",
+    "CourseName": "Teknik \u0130ngilizce",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "BA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 5,
+    "CourseCode": "BLM351",
+    "CourseName": "Mobil Uygulama Geli\u015Ftirme",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "CB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 6,
+    "CourseCode": "BLM305",
+    "CourseName": "Mikroi\u015Flemciler",
+    "Credit": 4,
+    "Ects": 6,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 6,
+    "CourseCode": "BLM306",
+    "CourseName": "Yapay Zekaya Giri\u015F",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 6,
+    "CourseCode": "BLM307",
+    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
+    "Credit": 3,
+    "Ects": 4,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 6,
+    "CourseCode": "BLM308",
+    "CourseName": "\u00C7izge Teorisi",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "AA",
+    "Passed": true
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 6,
+    "CourseCode": "ISL201",
+    "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
+    "Credit": 2,
+    "Ects": 3,
+    "LetterGrade": "FD",
+    "Passed": false
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 6,
+    "CourseCode": "BLM354",
+    "CourseName": "Oyun Programlama",
+    "Credit": 3,
+    "Ects": 5,
+    "LetterGrade": "BB",
+    "Passed": true
+  },
+  {
     "StudentNo": "20231062",
     "Term": 1,
     "CourseCode": "MAT101",
@@ -11452,8 +11452,8 @@
   {
     "StudentNo": "20231062",
     "Term": 5,
-    "CourseCode": "BLM351",
-    "CourseName": "Mobil Uygulama Geli\u015Ftirme",
+    "CourseCode": "BLM352",
+    "CourseName": "Web Programlama",
     "Credit": 3,
     "Ects": 5,
     "LetterGrade": "AA",
@@ -11512,8 +11512,8 @@
   {
     "StudentNo": "20231062",
     "Term": 6,
-    "CourseCode": "BLM354",
-    "CourseName": "Oyun Programlama",
+    "CourseCode": "BLM353",
+    "CourseName": "Bulut Bili\u015Fime Giri\u015F",
     "Credit": 3,
     "Ects": 5,
     "LetterGrade": "CC",
@@ -11922,8 +11922,8 @@
   {
     "StudentNo": "20231018",
     "Term": 7,
-    "CourseCode": "BLM452",
-    "CourseName": "Siber G\u00FCvenli\u011Fe Giri\u015F",
+    "CourseCode": "BLM453",
+    "CourseName": "Da\u011F\u0131t\u0131k Sistemler",
     "Credit": 3,
     "Ects": 5,
     "LetterGrade": "BA",

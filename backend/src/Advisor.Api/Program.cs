@@ -1,6 +1,7 @@
 using System.Text;
 using Advisor.Api.Auth;
 using Advisor.Application.Auth;
+using Advisor.Application.Registration;
 using Advisor.Infrastructure;
 using Advisor.Infrastructure.Auth;
 using Advisor.Infrastructure.Persistence;
@@ -12,7 +13,8 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(o => o.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter()));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -32,6 +34,9 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddRegistrationRules(
+    builder.Configuration.GetSection(RegistrationRuleOptions.SectionName).Get<RegistrationRuleOptions>()
+    ?? new RegistrationRuleOptions());
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentUser, CurrentUser>();

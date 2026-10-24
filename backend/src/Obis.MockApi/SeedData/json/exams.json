@@ -30,7 +30,7 @@
     "Date": "2026-11-17",
     "StartTime": "11:00:00",
     "EndTime": "12:00:00",
-    "Room": "D-108"
+    "Room": "D-114"
   },
   {
     "Term": 1,
@@ -41,7 +41,7 @@
     "Date": "2027-01-13",
     "StartTime": "11:00:00",
     "EndTime": "12:30:00",
-    "Room": "D-108"
+    "Room": "D-114"
   },
   {
     "Term": 1,
@@ -118,7 +118,7 @@
     "Date": "2026-11-16",
     "StartTime": "11:00:00",
     "EndTime": "12:00:00",
-    "Room": "D-101"
+    "Room": "D-105"
   },
   {
     "Term": 1,
@@ -129,7 +129,7 @@
     "Date": "2027-01-12",
     "StartTime": "11:00:00",
     "EndTime": "12:30:00",
-    "Room": "D-101"
+    "Room": "D-105"
   },
   {
     "Term": 1,
@@ -140,7 +140,7 @@
     "Date": "2026-11-17",
     "StartTime": "13:00:00",
     "EndTime": "14:00:00",
-    "Room": "D-112"
+    "Room": "D-115"
   },
   {
     "Term": 1,
@@ -151,7 +151,29 @@
     "Date": "2027-01-13",
     "StartTime": "13:00:00",
     "EndTime": "14:30:00",
-    "Room": "D-112"
+    "Room": "D-115"
+  },
+  {
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Section": "C",
+    "Type": "Midterm",
+    "Date": "2026-11-18",
+    "StartTime": "15:00:00",
+    "EndTime": "16:00:00",
+    "Room": "D-101"
+  },
+  {
+    "Term": 1,
+    "CourseCode": "MAT101",
+    "CourseName": "Matematik I",
+    "Section": "C",
+    "Type": "Final",
+    "Date": "2027-01-14",
+    "StartTime": "15:00:00",
+    "EndTime": "16:30:00",
+    "Room": "D-101"
   },
   {
     "Term": 1,
@@ -159,9 +181,9 @@
     "CourseName": "T\u00FCrk Dili I",
     "Section": "A",
     "Type": "Midterm",
-    "Date": "2026-11-18",
-    "StartTime": "15:00:00",
-    "EndTime": "16:00:00",
+    "Date": "2026-11-19",
+    "StartTime": "09:00:00",
+    "EndTime": "10:00:00",
     "Room": "D-106"
   },
   {
@@ -170,9 +192,9 @@
     "CourseName": "T\u00FCrk Dili I",
     "Section": "A",
     "Type": "Final",
-    "Date": "2027-01-14",
-    "StartTime": "15:00:00",
-    "EndTime": "16:30:00",
+    "Date": "2027-01-15",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
     "Room": "D-106"
   },
   {
@@ -206,7 +228,7 @@
     "Date": "2026-11-17",
     "StartTime": "11:00:00",
     "EndTime": "12:00:00",
-    "Room": "D-108"
+    "Room": "D-114"
   },
   {
     "Term": 2,
@@ -217,7 +239,7 @@
     "Date": "2027-01-13",
     "StartTime": "11:00:00",
     "EndTime": "12:30:00",
-    "Room": "D-108"
+    "Room": "D-114"
   },
   {
     "Term": 2,
@@ -316,7 +338,7 @@
     "Date": "2026-11-17",
     "StartTime": "13:00:00",
     "EndTime": "14:00:00",
-    "Room": "D-112"
+    "Room": "D-115"
   },
   {
     "Term": 2,
@@ -327,7 +349,7 @@
     "Date": "2027-01-13",
     "StartTime": "13:00:00",
     "EndTime": "14:30:00",
-    "Room": "D-112"
+    "Room": "D-115"
   },
   {
     "Term": 2,
@@ -404,7 +426,7 @@
     "Date": "2026-11-18",
     "StartTime": "13:00:00",
     "EndTime": "14:00:00",
-    "Room": "D-109"
+    "Room": "D-114"
   },
   {
     "Term": 3,
@@ -415,7 +437,7 @@
     "Date": "2027-01-14",
     "StartTime": "13:00:00",
     "EndTime": "14:30:00",
-    "Room": "D-109"
+    "Room": "D-114"
   },
   {
     "Term": 3,
@@ -448,7 +470,7 @@
     "Date": "2026-11-20",
     "StartTime": "09:00:00",
     "EndTime": "10:00:00",
-    "Room": "D-110"
+    "Room": "D-115"
   },
   {
     "Term": 3,
@@ -459,7 +481,7 @@
     "Date": "2027-01-16",
     "StartTime": "09:00:00",
     "EndTime": "10:30:00",
-    "Room": "D-110"
+    "Room": "D-115"
   },
   {
     "Term": 3,
@@ -479,8 +501,8 @@
     "Section": "A",
     "Type": "Final",
     "Date": "2027-01-12",
-    "StartTime": "09:00:00",
-    "EndTime": "10:30:00",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
     "Room": "D-104"
   },
   {
@@ -492,7 +514,7 @@
     "Date": "2026-11-17",
     "StartTime": "13:00:00",
     "EndTime": "14:00:00",
-    "Room": "D-111"
+    "Room": "D-116"
   },
   {
     "Term": 3,
@@ -503,7 +525,29 @@
     "Date": "2027-01-13",
     "StartTime": "13:00:00",
     "EndTime": "14:30:00",
-    "Room": "D-111"
+    "Room": "D-116"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Section": "C",
+    "Type": "Midterm",
+    "Date": "2026-11-18",
+    "StartTime": "15:00:00",
+    "EndTime": "16:00:00",
+    "Room": "D-104"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "BLM203",
+    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
+    "Section": "C",
+    "Type": "Final",
+    "Date": "2027-01-12",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
+    "Room": "D-104"
   },
   {
     "Term": 3,
@@ -511,9 +555,9 @@
     "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
     "Section": "A",
     "Type": "Midterm",
-    "Date": "2026-11-18",
-    "StartTime": "15:00:00",
-    "EndTime": "16:00:00",
+    "Date": "2026-11-19",
+    "StartTime": "09:00:00",
+    "EndTime": "10:00:00",
     "Room": "D-105"
   },
   {
@@ -522,9 +566,9 @@
     "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
     "Section": "A",
     "Type": "Final",
-    "Date": "2027-01-14",
-    "StartTime": "15:00:00",
-    "EndTime": "16:30:00",
+    "Date": "2027-01-15",
+    "StartTime": "09:00:00",
+    "EndTime": "10:30:00",
     "Room": "D-105"
   },
   {
@@ -533,9 +577,9 @@
     "CourseName": "Diferansiyel Denklemler",
     "Section": "A",
     "Type": "Midterm",
-    "Date": "2026-11-19",
-    "StartTime": "09:00:00",
-    "EndTime": "10:00:00",
+    "Date": "2026-11-20",
+    "StartTime": "11:00:00",
+    "EndTime": "12:00:00",
     "Room": "D-106"
   },
   {
@@ -544,9 +588,9 @@
     "CourseName": "Diferansiyel Denklemler",
     "Section": "A",
     "Type": "Final",
-    "Date": "2027-01-15",
-    "StartTime": "09:00:00",
-    "EndTime": "10:30:00",
+    "Date": "2027-01-16",
+    "StartTime": "11:00:00",
+    "EndTime": "12:30:00",
     "Room": "D-106"
   },
   {
@@ -624,7 +668,7 @@
     "Date": "2026-11-19",
     "StartTime": "15:00:00",
     "EndTime": "16:00:00",
-    "Room": "D-110"
+    "Room": "D-114"
   },
   {
     "Term": 4,
@@ -635,7 +679,7 @@
     "Date": "2027-01-15",
     "StartTime": "15:00:00",
     "EndTime": "16:30:00",
-    "Room": "D-110"
+    "Room": "D-114"
   },
   {
     "Term": 4,

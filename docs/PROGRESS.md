@@ -59,3 +59,48 @@ bunu `WebApplicationFactory` ile in-process doğrulayacak.
 - Swagger'da Bearer yetkilendirme butonu var.
 - 10 yeni test (giriş, 401/403, rol ayrımı, danışman/öğrenci sahiplik sınırı, seeder idempotent).
   Toplam build+test yeşil (11/11).
+
+## Aşama 5 — Ders kaydı doğrulama motoru
+
+- Durum: tamamlandı
+- `IRegistrationRule` (Application/Registration): her kural `Evaluate(RegistrationContext)` ile
+  `RegistrationIssue` (seviye Hata/Uyarı/Bilgi, mesaj, ilgili dersler) döner. Kurallar saf; OBİS'e
+  gitmez, yalnızca bağlamı okur. Yeni kural = yeni sınıf; `AddRegistrationRules` derlemeyi tarayıp
+  hepsini DI'a kaydeder.
+- 6 kural: `TIME_CONFLICT` (Hata), `PREREQUISITE` (Hata), `LOWER_SEMESTER_PRIORITY` (Uyarı, kalınmış ve
+  hiç alınmamış ayrı mesaj), `CREDIT_LIMIT` (Hata, GANO'ya göre AKTS sınırı), `EXAM_CONFLICT` (Hata),
+  `RETAKE` (Bilgi, BB ve üstü ile geçilmiş ders).
+- Eşikler `appsettings.json > RegistrationRules` bölümünden ayarlanır (GANO bantları, AKTS sınırları,
+  tekrar alma not eşiği).
+- Bağlam, doğrulanan dönemden ÖNCEKİ transkripti kullanır; geçmiş bir dönem doğrulanırken sonraki
+  dönemlerin sonuçları önkoşul/GANO hesabına sızmaz. GANO transkriptten hesaplanır (kredi ağırlıklı,
+  tekrarda son deneme geçerli) ve OBİS'in `Gpa` alanıyla 63 öğrencide birebir uyuşur.
+- API: `GET /api/registrations/students?term=` (danışman: yalnızca kendi öğrencileri, admin: hepsi;
+  uyarı rozet sayıları + son karar), `GET /api/registrations/{no}?term=` (dersler, çakışanlar işaretli
+  haftalık program, bulgular, karar geçmişi), `POST /api/registrations/{no}/review` (onayla / düzeltme
+  iste; düzeltmede not zorunlu; karar geçmişi tutulur, en son kayıt geçerli).
+- Enum'lar API'de metin olarak döner (`JsonStringEnumConverter`).
+- Testler: 72 test yeşil. Her kural için sınır/olumsuz durumlar (bitişik saat, farklı gün, başka şube,
+  aynı dönemde alınan önkoşul, gelecek dönemde geçilen önkoşul, GANO bantları, eşik ayarı...), 6 uç durum
+  öğrencisinin gerçek seed verisiyle yakalanması ve API yetki/sahiplik/karar testleri.
+- Canlı duman testi yapıldı (mock OBİS + API gerçek HTTP ile): giriş, JWT, 20241011 için
+  CREDIT_LIMIT + TIME_CONFLICT + LOWER_SEMESTER_PRIORITY, 401, Swagger 200.
+
+### Aşama 5'te bulunup düzeltilen seed/altyapı hataları
+
+1. **Ortak şube bozulması (Aşama 2 hatası):** EDGE-01 ve EDGE-05 için MAT101/A ve BLM203/A'nın
+   saatleri TÜM öğrenciler için değiştiriliyordu; ilk sınıf öğrencilerinin hepsinde yapay saat
+   çakışması çıkıyordu. Artık uç durum öğrencisine özel yeni şube ("C") eklenir, ortak şubeler
+   değişmez.
+2. **B şubesi çakışmaları:** B şubeleri dönemdeki başka bir dersin A saatine denk gelebiliyordu.
+   B şubeleri artık dönemde kullanılmayan (gün, saat) kombinasyonlarına yerleşir.
+3. **Seed tekrarlanabilir değildi:** seçmeli ders seçimi `string.GetHashCode()` kullanıyordu (.NET'te
+   süreç başına rastgele). Sabit bir değerle değiştirildi; `--generate-seed` iki kez çalıştırılıp
+   çıktının birebir aynı olduğu doğrulandı.
+4. **`HttpObisClient` enum çözemiyordu:** OBİS gün ve sınav türünü metin gönderiyor ("Monday",
+   "Midterm"); istemci sayı bekliyordu. `JsonStringEnumConverter` eklendi (canlı testte yakalandı).
+
+**Bilinen eksik / not:** Baseline öğrenciler kaldıkları dersi sonraki dönemde tekrar almadan ilerliyor
+(%92 geçme oranlı rastgele üretim). Bu yüzden uç durum olmayan birçok öğrencide gerçek bir
+`LOWER_SEMESTER_PRIORITY` uyarısı ya da önkoşul hatası çıkıyor. Kural doğru çalışıyor; bu, veri
+üretiminin gerçekçilik sınırı. Aşama 11'de uç durum raporu hazırlanırken bu fazlalık ayrıca ele alınacak.

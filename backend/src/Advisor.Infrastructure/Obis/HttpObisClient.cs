@@ -1,4 +1,6 @@
 using System.Net.Http.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Advisor.Application.Obis;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
@@ -13,6 +15,12 @@ namespace Advisor.Infrastructure.Obis;
 /// </summary>
 public class HttpObisClient : IObisClient
 {
+    // OBİS enum'ları (gün, sınav türü) metin olarak gönderir.
+    private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web)
+    {
+        Converters = { new JsonStringEnumConverter() },
+    };
+
     private readonly HttpClient _http;
     private readonly IMemoryCache _cache;
     private readonly TimeSpan _ttl;
@@ -43,7 +51,7 @@ public class HttpObisClient : IObisClient
         }
 
         response.EnsureSuccessStatusCode();
-        var student = await response.Content.ReadFromJsonAsync<ObisStudent>(cancellationToken: ct);
+        var student = await response.Content.ReadFromJsonAsync<ObisStudent>(JsonOptions, ct);
         _cache.Set(key, student, _ttl);
         return student;
     }
@@ -87,7 +95,7 @@ public class HttpObisClient : IObisClient
             return cached;
         }
 
-        var result = await _http.GetFromJsonAsync<T>(requestUri, ct) ?? fallback;
+        var result = await _http.GetFromJsonAsync<T>(requestUri, JsonOptions, ct) ?? fallback;
         _cache.Set(cacheKey, result, _ttl);
         return result;
     }

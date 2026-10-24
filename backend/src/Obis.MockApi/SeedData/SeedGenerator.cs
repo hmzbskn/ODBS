@@ -212,7 +212,7 @@ public static class SeedGenerator
             return mandatory;
         }
 
-        var hash = plan.StudentNo.GetHashCode() ^ term;
+        var hash = int.Parse(plan.StudentNo) ^ term; // string.GetHashCode() süreç başına rastgeledir, seed tekrarlanabilir olmaz
         var pickIndex = hash & 0x7FFFFFFF; // her zaman negatif olmayan deterministik indeks
         var chosen = electives[pickIndex % electives.Count];
         return mandatory.Append(chosen).ToList();
@@ -239,6 +239,9 @@ public static class SeedGenerator
         foreach (var termGroup in courses.GroupBy(c => c.Term).OrderBy(g => g.Key))
         {
             var combo = 0; // (gün, saat) kombinasyonunu sırayla dolaş -> aynı dönem içi çakışma olmaz
+            // A şubeleri 0..n-1 numaralı kombinasyonları kullanır; B şubeleri n'den başlayarak
+            // ayrı kombinasyonlara yerleşir, böylece hiçbir şube dönem içinde başka bir dersle çakışmaz.
+            var nextSecondary = termGroup.Count();
             foreach (var course in termGroup.OrderBy(c => c.CourseCode))
             {
                 var day = Days[combo % Days.Length];
@@ -250,9 +253,10 @@ public static class SeedGenerator
 
                 if (DualSectionCourses.Contains(course.CourseCode))
                 {
-                    var day2 = Days[(combo + 2) % Days.Length];
-                    var start2 = Slots[((combo / Days.Length) + 1) % Slots.Length];
-                    var room2 = rooms[(combo + 7) % rooms.Count];
+                    var b = nextSecondary++;
+                    var day2 = Days[b % Days.Length];
+                    var start2 = Slots[(b / Days.Length) % Slots.Length];
+                    var room2 = rooms[(b + 7) % rooms.Count];
                     var end2 = start2.AddMinutes(course.Credit >= 4 ? 120 : 90);
                     slots.Add(new ScheduleSlot(course.Term, course.CourseCode, course.CourseName, "B", day2, start2, end2, room2));
                 }
@@ -337,12 +341,14 @@ public static class SeedGenerator
         var byClass = plans.GroupBy(p => p.ClassYear).ToDictionary(g => g.Key, g => g.ToList());
 
         // EDGE-01: Saat çakışması — sınıf3 öğrencisi, MAT101'i (dönem1, geçmemiş) tekrar
-        // almak için kaydoluyor; MAT101 Section A, dönem5 BLM301 ile aynı gün/saate denk geliyor.
+        // almak için kaydoluyor; özel MAT101 Section C, dönem5 BLM301/A ile aynı gün/saate denk geliyor.
         var s1 = byClass[3][0];
         s1.EdgeCaseTag = "EDGE-01 saat-çakışması";
         MarkAsFailed(transcripts, s1.StudentNo, 1, "MAT101");
-        registrations.Add(new RegistrationEntry(s1.StudentNo, s1.CurrentTerm, "MAT101", "A", "Beklemede"));
-        ForceScheduleOverlap(schedule, "MAT101", "BLM301");
+        // Ortak şubeleri bozmamak için MAT101'e yalnızca bu öğrencinin seçtiği özel bir "C"
+        // şubesi eklenir; saati BLM301/A ile aynıdır.
+        AddSectionOverlapping(schedule, "MAT101", "C", "BLM301");
+        registrations.Add(new RegistrationEntry(s1.StudentNo, s1.CurrentTerm, "MAT101", "C", "Beklemede"));
 
         // EDGE-02: Önkoşul ihlali — sınıf2 öğrencisi BLM103'ü (dönem2) hiç geçemedi (FF),
         // ama dönem3'te BLM103'e bağımlı BLM201'e kayıtlı.
@@ -372,7 +378,10 @@ public static class SeedGenerator
         var s5 = byClass[4][0];
         s5.EdgeCaseTag = "EDGE-05 sınav-çakışması";
         MarkAsFailed(transcripts, s5.StudentNo, 3, "BLM203");
-        EnsureRegistered(registrations, s5.StudentNo, s5.CurrentTerm, "BLM203", "A", "Beklemede");
+        // Yalnızca bu öğrencinin seçtiği özel "C" şubesi: ders saati öğrencinin dönem programında
+        // boş bir yerde (saat çakışması olmasın, tek bulgu sınav çakışması olsun).
+        AddSectionAtFreeSlot(schedule, "BLM203", "C", s5.CurrentTerm);
+        EnsureRegistered(registrations, s5.StudentNo, s5.CurrentTerm, "BLM203", "C", "Beklemede");
 
         // EDGE-06: Tekrar alma (bilgi) — sınıf4 öğrencisi dönem3'te BLM201'i AA ile geçmişken
         // bu dönem tekrar BLM201'e kayıtlı (GANO yükseltme amaçlı — bilgi seviyesi uyarı).
@@ -485,20 +494,51 @@ public static class SeedGenerator
         }
     }
 
-    /// <summary>İki dersin A şubesinin gün/saatini aynı değerlere zorlar; sadece bu ikisini
-    /// birlikte seçen öğrenci (EDGE-01) çakışma görür, diğer öğrenciler etkilenmez çünkü
-    /// bu iki ders normalde aynı öğrencinin aynı dönem programında yer almaz.</summary>
-    private static void ForceScheduleOverlap(List<ScheduleSlot> schedule, string courseA, string courseB)
+    /// <summary><paramref name="courseCode"/> dersine, <paramref name="overlapWithCourse"/> dersinin A
+    /// şubesiyle aynı gün/saatte yeni bir özel şube ekler. Mevcut şubelere dokunulmaz; yalnızca bu
+    /// şubeyi seçen öğrenci çakışma görür.</summary>
+    private static void AddSectionOverlapping(List<ScheduleSlot> schedule, string courseCode, string section, string overlapWithCourse)
     {
-        var idxA = schedule.FindIndex(s => s.CourseCode == courseA && s.Section == "A");
-        var idxB = schedule.FindIndex(s => s.CourseCode == courseB && s.Section == "A");
-        if (idxA < 0 || idxB < 0)
+        var template = schedule.FirstOrDefault(s => s.CourseCode == courseCode && s.Section == "A");
+        var target = schedule.FirstOrDefault(s => s.CourseCode == overlapWithCourse && s.Section == "A");
+        if (template is null || target is null)
         {
             return;
         }
 
-        var target = schedule[idxB];
-        schedule[idxA] = schedule[idxA] with { Day = target.Day, StartTime = target.StartTime, EndTime = target.EndTime, Room = target.Room };
+        var duration = template.EndTime - template.StartTime;
+        schedule.Add(template with
+        {
+            Section = section, Day = target.Day, StartTime = target.StartTime,
+            EndTime = target.StartTime.Add(duration), Room = target.Room,
+        });
+    }
+
+    /// <summary><paramref name="courseCode"/> dersine, <paramref name="term"/> dönemi dersleriyle çakışmayan
+    /// (boş bir gün/saatte) yeni bir özel şube ekler.</summary>
+    private static void AddSectionAtFreeSlot(List<ScheduleSlot> schedule, string courseCode, string section, int term)
+    {
+        var template = schedule.FirstOrDefault(s => s.CourseCode == courseCode && s.Section == "A");
+        if (template is null)
+        {
+            return;
+        }
+
+        var used = schedule.Where(s => s.Term == term).Select(s => (s.Day, s.StartTime)).ToHashSet();
+        foreach (var start in Slots)
+        {
+            foreach (var day in Days)
+            {
+                if (used.Contains((day, start)))
+                {
+                    continue;
+                }
+
+                var duration = template.EndTime - template.StartTime;
+                schedule.Add(template with { Section = section, Day = day, StartTime = start, EndTime = start.Add(duration) });
+                return;
+            }
+        }
     }
 
     /// <summary>Baseline bir öğrenciyi CurrentTerm=t ile "bekleyen kayıt" olarak işlemişken,
@@ -557,7 +597,7 @@ public static class SeedGenerator
         // EDGE-05 öğrencisinin BLM203 final'ini, aynı dönemdeki BLM401 final'iyle aynı
         // tarih/saate taşı (ikisi de bu öğrencinin kayıtlı olduğu dersler).
         var blm401Final = exams.FindIndex(e => e.CourseCode == "BLM401" && e.Section == "A" && e.Type == ExamType.Final);
-        var blm203FinalIdx = exams.FindIndex(e => e.CourseCode == "BLM203" && e.Section == "A" && e.Type == ExamType.Final);
+        var blm203FinalIdx = exams.FindIndex(e => e.CourseCode == "BLM203" && e.Section == "C" && e.Type == ExamType.Final);
         if (blm401Final >= 0 && blm203FinalIdx >= 0)
         {
             var target = exams[blm401Final];
