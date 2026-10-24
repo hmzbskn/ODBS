@@ -124,3 +124,13 @@ düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
   (`[Authorize(Roles)]` + `IStudentAccessGuard`); ön yüz yalnızca kullanıcıya gereksiz sayfayı göstermez.
 - **Yer tutucu sayfalar:** Menü baştan tam görünür ("Yakında" etiketiyle); modül hazır oldukça kendi
   route'u yer tutucunun önüne eklenir.
+
+## 2026-10-24 — Aşama 7: arayüz kararları
+
+- **Haftalık program ızgarası başlangıç saatine göre satırlanır:** Seed'deki dersler 09/11/13/15
+  başlangıçlıdır; saatlik sabit ızgara yerine verideki başlangıç saatleri satır olur. Gerçek OBİS'te
+  keyfi saatler gelirse bu bileşen (WeeklySchedule) saat dilimlerine bölünecek şekilde genişletilmeli.
+- **Öğrenci düzeltme notunu görür, danışmanın karar geçmişini görmez:** Prompt "görüşme notları
+  öğrenciye kapalı" der; bu, görüşme notları içindir. Kayıt kararındaki not ise öğrenciye iletilmek
+  üzere yazılır, bu yüzden öğrenci yalnızca son kararı ve notunu görür.
+- **Hata seviyeli kayıt onaylanabilir:** Engelleme yerine uyarı metni gösterilir (bkz. Aşama 5 kararı).

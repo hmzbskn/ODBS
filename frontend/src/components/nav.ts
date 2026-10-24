@@ -12,8 +12,8 @@ const STAFF: Role[] = ['Admin', 'Danisman']
 
 export const NAV_ITEMS: NavItem[] = [
   { to: '/', label: 'Genel Bakış', roles: ['Admin', 'Danisman', 'Ogrenci'] },
-  { to: '/kayitlar', label: 'Ders Kayıtları', roles: STAFF, soonPhase: 7 },
-  { to: '/kayitlarim', label: 'Kayıt Durumum', roles: ['Ogrenci'], soonPhase: 7 },
+  { to: '/kayitlar', label: 'Ders Kayıtları', roles: STAFF },
+  { to: '/kayitlarim', label: 'Kayıt Durumum', roles: ['Ogrenci'] },
   { to: '/anketler', label: 'Anketler', roles: STAFF, soonPhase: 8 },
   { to: '/anketlerim', label: 'Anketlerim', roles: ['Ogrenci'], soonPhase: 8 },
   { to: '/risk', label: 'Risk ve Mezuniyet', roles: STAFF, soonPhase: 9 },

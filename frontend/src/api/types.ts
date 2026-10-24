@@ -48,6 +48,36 @@ export interface RegistrationIssue {
   courseCodes: string[]
 }
 
+export interface RegisteredCourse {
+  courseCode: string
+  courseName: string
+  section: string
+  ects: number
+  courseTerm: number
+  inConflict: boolean
+}
+
+export type DayName = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday'
+
+export interface WeeklySlot {
+  courseCode: string
+  courseName: string
+  section: string
+  day: DayName
+  startTime: string
+  endTime: string
+  room: string
+  inConflict: boolean
+}
+
+export interface RegistrationReview {
+  id: string
+  decision: RegistrationDecision
+  note: string | null
+  reviewedByAdvisorId: string
+  reviewedAt: string
+}
+
 export interface RegistrationDetail {
   studentNo: string
   fullName: string
@@ -56,9 +86,12 @@ export interface RegistrationDetail {
   gpa: number
   totalEcts: number
   maxEcts: number
+  courses: RegisteredCourse[]
+  weeklySchedule: WeeklySlot[]
   issues: RegistrationIssue[]
   errorCount: number
   warningCount: number
   infoCount: number
   decision: RegistrationDecision
+  reviews: RegistrationReview[]
 }

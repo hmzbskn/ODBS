@@ -7,6 +7,8 @@ import { ComingSoonPage } from './pages/ComingSoonPage'
 import { DashboardPage } from './pages/DashboardPage'
 import { LoginPage } from './pages/LoginPage'
 import { NotFoundPage } from './pages/NotFoundPage'
+import { RegistrationDetailPage } from './pages/RegistrationDetailPage'
+import { RegistrationsPage } from './pages/RegistrationsPage'
 
 export default function App() {
   return (
@@ -17,6 +19,13 @@ export default function App() {
           <Route element={<RequireAuth />}>
             <Route element={<Layout />}>
               <Route index element={<DashboardPage />} />
+              <Route element={<RequireAuth roles={['Admin', 'Danisman']} />}>
+                <Route path="/kayitlar" element={<RegistrationsPage />} />
+                <Route path="/kayitlar/:studentNo" element={<RegistrationDetailPage />} />
+              </Route>
+              <Route element={<RequireAuth roles={['Ogrenci']} />}>
+                <Route path="/kayitlarim" element={<RegistrationDetailPage />} />
+              </Route>
               {/* Yer tutucu sayfalar: modül hazır oldukça kendi route'larıyla değiştirilir. */}
               {NAV_ITEMS.filter((n) => n.soonPhase).map((n) => (
                 <Route key={n.to} element={<RequireAuth roles={n.roles} />}>

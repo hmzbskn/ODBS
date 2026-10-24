@@ -3,6 +3,7 @@ import type { AdvisorStudentList, RegistrationDetail } from '../api/types'
 import { useAuth } from '../auth/AuthContext'
 import { EmptyState, ErrorState, Loading } from '../components/Feedback'
 import { DECISION_LABELS } from '../components/labels'
+import { formatGpa } from '../components/format'
 import { useAsync } from '../components/useAsync'
 
 export function DashboardPage() {
@@ -95,7 +96,7 @@ function StudentSummary({ studentNo }: { studentNo: string }) {
     <>
       <div className="stat-grid">
         <Stat label="Dönem" value={d.term} />
-        <Stat label="GANO" value={d.gpa.toFixed(2)} />
+        <Stat label="GANO" value={formatGpa(d.gpa)} />
         <Stat
           label="AKTS"
           value={`${d.totalEcts} / ${d.maxEcts}`}

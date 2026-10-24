@@ -313,6 +313,162 @@ th {
   color: var(--muted);
 }
 
+/* ---- ders kaydı ekranları ---- */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.toolbar .field {
+  min-width: 200px;
+}
+
+.field select,
+.field textarea {
+  font: inherit;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-bottom: 0.55rem;
+  font-size: 0.9rem;
+}
+
+.issue-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.issue {
+  border: 1px solid var(--border);
+  border-left-width: 4px;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+}
+
+.issue p {
+  margin: 0.3rem 0 0;
+}
+
+.issue-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.issue-error {
+  border-left-color: var(--danger);
+}
+
+.issue-warning {
+  border-left-color: var(--warn);
+}
+
+.issue-info {
+  border-left-color: var(--primary);
+}
+
+.schedule th,
+.schedule td {
+  vertical-align: top;
+  white-space: normal;
+  min-width: 120px;
+}
+
+.schedule tbody th {
+  min-width: 60px;
+  white-space: nowrap;
+}
+
+.slot {
+  padding: 0.4rem 0.5rem;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+
+.slot + .slot {
+  margin-top: 0.4rem;
+}
+
+.slot-meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.slot-conflict {
+  background: var(--danger-bg);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.slot-conflict .slot-meta,
+.slot-conflict .muted {
+  color: var(--danger);
+}
+
+.row-conflict td {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.count-error {
+  color: var(--danger);
+}
+
+.count-warn {
+  color: var(--warn);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.review-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.form-warn {
+  margin: 0 0 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  background: var(--warn-bg);
+  color: var(--warn);
+  font-size: 0.9rem;
+}
+
+.history {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.history p {
+  margin: 0.25rem 0 0;
+}
+
 /* ---- durumlar ---- */
 .state {
   display: grid;

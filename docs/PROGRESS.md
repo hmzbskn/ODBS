@@ -128,3 +128,21 @@ bunu `WebApplicationFactory` ile in-process doğrulayacak.
 
 **Bilinen eksik:** Arayüz bir tarayıcıda gözle kontrol edilmedi (bu ortamda tarayıcı aracı yoktu);
 düzen/renk doğrulaması Aşama 7'de ders kaydı ekranıyla birlikte yapılacak.
+
+## Aşama 7 — Ders kaydı doğrulama arayüzü
+
+- Durum: tamamlandı
+- Danışman/yönetici: `/kayitlar` — dönem seçimi (varsayılan: her öğrencinin güncel dönemi), ad/numara
+  arama, "yalnızca bulgusu olanlar" süzgeci; her öğrencinin yanında hata/uyarı/bilgi rozetleri, AKTS,
+  GANO ve danışman kararı. Satırdan `/kayitlar/:studentNo` detayına geçilir.
+- Detay: özet kartları (dönem, GANO, AKTS/üst sınır, bulgu sayıları), seviyeye göre renkli kural bulguları,
+  **haftalık ders programı** (gün x saat ızgarası; çakışan dersler kırmızı + "Çakışma" etiketi), seçilen
+  dersler tablosu (çakışanlar kırmızı), danışman karar paneli, karar geçmişi.
+- Karar paneli: "Onayla" ya da "Düzeltme iste" (not yazılmadan gönderilemez, sunucu da doğrular). Hatalı
+  kayıt onaylanırken bilgilendirme çıkar ama engellenmez. Kayıttan sonra ekran yenilenir.
+- Öğrenci: `/kayitlarim` — aynı ekranın salt okunur hali; danışmanın son kararı ve notu en üstte görünür.
+- `formatGpa`: notlandırılmış dersi olmayan (ilk dönem) öğrencide GANO "0.00" yerine "-" gösterilir.
+- Doğrulama: Playwright (geçici, projeye eklenmedi) ile gerçek tarayıcıda uçtan uca gezildi: giriş →
+  genel bakış → liste → detay → not zorunluluğu (not boşken buton kapalı) → düzeltme isteme → öğrenci
+  hesabında kararın görünmesi → 390 px mobil görünüm (yatay taşma yok, menü çekmecesi açılıyor).
+  Konsol hatası yok. `tsc -b`, `oxlint` (0 uyarı) ve `vite build` temiz; backend 72/72 test yeşil.
