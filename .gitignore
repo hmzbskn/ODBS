@@ -1,0 +1,30 @@
+# .NET
+backend/**/bin/
+backend/**/obj/
+*.user
+*.suo
+*.db
+*.db-shm
+*.db-wal
+backend/**/*.sqlite
+backend/**/*.sqlite3
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env / secrets
+**/appsettings.Development.local.json
+**/.env.local

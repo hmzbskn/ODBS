@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Advisor.Api/Advisor.Api.csproj" />
+    <Project Path="src/Advisor.Application/Advisor.Application.csproj" />
+    <Project Path="src/Advisor.Domain/Advisor.Domain.csproj" />
+    <Project Path="src/Advisor.Infrastructure/Advisor.Infrastructure.csproj" />
+    <Project Path="src/Obis.MockApi/Obis.MockApi.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Advisor.Tests/Advisor.Tests.csproj" />
+  </Folder>
+</Solution>
