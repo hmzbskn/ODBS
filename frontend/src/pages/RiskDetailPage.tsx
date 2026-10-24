@@ -21,6 +21,8 @@ export function RiskDetailPage() {
         <Link to="/risk">← Riskli öğrenciler</Link>
         {' · '}
         <Link to={`/kayitlar/${r.studentNo}`}>Ders kaydı</Link>
+        {' · '}
+        <Link to={`/ogrenci/${r.studentNo}`}>Öğrenci dosyası</Link>
       </p>
       <h1>
         {r.fullName} <span className="muted">({r.studentNo})</span>

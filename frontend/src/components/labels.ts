@@ -1,4 +1,4 @@
-import type { DayName, IssueSeverity, MissingStatus, QuestionType, RegistrationDecision, RiskLevel, SurveyStatus } from '../api/types'
+import type { AppointmentStatus, DayName, IssueSeverity, MissingStatus, QuestionType, RegistrationDecision, RiskLevel, SurveyStatus } from '../api/types'
 
 export const DECISION_LABELS: Record<RegistrationDecision, string> = {
   Pending: 'Karar bekliyor',
@@ -54,4 +54,11 @@ export const MISSING_STATUS_LABELS: Record<MissingStatus, string> = {
   Failed: 'Kaldı',
   NotTaken: 'Alınmadı',
   InProgress: 'Bu dönem alıyor',
+}
+
+export const APPOINTMENT_STATUS_LABELS: Record<AppointmentStatus, string> = {
+  Scheduled: 'Planlandı',
+  CancelledByStudent: 'Öğrenci iptal etti',
+  CancelledByAdvisor: 'Danışman iptal etti',
+  Completed: 'Tamamlandı',
 }

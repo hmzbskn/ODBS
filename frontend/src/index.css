@@ -891,6 +891,122 @@ a.btn {
   gap: 0.35rem;
 }
 
+/* ---- randevu ve öğrenci dosyası ---- */
+.slot-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.slot-form .field input,
+.slot-form .field select {
+  font: inherit;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.day-group {
+  margin-top: 1.25rem;
+}
+
+.day-group h3 {
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+}
+
+.slot-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 0.4rem;
+}
+
+.slot-row.taken {
+  opacity: 0.6;
+}
+
+.inline-cancel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.inline-cancel input {
+  font: inherit;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  min-width: 220px;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1rem;
+  border-left: 2px solid var(--border);
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline li {
+  position: relative;
+}
+
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: -1.4rem;
+  top: 0.45rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.timeline .tl-date {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.timeline p {
+  margin: 0.15rem 0 0;
+  white-space: pre-wrap;
+}
+
+.note-form textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  resize: vertical;
+}
+
+.note-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.note-item p {
+  margin: 0.25rem 0;
+  white-space: pre-wrap;
+}
+
 /* ---- durumlar ---- */
 .state {
   display: grid;

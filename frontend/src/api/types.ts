@@ -311,3 +311,75 @@ export interface DashboardResponse {
   courseSuccess: { courseCode: string; courseName: string; attempts: number; passed: number; successRate: number }[]
   graduationCandidates: number
 }
+
+// ---- randevu, görüşme notu ----
+
+export type AppointmentStatus = 'Scheduled' | 'CancelledByStudent' | 'CancelledByAdvisor' | 'Completed'
+
+export interface Slot {
+  id: string
+  advisorId: string
+  day: DayName
+  startTime: string
+  endTime: string
+  isActive: boolean
+  upcomingBookings: number
+}
+
+export interface Appointment {
+  id: string
+  slotId: string
+  advisorId: string
+  studentNo: string
+  studentName: string
+  date: string
+  startTime: string
+  endTime: string
+  status: AppointmentStatus
+  cancellationReason: string | null
+  bookedAt: string
+  isPast: boolean
+}
+
+export interface AvailableSlot {
+  slotId: string
+  date: string
+  day: DayName
+  startTime: string
+  endTime: string
+  available: boolean
+  bookedByMe: boolean
+}
+
+export interface Availability {
+  advisorId: string
+  advisorName: string
+  maxActiveAppointments: number
+  activeAppointments: number
+  slots: AvailableSlot[]
+}
+
+export interface Note {
+  id: string
+  advisorId: string
+  studentNo: string
+  content: string
+  createdAt: string
+}
+
+export interface TimelineItem {
+  kind: 'Note' | 'Appointment' | 'Petition' | 'Announcement'
+  date: string
+  title: string
+  detail: string | null
+  refId: string | null
+}
+
+export interface StudentFile {
+  studentNo: string
+  fullName: string
+  classYear: number
+  gpa: number
+  timeline: TimelineItem[]
+  notes: Note[]
+}

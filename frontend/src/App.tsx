@@ -7,11 +7,13 @@ import { ComingSoonPage } from './pages/ComingSoonPage'
 import { DashboardPage } from './pages/DashboardPage'
 import { LoginPage } from './pages/LoginPage'
 import { NotFoundPage } from './pages/NotFoundPage'
+import { AppointmentsPage } from './pages/AppointmentsPage'
 import { GraduationPage } from './pages/GraduationPage'
 import { RegistrationDetailPage } from './pages/RegistrationDetailPage'
 import { RegistrationsPage } from './pages/RegistrationsPage'
 import { RiskDetailPage } from './pages/RiskDetailPage'
 import { RiskPage } from './pages/RiskPage'
+import { StudentFilePage } from './pages/StudentFilePage'
 import { StudentSurveyFormPage } from './pages/StudentSurveyFormPage'
 import { StudentSurveysPage } from './pages/StudentSurveysPage'
 import { SurveyBuilderPage } from './pages/SurveyBuilderPage'
@@ -27,7 +29,9 @@ export default function App() {
           <Route element={<RequireAuth />}>
             <Route element={<Layout />}>
               <Route index element={<DashboardPage />} />
+              <Route path="/randevular" element={<AppointmentsPage />} />
               <Route element={<RequireAuth roles={['Admin', 'Danisman']} />}>
+                <Route path="/ogrenci/:studentNo" element={<StudentFilePage />} />
                 <Route path="/kayitlar" element={<RegistrationsPage />} />
                 <Route path="/kayitlar/:studentNo" element={<RegistrationDetailPage />} />
                 <Route path="/risk" element={<RiskPage />} />
