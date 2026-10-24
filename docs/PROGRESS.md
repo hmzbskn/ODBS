@@ -266,3 +266,33 @@ düzen/renk doğrulaması Aşama 7'de ders kaydı ekranıyla birlikte yapılacak
   olunca sıfırlanması, `.exe` reddi (Türkçe hata), PDF ekli talep, danışmanın eki indirmesi (içerik birebir),
   not olmadan "Reddet" kapalı, İncelemeye al → Onayla, öğrencide yanıt notu ve 2 bildirim, danışmanda "1 / 5 okudu",
   öğrencinin personel sayfalarına girememesi, mobil.
+
+## Aşama 11 — Uçtan uca doğrulama ve sertleştirme
+
+- Durum: tamamlandı
+- **Tam yığın testi (bellek içi, ağsız):** Mock OBİS gerçek Minimal API + JSON seed ile `WebApplicationFactory` içinde ayağa
+  kalkar, ana uygulama GERÇEK `HttpObisClient` ile ona bağlanır (sahte istemci yok). Böylece HTTP sözleşmesi (metin enum'lar,
+  saat/tarih biçimleri) otomatik doğrulanır. Doğrulananlar: OBİS adaptörünün her endpoint'i; 10 uç durumdan ders kaydı ve
+  risk/mezuniyet ile ilgili olanların API üzerinden yakalanması (saat/sınav çakışması, önkoşul, alttan ders, AKTS limiti, tekrar
+  alma, GANO düşüşü, süre aşımı, devamsızlık, yüksek risk, mezuniyete az kalan); **63 öğrencinin tamamı için** ders kaydı, risk,
+  mezuniyet ve öğrenci dosyası uçlarının 200 dönmesi; tüm demo öğrenci hesaplarının kendi ekranlarını kullanabilmesi.
+- **Otomatik yetki taraması:** Uygulamadaki her endpoint (49) çalışma zamanında listelenir ve taranır: (1) anonim erişime açık
+  olan yalnızca `POST api/auth/login`; (2) diğer tüm endpoint'ler anonim istekte 401 verir; (3) rol kısıtlı her endpoint (40),
+  izin verilmeyen her rolden 403 alır; (4) rol kısıtı OLMAYAN endpoint'ler bilinçli onaylanmış bir listeyle birebir eşleşmek
+  zorundadır (yetki servis/guard katmanında). Yeni bir endpoint eklenip yetki düşünülmezse test kırılır.
+- **Swagger testi:** `/swagger/v1/swagger.json` Development'ta üretilir ve tüm controller'ları belgeler (44 yol); Production'da açık değildir.
+- **Sertleştirme:**
+  - Üretimde zayıf ya da geliştirme `Jwt:SigningKey` ile uygulama BAŞLAMAZ (anahtar repoda göründüğü için token sahteciliği mümkün olurdu).
+  - Demo hesaplar (bilinen şifreli) yalnızca Development/Testing'de kendiliğinden oluşur; üretimde `Demo:SeedAccounts=true` ile
+    açıkça istenmelidir.
+  - Giriş uç noktasında istemci IP'si başına dakikada 10 deneme sınırı (`Auth:LoginAttemptsPerMinute`); aşılınca 429 + Türkçe
+    mesaj, doğru şifre de sınırı aşamaz.
+  - Güvenlik başlıkları (`X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy: no-referrer`), üretimde HSTS.
+  - İmzası bozulmuş ya da rolü değiştirilmiş (içerik değiştirilmiş) JWT'nin reddedildiği testle doğrulandı.
+- Testler: toplam 333 (bu aşamada +34).
+
+**Bilinen sınırlamalar (rapora not):**
+- Giriş hız sınırı IP'ye göre; ters proxy arkasında `X-Forwarded-For` işlenmeli (`UseForwardedHeaders`) yoksa tüm istemciler tek IP görünür.
+- Token'ı geri çağırma (logout sonrası geçersiz kılma) ve refresh token yoktur; token süresi 120 dk.
+- Yüklenen dosyalar virüs taramasından geçmez; yalnızca tür/imza/boyut denetimi vardır.
+- Frontend üretim derlemesi (`frontend/dist`) API tarafından sunulmaz; ters proxy ya da statik barındırma gerekir.

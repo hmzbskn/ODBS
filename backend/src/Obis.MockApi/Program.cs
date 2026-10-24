@@ -56,3 +56,10 @@ static string FindProjectRoot()
 
     return dir?.FullName ?? Directory.GetCurrentDirectory();
 }
+
+namespace Obis.MockApi
+{
+    /// <summary>Testlerde <c>WebApplicationFactory&lt;MockApiMarker&gt;</c> ile bu uygulamayı bellek içinde ayağa kaldırmak için.
+    /// (Program sınıfı, Advisor.Api'dekiyle ad çakışması yaşamasın diye açılmadı.)</summary>
+    public sealed class MockApiMarker;
+}

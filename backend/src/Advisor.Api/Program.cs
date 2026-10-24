@@ -7,12 +7,24 @@ using Advisor.Infrastructure;
 using Advisor.Infrastructure.Auth;
 using Advisor.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Güvenli varsayılan: geliştirme anahtarıyla üretimde çalışmayı reddet. Anahtar repoda göründüğü için
+// onunla imzalanmış token'ı herkes üretebilir.
+var jwtKey = builder.Configuration[$"{JwtOptions.SectionName}:SigningKey"] ?? string.Empty;
+var isDevOrTest = builder.Environment.IsDevelopment() || builder.Environment.IsEnvironment("Testing");
+if (!isDevOrTest && (jwtKey.Length < 32 || jwtKey.Contains("DEV-ONLY", StringComparison.OrdinalIgnoreCase)))
+{
+    throw new InvalidOperationException(
+        "Üretim ortamında Jwt:SigningKey, en az 32 karakterlik gizli bir değer olmalıdır " +
+        "(ortam değişkeni Jwt__SigningKey ile verin). Geliştirme anahtarı kullanılamaz.");
+}
 
 builder.Services.AddControllers()
     .AddJsonOptions(o => o.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter()));
@@ -71,6 +83,23 @@ builder.Services.AddAuthorization(o =>
     o.FallbackPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
 });
 
+// Kaba kuvvet denemelerine karşı giriş hız sınırı (istemci IP'si başına, dakikada N deneme).
+var loginPermits = builder.Configuration.GetValue("Auth:LoginAttemptsPerMinute", 10);
+builder.Services.AddRateLimiter(o =>
+{
+    o.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    o.AddPolicy("login", httpContext => RateLimitPartition.GetFixedWindowLimiter(
+        httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+        _ => new FixedWindowRateLimiterOptions { PermitLimit = loginPermits, Window = TimeSpan.FromMinutes(1), QueueLimit = 0 }));
+    o.OnRejected = async (context, ct) =>
+    {
+        if (context.Lease.TryGetMetadata(MetadataName.RetryAfter, out var retryAfter))
+            context.HttpContext.Response.Headers.RetryAfter = ((int)retryAfter.TotalSeconds).ToString();
+        await context.HttpContext.Response.WriteAsJsonAsync(
+            new { message = "Çok fazla giriş denemesi yaptınız. Lütfen bir dakika sonra tekrar deneyin." }, ct);
+    };
+});
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -78,10 +107,22 @@ using (var scope = app.Services.CreateScope())
     var db = scope.ServiceProvider.GetRequiredService<AdvisorDbContext>();
     if (db.Database.IsRelational()) db.Database.Migrate();
     else db.Database.EnsureCreated();
-    await DemoDataSeeder.SeedAsync(db);
+    // Demo hesapları (bilinen şifreli) yalnızca geliştirme/test ortamında kendiliğinden oluşur;
+    // üretimde Demo:SeedAccounts=true ile açıkça istenmedikçe oluşturulmaz.
+    var seedDemo = app.Configuration.GetValue<bool?>("Demo:SeedAccounts") ?? !app.Environment.IsProduction();
+    if (seedDemo) await DemoDataSeeder.SeedAsync(db);
 }
 
 app.UseMiddleware<ExceptionMiddleware>();
+
+app.Use(async (context, next) =>
+{
+    var h = context.Response.Headers;
+    h["X-Content-Type-Options"] = "nosniff";
+    h["X-Frame-Options"] = "DENY";
+    h["Referrer-Policy"] = "no-referrer";
+    await next();
+});
 
 if (app.Environment.IsDevelopment())
 {
@@ -89,9 +130,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+if (!app.Environment.IsDevelopment()) app.UseHsts();
+
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseRateLimiter();
 app.MapControllers();
 
 app.Run();

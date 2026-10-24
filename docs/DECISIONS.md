@@ -205,3 +205,14 @@ düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
   tür, doğrulanmış uzantı ve dosya imzasından üretilir.
 - **Sonuçlanan talep değişmez:** Karar geri alınabilseydi öğrenciye gönderilen bildirimle çelişirdi; hata düzeltmesi için yeni
   talep açılır.
+
+## 2026-10-24 — Aşama 11: sertleştirme kararları
+
+- **Uçtan uca test canlı sunucu yerine bellek içi:** Ağ portu, süreç yönetimi ve zamanlama kırılganlığı olmadan her `dotnet test`
+  çalıştırmasında aynı doğrulama yapılır. Canlı tarayıcı doğrulaması ise her arayüz aşamasında ayrıca yapıldı.
+- **Yetki taraması "izin listesi" yaklaşımıyla:** Rol kısıtı olmayan endpoint'ler açık bir listeyle eşleşmek zorunda; böylece
+  yeni endpoint için yetki kararı kod incelemesinde ve testte görünür olur (varsayılan-reddet politikasının test karşılığı).
+- **Üretim kapıları "fail closed":** Zayıf anahtar ya da demo hesapları sessizce kabul edilmez; uygulama başlamaz ya da hesap oluşturmaz.
+- **Hız sınırı yerleşik `RateLimiter` ile:** Ek paket yok. Anahtarı IP; kullanıcı adı başına kilitleme eklenmedi (hesap kilitleme,
+  saldırganın gerçek kullanıcıyı kilitlemesine izin veren bir hizmet reddi vektörü olabilir).
+- **CORS eklenmedi:** Ön yüz aynı origin'den (geliştirmede Vite proxy, üretimde ters proxy) çağırır; çapraz kaynak izni gereksiz saldırı yüzeyi olurdu.
