@@ -2,6 +2,7 @@ using System.Globalization;
 using Advisor.Application.Auth;
 using Advisor.Application.Common;
 using Advisor.Application.Communication;
+using Advisor.Application.Management;
 using Advisor.Application.Obis;
 using Advisor.Domain.Entities;
 using Advisor.Domain.Enums;
@@ -24,13 +25,15 @@ public class AppointmentService
 
     private readonly AdvisorDbContext _db;
     private readonly IObisClient _obis;
+    private readonly IStudentDirectory _students;
     private readonly ICurrentUser _user;
     private readonly TimeProvider _time;
 
-    public AppointmentService(AdvisorDbContext db, IObisClient obis, ICurrentUser user, TimeProvider time)
+    public AppointmentService(AdvisorDbContext db, IObisClient obis, IStudentDirectory students, ICurrentUser user, TimeProvider time)
     {
         _db = db;
         _obis = obis;
+        _students = students;
         _user = user;
         _time = time;
     }
@@ -125,7 +128,7 @@ public class AppointmentService
         }
 
         var list = await query.ToListAsync(ct);
-        var names = (await _obis.GetStudentsAsync(ct)).ToDictionary(s => s.StudentNo, s => $"{s.FirstName} {s.LastName}");
+        var names = (await _students.GetStudentsAsync(ct)).ToDictionary(s => s.StudentNo, s => $"{s.FirstName} {s.LastName}");
         var now = Now;
         return list
             .OrderByDescending(StartOf)
@@ -279,7 +282,7 @@ public class AppointmentService
     private async Task<ObisStudent> CurrentStudentAsync(CancellationToken ct)
     {
         if (_user.Role != UserRole.Ogrenci || _user.LinkedStudentNo is null) throw AppException.Forbidden();
-        return await _obis.GetStudentAsync(_user.LinkedStudentNo, ct)
+        return await _students.GetStudentAsync(_user.LinkedStudentNo, ct)
             ?? throw AppException.NotFound("Öğrenci kaydınız OBİS'te bulunamadı.");
     }
 

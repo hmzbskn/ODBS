@@ -35,13 +35,13 @@ public static class SeedGenerator
 
     private static readonly TimeOnly[] Slots =
     {
-        new(9, 0), new(11, 0), new(13, 0), new(15, 0),
+        new(8, 0), new(10, 0), new(12, 0), new(14, 0), new(16, 0), new(18, 0),
     };
 
     // Section B alan "yoğun" dersler (gerçekçilik: ilk yıllarda şube sayısı daha fazla).
     private static readonly HashSet<string> DualSectionCourses = new()
     {
-        "BLM101", "BLM103", "MAT101", "MAT102", "BLM201", "BLM202", "BLM203", "BLM205",
+        "3301151", "3301251", "3301256", "3301351", "3301353", "3301354", "3301452", "3301453",
     };
 
     public static SeedBundle Generate()
@@ -74,7 +74,8 @@ public static class SeedGenerator
         var students = plans
             .Select(p => new StudentInfo(
                 p.StudentNo, p.FirstName, p.LastName, p.ClassYear, Department, p.AdvisorId,
-                ComputeGpa(p.StudentNo, transcripts), p.Status))
+                ComputeGpa(p.StudentNo, transcripts), p.Status,
+                StudentEmail(p), StudentPhone(p.StudentNo), StudentResidence(p.StudentNo), StudentProgram(p.StudentNo)))
             .ToList();
 
         var curriculum = BuildCurriculum(courses);
@@ -89,6 +90,34 @@ public static class SeedGenerator
         return new SeedBundle(advisors, students, courses, curriculum, schedule, exams, transcripts, registrations, attendance, internships, edgeCases);
     }
 
+    // İletişim ve öğretim türü rastgele akıştan DEĞİL, öğrenci sıra numarasından türetilir: üretim deterministik
+    // kalır ve diğer seed çıktıları (transkript, kayıt...) değişmez. Telefon numaraları kurgusaldır.
+    private static int Ordinal(string studentNo) => int.Parse(studentNo[^3..]);
+
+    private static string StudentEmail(StudentPlan p)
+    {
+        static string Ascii(string v) => new string(v.ToLowerInvariant()
+            .Replace('ı', 'i').Replace('ğ', 'g').Replace('ü', 'u').Replace('ş', 's').Replace('ö', 'o').Replace('ç', 'c')
+            .Where(char.IsAsciiLetterOrDigit).ToArray());
+        return $"{Ascii(p.FirstName)}{Ascii(p.LastName)}@ogr.selcuk.edu.tr";
+    }
+
+    private static string StudentPhone(string studentNo)
+    {
+        var n = Ordinal(studentNo);
+        return $"05{30 + n % 20:D2} {(n * 7919) % 900 + 100} {(n * 31) % 90 + 10} {(n * 17) % 90 + 10}";
+    }
+
+    private static readonly string[] Residences =
+    {
+        "Selçuklu / Bosna Hersek Mah.", "Selçuklu / Yazır Mah.", "Meram / Havzan Mah.", "Karatay / Fevziçakmak Mah.",
+        "Selçuklu / Akademi Mah.", "Meram / Yaka Mah.", "Selçuklu / Nişantaş Mah.", "Karatay / Aziziye Mah.",
+    };
+
+    private static string StudentResidence(string studentNo) => Residences[Ordinal(studentNo) % Residences.Length];
+
+    private static string StudentProgram(string studentNo) => Ordinal(studentNo) % 4 == 0 ? "İkinci Öğretim" : "Birinci Öğretim";
+
     private static List<AdvisorInfo> BuildAdvisors() =>
         NamePools.Advisors
             .Select((a, i) => new AdvisorInfo($"ADV{i + 1}", a.FirstName, a.LastName, a.Title))
@@ -99,7 +128,7 @@ public static class SeedGenerator
         public required string StudentNo { get; init; }
         public required string FirstName { get; init; }
         public required string LastName { get; init; }
-        public required string AdvisorId { get; init; }
+        public required string AdvisorId { get; set; }
         public int CurrentTerm { get; set; }
         public int ClassYear => Math.Min(4, (CurrentTerm + 1) / 2);
         public string Status { get; set; } = "Aktif";
@@ -115,7 +144,8 @@ public static class SeedGenerator
 
         int[] perClassYear = { 5, 5, 5, 6 }; // sınıf 1,2,3,4 -> advisor başına
 
-        foreach (var advisor in advisors)
+        // Öğrenci kümesi (ve rastgele akışı) ilk üç danışmanla üretilir; danışman ataması sonradan sınıfa göre yapılır.
+        foreach (var advisor in advisors.Take(3))
         {
             for (var classYear = 1; classYear <= 4; classYear++)
             {
@@ -146,6 +176,11 @@ public static class SeedGenerator
             }
         }
 
+        // İş kuralı: her danışman yalnızca bir sınıfa bakar, her sınıfın tek danışmanı vardır.
+        // 3. sınıf ADV1'de kalır (demo: danisman1 <-> ogrenci2), diğerleri farklı hocalara dağılır.
+        string[] advisorByClassYear = { advisors[1].AdvisorId, advisors[2].AdvisorId, advisors[0].AdvisorId, advisors[3].AdvisorId };
+        foreach (var plan in plans) plan.AdvisorId = advisorByClassYear[plan.ClassYear - 1];
+
         return plans;
     }
 
@@ -165,7 +200,7 @@ public static class SeedGenerator
         {
             foreach (var course in CoursesForTerm(coursesByTerm, term, plan, rnd))
             {
-                var passed = rnd.NextDouble() > 0.08; // ~%92 geçme oranı (gerçekçi taban gürültü)
+                var passed = rnd.NextDouble() > 0.06; // ~%94 geçme oranı: gerçek müfredatta ~35 ders var, taban gürültü ders sayısıyla birlikte büyümesin
                 var grade = passed
                     ? PassGradePool[rnd.Next(PassGradePool.Length)]
                     : FailGradePool[rnd.Next(FailGradePool.Length)];
@@ -203,23 +238,25 @@ public static class SeedGenerator
         }
 
         var mandatory = all.Where(c => c.IsMandatory).ToList();
-        if (term < 5)
+        if (!ElectivesPerTerm.TryGetValue(term, out var electiveCount))
         {
             return mandatory;
         }
 
-        // Dönem 5+: zorunlular + o dönemin seçmeli havuzundan öğrenciye özgü deterministik bir seçim.
-        var electives = all.Where(c => !c.IsMandatory).OrderBy(c => c.CourseCode).ToList();
-        if (electives.Count == 0)
-        {
-            return mandatory;
-        }
+        // Dönem 4-7: zorunlular + seçmeli havuzundan öğrenciye özgü deterministik seçim. Havuz, dönemin en sık AKTS'li
+        // seçmelileridir (dönem yükü ~30 AKTS kalsın); aynı dönemin tüm dersleri ayrı saat dilimindedir, seçimler çakışmaz.
+        var electives = all.Where(c => !c.IsMandatory).ToList();
+        var modalEcts = electives.GroupBy(c => c.Ects).OrderByDescending(g => g.Count()).First().Key;
+        var pool = electives.Where(c => c.Ects == modalEcts).OrderBy(c => c.CourseCode).ToList();
 
         var hash = int.Parse(plan.StudentNo) ^ term; // string.GetHashCode() süreç başına rastgeledir, seed tekrarlanabilir olmaz
-        var pickIndex = hash & 0x7FFFFFFF; // her zaman negatif olmayan deterministik indeks
-        var chosen = electives[pickIndex % electives.Count];
-        return mandatory.Append(chosen).ToList();
+        var start = hash & 0x7FFFFFFF; // her zaman negatif olmayan deterministik indeks
+        var chosen = Enumerable.Range(0, Math.Min(electiveCount, pool.Count)).Select(i => pool[(start + i) % pool.Count]);
+        return mandatory.Concat(chosen).ToList();
     }
+
+    /// <summary>Dönem başına öğrencinin aldığı seçmeli sayısı (gerçek müfredatta seçmeliler 4-7. dönemlerde).</summary>
+    private static readonly Dictionary<int, int> ElectivesPerTerm = new() { [4] = 1, [5] = 3, [6] = 3, [7] = 4 };
 
     private static string PickSection(Dictionary<string, List<string>> sectionsByCourse, string courseCode, Random rnd)
     {
@@ -278,7 +315,7 @@ public static class SeedGenerator
         var finalBase = new DateOnly(2027, 1, 12);
 
         // Dönem içi indeks sıfırlanır: aynı dönemdeki dersler asla aynı tarih+saate denk
-        // gelmez (5 gün x 4 saat = 20 kombinasyon, bir dönemde en fazla 7 ders var).
+        // gelmez (5 gün x 6 saat = 30 kombinasyon, bir dönemde en fazla 29 ders var).
         // Farklı dönemler arası kesişim kasıtlı — sadece aynı anda iki farklı dönemden
         // ders alan (retake yapan) öğrencilerde anlamlı hale gelir.
         foreach (var termGroup in schedule.GroupBy(s => s.Term).OrderBy(g => g.Key))
@@ -355,7 +392,7 @@ public static class SeedGenerator
     private static CurriculumInfo BuildCurriculum(List<CourseInfo> courses)
     {
         var mandatory = courses.Where(c => c.IsMandatory).Select(c => c.CourseCode).ToList();
-        return new CurriculumInfo(Department, mandatory, ElectiveCreditRequirement: 12, TotalEctsRequirement: 212, InternshipDaysRequirement: 40);
+        return new CurriculumInfo(Department, mandatory, ElectiveCreditRequirement: 30, TotalEctsRequirement: 240, InternshipDaysRequirement: 40);
     }
 
     private static void ApplyEdgeCases(
@@ -379,24 +416,24 @@ public static class SeedGenerator
         // almak için kaydoluyor; özel MAT101 Section C, dönem5 BLM301/A ile aynı gün/saate denk geliyor.
         var s1 = byClass[3][0];
         s1.EdgeCaseTag = "EDGE-01 saat-çakışması";
-        MarkAsFailed(transcripts, s1.StudentNo, 1, "MAT101");
+        MarkAsFailed(transcripts, s1.StudentNo, 1, CourseCatalog.Math1);
         // Ortak şubeleri bozmamak için MAT101'e yalnızca bu öğrencinin seçtiği özel bir "C"
         // şubesi eklenir; saati BLM301/A ile aynıdır.
-        AddSectionOverlapping(schedule, "MAT101", "C", "BLM301");
-        registrations.Add(new RegistrationEntry(s1.StudentNo, s1.CurrentTerm, "MAT101", "C", "Beklemede"));
+        AddSectionOverlapping(schedule, CourseCatalog.Math1, "C", CourseCatalog.Microprocessors);
+        registrations.Add(new RegistrationEntry(s1.StudentNo, s1.CurrentTerm, CourseCatalog.Math1, "C", "Beklemede"));
 
         // EDGE-02: Önkoşul ihlali — sınıf2 öğrencisi BLM103'ü (dönem2) hiç geçemedi (FF),
         // ama dönem3'te BLM103'e bağımlı BLM201'e kayıtlı.
         var s2 = byClass[2][0];
         s2.EdgeCaseTag = "EDGE-02 önkoşul-ihlali";
-        MarkAsFailed(transcripts, s2.StudentNo, 2, "BLM103");
-        EnsureRegistered(registrations, s2.StudentNo, s2.CurrentTerm, "BLM201", "A", "Beklemede");
+        MarkAsFailed(transcripts, s2.StudentNo, 2, CourseCatalog.Programming1);
+        EnsureRegistered(registrations, s2.StudentNo, s2.CurrentTerm, CourseCatalog.DataStructures, "A", "Beklemede");
 
         // EDGE-03: Alttan ders önceliği — sınıf3 öğrencisi dönem2 FIZ102'yi geçemedi
         // ama alttan tamamlamadan dönem5 derslerine devam ediyor (retake kaydı yok).
         var s3 = byClass[3][1];
         s3.EdgeCaseTag = "EDGE-03 alttan-ders";
-        MarkAsFailed(transcripts, s3.StudentNo, 2, "FIZ102");
+        MarkAsFailed(transcripts, s3.StudentNo, 2, CourseCatalog.Physics2);
 
         // EDGE-04: Kredi/AKTS limiti aşımı — düşük GANO'lu sınıf2 öğrencisi normal
         // dönem yüküne ek olarak üç ekstra ders daha almış (toplam kredi limiti aşıyor).
@@ -407,7 +444,7 @@ public static class SeedGenerator
         var s4Course = coursesByTerm[s4.CurrentTerm].First(c => c.IsMandatory).CourseCode;
         attendance.RemoveAll(a => a.StudentNo == s4.StudentNo && a.CourseCode == s4Course);
         attendance.Add(new AttendanceRecord(s4.StudentNo, s4.CurrentTerm, s4Course, 14, 9));
-        foreach (var extra in new[] { "BLM301", "BLM302", "BLM303" })
+        foreach (var extra in new[] { CourseCatalog.Microprocessors, CourseCatalog.Programming3, CourseCatalog.DataCommunication })
         {
             EnsureRegistered(registrations, s4.StudentNo, s4.CurrentTerm, extra, "A", "Beklemede");
         }
@@ -416,18 +453,22 @@ public static class SeedGenerator
         // tekrar alıyor; final tarihleri aynı güne denk getirilecek (ApplyExamConflictEdgeCase).
         var s5 = byClass[4][0];
         s5.EdgeCaseTag = "EDGE-05 sınav-çakışması";
-        MarkAsFailed(transcripts, s5.StudentNo, 3, "BLM203");
+        MarkAsFailed(transcripts, s5.StudentNo, 3, CourseCatalog.LogicCircuits1);
         // Yalnızca bu öğrencinin seçtiği özel "C" şubesi: ders saati öğrencinin dönem programında
         // boş bir yerde (saat çakışması olmasın, tek bulgu sınav çakışması olsun).
-        AddSectionAtFreeSlot(schedule, "BLM203", "C", s5.CurrentTerm);
-        EnsureRegistered(registrations, s5.StudentNo, s5.CurrentTerm, "BLM203", "C", "Beklemede");
+        AddSectionAtFreeSlot(schedule, CourseCatalog.LogicCircuits1, "C", s5.CurrentTerm, registrations.Where(x => x.StudentNo == s5.StudentNo));
+        EnsureRegistered(registrations, s5.StudentNo, s5.CurrentTerm, CourseCatalog.LogicCircuits1, "C", "Beklemede");
+        DropOneElective(registrations, attendance, coursesByTerm, s5); // tekrar dersi AKTS limitini aşırmasın: tek bulgu sınav çakışması
 
         // EDGE-06: Tekrar alma (bilgi) — sınıf4 öğrencisi dönem3'te BLM201'i AA ile geçmişken
         // bu dönem tekrar BLM201'e kayıtlı (GANO yükseltme amaçlı — bilgi seviyesi uyarı).
         var s6 = byClass[4][1];
         s6.EdgeCaseTag = "EDGE-06 tekrar-alma";
-        ForceGrade(transcripts, s6.StudentNo, 3, "BLM201", "AA");
-        EnsureRegistered(registrations, s6.StudentNo, s6.CurrentTerm, "BLM201", "A", "Beklemede");
+        ForceGrade(transcripts, s6.StudentNo, 3, CourseCatalog.DataStructures, "AA");
+        // Tekrar dersi, öğrencinin programında boş bir saatteki özel "C" şubesine yazılır: tek bulgu bilgi seviyesindeki tekrar uyarısı olsun.
+        AddSectionAtFreeSlot(schedule, CourseCatalog.DataStructures, "C", s6.CurrentTerm, registrations.Where(x => x.StudentNo == s6.StudentNo));
+        EnsureRegistered(registrations, s6.StudentNo, s6.CurrentTerm, CourseCatalog.DataStructures, "C", "Beklemede");
+        DropOneElective(registrations, attendance, coursesByTerm, s6);
 
         // EDGE-07: GANO düşüşü — sınıf3 öğrencisinin son tamamlanan dönemi (dönem4) zayıf
         // notlarla dolu, önceki dönem (dönem3) yüksek notluydu -> görünür düşüş.
@@ -440,13 +481,13 @@ public static class SeedGenerator
         // gerekirken birden fazla dersi tekrarladığı için dönem9'da (gecikmeli).
         var s8 = byClass[4][2];
         s8.EdgeCaseTag = "EDGE-08 azami-süre";
-        MarkAsFailed(transcripts, s8.StudentNo, 1, "BLM101");
-        MarkAsFailed(transcripts, s8.StudentNo, 2, "BLM103");
-        MarkAsFailed(transcripts, s8.StudentNo, 4, "BLM204");
+        MarkAsFailed(transcripts, s8.StudentNo, 1, CourseCatalog.Math1);
+        MarkAsFailed(transcripts, s8.StudentNo, 2, CourseCatalog.Programming1);
+        MarkAsFailed(transcripts, s8.StudentNo, 4, CourseCatalog.Programming2);
         PromoteCurrentTermToHistory(s8, registrations, transcripts, coursesByTerm, rnd);
         s8.CurrentTerm = 9;
         // Dönem9'da kalan zorunluları ve tekrarları alıyor.
-        foreach (var retake in new[] { "BLM101", "BLM103", "BLM204" })
+        foreach (var retake in new[] { CourseCatalog.Math1, CourseCatalog.Programming1, CourseCatalog.Programming2 })
         {
             EnsureRegistered(registrations, s8.StudentNo, 9, retake, "A", "Beklemede");
         }
@@ -461,10 +502,10 @@ public static class SeedGenerator
         PromoteCurrentTermToHistory(s9, registrations, transcripts, coursesByTerm, rnd);
         s9.CurrentTerm = 8;
         AppendCurrentTermRegistrationsOnly(s9, coursesByTerm, sectionsByCourse, registrations, attendance, rnd);
-        // "Az kaldı" senaryosunu netleştir: dönem8'in 5 dersinden 3'ünü daha önceden
+        // "Az kaldı" senaryosunu netleştir: dönem8'in 3 dersinden 1'ini daha önceden
         // tamamlanmış kabul et (transkripte geçir), sadece 2'si bu dönem gerçekten eksik/kayıtlı kalsın.
         var term8Regs = registrations.Where(r => r.StudentNo == s9.StudentNo && r.Term == 8).Select(r => r.CourseCode).OrderBy(c => c).ToList();
-        foreach (var courseCode in term8Regs.Take(3))
+        foreach (var courseCode in term8Regs.Take(1))
         {
             var course = coursesByTerm[8].First(c => c.CourseCode == courseCode);
             transcripts.Add(new TranscriptEntry(s9.StudentNo, 8, course.CourseCode, course.CourseName, course.Credit, course.Ects, "BA", true));
@@ -482,6 +523,21 @@ public static class SeedGenerator
         var targetCourse = coursesByTerm[s10.CurrentTerm].First(c => c.IsMandatory).CourseCode;
         attendance.RemoveAll(a => a.StudentNo == s10.StudentNo && a.CourseCode == targetCourse);
         attendance.Add(new AttendanceRecord(s10.StudentNo, s10.CurrentTerm, targetCourse, 14, 10));
+    }
+
+    /// <summary>Güncel dönemde öğrencinin seçmeli derslerinden birini kayıttan çıkarır (eklenen tekrar dersinin AKTS'ini dengeler).</summary>
+    private static void DropOneElective(
+        List<RegistrationEntry> registrations, List<AttendanceRecord> attendance,
+        Dictionary<int, List<CourseInfo>> coursesByTerm, StudentPlan plan)
+    {
+        var electiveCodes = coursesByTerm[plan.CurrentTerm].Where(c => !c.IsMandatory).Select(c => c.CourseCode).ToHashSet();
+        var drop = registrations
+            .Where(x => x.StudentNo == plan.StudentNo && x.Term == plan.CurrentTerm && electiveCodes.Contains(x.CourseCode))
+            .OrderBy(x => x.CourseCode)
+            .FirstOrDefault();
+        if (drop is null) return;
+        registrations.Remove(drop);
+        attendance.RemoveAll(a => a.StudentNo == plan.StudentNo && a.Term == plan.CurrentTerm && a.CourseCode == drop.CourseCode);
     }
 
     private static void MarkAsFailed(List<TranscriptEntry> transcripts, string studentNo, int term, string courseCode)
@@ -575,7 +631,11 @@ public static class SeedGenerator
 
     /// <summary><paramref name="courseCode"/> dersine, <paramref name="term"/> dönemi dersleriyle çakışmayan
     /// (boş bir gün/saatte) yeni bir özel şube ekler.</summary>
-    private static void AddSectionAtFreeSlot(List<ScheduleSlot> schedule, string courseCode, string section, int term)
+    /// <summary>Şubeyi, öğrencinin o dönemki mevcut kayıtlarıyla çakışmayan ilk (gün, saat) kombinasyonuna ekler.
+    /// Dönemin tüm dersleri (zorunlu + geniş seçmeli havuzu) ızgarayı doldurabildiği için "boş" kombinasyon
+    /// dönem genelinde değil, öğrencinin kendi programına göre aranır.</summary>
+    private static void AddSectionAtFreeSlot(
+        List<ScheduleSlot> schedule, string courseCode, string section, int term, IEnumerable<RegistrationEntry> studentRegistrations)
     {
         var template = schedule.FirstOrDefault(s => s.CourseCode == courseCode && s.Section == "A");
         if (template is null)
@@ -583,7 +643,8 @@ public static class SeedGenerator
             return;
         }
 
-        var used = schedule.Where(s => s.Term == term).Select(s => (s.Day, s.StartTime)).ToHashSet();
+        var registered = studentRegistrations.Where(x => x.Term == term).Select(x => (x.CourseCode, x.Section)).ToHashSet();
+        var used = schedule.Where(s => registered.Contains((s.CourseCode, s.Section))).Select(s => (s.Day, s.StartTime)).ToHashSet();
         foreach (var start in Slots)
         {
             foreach (var day in Days)
@@ -653,10 +714,10 @@ public static class SeedGenerator
 
     private static void ApplyExamConflictEdgeCase(List<ExamSlot> exams, List<RegistrationEntry> registrations)
     {
-        // EDGE-05 öğrencisinin BLM203 final'ini, aynı dönemdeki BLM401 final'iyle aynı
+        // EDGE-05 öğrencisinin Mantık Devreleri-1 final'ini, aynı dönemdeki Bilgisayar Mimarisi final'iyle aynı
         // tarih/saate taşı (ikisi de bu öğrencinin kayıtlı olduğu dersler).
-        var blm401Final = exams.FindIndex(e => e.CourseCode == "BLM401" && e.Section == "A" && e.Type == ExamType.Final);
-        var blm203FinalIdx = exams.FindIndex(e => e.CourseCode == "BLM203" && e.Section == "C" && e.Type == ExamType.Final);
+        var blm401Final = exams.FindIndex(e => e.CourseCode == CourseCatalog.ComputerArchitecture && e.Section == "A" && e.Type == ExamType.Final);
+        var blm203FinalIdx = exams.FindIndex(e => e.CourseCode == CourseCatalog.LogicCircuits1 && e.Section == "C" && e.Type == ExamType.Final);
         if (blm401Final >= 0 && blm203FinalIdx >= 0)
         {
             var target = exams[blm401Final];

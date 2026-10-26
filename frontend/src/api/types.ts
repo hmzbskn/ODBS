@@ -1,7 +1,7 @@
 // Backend sözleşmesinin ön yüz tarafı (Advisor.Api / Advisor.Application).
 // Enum'lar API'de metin olarak gelir.
 
-export type Role = 'Admin' | 'Danisman' | 'Ogrenci'
+export type Role = 'Admin' | 'Danisman' | 'Ogrenci' | 'BolumBaskani' | 'Dekan'
 
 export interface UserInfo {
   id: string
@@ -10,6 +10,7 @@ export interface UserInfo {
   role: Role
   linkedAdvisorId: string | null
   linkedStudentNo: string | null
+  department?: string | null
 }
 
 export interface LoginResponse {
@@ -33,6 +34,38 @@ export interface AdvisorStudentRow {
   warningCount: number
   infoCount: number
   decision: RegistrationDecision
+  conflictCount: number
+}
+
+export interface StudentListRow {
+  studentNo: string
+  fullName: string
+  classYear: number
+  program: string
+  gpa: number
+  advisorName: string
+  status: string
+}
+
+export interface StudentProfileDetail {
+  school: {
+    studentNo: string
+    fullName: string
+    department: string
+    classYear: number
+    term: number
+    program: string
+    status: string
+  }
+  contact: { email: string | null; phone: string | null; residence: string | null }
+  academic: {
+    gpa: number
+    earnedEcts: number
+    requiredEcts: number
+    remainingEcts: number
+    currentTermCourseCount: number
+  }
+  advisor: AdvisorContact | null
 }
 
 export interface AdvisorStudentList {
@@ -78,6 +111,12 @@ export interface RegistrationReview {
   reviewedAt: string
 }
 
+export interface AdvisorContact {
+  name: string
+  title: string
+  email: string
+}
+
 export interface RegistrationDetail {
   studentNo: string
   fullName: string
@@ -94,6 +133,7 @@ export interface RegistrationDetail {
   infoCount: number
   decision: RegistrationDecision
   reviews: RegistrationReview[]
+  advisor: AdvisorContact | null
 }
 
 // ---- anketler ----
@@ -310,6 +350,48 @@ export interface DashboardResponse {
   gpaTrend: { term: number; averageGpa: number; studentCount: number }[]
   courseSuccess: { courseCode: string; courseName: string; attempts: number; passed: number; successRate: number }[]
   graduationCandidates: number
+}
+
+// ---- yönetim (bölüm başkanı, dekan, yönetici) ----
+
+export interface AdvisorSummary {
+  advisorId: string
+  fullName: string
+  title: string
+  studentCount: number
+  averageGpa: number
+  risk: { low: number; medium: number; high: number }
+  graduationCandidates: number
+}
+
+export interface ManagementOverview {
+  total: DashboardResponse
+  advisors: AdvisorSummary[]
+}
+
+export interface ManagedStudent {
+  studentNo: string
+  fullName: string
+  classYear: number
+  department: string
+  gpa: number
+  advisorId: string
+  advisorName: string
+  obisAdvisorId: string
+  isReassigned: boolean
+}
+
+export interface ManagedAdvisor {
+  advisorId: string
+  fullName: string
+  title: string
+  studentCount: number
+}
+
+export interface AssignResult {
+  assigned: number
+  unchanged: number
+  restoredToObis: number
 }
 
 // ---- randevu, görüşme notu ----

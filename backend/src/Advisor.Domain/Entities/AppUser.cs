@@ -19,5 +19,9 @@ public class AppUser
     /// <summary>Role == Ogrenci ise OBİS StudentNo.</summary>
     public string? LinkedStudentNo { get; set; }
 
+    /// <summary>Role == BolumBaskani ise yetki alanı olan bölüm (OBİS'teki Department metni).
+    /// Boşsa kullanıcı bölümle sınırlı değildir (yönetici, dekan).</summary>
+    public string? Department { get; set; }
+
     public DateTime CreatedAt { get; set; }
 }

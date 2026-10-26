@@ -23,5 +23,6 @@ public static class NamePools
         ("Elif", "Yıldız", "Dr. Öğr. Üyesi"),
         ("Mehmet", "Arslan", "Doç. Dr."),
         ("Zeynep", "Kara", "Dr. Öğr. Üyesi"),
+        ("Ali", "Çelik", "Prof. Dr."),
     };
 }

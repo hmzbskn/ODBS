@@ -92,10 +92,10 @@ public class FullStackTests : IClassFixture<FullStackFactory>
         var curriculum = await obis.GetCurriculumAsync();
 
         Assert.Equal(63, students.Count);
-        Assert.Equal(3, (await obis.GetAdvisorsAsync()).Count);
-        Assert.Equal(52, courses.Count);
-        Assert.Equal(42, curriculum.MandatoryCourseCodes.Count);
-        Assert.Equal(212, curriculum.TotalEctsRequirement);
+        Assert.Equal(4, (await obis.GetAdvisorsAsync()).Count);
+        Assert.Equal(118, courses.Count);
+        Assert.Equal(44, curriculum.MandatoryCourseCodes.Count);
+        Assert.Equal(240, curriculum.TotalEctsRequirement);
         // Metin olarak gelen enum'lar doğru çözülmeli (bu hata daha önce canlıda yakalanmıştı).
         Assert.All(schedule, s => Assert.True(s.Day is >= DayOfWeek.Monday and <= DayOfWeek.Friday));
         Assert.All(schedule, s => Assert.True(s.StartTime < s.EndTime));
@@ -118,8 +118,8 @@ public class FullStackTests : IClassFixture<FullStackFactory>
         var d = await Get<RegistrationDetail_>(adv, "/api/registrations/20241011");
 
         Assert.Contains(d.Issues, i => i.RuleCode == "TIME_CONFLICT");
-        Assert.Contains(d.WeeklySchedule, s => s.CourseCode == "MAT101" && s.InConflict);
-        Assert.Contains(d.WeeklySchedule, s => s.CourseCode == "BLM301" && s.InConflict);
+        Assert.Contains(d.WeeklySchedule, s => s.CourseCode == "3301151" && s.InConflict);
+        Assert.Contains(d.WeeklySchedule, s => s.CourseCode == "3301551" && s.InConflict);
     }
 
     [Theory]
@@ -130,7 +130,7 @@ public class FullStackTests : IClassFixture<FullStackFactory>
     [InlineData("20231017", "RETAKE")]
     public async Task RegistrationEdgeCases_AreCaughtThroughTheApi(string studentNo, string rule)
     {
-        var adv = await LoginAs("danisman1");
+        var adv = await LoginAs("admin");
 
         var d = await Get<RegistrationDetail_>(adv, $"/api/registrations/{studentNo}");
 
@@ -145,7 +145,7 @@ public class FullStackTests : IClassFixture<FullStackFactory>
     [InlineData("20251007", "LOW_GPA")]
     public async Task RiskEdgeCases_AreCaughtThroughTheApi(string studentNo, string indicator)
     {
-        var adv = await LoginAs("danisman1");
+        var adv = await LoginAs("admin");
 
         var r = await Get<RiskDetail>(adv, $"/api/analytics/students/{studentNo}/risk");
 
@@ -155,7 +155,7 @@ public class FullStackTests : IClassFixture<FullStackFactory>
     [Fact]
     public async Task Edge09_AlmostGraduated_IsReportedWithProjection()
     {
-        var adv = await LoginAs("danisman1");
+        var adv = await LoginAs("admin");
 
         var g = await Get<GraduationAnalysis>(adv, "/api/analytics/students/20231019/graduation");
 

@@ -1,4 +1,5 @@
 using Advisor.Application.Auth;
+using Advisor.Application.Management;
 using Advisor.Application.Obis;
 using Advisor.Application.Registration;
 using Advisor.Domain.Entities;
@@ -13,7 +14,7 @@ namespace Advisor.Api.Controllers;
 public record AdvisorStudentRow(
     string StudentNo, string FullName, int ClassYear, double Gpa, int Term,
     int CourseCount, int TotalEcts, int ErrorCount, int WarningCount, int InfoCount,
-    RegistrationDecision Decision);
+    RegistrationDecision Decision, int ConflictCount = 0);
 
 public record AdvisorStudentList(int? Term, IReadOnlyList<int> AvailableTerms, IReadOnlyList<AdvisorStudentRow> Students);
 
@@ -27,6 +28,10 @@ public record WeeklySlotDto(
 public record ReviewDto(
     Guid Id, RegistrationDecision Decision, string? Note, string ReviewedByAdvisorId, DateTime ReviewedAt);
 
+/// <summary>Öğrencinin danışmanı. OBİS'te e-posta alanı olmadığı için adres, Selçuk biçiminden
+/// (adsoyad@selcuk.edu.tr) türetilir.</summary>
+public record AdvisorContactDto(string Name, string Title, string Email);
+
 public record RegistrationDetail(
     string StudentNo, string FullName, int ClassYear, int Term, double Gpa,
     int TotalEcts, int MaxEcts,
@@ -34,7 +39,7 @@ public record RegistrationDetail(
     IReadOnlyList<WeeklySlotDto> WeeklySchedule,
     IReadOnlyList<RegistrationIssue> Issues,
     int ErrorCount, int WarningCount, int InfoCount,
-    RegistrationDecision Decision, IReadOnlyList<ReviewDto> Reviews);
+    RegistrationDecision Decision, IReadOnlyList<ReviewDto> Reviews, AdvisorContactDto? Advisor);
 
 public record ReviewRequest(int Term, RegistrationDecision Decision, string? Note);
 
@@ -44,16 +49,18 @@ public class RegistrationsController : ControllerBase
 {
     private readonly IRegistrationValidationService _validation;
     private readonly IObisClient _obis;
+    private readonly IStudentDirectory _students;
     private readonly AdvisorDbContext _db;
     private readonly ICurrentUser _current;
     private readonly IStudentAccessGuard _guard;
 
     public RegistrationsController(
-        IRegistrationValidationService validation, IObisClient obis, AdvisorDbContext db,
+        IRegistrationValidationService validation, IObisClient obis, IStudentDirectory students, AdvisorDbContext db,
         ICurrentUser current, IStudentAccessGuard guard)
     {
         _validation = validation;
         _obis = obis;
+        _students = students;
         _db = db;
         _current = current;
         _guard = guard;
@@ -65,9 +72,7 @@ public class RegistrationsController : ControllerBase
     [Authorize(Roles = nameof(UserRole.Danisman) + "," + nameof(UserRole.Admin))]
     public async Task<ActionResult<AdvisorStudentList>> Students([FromQuery] int? term, CancellationToken ct)
     {
-        var students = await _obis.GetStudentsAsync(ct);
-        if (_current.Role == UserRole.Danisman)
-            students = students.Where(s => s.AdvisorId == _current.LinkedAdvisorId).ToList();
+        var students = await _students.GetVisibleStudentsAsync(null, ct);
 
         var results = new List<RegistrationValidationResult>();
         foreach (var s in students.OrderBy(s => s.StudentNo))
@@ -93,7 +98,7 @@ public class RegistrationsController : ControllerBase
             .Select(r => new AdvisorStudentRow(
                 r.Student.StudentNo, $"{r.Student.FirstName} {r.Student.LastName}", r.Student.ClassYear,
                 r.Gpa, r.Term, r.Selected.Count, r.TotalEcts, r.ErrorCount, r.WarningCount, r.InfoCount,
-                DecisionFor(r)))
+                DecisionFor(r), r.Issues.Count(i => i.RuleCode == "TIME_CONFLICT")))
             .ToList();
 
         var maxTerm = results.Count > 0 ? results.Max(r => r.Term) : 0;
@@ -148,12 +153,27 @@ public class RegistrationsController : ControllerBase
             .OrderByDescending(r => r.ReviewedAt)
             .ToListAsync(ct);
 
+        var advisorId = (await _students.GetStudentAsync(studentNo, ct))?.AdvisorId ?? result.Student.AdvisorId;
+        var advisor = (await _obis.GetAdvisorsAsync(ct)).FirstOrDefault(a => a.AdvisorId == advisorId);
+        var advisorDto = advisor is null
+            ? null
+            : new AdvisorContactDto($"{advisor.FirstName} {advisor.LastName}", advisor.Title, AdvisorEmail(advisor.FirstName, advisor.LastName));
+
         return new RegistrationDetail(
             result.Student.StudentNo, $"{result.Student.FirstName} {result.Student.LastName}",
             result.Student.ClassYear, result.Term, result.Gpa, result.TotalEcts, result.MaxEcts,
             courseDtos, weekly, result.Issues, result.ErrorCount, result.WarningCount, result.InfoCount,
             reviews.Count > 0 ? reviews[0].Decision : RegistrationDecision.Pending,
-            reviews.Select(r => new ReviewDto(r.Id, r.Decision, r.Note, r.ReviewedByAdvisorId, r.ReviewedAt)).ToList());
+            reviews.Select(r => new ReviewDto(r.Id, r.Decision, r.Note, r.ReviewedByAdvisorId, r.ReviewedAt)).ToList(),
+            advisorDto);
+    }
+
+    internal static string AdvisorEmail(string firstName, string lastName)
+    {
+        static string Ascii(string v) => new string(v.ToLowerInvariant()
+            .Replace('ı', 'i').Replace('ğ', 'g').Replace('ü', 'u').Replace('ş', 's').Replace('ö', 'o').Replace('ç', 'c')
+            .Where(char.IsAsciiLetterOrDigit).ToArray());
+        return $"{Ascii(firstName)}{Ascii(lastName)}@selcuk.edu.tr";
     }
 
     /// <summary>Danışman kararı: onayla ya da düzeltme iste (not zorunlu). Karar geçmişi tutulur;

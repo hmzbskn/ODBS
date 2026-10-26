@@ -64,6 +64,8 @@ Tüm hesapların şifresi: **`Demo123!`** (yalnızca geliştirme amaçlı).
 | `danisman1` | Danışman | ADV1 — Dr. Öğr. Üyesi Elif Yıldız (21 öğrenci; tüm uç durum öğrencileri bu danışmanda) |
 | `danisman2` | Danışman | ADV2 — Doç. Dr. Mehmet Arslan |
 | `danisman3` | Danışman | ADV3 — Dr. Öğr. Üyesi Zeynep Kara |
+| `bolumbaskani1` | Bölüm Başkanı | Bilgisayar Mühendisliği — kendi bölümünün öğrencilerini danışmanlara atar, her danışmanın analizlerini görür |
+| `dekan1` | Dekan | Tüm bölümler — atama yapar, tüm danışmanların analizlerini görür |
 | `ogrenci1` | Öğrenci | 20261001 Can Şahin (1. sınıf, henüz notlandırılmış dersi yok) |
 | `ogrenci2` | Öğrenci | 20241011 Buse Ateş (3. sınıf — **saat çakışması** uç durumu) |
 | `ogrenci3` | Öğrenci | 20251006 Selin Kılıç (2. sınıf — **önkoşul ihlali** uç durumu) |
@@ -151,17 +153,17 @@ Arayüz masaüstü öncelikli ama mobilde bozulmaz (menü çekmeceye dönüşür
 
 ## Seed uç durumları
 
-Mock OBİS'in deterministik seed verisi (63 öğrenci, 52 derslik 8 dönemlik müfredat) 10 bilinçli uç durum içerir; her biri ilgili modülde
+Mock OBİS'in deterministik seed verisi (63 öğrenci, 118 derslik gerçek 8 dönemlik Bilgisayar Mühendisliği müfredatı) 10 bilinçli uç durum içerir; her biri ilgili modülde
 doğru yakalanır ve testlerle doğrulanmıştır. Hepsi `danisman1`'in öğrencisidir.
 
 | Uç durum | Öğrenci | Nerede görünür |
 | --- | --- | --- |
-| EDGE-01 Saat çakışması | 20241011 Buse Ateş | Ders Kayıtları → detay (MAT101/C ile BLM301 kırmızı) |
-| EDGE-02 Önkoşul ihlali | 20251006 Selin Kılıç | Ders Kayıtları (BLM103 kalmış, BLM201 seçilmiş) |
-| EDGE-03 Alttan ders önceliği | 20241012 Duygu Şahin | Ders Kayıtları (FIZ102 kalmış) |
+| EDGE-01 Saat çakışması | 20241011 Buse Ateş | Ders Kayıtları → detay (Matematik-1/C ile Mikroişlemciler kırmızı) |
+| EDGE-02 Önkoşul ihlali | 20251006 Selin Kılıç | Ders Kayıtları (Programlama Dili-1 kalmış, Veri Yapıları seçilmiş) |
+| EDGE-03 Alttan ders önceliği | 20241012 Duygu Şahin | Ders Kayıtları (Fizik-2 kalmış) |
 | EDGE-04 AKTS limiti + yüksek risk | 20251007 Sude Kaya | Ders Kayıtları (44 AKTS) ve Risk (puan 85: düşük GANO, art arda kalma, devamsızlık) |
-| EDGE-05 Sınav çakışması | 20231016 Caner Polat | Ders Kayıtları (BLM401 ve BLM203 finalleri) |
-| EDGE-06 Tekrar alma | 20231017 Kaan Aksoy | Ders Kayıtları (BLM201, AA ile geçilmiş) |
+| EDGE-05 Sınav çakışması | 20231016 Caner Polat | Ders Kayıtları (Bilgisayar Mimarisi ve Mantık Devreleri-1 finalleri) |
+| EDGE-06 Tekrar alma | 20231017 Kaan Aksoy | Ders Kayıtları (Veri Yapıları, AA ile geçilmiş) |
 | EDGE-07 GANO düşüşü | 20241013 Volkan Kurt | Risk (dönem ortalaması AA → DD) |
 | EDGE-08 Azami süreye yaklaşma | 20231018 Yusuf Karaca | Risk (9. dönem) |
 | EDGE-09 Mezuniyete az kalan | 20231019 Oğuz Erdoğan | Mezuniyet analizi (bu dönemi geçerse mezun) |

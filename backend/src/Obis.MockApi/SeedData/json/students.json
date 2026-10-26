@@ -5,9 +5,13 @@
     "LastName": "\u015Eahin",
     "ClassYear": 1,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
+    "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "cansahin@ogr.selcuk.edu.tr",
+    "Phone": "0531 819 41 27",
+    "Residence": "Sel\u00E7uklu / Yaz\u0131r Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261002",
@@ -15,9 +19,13 @@
     "LastName": "Acar",
     "ClassYear": 1,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
+    "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "selinacar@ogr.selcuk.edu.tr",
+    "Phone": "0532 638 72 44",
+    "Residence": "Meram / Havzan Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261003",
@@ -25,9 +33,13 @@
     "LastName": "Keskin",
     "ClassYear": 1,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
+    "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "hakankeskin@ogr.selcuk.edu.tr",
+    "Phone": "0533 457 13 61",
+    "Residence": "Karatay / Fevzi\u00E7akmak Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261004",
@@ -35,9 +47,13 @@
     "LastName": "Y\u0131ld\u0131z",
     "ClassYear": 1,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
+    "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "duyguyildiz@ogr.selcuk.edu.tr",
+    "Phone": "0534 276 44 78",
+    "Residence": "Sel\u00E7uklu / Akademi Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261005",
@@ -45,9 +61,13 @@
     "LastName": "K\u0131l\u0131\u00E7",
     "ClassYear": 1,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
+    "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "bariskilic@ogr.selcuk.edu.tr",
+    "Phone": "0535 995 75 95",
+    "Residence": "Meram / Yaka Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251006",
@@ -55,9 +75,13 @@
     "LastName": "K\u0131l\u0131\u00E7",
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
-    "Gpa": 2.78,
-    "Status": "Aktif"
+    "AdvisorId": "ADV3",
+    "Gpa": 2.8,
+    "Status": "Aktif",
+    "Email": "selinkilic@ogr.selcuk.edu.tr",
+    "Phone": "0536 814 16 22",
+    "Residence": "Sel\u00E7uklu / Ni\u015Fanta\u015F Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251007",
@@ -65,9 +89,13 @@
     "LastName": "Kaya",
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
-    "Gpa": 0.95,
-    "Status": "Aktif"
+    "AdvisorId": "ADV3",
+    "Gpa": 1.51,
+    "Status": "Aktif",
+    "Email": "sudekaya@ogr.selcuk.edu.tr",
+    "Phone": "0537 633 47 39",
+    "Residence": "Karatay / Aziziye Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251008",
@@ -75,9 +103,13 @@
     "LastName": "Y\u0131lmaz",
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
-    "Gpa": 2.43,
-    "Status": "Aktif"
+    "AdvisorId": "ADV3",
+    "Gpa": 2.72,
+    "Status": "Aktif",
+    "Email": "hakanyilmaz@ogr.selcuk.edu.tr",
+    "Phone": "0538 452 78 56",
+    "Residence": "Sel\u00E7uklu / Bosna Hersek Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251009",
@@ -85,9 +117,13 @@
     "LastName": "Keskin",
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
-    "Gpa": 2.95,
-    "Status": "Aktif"
+    "AdvisorId": "ADV3",
+    "Gpa": 2.79,
+    "Status": "Aktif",
+    "Email": "berkkeskin@ogr.selcuk.edu.tr",
+    "Phone": "0539 271 19 73",
+    "Residence": "Sel\u00E7uklu / Yaz\u0131r Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251010",
@@ -95,9 +131,13 @@
     "LastName": "Y\u0131lmaz",
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
-    "Gpa": 2.7,
-    "Status": "Aktif"
+    "AdvisorId": "ADV3",
+    "Gpa": 2.92,
+    "Status": "Aktif",
+    "Email": "esrayilmaz@ogr.selcuk.edu.tr",
+    "Phone": "0540 990 50 90",
+    "Residence": "Meram / Havzan Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241011",
@@ -106,8 +146,12 @@
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV1",
-    "Gpa": 2.84,
-    "Status": "Aktif"
+    "Gpa": 2.64,
+    "Status": "Aktif",
+    "Email": "buseates@ogr.selcuk.edu.tr",
+    "Phone": "0541 809 81 17",
+    "Residence": "Karatay / Fevzi\u00E7akmak Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241012",
@@ -116,8 +160,12 @@
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV1",
-    "Gpa": 2.94,
-    "Status": "Aktif"
+    "Gpa": 2.81,
+    "Status": "Aktif",
+    "Email": "duygusahin@ogr.selcuk.edu.tr",
+    "Phone": "0542 628 22 34",
+    "Residence": "Sel\u00E7uklu / Akademi Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241013",
@@ -126,8 +174,12 @@
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV1",
-    "Gpa": 2.45,
-    "Status": "Aktif"
+    "Gpa": 2.84,
+    "Status": "Aktif",
+    "Email": "volkankurt@ogr.selcuk.edu.tr",
+    "Phone": "0543 447 53 51",
+    "Residence": "Meram / Yaka Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241014",
@@ -136,8 +188,12 @@
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV1",
-    "Gpa": 2.82,
-    "Status": "Aktif"
+    "Gpa": 3.01,
+    "Status": "Aktif",
+    "Email": "keremsahin@ogr.selcuk.edu.tr",
+    "Phone": "0544 266 84 68",
+    "Residence": "Sel\u00E7uklu / Ni\u015Fanta\u015F Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241015",
@@ -146,8 +202,12 @@
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV1",
-    "Gpa": 2.9,
-    "Status": "Aktif"
+    "Gpa": 2.78,
+    "Status": "Aktif",
+    "Email": "hakanates@ogr.selcuk.edu.tr",
+    "Phone": "0545 985 25 85",
+    "Residence": "Karatay / Aziziye Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231016",
@@ -155,9 +215,13 @@
     "LastName": "Polat",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
-    "Gpa": 2.94,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 2.91,
+    "Status": "Aktif",
+    "Email": "canerpolat@ogr.selcuk.edu.tr",
+    "Phone": "0546 804 56 12",
+    "Residence": "Sel\u00E7uklu / Bosna Hersek Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231017",
@@ -165,9 +229,13 @@
     "LastName": "Aksoy",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
-    "Gpa": 2.96,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 2.98,
+    "Status": "Aktif",
+    "Email": "kaanaksoy@ogr.selcuk.edu.tr",
+    "Phone": "0547 623 87 29",
+    "Residence": "Sel\u00E7uklu / Yaz\u0131r Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231018",
@@ -175,9 +243,13 @@
     "LastName": "Karaca",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
-    "Gpa": 2.77,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 2.93,
+    "Status": "Aktif",
+    "Email": "yusufkaraca@ogr.selcuk.edu.tr",
+    "Phone": "0548 442 28 46",
+    "Residence": "Meram / Havzan Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231019",
@@ -185,9 +257,13 @@
     "LastName": "Erdo\u011Fan",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
-    "Gpa": 3.17,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 3.01,
+    "Status": "Aktif",
+    "Email": "oguzerdogan@ogr.selcuk.edu.tr",
+    "Phone": "0549 261 59 63",
+    "Residence": "Karatay / Fevzi\u00E7akmak Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231020",
@@ -195,9 +271,13 @@
     "LastName": "\u015Eahin",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
-    "Gpa": 3.17,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 3.11,
+    "Status": "Aktif",
+    "Email": "selinsahin@ogr.selcuk.edu.tr",
+    "Phone": "0530 980 90 80",
+    "Residence": "Sel\u00E7uklu / Akademi Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231021",
@@ -205,9 +285,13 @@
     "LastName": "\u00C7elik",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV1",
-    "Gpa": 2.96,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 3.32,
+    "Status": "Aktif",
+    "Email": "senacelik@ogr.selcuk.edu.tr",
+    "Phone": "0531 799 31 97",
+    "Residence": "Meram / Yaka Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261022",
@@ -217,7 +301,11 @@
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "fatmagunes@ogr.selcuk.edu.tr",
+    "Phone": "0532 618 62 24",
+    "Residence": "Sel\u00E7uklu / Ni\u015Fanta\u015F Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261023",
@@ -227,7 +315,11 @@
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "melisarslan@ogr.selcuk.edu.tr",
+    "Phone": "0533 437 93 41",
+    "Residence": "Karatay / Aziziye Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261024",
@@ -237,7 +329,11 @@
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "cancetin@ogr.selcuk.edu.tr",
+    "Phone": "0534 256 34 58",
+    "Residence": "Sel\u00E7uklu / Bosna Hersek Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261025",
@@ -247,7 +343,11 @@
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "sudeacar@ogr.selcuk.edu.tr",
+    "Phone": "0535 975 65 75",
+    "Residence": "Sel\u00E7uklu / Yaz\u0131r Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261026",
@@ -257,7 +357,11 @@
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "volkanaydin@ogr.selcuk.edu.tr",
+    "Phone": "0536 794 96 92",
+    "Residence": "Meram / Havzan Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251027",
@@ -265,9 +369,13 @@
     "LastName": "Uysal",
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 2.47,
-    "Status": "Aktif"
+    "AdvisorId": "ADV3",
+    "Gpa": 3.22,
+    "Status": "Aktif",
+    "Email": "denizuysal@ogr.selcuk.edu.tr",
+    "Phone": "0537 613 37 19",
+    "Residence": "Karatay / Fevzi\u00E7akmak Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251028",
@@ -275,9 +383,13 @@
     "LastName": "\u00D6zdemir",
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 3.22,
-    "Status": "Aktif"
+    "AdvisorId": "ADV3",
+    "Gpa": 3.38,
+    "Status": "Aktif",
+    "Email": "senaozdemir@ogr.selcuk.edu.tr",
+    "Phone": "0538 432 68 36",
+    "Residence": "Sel\u00E7uklu / Akademi Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251029",
@@ -285,9 +397,13 @@
     "LastName": "Arslan",
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 3.12,
-    "Status": "Aktif"
+    "AdvisorId": "ADV3",
+    "Gpa": 3.33,
+    "Status": "Aktif",
+    "Email": "emrearslan@ogr.selcuk.edu.tr",
+    "Phone": "0539 251 99 53",
+    "Residence": "Meram / Yaka Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251030",
@@ -295,9 +411,13 @@
     "LastName": "Korkmaz",
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 3.14,
-    "Status": "Aktif"
+    "AdvisorId": "ADV3",
+    "Gpa": 3.17,
+    "Status": "Aktif",
+    "Email": "zeynepkorkmaz@ogr.selcuk.edu.tr",
+    "Phone": "0540 970 40 70",
+    "Residence": "Sel\u00E7uklu / Ni\u015Fanta\u015F Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251031",
@@ -305,9 +425,13 @@
     "LastName": "Ate\u015F",
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 3.09,
-    "Status": "Aktif"
+    "AdvisorId": "ADV3",
+    "Gpa": 2.74,
+    "Status": "Aktif",
+    "Email": "pinarates@ogr.selcuk.edu.tr",
+    "Phone": "0541 789 71 87",
+    "Residence": "Karatay / Aziziye Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241032",
@@ -315,9 +439,13 @@
     "LastName": "Erdo\u011Fan",
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 3.32,
-    "Status": "Aktif"
+    "AdvisorId": "ADV1",
+    "Gpa": 2.66,
+    "Status": "Aktif",
+    "Email": "gizemerdogan@ogr.selcuk.edu.tr",
+    "Phone": "0542 608 12 14",
+    "Residence": "Sel\u00E7uklu / Bosna Hersek Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241033",
@@ -325,9 +453,13 @@
     "LastName": "Y\u0131ld\u0131r\u0131m",
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 3.33,
-    "Status": "Aktif"
+    "AdvisorId": "ADV1",
+    "Gpa": 2.94,
+    "Status": "Aktif",
+    "Email": "pinaryildirim@ogr.selcuk.edu.tr",
+    "Phone": "0543 427 43 31",
+    "Residence": "Sel\u00E7uklu / Yaz\u0131r Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241034",
@@ -335,9 +467,13 @@
     "LastName": "Do\u011Fan",
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 3.21,
-    "Status": "Aktif"
+    "AdvisorId": "ADV1",
+    "Gpa": 3.15,
+    "Status": "Aktif",
+    "Email": "onurdogan@ogr.selcuk.edu.tr",
+    "Phone": "0544 246 74 48",
+    "Residence": "Meram / Havzan Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241035",
@@ -345,9 +481,13 @@
     "LastName": "\u00C7elik",
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 2.95,
-    "Status": "Aktif"
+    "AdvisorId": "ADV1",
+    "Gpa": 2.89,
+    "Status": "Aktif",
+    "Email": "nazlicelik@ogr.selcuk.edu.tr",
+    "Phone": "0545 965 15 65",
+    "Residence": "Karatay / Fevzi\u00E7akmak Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241036",
@@ -355,9 +495,13 @@
     "LastName": "\u00D6zdemir",
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 2.97,
-    "Status": "Aktif"
+    "AdvisorId": "ADV1",
+    "Gpa": 3.06,
+    "Status": "Aktif",
+    "Email": "yusufozdemir@ogr.selcuk.edu.tr",
+    "Phone": "0546 784 46 82",
+    "Residence": "Sel\u00E7uklu / Akademi Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231037",
@@ -365,9 +509,13 @@
     "LastName": "Bulut",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 3,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 2.92,
+    "Status": "Aktif",
+    "Email": "tolgabulut@ogr.selcuk.edu.tr",
+    "Phone": "0547 603 77 99",
+    "Residence": "Meram / Yaka Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231038",
@@ -375,9 +523,13 @@
     "LastName": "K\u0131l\u0131\u00E7",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 2.76,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 2.75,
+    "Status": "Aktif",
+    "Email": "fatmakilic@ogr.selcuk.edu.tr",
+    "Phone": "0548 422 18 26",
+    "Residence": "Sel\u00E7uklu / Ni\u015Fanta\u015F Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231039",
@@ -385,9 +537,13 @@
     "LastName": "Korkmaz",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 3.11,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 3,
+    "Status": "Aktif",
+    "Email": "canerkorkmaz@ogr.selcuk.edu.tr",
+    "Phone": "0549 241 49 43",
+    "Residence": "Karatay / Aziziye Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231040",
@@ -395,9 +551,13 @@
     "LastName": "Aksoy",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 3,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 2.76,
+    "Status": "Aktif",
+    "Email": "denizaksoy@ogr.selcuk.edu.tr",
+    "Phone": "0530 960 80 60",
+    "Residence": "Sel\u00E7uklu / Bosna Hersek Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231041",
@@ -405,9 +565,13 @@
     "LastName": "Kaya",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 2.98,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 2.95,
+    "Status": "Aktif",
+    "Email": "burakkaya@ogr.selcuk.edu.tr",
+    "Phone": "0531 779 21 77",
+    "Residence": "Sel\u00E7uklu / Yaz\u0131r Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231042",
@@ -415,9 +579,13 @@
     "LastName": "Acar",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV2",
-    "Gpa": 2.81,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 2.75,
+    "Status": "Aktif",
+    "Email": "onuracar@ogr.selcuk.edu.tr",
+    "Phone": "0532 598 52 94",
+    "Residence": "Meram / Havzan Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261043",
@@ -425,9 +593,13 @@
     "LastName": "Ko\u00E7",
     "ClassYear": 1,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
+    "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "mustafakoc@ogr.selcuk.edu.tr",
+    "Phone": "0533 417 83 21",
+    "Residence": "Karatay / Fevzi\u00E7akmak Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261044",
@@ -435,9 +607,13 @@
     "LastName": "Kaya",
     "ClassYear": 1,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
+    "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "onurkaya@ogr.selcuk.edu.tr",
+    "Phone": "0534 236 24 38",
+    "Residence": "Sel\u00E7uklu / Akademi Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261045",
@@ -445,9 +621,13 @@
     "LastName": "\u00C7elik",
     "ClassYear": 1,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
+    "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "aslicelik@ogr.selcuk.edu.tr",
+    "Phone": "0535 955 55 55",
+    "Residence": "Meram / Yaka Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261046",
@@ -455,9 +635,13 @@
     "LastName": "Ayd\u0131n",
     "ClassYear": 1,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
+    "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "oguzaydin@ogr.selcuk.edu.tr",
+    "Phone": "0536 774 86 72",
+    "Residence": "Sel\u00E7uklu / Ni\u015Fanta\u015F Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261047",
@@ -465,9 +649,13 @@
     "LastName": "Kaya",
     "ClassYear": 1,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
+    "AdvisorId": "ADV2",
     "Gpa": 0,
-    "Status": "Aktif"
+    "Status": "Aktif",
+    "Email": "serkankaya@ogr.selcuk.edu.tr",
+    "Phone": "0537 593 27 89",
+    "Residence": "Karatay / Aziziye Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251048",
@@ -476,8 +664,12 @@
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV3",
-    "Gpa": 3.03,
-    "Status": "Aktif"
+    "Gpa": 3.33,
+    "Status": "Aktif",
+    "Email": "meliserdogan@ogr.selcuk.edu.tr",
+    "Phone": "0538 412 58 16",
+    "Residence": "Sel\u00E7uklu / Bosna Hersek Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251049",
@@ -486,8 +678,12 @@
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV3",
-    "Gpa": 3.18,
-    "Status": "Aktif"
+    "Gpa": 3.28,
+    "Status": "Aktif",
+    "Email": "aysecelik@ogr.selcuk.edu.tr",
+    "Phone": "0539 231 89 33",
+    "Residence": "Sel\u00E7uklu / Yaz\u0131r Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251050",
@@ -496,8 +692,12 @@
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV3",
-    "Gpa": 2.85,
-    "Status": "Aktif"
+    "Gpa": 2.95,
+    "Status": "Aktif",
+    "Email": "esrakeskin@ogr.selcuk.edu.tr",
+    "Phone": "0540 950 30 50",
+    "Residence": "Meram / Havzan Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251051",
@@ -506,8 +706,12 @@
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV3",
-    "Gpa": 3.27,
-    "Status": "Aktif"
+    "Gpa": 3.11,
+    "Status": "Aktif",
+    "Email": "hakanpolat@ogr.selcuk.edu.tr",
+    "Phone": "0541 769 61 67",
+    "Residence": "Karatay / Fevzi\u00E7akmak Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251052",
@@ -516,8 +720,12 @@
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV3",
-    "Gpa": 2.57,
-    "Status": "Aktif"
+    "Gpa": 3.25,
+    "Status": "Aktif",
+    "Email": "busecetin@ogr.selcuk.edu.tr",
+    "Phone": "0542 588 92 84",
+    "Residence": "Sel\u00E7uklu / Akademi Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241053",
@@ -525,9 +733,13 @@
     "LastName": "Erdo\u011Fan",
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
-    "Gpa": 2.71,
-    "Status": "Aktif"
+    "AdvisorId": "ADV1",
+    "Gpa": 2.77,
+    "Status": "Aktif",
+    "Email": "umuterdogan@ogr.selcuk.edu.tr",
+    "Phone": "0543 407 33 11",
+    "Residence": "Meram / Yaka Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241054",
@@ -535,9 +747,13 @@
     "LastName": "\u015Een",
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
-    "Gpa": 3.17,
-    "Status": "Aktif"
+    "AdvisorId": "ADV1",
+    "Gpa": 2.99,
+    "Status": "Aktif",
+    "Email": "nazlisen@ogr.selcuk.edu.tr",
+    "Phone": "0544 226 64 28",
+    "Residence": "Sel\u00E7uklu / Ni\u015Fanta\u015F Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241055",
@@ -545,9 +761,13 @@
     "LastName": "Y\u0131ld\u0131r\u0131m",
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
-    "Gpa": 3.02,
-    "Status": "Aktif"
+    "AdvisorId": "ADV1",
+    "Gpa": 3.23,
+    "Status": "Aktif",
+    "Email": "senayildirim@ogr.selcuk.edu.tr",
+    "Phone": "0545 945 95 45",
+    "Residence": "Karatay / Aziziye Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241056",
@@ -555,9 +775,13 @@
     "LastName": "Ko\u00E7",
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
-    "Gpa": 3.27,
-    "Status": "Aktif"
+    "AdvisorId": "ADV1",
+    "Gpa": 3.15,
+    "Status": "Aktif",
+    "Email": "elifkoc@ogr.selcuk.edu.tr",
+    "Phone": "0546 764 36 62",
+    "Residence": "Sel\u00E7uklu / Bosna Hersek Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241057",
@@ -565,9 +789,13 @@
     "LastName": "Kurt",
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
-    "Gpa": 2.79,
-    "Status": "Aktif"
+    "AdvisorId": "ADV1",
+    "Gpa": 2.97,
+    "Status": "Aktif",
+    "Email": "pinarkurt@ogr.selcuk.edu.tr",
+    "Phone": "0547 583 67 79",
+    "Residence": "Sel\u00E7uklu / Yaz\u0131r Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231058",
@@ -575,9 +803,13 @@
     "LastName": "Kaya",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
-    "Gpa": 2.5,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 3.08,
+    "Status": "Aktif",
+    "Email": "keremkaya@ogr.selcuk.edu.tr",
+    "Phone": "0548 402 98 96",
+    "Residence": "Meram / Havzan Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231059",
@@ -585,9 +817,13 @@
     "LastName": "K\u0131l\u0131\u00E7",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
-    "Gpa": 3.03,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 2.97,
+    "Status": "Aktif",
+    "Email": "onurkilic@ogr.selcuk.edu.tr",
+    "Phone": "0549 221 39 23",
+    "Residence": "Karatay / Fevzi\u00E7akmak Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231060",
@@ -595,9 +831,13 @@
     "LastName": "\u00C7etin",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
-    "Gpa": 2.75,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 2.93,
+    "Status": "Aktif",
+    "Email": "tolgacetin@ogr.selcuk.edu.tr",
+    "Phone": "0530 940 70 40",
+    "Residence": "Sel\u00E7uklu / Akademi Mah.",
+    "Program": "\u0130kinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231061",
@@ -605,9 +845,13 @@
     "LastName": "\u00C7elik",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
-    "Gpa": 2.94,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 3.15,
+    "Status": "Aktif",
+    "Email": "serkancelik@ogr.selcuk.edu.tr",
+    "Phone": "0531 759 11 57",
+    "Residence": "Meram / Yaka Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231062",
@@ -615,9 +859,13 @@
     "LastName": "Karaca",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
-    "Gpa": 2.8,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 3.17,
+    "Status": "Aktif",
+    "Email": "cagankaraca@ogr.selcuk.edu.tr",
+    "Phone": "0532 578 42 74",
+    "Residence": "Sel\u00E7uklu / Ni\u015Fanta\u015F Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231063",
@@ -625,8 +873,12 @@
     "LastName": "Y\u0131lmaz",
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
-    "AdvisorId": "ADV3",
-    "Gpa": 3.14,
-    "Status": "Aktif"
+    "AdvisorId": "ADV4",
+    "Gpa": 3.05,
+    "Status": "Aktif",
+    "Email": "emreyilmaz@ogr.selcuk.edu.tr",
+    "Phone": "0533 397 73 91",
+    "Residence": "Karatay / Aziziye Mah.",
+    "Program": "Birinci \u00D6\u011Fretim"
   }
 ]

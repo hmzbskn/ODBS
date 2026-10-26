@@ -2,6 +2,7 @@ using System.Globalization;
 using Advisor.Application.Auth;
 using Advisor.Application.Common;
 using Advisor.Application.Communication;
+using Advisor.Application.Management;
 using Advisor.Application.Obis;
 using Advisor.Application.Registration;
 using Advisor.Domain.Entities;
@@ -19,14 +20,16 @@ public class StudentFileService
 
     private readonly AdvisorDbContext _db;
     private readonly IObisClient _obis;
+    private readonly IStudentDirectory _students;
     private readonly ICurrentUser _user;
     private readonly IStudentAccessGuard _guard;
     private readonly TimeProvider _time;
 
-    public StudentFileService(AdvisorDbContext db, IObisClient obis, ICurrentUser user, IStudentAccessGuard guard, TimeProvider time)
+    public StudentFileService(AdvisorDbContext db, IObisClient obis, IStudentDirectory students, ICurrentUser user, IStudentAccessGuard guard, TimeProvider time)
     {
         _db = db;
         _obis = obis;
+        _students = students;
         _user = user;
         _guard = guard;
         _time = time;
@@ -98,7 +101,7 @@ public class StudentFileService
     {
         if (_user.Role is not (UserRole.Danisman or UserRole.Admin)) throw AppException.Forbidden();
         if (!await _guard.CanAccessStudentAsync(studentNo, ct)) throw AppException.Forbidden("Bu öğrenci size bağlı değil.");
-        return await _obis.GetStudentAsync(studentNo, ct) ?? throw AppException.NotFound("Öğrenci bulunamadı.");
+        return await _students.GetStudentAsync(studentNo, ct) ?? throw AppException.NotFound("Öğrenci bulunamadı.");
     }
 
     private static NoteDto ToDto(MeetingNote n) => new(n.Id, n.AdvisorId, n.StudentNo, n.Content, n.CreatedAt);

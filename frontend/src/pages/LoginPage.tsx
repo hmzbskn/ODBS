@@ -36,15 +36,27 @@ export function LoginPage() {
   }
 
   return (
-    <div className="login-page">
-      <form className="card login-card" onSubmit={onSubmit}>
+    <div className="login-page login-split">
+      <aside className="login-aside">
         <div className="brand">
           <span className="brand-mark" aria-hidden="true">
-            D
+            O
           </span>
-          <span>Danışman Otomasyonu</span>
+          <span>Öğrenci - Danışman Bilgi Sistemi (ODBS)</span>
         </div>
-        <h1>Giriş yap</h1>
+        <h2 className="login-tagline">Öğrenci danışmanlığını tek ekrandan yönetin.</h2>
+        <ul className="login-points">
+          <li>Ders kaydı kurallarını otomatik doğrulayın</li>
+          <li>Riskli öğrencileri erken görün</li>
+          <li>Randevu, duyuru ve talepleri takip edin</li>
+        </ul>
+      </aside>
+
+      <form className="card login-card" onSubmit={onSubmit}>
+        <div>
+          <h1>Giriş yap</h1>
+          <p className="muted login-sub">Hesabınızla devam edin.</p>
+        </div>
 
         <label className="field">
           <span>Kullanıcı adı</span>
@@ -73,7 +85,7 @@ export function LoginPage() {
           </p>
         )}
 
-        <button type="submit" className="btn btn-primary" disabled={busy}>
+        <button type="submit" className="btn btn-primary btn-block" disabled={busy}>
           {busy ? 'Giriş yapılıyor…' : 'Giriş yap'}
         </button>
 

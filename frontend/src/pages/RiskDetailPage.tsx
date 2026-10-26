@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { api } from '../api/client'
+import { useAuth } from '../auth/AuthContext'
 import type { RiskDetail } from '../api/types'
 import { ErrorState, Loading } from '../components/Feedback'
 import { formatGpa } from '../components/format'
@@ -9,6 +10,9 @@ import { useAsync } from '../components/useAsync'
 
 export function RiskDetailPage() {
   const { studentNo = '' } = useParams()
+  const { user } = useAuth()
+  // Ders kaydı ve öğrenci dosyası yalnızca danışman/yönetici içindir; bölüm başkanı ve dekan analizi görür.
+  const canOpenFile = user?.role === 'Admin' || user?.role === 'Danisman'
   const { state, retry } = useAsync(() => api.get<RiskDetail>(`/api/analytics/students/${studentNo}/risk`), [studentNo])
 
   if (state.status === 'loading') return <Loading />
@@ -19,10 +23,14 @@ export function RiskDetailPage() {
     <>
       <p>
         <Link to="/risk">← Riskli öğrenciler</Link>
-        {' · '}
-        <Link to={`/kayitlar/${r.studentNo}`}>Ders kaydı</Link>
-        {' · '}
-        <Link to={`/ogrenci/${r.studentNo}`}>Öğrenci dosyası</Link>
+        {canOpenFile && (
+          <>
+            {' · '}
+            <Link to={`/kayitlar/${r.studentNo}`}>Ders kaydı</Link>
+            {' · '}
+            <Link to={`/ogrenci/${r.studentNo}`}>Öğrenci dosyası</Link>
+          </>
+        )}
       </p>
       <h1>
         {r.fullName} <span className="muted">({r.studentNo})</span>

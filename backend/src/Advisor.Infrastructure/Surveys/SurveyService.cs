@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Text;
 using Advisor.Application.Auth;
 using Advisor.Application.Common;
+using Advisor.Application.Management;
 using Advisor.Application.Obis;
 using Advisor.Application.Surveys;
 using Advisor.Domain.Entities;
@@ -22,13 +23,15 @@ public class SurveyService
 
     private readonly AdvisorDbContext _db;
     private readonly IObisClient _obis;
+    private readonly IStudentDirectory _students;
     private readonly ICurrentUser _user;
     private readonly TimeProvider _time;
 
-    public SurveyService(AdvisorDbContext db, IObisClient obis, ICurrentUser user, TimeProvider time)
+    public SurveyService(AdvisorDbContext db, IObisClient obis, IStudentDirectory students, ICurrentUser user, TimeProvider time)
     {
         _db = db;
         _obis = obis;
+        _students = students;
         _user = user;
         _time = time;
     }
@@ -97,7 +100,7 @@ public class SurveyService
             .GroupBy(r => r.SurveyId)
             .Select(g => new { g.Key, Count = g.Count() })
             .ToDictionaryAsync(x => x.Key, x => x.Count, ct);
-        var students = await _obis.GetStudentsAsync(ct);
+        var students = await _students.GetStudentsAsync(ct);
 
         return surveys
             .Select(s => new SurveySummary(
@@ -156,7 +159,7 @@ public class SurveyService
     public async Task<ResultsResponse> GetResultsAsync(Guid id, CancellationToken ct)
     {
         var survey = await LoadOwnedAsync(id, ct, includeResponses: true);
-        var students = await _obis.GetStudentsAsync(ct);
+        var students = await _students.GetStudentsAsync(ct);
         var byNo = students.ToDictionary(s => s.StudentNo);
         var support = await _db.NeedScoreResults.Where(r => r.SurveyId == id).ToDictionaryAsync(r => r.StudentNo, r => r.SupportAssigned, ct);
 
@@ -249,7 +252,7 @@ public class SurveyService
     public async Task<StatsResponse> GetStatsAsync(Guid id, CancellationToken ct)
     {
         var survey = await LoadOwnedAsync(id, ct, includeResponses: true);
-        var students = await _obis.GetStudentsAsync(ct);
+        var students = await _students.GetStudentsAsync(ct);
         var answers = survey.Responses.SelectMany(r => r.Answers).ToLookup(a => a.QuestionId);
 
         var stats = new List<QuestionStat>();
@@ -320,7 +323,7 @@ public class SurveyService
         var missing = questions.Where(q => q.Required && !columnOf.ContainsKey(q.Id)).Select(q => $"'{q.Text}'").ToList();
         if (missing.Count > 0) throw AppException.BadRequest($"Zorunlu soru sütunları eksik: {string.Join(", ", missing)}.");
 
-        var targets = TargetStudents(survey, await _obis.GetStudentsAsync(ct)).Select(s => s.StudentNo).ToHashSet();
+        var targets = TargetStudents(survey, await _students.GetStudentsAsync(ct)).Select(s => s.StudentNo).ToHashSet();
         var already = survey.Responses.Select(r => r.StudentNo).ToHashSet();
         var errors = new List<ImportError>();
         var imported = 0;
@@ -587,7 +590,7 @@ public class SurveyService
 
     private async Task<SurveyDefinition> ToDefinitionAsync(Survey s, CancellationToken ct)
     {
-        var students = await _obis.GetStudentsAsync(ct);
+        var students = await _students.GetStudentsAsync(ct);
         var responseCount = await _db.SurveyResponses.CountAsync(r => r.SurveyId == s.Id, ct);
         var questions = s.Questions
             .OrderBy(q => q.Order)
@@ -610,7 +613,7 @@ public class SurveyService
     private async Task<ObisStudent> CurrentStudentAsync(CancellationToken ct)
     {
         if (_user.Role != UserRole.Ogrenci || _user.LinkedStudentNo is null) throw AppException.Forbidden();
-        return await _obis.GetStudentAsync(_user.LinkedStudentNo, ct)
+        return await _students.GetStudentAsync(_user.LinkedStudentNo, ct)
             ?? throw AppException.NotFound("Öğrenci kaydınız OBİS'te bulunamadı.");
     }
 

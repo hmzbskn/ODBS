@@ -16,4 +16,8 @@ public record StudentInfo(
     string Department,
     string AdvisorId,
     double Gpa,
-    string Status);
+    string Status,
+    string? Email = null,
+    string? Phone = null,
+    string? Residence = null,
+    string? Program = null);

@@ -1,6 +1,7 @@
 using Advisor.Application.Auth;
 using Advisor.Application.Common;
 using Advisor.Application.Communication;
+using Advisor.Application.Management;
 using Advisor.Application.Obis;
 using Advisor.Domain.Entities;
 using Advisor.Domain.Enums;
@@ -19,15 +20,17 @@ public class PetitionService
 
     private readonly AdvisorDbContext _db;
     private readonly IObisClient _obis;
+    private readonly IStudentDirectory _students;
     private readonly ICurrentUser _user;
     private readonly IStudentAccessGuard _guard;
     private readonly IFileStore _files;
     private readonly TimeProvider _time;
 
-    public PetitionService(AdvisorDbContext db, IObisClient obis, ICurrentUser user, IStudentAccessGuard guard, IFileStore files, TimeProvider time)
+    public PetitionService(AdvisorDbContext db, IObisClient obis, IStudentDirectory students, ICurrentUser user, IStudentAccessGuard guard, IFileStore files, TimeProvider time)
     {
         _db = db;
         _obis = obis;
+        _students = students;
         _user = user;
         _guard = guard;
         _files = files;
@@ -37,7 +40,7 @@ public class PetitionService
     public async Task<PetitionDto> CreateAsync(PetitionType type, string? description, UploadedFile? file, CancellationToken ct)
     {
         if (_user.Role != UserRole.Ogrenci || _user.LinkedStudentNo is null) throw AppException.Forbidden("Talebi yalnızca öğrenci açabilir.");
-        var student = await _obis.GetStudentAsync(_user.LinkedStudentNo, ct) ?? throw AppException.NotFound("Öğrenci kaydınız OBİS'te bulunamadı.");
+        var student = await _students.GetStudentAsync(_user.LinkedStudentNo, ct) ?? throw AppException.NotFound("Öğrenci kaydınız OBİS'te bulunamadı.");
 
         if (!Enum.IsDefined(type)) throw AppException.BadRequest("Geçersiz talep türü.");
         var text = description?.Trim() ?? string.Empty;
@@ -82,7 +85,7 @@ public class PetitionService
                 break;
             case UserRole.Danisman:
                 var advisorId = _user.LinkedAdvisorId ?? throw AppException.Forbidden();
-                var mine = (await _obis.GetStudentsAsync(ct)).Where(s => s.AdvisorId == advisorId).Select(s => s.StudentNo).ToHashSet();
+                var mine = (await _students.GetStudentsAsync(ct)).Where(s => s.AdvisorId == advisorId).Select(s => s.StudentNo).ToHashSet();
                 petitions = (await query.ToListAsync(ct)).Where(p => mine.Contains(p.StudentNo)).ToList();
                 break;
             default:
@@ -90,7 +93,7 @@ public class PetitionService
                 break;
         }
 
-        var names = (await _obis.GetStudentsAsync(ct)).ToDictionary(s => s.StudentNo, s => $"{s.FirstName} {s.LastName}");
+        var names = (await _students.GetStudentsAsync(ct)).ToDictionary(s => s.StudentNo, s => $"{s.FirstName} {s.LastName}");
         return petitions
             .OrderBy(p => p.Status is PetitionStatus.Onaylandi or PetitionStatus.Reddedildi) // açık talepler önce
             .ThenByDescending(p => p.CreatedAt)
@@ -128,7 +131,7 @@ public class PetitionService
         });
 
         await _db.SaveChangesAsync(ct);
-        var student = await _obis.GetStudentAsync(petition.StudentNo, ct);
+        var student = await _students.GetStudentAsync(petition.StudentNo, ct);
         return ToDto(petition, student is null ? petition.StudentNo : $"{student.FirstName} {student.LastName}");
     }
 

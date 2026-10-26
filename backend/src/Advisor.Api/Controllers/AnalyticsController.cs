@@ -1,6 +1,6 @@
 using Advisor.Application.Analytics;
 using Advisor.Application.Auth;
-using Advisor.Application.Obis;
+using Advisor.Application.Management;
 using Advisor.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,30 +13,31 @@ namespace Advisor.Api.Controllers;
 [Route("api/analytics")]
 public class AnalyticsController : ControllerBase
 {
-    private const string Staff = nameof(UserRole.Danisman) + "," + nameof(UserRole.Admin);
+    // Danışmanın üstündeki yönetim katmanı da analizleri görür (kendi kapsamında).
+    private const string Staff = nameof(UserRole.Danisman) + "," + ManagementController.Roles;
 
     private readonly IAnalyticsService _analytics;
-    private readonly IObisClient _obis;
+    private readonly IStudentDirectory _students;
     private readonly ICurrentUser _current;
     private readonly IStudentAccessGuard _guard;
 
-    public AnalyticsController(IAnalyticsService analytics, IObisClient obis, ICurrentUser current, IStudentAccessGuard guard)
+    public AnalyticsController(IAnalyticsService analytics, IStudentDirectory students, ICurrentUser current, IStudentAccessGuard guard)
     {
         _analytics = analytics;
-        _obis = obis;
+        _students = students;
         _current = current;
         _guard = guard;
     }
 
     [HttpGet("dashboard")]
     [Authorize(Roles = Staff)]
-    public async Task<ActionResult<DashboardResponse>> Dashboard(CancellationToken ct) =>
-        Ok(await _analytics.GetDashboardAsync(await ScopeAsync(ct), ct));
+    public async Task<ActionResult<DashboardResponse>> Dashboard([FromQuery] string? advisorId, CancellationToken ct) =>
+        Ok(await _analytics.GetDashboardAsync(await _students.GetVisibleStudentsAsync(advisorId, ct), ct));
 
     [HttpGet("risk")]
     [Authorize(Roles = Staff)]
-    public async Task<ActionResult<List<RiskRow>>> RiskList(CancellationToken ct) =>
-        Ok(await _analytics.GetRiskListAsync(await ScopeAsync(ct), ct));
+    public async Task<ActionResult<List<RiskRow>>> RiskList([FromQuery] string? advisorId, CancellationToken ct) =>
+        Ok(await _analytics.GetRiskListAsync(await _students.GetVisibleStudentsAsync(advisorId, ct), ct));
 
     [HttpGet("students/{studentNo}/risk")]
     [Authorize(Roles = Staff)]
@@ -46,13 +47,4 @@ public class AnalyticsController : ControllerBase
     [HttpGet("students/{studentNo}/graduation")]
     public async Task<IActionResult> Graduation(string studentNo, CancellationToken ct) =>
         await _guard.CanAccessStudentAsync(studentNo, ct) ? Ok(await _analytics.GetGraduationAsync(studentNo, ct)) : Forbid();
-
-    /// <summary>Danışman yalnızca kendi öğrencilerini, yönetici hepsini görür.</summary>
-    private async Task<IReadOnlyList<ObisStudent>> ScopeAsync(CancellationToken ct)
-    {
-        var students = await _obis.GetStudentsAsync(ct);
-        return _current.Role == UserRole.Danisman
-            ? students.Where(s => s.AdvisorId == _current.LinkedAdvisorId).ToList()
-            : students;
-    }
 }

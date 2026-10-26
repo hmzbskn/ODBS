@@ -15,6 +15,7 @@ public class AdvisorDbContext : DbContext
 
     public DbSet<AppUser> Users => Set<AppUser>();
     public DbSet<RegistrationReview> RegistrationReviews => Set<RegistrationReview>();
+    public DbSet<AdvisorAssignment> AdvisorAssignments => Set<AdvisorAssignment>();
 
     public DbSet<Survey> Surveys => Set<Survey>();
     public DbSet<SurveyQuestion> SurveyQuestions => Set<SurveyQuestion>();
@@ -36,6 +37,12 @@ public class AdvisorDbContext : DbContext
         modelBuilder.Entity<AppUser>(e =>
         {
             e.HasIndex(u => u.Username).IsUnique();
+        });
+
+        modelBuilder.Entity<AdvisorAssignment>(e =>
+        {
+            e.HasIndex(a => a.StudentNo).IsUnique();
+            e.HasIndex(a => a.AdvisorId);
         });
 
         modelBuilder.Entity<Survey>(e =>

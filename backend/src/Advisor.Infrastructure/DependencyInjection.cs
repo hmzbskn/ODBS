@@ -1,7 +1,9 @@
 using Advisor.Application.Communication;
+using Advisor.Application.Management;
 using Advisor.Application.Obis;
 using Advisor.Infrastructure.Auth;
 using Advisor.Infrastructure.Communication;
+using Advisor.Infrastructure.Management;
 using Advisor.Infrastructure.Obis;
 using Advisor.Infrastructure.Persistence;
 using Advisor.Infrastructure.Surveys;
@@ -26,6 +28,8 @@ public static class DependencyInjection
         services.Configure<JwtOptions>(configuration.GetSection(JwtOptions.SectionName));
         services.AddScoped<AuthService>();
         services.TryAddSingleton(TimeProvider.System);
+        services.AddScoped<IStudentDirectory, StudentDirectory>();
+        services.AddScoped<ManagementService>();
         services.AddScoped<SurveyService>();
         services.AddScoped<AppointmentService>();
         services.AddScoped<StudentFileService>();

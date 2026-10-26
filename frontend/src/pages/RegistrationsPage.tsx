@@ -13,6 +13,7 @@ export function RegistrationsPage() {
   const term = search.get('term')
   const [query, setQuery] = useState('')
   const [onlyProblems, setOnlyProblems] = useState(false)
+  const [onlyConflicts, setOnlyConflicts] = useState(false)
 
   const { state, retry } = useAsync(
     () => api.get<AdvisorStudentList>(`/api/registrations/students${term ? `?term=${term}` : ''}`),
@@ -25,9 +26,10 @@ export function RegistrationsPage() {
     return state.data.students.filter(
       (s) =>
         (!q || s.fullName.toLocaleLowerCase('tr-TR').includes(q) || s.studentNo.includes(q)) &&
-        (!onlyProblems || s.errorCount + s.warningCount > 0),
+        (!onlyProblems || s.errorCount + s.warningCount > 0) &&
+        (!onlyConflicts || s.conflictCount > 0),
     )
-  }, [state, query, onlyProblems])
+  }, [state, query, onlyProblems, onlyConflicts])
 
   // Dönem listesi ilk yüklemeden gelir; sonraki filtrelemede korunur.
   const [terms, setTerms] = useState<number[]>([])
@@ -62,6 +64,10 @@ export function RegistrationsPage() {
           <input type="checkbox" checked={onlyProblems} onChange={(e) => setOnlyProblems(e.target.checked)} />
           Yalnızca bulgusu olanlar
         </label>
+        <label className="check">
+          <input type="checkbox" checked={onlyConflicts} onChange={(e) => setOnlyConflicts(e.target.checked)} />
+          Yalnızca ders saati çakışanlar
+        </label>
       </div>
 
       {state.status === 'loading' && <Loading label="Kayıtlar kontrol ediliyor…" />}
@@ -82,6 +88,7 @@ export function RegistrationsPage() {
                     <th>Dönem</th>
                     <th>GANO</th>
                     <th>AKTS</th>
+                    <th>Çakışma</th>
                     <th>Hata</th>
                     <th>Uyarı</th>
                     <th>Bilgi</th>
@@ -99,6 +106,7 @@ export function RegistrationsPage() {
                       <td>{s.term}</td>
                       <td>{formatGpa(s.gpa)}</td>
                       <td>{s.totalEcts}</td>
+                      <td>{s.conflictCount > 0 ? <span className="badge badge-danger">{s.conflictCount}</span> : '-'}</td>
                       <td>{s.errorCount > 0 ? <span className="badge badge-danger">{s.errorCount}</span> : '-'}</td>
                       <td>{s.warningCount > 0 ? <span className="badge badge-warn">{s.warningCount}</span> : '-'}</td>
                       <td>{s.infoCount > 0 ? <span className="badge">{s.infoCount}</span> : '-'}</td>

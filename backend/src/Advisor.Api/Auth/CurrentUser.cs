@@ -1,6 +1,6 @@
 using System.Security.Claims;
 using Advisor.Application.Auth;
-using Advisor.Application.Obis;
+using Advisor.Application.Management;
 using Advisor.Domain.Enums;
 using Advisor.Infrastructure.Auth;
 
@@ -23,17 +23,18 @@ public class CurrentUser : ICurrentUser
 
     public string? LinkedAdvisorId => _principal?.FindFirstValue(ClaimNames.LinkedAdvisorId);
     public string? LinkedStudentNo => _principal?.FindFirstValue(ClaimNames.LinkedStudentNo);
+    public string? Department => _principal?.FindFirstValue(ClaimNames.Department);
 }
 
 public class StudentAccessGuard : IStudentAccessGuard
 {
     private readonly ICurrentUser _user;
-    private readonly IObisClient _obis;
+    private readonly IStudentDirectory _students;
 
-    public StudentAccessGuard(ICurrentUser user, IObisClient obis)
+    public StudentAccessGuard(ICurrentUser user, IStudentDirectory students)
     {
         _user = user;
-        _obis = obis;
+        _students = students;
     }
 
     public async Task<bool> CanAccessStudentAsync(string studentNo, CancellationToken ct = default)
@@ -46,8 +47,13 @@ public class StudentAccessGuard : IStudentAccessGuard
             case UserRole.Ogrenci:
                 return _user.LinkedStudentNo == studentNo;
             case UserRole.Danisman:
-                var student = await _obis.GetStudentAsync(studentNo, ct);
+                var student = await _students.GetStudentAsync(studentNo, ct);
                 return student is not null && student.AdvisorId == _user.LinkedAdvisorId;
+            case UserRole.Dekan:
+                return true;
+            case UserRole.BolumBaskani:
+                var inDepartment = await _students.GetStudentAsync(studentNo, ct);
+                return inDepartment is not null && _user.Department is not null && inDepartment.Department == _user.Department;
             default:
                 return false;
         }

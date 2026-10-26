@@ -61,12 +61,12 @@ düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
 
 | Etiket | Öğrenci No | Senaryo |
 | --- | --- | --- |
-| EDGE-01 | 20241011 | Saat çakışması (MAT101/A tekrar + BLM301/A aynı gün/saat) |
-| EDGE-02 | 20251006 | Önkoşul ihlali (BLM103 kalmış, BLM201'e kayıtlı) |
-| EDGE-03 | 20241012 | Alttan ders önceliği (FIZ102 kalmış, dönem5 dersleri alıyor) |
+| EDGE-01 | 20241011 | Saat çakışması (Matematik-1 tekrar, özel C şubesi + Mikroişlemciler/A aynı gün/saat) |
+| EDGE-02 | 20251006 | Önkoşul ihlali (Programlama Dili-1 kalmış, Veri Yapıları'na kayıtlı) |
+| EDGE-03 | 20241012 | Alttan ders önceliği (Fizik-2 kalmış, dönem5 dersleri alıyor) |
 | EDGE-04 | 20251007 | Kredi/AKTS limiti aşımı (düşük GANO + 3 ekstra ders) |
-| EDGE-05 | 20231016 | Sınav çakışması (BLM203 ve BLM401 final'leri aynı an) |
-| EDGE-06 | 20231017 | Tekrar alma (BLM201'i AA ile geçmiş, yine kayıtlı) |
+| EDGE-05 | 20231016 | Sınav çakışması (Mantık Devreleri-1 ve Bilgisayar Mimarisi final'leri aynı an) |
+| EDGE-06 | 20231017 | Tekrar alma (Veri Yapıları'nı AA ile geçmiş, yine kayıtlı) |
 | EDGE-07 | 20241013 | GANO düşüşü (dönem3 AA ortalama → dönem4 DD ortalama) |
 | EDGE-08 | 20231018 | Azami süreye yaklaşma (dönem9'da, 3 ders tekrarı) |
 | EDGE-09 | 20231019 | Mezuniyete az kalan (dönem8, 5 dersten sadece 2'si eksik) |
@@ -227,3 +227,43 @@ düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
   değişikliğinde yeniden üretilebilir (betik repoda değil: geçici Playwright bağımlılığı projeye eklenmedi).
 - **Mermaid'in "doğrulanarak" yazılması:** Diyagram söz dizimi hataları görsel olarak sessizce bozuk gösterilir; bu yüzden gerçek motorla ayrıştırma
   ve çizme denendi.
+
+## 2026-10-26 — Aşama 13: Bölüm Başkanı, Dekan ve danışman atama
+
+Hoca "sadece öğrenci ve öğretmen varsaymayın" dedi: danışmanların üstüne yönetim katmanı eklendi.
+
+- **Roller:** `UserRole`'e `BolumBaskani` ve `Dekan` eklendi (enum sonuna: rol veritabanında sayı). `Admin` aynı yönetim yetkisini korur
+  (`UserRoleExtensions.IsManagement`). Bölüm başkanının yetki alanı `AppUser.Department`; dekan ve yönetici bölümle sınırlı değil. Bölümü
+  boş bölüm başkanı hiçbir öğrenci göremez (güvenli varsayılan).
+- **Atama OBİS'i ezer, OBİS'e yazılmaz:** OBİS salt okunur veri kaynağı. Atamalar ana uygulamada `AdvisorAssignments` tablosunda (öğrenci başına
+  tek satır; kim, ne zaman, önceki danışman kayıtlı). Bir öğrenciyi OBİS'teki danışmanına geri atamak satırı siler.
+- **Tek eşleme noktası `IStudentDirectory`:** OBİS'teki danışman, atamalarla ezilmiş halde döner. Danışman kapsamına bakan her yer (erişim koruması,
+  analizler, ders kaydı listesi, anketler, duyurular, randevular, talepler, öğrenci dosyası) `IObisClient.GetStudent(s)Async` yerine bunu kullanır;
+  böylece atama tüm modüllerde aynı anda geçerli olur. (`IObisClient`'ı sarmalamak yerine ayrı arayüz seçildi: testler `IObisClient`'ı değiştiriyor,
+  dekoratör testlerde devre dışı kalırdı.)
+- **Atamanın yan etkisi:** Öğrenci yeni danışmanın listesine ve analizlerine geçer, eski danışman erişimini anında kaybeder (erişim her istekte
+  hesaplanır). Mevcut randevular, görüşme notları, anket yanıtları silinmez; yeni randevular yalnızca yeni danışmanın saatlerinden alınır.
+- **Analizler danışman bazında:** `GET /api/management/overview` her danışman için öğrenci sayısı, ortalama GANO, risk dağılımı ve mezuniyet adayı
+  özeti verir; `/api/analytics/dashboard` ve `/risk` yönetim rollerinde `?advisorId=` ile bir danışmanın öğrencilerine daraltılır ve danışmanın kendi
+  panelindeki sayılarla birebir aynıdır (testle doğrulanır). Danışman rolünde `advisorId` yok sayılır; kapsam genişletilemez.
+- **Bölüm başkanı/dekan neyi görür:** Genel bakış, risk ve mezuniyet analizi, danışman atamaları. Ders kaydı onayı, anket, randevu, duyuru, talep ve
+  öğrenci dosyası danışman/yönetici işi olarak kaldı (salt-okunur gözetim; yazma yetkisi yalnızca atama). Bölüm başkanı kendi bölümü dışındaki
+  öğrenciyi atayamaz; kapsam dışı bir numara bulunursa istek bütünüyle reddedilir (kısmi uygulama yok).
+- **Demo hesaplar:** `bolumbaskani1`, `dekan1`. Tohumlayıcı artık hesap hesap ekler (eski veritabanları yeni demo rolleri alır).
+- **Bilinen sınır:** Mock OBİS'te tek bölüm ve danışmanların bölümü yok; bölüm başkanı tüm danışmanlara atama yapabilir. Gerçek OBİS'te danışman
+  bölümü gelirse `ManagementService.AssignAsync` hedef danışmanı da bölümle sınırlamalıdır.
+
+## Aşama 14: Gerçek müfredat (2026-10-26)
+
+Mock OBİS'in kurgusal 52 derslik müfredatı, Selçuk Üniversitesi Teknoloji Fakültesi Bilgisayar Mühendisliği (Lisans) Bologna
+bilgi paketindeki GERÇEK 118 dersle değiştirildi (`CourseCatalog.cs`: kod, ad, AKTS, zorunlu/seçmeli; hepsi sayfadan).
+
+- **Sayfada olmayan, seed'e özgü varsayımlar:** (1) önkoşullar: yalnızca zorunlu zincirler (Matematik-1→2→Müh. Matematiği,
+  Programlama Dili-1→NYPD→PD-2→PD-3, PD-1→Veri Yapıları→{Veritabanı, Yapay Zeka}, Mantık Devreleri-1→2→Mikroişlemciler),
+  seçmeliler önkoşulsuz; (2) kredi AKTS'den türetilir (6+ → 4, 4-5 → 3, ≤3 → 2, mesleki eğitim 6). Gerçek müfredatla birebir değildir.
+- **Seçmeli seçimi:** 4-7. dönemlerde öğrenci başına 1/3/3/4 seçmeli (dönemin en sık AKTS'li havuzundan, deterministik); dönem yükü ~30 AKTS.
+  Müfredat sabitleri: 240 AKTS, 30 seçmeli kredi, 40 gün staj (eski 212/12/40 değerlerinin yerine).
+- **Zaman ızgarası:** 5 gün x 6 saat (08:00-18:00) = 30 kombinasyon; dönem 7'de 31 ders var, seçmeli havuzu öğrencinin
+  seçebildiği derslerle sınırlı olduğundan seçimler çakışmaz. Uç durum şubeleri (özel "C") öğrencinin kendi programındaki boş saate eklenir.
+- **Taban başarısızlık oranı** %8 → %6: ders sayısı arttığı için öğrenci başına rastgele "kaldı" gürültüsü büyümesin.
+- **EDGE-09:** 8. dönemde 3 ders var (İşletmede Mesleki Eğitim, Staj-1, Staj-2); biri geçilmiş sayılır, 2'si kalır.

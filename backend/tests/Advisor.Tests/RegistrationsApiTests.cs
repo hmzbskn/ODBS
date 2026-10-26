@@ -98,9 +98,9 @@ public class RegistrationsApiTests : IClassFixture<SeedApiFactory>
 
         Assert.Contains(detail!.Issues, i => i.RuleCode == "TIME_CONFLICT");
         var conflicting = detail.WeeklySchedule.Where(s => s.InConflict).Select(s => s.CourseCode).ToHashSet();
-        Assert.Contains("MAT101", conflicting);
-        Assert.Contains("BLM301", conflicting);
-        Assert.Contains(detail.Courses, c => c.CourseCode == "MAT101" && c.InConflict);
+        Assert.Contains("3301151", conflicting);
+        Assert.Contains("3301551", conflicting);
+        Assert.Contains(detail.Courses, c => c.CourseCode == "3301151" && c.InConflict);
         Assert.Contains(detail.WeeklySchedule, s => !s.InConflict);
     }
 

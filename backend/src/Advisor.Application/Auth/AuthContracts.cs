@@ -6,7 +6,7 @@ public record LoginRequest(string Username, string Password);
 
 public record UserInfo(
     Guid Id, string Username, string DisplayName, UserRole Role,
-    string? LinkedAdvisorId, string? LinkedStudentNo);
+    string? LinkedAdvisorId, string? LinkedStudentNo, string? Department = null);
 
 public record LoginResponse(string AccessToken, DateTime ExpiresAtUtc, UserInfo User);
 
@@ -18,6 +18,9 @@ public interface ICurrentUser
     UserRole Role { get; }
     string? LinkedAdvisorId { get; }
     string? LinkedStudentNo { get; }
+
+    /// <summary>Bölüm başkanının yetki alanı olan bölüm; diğer rollerde boş.</summary>
+    string? Department { get; }
 }
 
 /// <summary>"Danışman yalnızca kendi öğrencilerini görür" kuralının tek uygulama noktası.

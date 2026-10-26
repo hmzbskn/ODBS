@@ -1,7 +1,7 @@
 [
   {
-    "CourseCode": "MAT101",
-    "CourseName": "Matematik I",
+    "CourseCode": "3301151",
+    "CourseName": "Matematik-1",
     "Credit": 4,
     "Ects": 6,
     "Term": 1,
@@ -9,17 +9,8 @@
     "Prerequisites": []
   },
   {
-    "CourseCode": "FIZ101",
-    "CourseName": "Fizik I",
-    "Credit": 4,
-    "Ects": 5,
-    "Term": 1,
-    "IsMandatory": true,
-    "Prerequisites": []
-  },
-  {
-    "CourseCode": "BLM101",
-    "CourseName": "Programlamaya Giri\u015F",
+    "CourseCode": "3301152",
+    "CourseName": "Fizik-1",
     "Credit": 4,
     "Ects": 6,
     "Term": 1,
@@ -27,7 +18,7 @@
     "Prerequisites": []
   },
   {
-    "CourseCode": "TUR101",
+    "CourseCode": "3301153",
     "CourseName": "T\u00FCrk Dili I",
     "Credit": 2,
     "Ects": 2,
@@ -36,8 +27,8 @@
     "Prerequisites": []
   },
   {
-    "CourseCode": "ING101",
-    "CourseName": "\u0130ngilizce I",
+    "CourseCode": "3301154",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi-1",
     "Credit": 2,
     "Ects": 2,
     "Term": 1,
@@ -45,72 +36,99 @@
     "Prerequisites": []
   },
   {
-    "CourseCode": "BLM102",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "CourseCode": "3301155",
+    "CourseName": "Yabanc\u0131 Dil-1",
     "Credit": 2,
-    "Ects": 3,
+    "Ects": 2,
     "Term": 1,
     "IsMandatory": true,
     "Prerequisites": []
   },
   {
-    "CourseCode": "MAT102",
-    "CourseName": "Matematik II",
+    "CourseCode": "3301156",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 1,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301157",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi-1",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 1,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301158",
+    "CourseName": "Lineer Cebir",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 1,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301251",
+    "CourseName": "Matematik-2",
     "Credit": 4,
     "Ects": 6,
     "Term": 2,
     "IsMandatory": true,
     "Prerequisites": [
-      "MAT101"
+      "3301151"
     ]
   },
   {
-    "CourseCode": "FIZ102",
-    "CourseName": "Fizik II",
-    "Credit": 4,
-    "Ects": 5,
-    "Term": 2,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "FIZ101"
-    ]
-  },
-  {
-    "CourseCode": "BLM103",
-    "CourseName": "Programlama I",
+    "CourseCode": "3301252",
+    "CourseName": "Fizik-2",
     "Credit": 4,
     "Ects": 6,
     "Term": 2,
     "IsMandatory": true,
     "Prerequisites": [
-      "BLM101"
+      "3301152"
     ]
   },
   {
-    "CourseCode": "TUR102",
+    "CourseCode": "3301253",
     "CourseName": "T\u00FCrk Dili II",
     "Credit": 2,
     "Ects": 2,
     "Term": 2,
     "IsMandatory": true,
     "Prerequisites": [
-      "TUR101"
+      "3301153"
     ]
   },
   {
-    "CourseCode": "ING102",
-    "CourseName": "\u0130ngilizce II",
+    "CourseCode": "3301254",
+    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi-2",
     "Credit": 2,
     "Ects": 2,
     "Term": 2,
     "IsMandatory": true,
     "Prerequisites": [
-      "ING101"
+      "3301154"
     ]
   },
   {
-    "CourseCode": "KIM101",
-    "CourseName": "Kimya",
+    "CourseCode": "3301255",
+    "CourseName": "Yabanc\u0131 Dil-2",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 2,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "3301155"
+    ]
+  },
+  {
+    "CourseCode": "3301256",
+    "CourseName": "Programlama Dili-1",
     "Credit": 3,
     "Ects": 4,
     "Term": 2,
@@ -118,427 +136,983 @@
     "Prerequisites": []
   },
   {
-    "CourseCode": "BLM201",
-    "CourseName": "Veri Yap\u0131lar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "Term": 3,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "BLM103"
-    ]
-  },
-  {
-    "CourseCode": "BLM202",
-    "CourseName": "Nesne Y\u00F6nelimli Programlama",
-    "Credit": 4,
-    "Ects": 6,
-    "Term": 3,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "BLM103"
-    ]
-  },
-  {
-    "CourseCode": "MAT201",
-    "CourseName": "Diferansiyel Denklemler",
-    "Credit": 4,
-    "Ects": 6,
-    "Term": 3,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "MAT102"
-    ]
-  },
-  {
-    "CourseCode": "BLM203",
-    "CourseName": "Say\u0131sal Mant\u0131k Devreleri",
-    "Credit": 3,
-    "Ects": 5,
-    "Term": 3,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "FIZ102"
-    ]
-  },
-  {
-    "CourseCode": "AIT101",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi I",
+    "CourseCode": "3301257",
+    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi-2",
     "Credit": 2,
     "Ects": 2,
-    "Term": 3,
+    "Term": 2,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "3301157"
+    ]
+  },
+  {
+    "CourseCode": "3301258",
+    "CourseName": "Ayr\u0131k Matematik",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 2,
     "IsMandatory": true,
     "Prerequisites": []
   },
   {
-    "CourseCode": "ISG101",
-    "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi",
-    "Credit": 1,
-    "Ects": 1,
-    "Term": 3,
-    "IsMandatory": true,
-    "Prerequisites": []
-  },
-  {
-    "CourseCode": "BLM204",
-    "CourseName": "Algoritma Analizi",
-    "Credit": 4,
-    "Ects": 6,
-    "Term": 4,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "BLM201"
-    ]
-  },
-  {
-    "CourseCode": "BLM205",
-    "CourseName": "Bilgisayar Organizasyonu",
-    "Credit": 4,
-    "Ects": 6,
-    "Term": 4,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "BLM203"
-    ]
-  },
-  {
-    "CourseCode": "MAT202",
-    "CourseName": "Olas\u0131l\u0131k ve \u0130statistik",
+    "CourseCode": "3301351",
+    "CourseName": "Nesneye Y\u00F6nelik Programlama Dili",
     "Credit": 3,
-    "Ects": 5,
-    "Term": 4,
+    "Ects": 4,
+    "Term": 3,
     "IsMandatory": true,
     "Prerequisites": [
-      "MAT102"
+      "3301256"
     ]
   },
   {
-    "CourseCode": "BLM206",
-    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "Term": 4,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "BLM201"
-    ]
-  },
-  {
-    "CourseCode": "AIT102",
-    "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi II",
-    "Credit": 2,
-    "Ects": 2,
-    "Term": 4,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "AIT101"
-    ]
-  },
-  {
-    "CourseCode": "STJ101",
-    "CourseName": "Staj I Haz\u0131rl\u0131k",
-    "Credit": 1,
-    "Ects": 2,
-    "Term": 4,
-    "IsMandatory": true,
-    "Prerequisites": []
-  },
-  {
-    "CourseCode": "BLM301",
+    "CourseCode": "3301352",
     "CourseName": "\u0130\u015Fletim Sistemleri",
-    "Credit": 4,
-    "Ects": 6,
-    "Term": 5,
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 3,
     "IsMandatory": true,
     "Prerequisites": [
-      "BLM205"
+      "3301256"
     ]
   },
   {
-    "CourseCode": "BLM302",
-    "CourseName": "Bilgisayar A\u011Flar\u0131",
-    "Credit": 4,
-    "Ects": 6,
-    "Term": 5,
+    "CourseCode": "3301353",
+    "CourseName": "Mant\u0131k Devreleri-1",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 3,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301354",
+    "CourseName": "Veri Yap\u0131lar\u0131 ve Uygulamalar\u0131",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 3,
     "IsMandatory": true,
     "Prerequisites": [
-      "BLM205"
+      "3301256"
     ]
   },
   {
-    "CourseCode": "BLM303",
+    "CourseCode": "3301355",
+    "CourseName": "Elektronik Devre Elemanlar\u0131 ve \u00D6l\u00E7me",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 3,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "3301152"
+    ]
+  },
+  {
+    "CourseCode": "3301356",
+    "CourseName": "Say\u0131sal Y\u00F6ntemler",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 3,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "3301158"
+    ]
+  },
+  {
+    "CourseCode": "3301357",
+    "CourseName": "\u0130statistik ve Olas\u0131l\u0131k",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 3,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "3301151"
+    ]
+  },
+  {
+    "CourseCode": "3301451",
+    "CourseName": "M\u00FChendislik Matemati\u011Fi",
+    "Credit": 4,
+    "Ects": 7,
+    "Term": 4,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "3301251"
+    ]
+  },
+  {
+    "CourseCode": "3301452",
+    "CourseName": "Programlama Dili-2",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 4,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "3301351"
+    ]
+  },
+  {
+    "CourseCode": "3301453",
+    "CourseName": "Mant\u0131k Devreleri-2",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 4,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "3301353"
+    ]
+  },
+  {
+    "CourseCode": "3301454",
+    "CourseName": "Veritaban\u0131 Y\u00F6netim Sistemleri",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 4,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "3301354"
+    ]
+  },
+  {
+    "CourseCode": "3301455",
     "CourseName": "Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
-    "Credit": 4,
-    "Ects": 6,
-    "Term": 5,
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 4,
     "IsMandatory": true,
     "Prerequisites": [
-      "BLM202"
+      "3301351"
     ]
   },
   {
-    "CourseCode": "BLM304",
-    "CourseName": "Otomata Teorisi",
+    "CourseCode": "3301456",
+    "CourseName": "Mobil Programlama",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 4,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "3301351"
+    ]
+  },
+  {
+    "CourseCode": "3301461",
+    "CourseName": "Teknoloji Tarihi",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301462",
+    "CourseName": "\u0130\u015F Hukuku ve Etik",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301463",
+    "CourseName": "\u0130leti\u015Fim Becerileri ve Akademik Raporlama",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301464",
+    "CourseName": "Sosyal Sorumluluk ve De\u011Ferler E\u011Fitimi",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301465",
+    "CourseName": "Etkili \u0130leti\u015Fim ve Beden Dili",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301466",
+    "CourseName": "Medya Okur Yazarl\u0131\u011F\u0131",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301467",
+    "CourseName": "Y\u00F6netim ve Organizasyon",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301468",
+    "CourseName": "\u00C7evre ve Ekoloji",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301469",
+    "CourseName": "Ya\u015Fam Boyu \u00D6\u011Frenme",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301470",
+    "CourseName": "\u0130leti\u015Fim ve Stres Y\u00F6netimi",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301471",
+    "CourseName": "G\u00F6n\u00FCll\u00FCl\u00FCk \u00C7al\u0131\u015Fmalar\u0131",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301472",
+    "CourseName": "Dijital D\u00F6n\u00FC\u015F\u00FCm",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301473",
+    "CourseName": "Sosyal \u0130ngilizce",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 4,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301551",
+    "CourseName": "Mikroi\u015Flemciler ve Mikrodenetleyiciler",
     "Credit": 3,
     "Ects": 5,
     "Term": 5,
     "IsMandatory": true,
     "Prerequisites": [
-      "BLM204"
+      "3301453"
     ]
   },
   {
-    "CourseCode": "ENG201",
+    "CourseCode": "3301552",
+    "CourseName": "Programlama Dili-3",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 5,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "3301452"
+    ]
+  },
+  {
+    "CourseCode": "3301553",
+    "CourseName": "Veri Haberle\u015Fmesi ve A\u011Flar",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 5,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301554",
     "CourseName": "Teknik \u0130ngilizce",
     "Credit": 2,
     "Ects": 3,
     "Term": 5,
     "IsMandatory": true,
     "Prerequisites": [
-      "ING102"
+      "3301255"
     ]
   },
   {
-    "CourseCode": "BLM351",
-    "CourseName": "Mobil Uygulama Geli\u015Ftirme",
+    "CourseCode": "3301561",
+    "CourseName": "Sinyal \u0130\u015Fleme",
     "Credit": 3,
-    "Ects": 5,
+    "Ects": 4,
     "Term": 5,
     "IsMandatory": false,
-    "Prerequisites": [
-      "BLM202"
-    ]
+    "Prerequisites": []
   },
   {
-    "CourseCode": "BLM352",
-    "CourseName": "Web Programlama",
+    "CourseCode": "3301562",
+    "CourseName": "Tasar\u0131m Desenleri",
     "Credit": 3,
-    "Ects": 5,
+    "Ects": 4,
     "Term": 5,
     "IsMandatory": false,
-    "Prerequisites": [
-      "BLM202"
-    ]
+    "Prerequisites": []
   },
   {
-    "CourseCode": "BLM305",
-    "CourseName": "Mikroi\u015Flemciler",
-    "Credit": 4,
-    "Ects": 6,
-    "Term": 6,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "BLM205"
-    ]
-  },
-  {
-    "CourseCode": "BLM306",
-    "CourseName": "Yapay Zekaya Giri\u015F",
+    "CourseCode": "3301563",
+    "CourseName": "\u0130nsan Bilgisayar Etkile\u015Fimi",
     "Credit": 3,
-    "Ects": 5,
-    "Term": 6,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "BLM204"
-    ]
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
   },
   {
-    "CourseCode": "BLM307",
-    "CourseName": "\u0130nsan-Bilgisayar Etkile\u015Fimi",
+    "CourseCode": "3301564",
+    "CourseName": "Biyomedikal Sistemler",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301565",
+    "CourseName": "Sim\u00FClasyon ve Modelleme",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301566",
+    "CourseName": "Bilgisayar Donan\u0131m\u0131",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301567",
+    "CourseName": "Web Tasar\u0131m\u0131",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301568",
+    "CourseName": "Veri Madencili\u011Fi",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301569",
+    "CourseName": "Adli Bili\u015Fim",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301570",
+    "CourseName": "Veri Taban\u0131 Programlama",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301571",
+    "CourseName": "Makine \u00D6\u011Frenmesi",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301572",
+    "CourseName": "Algoritma Analizi",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301573",
+    "CourseName": "Do\u011Fal Dil \u0130\u015Fleme Temelleri",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301574",
+    "CourseName": "Nesnelerin \u0130nterneti",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301575",
+    "CourseName": "\u0130leri Dijital Sistemler",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301576",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Finde \u00D6zel Konular",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301577",
+    "CourseName": "Siber Sistemler ve Bilgi G\u00FCvenli\u011Fi",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301578",
+    "CourseName": "S\u00FCrd\u00FCr\u00FClebilir Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 5,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301651",
+    "CourseName": "Yapay Zeka",
     "Credit": 3,
     "Ects": 4,
     "Term": 6,
     "IsMandatory": true,
-    "Prerequisites": []
+    "Prerequisites": [
+      "3301354"
+    ]
   },
   {
-    "CourseCode": "BLM308",
-    "CourseName": "\u00C7izge Teorisi",
+    "CourseCode": "3301652",
+    "CourseName": "Otomata Teorisi ve Bi\u00E7imsel Diller",
     "Credit": 3,
-    "Ects": 5,
+    "Ects": 4,
     "Term": 6,
     "IsMandatory": true,
     "Prerequisites": [
-      "BLM304"
+      "3301258"
     ]
   },
   {
-    "CourseCode": "ISL201",
-    "CourseName": "\u0130\u015Fletme Bilimine Giri\u015F",
-    "Credit": 2,
-    "Ects": 3,
+    "CourseCode": "3301653",
+    "CourseName": "G\u00F6r\u00FCnt\u00FC \u0130\u015Fleme",
+    "Credit": 3,
+    "Ects": 4,
     "Term": 6,
     "IsMandatory": true,
-    "Prerequisites": []
-  },
-  {
-    "CourseCode": "BLM353",
-    "CourseName": "Bulut Bili\u015Fime Giri\u015F",
-    "Credit": 3,
-    "Ects": 5,
-    "Term": 6,
-    "IsMandatory": false,
     "Prerequisites": [
-      "BLM302"
+      "3301356"
     ]
   },
   {
-    "CourseCode": "BLM354",
-    "CourseName": "Oyun Programlama",
-    "Credit": 3,
-    "Ects": 5,
-    "Term": 6,
-    "IsMandatory": false,
-    "Prerequisites": [
-      "BLM202"
-    ]
-  },
-  {
-    "CourseCode": "BLM401",
-    "CourseName": "Derleyici Tasar\u0131m\u0131",
+    "CourseCode": "3301654",
+    "CourseName": "M\u00FChendislik Tasar\u0131m\u0131",
     "Credit": 4,
     "Ects": 6,
-    "Term": 7,
+    "Term": 6,
     "IsMandatory": true,
     "Prerequisites": [
-      "BLM304"
+      "3301455"
     ]
   },
   {
-    "CourseCode": "BLM402",
-    "CourseName": "Bilgisayar Grafikleri",
+    "CourseCode": "3301661",
+    "CourseName": "Sistem Programlama",
     "Credit": 3,
-    "Ects": 5,
-    "Term": 7,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "BLM202"
-    ]
-  },
-  {
-    "CourseCode": "BLM403",
-    "CourseName": "Bitirme Projesi I",
-    "Credit": 2,
-    "Ects": 6,
-    "Term": 7,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "BLM303"
-    ]
-  },
-  {
-    "CourseCode": "EKO101",
-    "CourseName": "Ekonomi",
-    "Credit": 2,
-    "Ects": 3,
-    "Term": 7,
-    "IsMandatory": true,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
     "Prerequisites": []
   },
   {
-    "CourseCode": "BLM451",
-    "CourseName": "Makine \u00D6\u011Frenmesine Giri\u015F",
+    "CourseCode": "3301662",
+    "CourseName": "Bilgisayar ve A\u011F G\u00FCvenli\u011Fi",
     "Credit": 3,
-    "Ects": 5,
-    "Term": 7,
+    "Ects": 4,
+    "Term": 6,
     "IsMandatory": false,
-    "Prerequisites": [
-      "BLM306"
-    ]
-  },
-  {
-    "CourseCode": "BLM452",
-    "CourseName": "Siber G\u00FCvenli\u011Fe Giri\u015F",
-    "Credit": 3,
-    "Ects": 5,
-    "Term": 7,
-    "IsMandatory": false,
-    "Prerequisites": [
-      "BLM302"
-    ]
-  },
-  {
-    "CourseCode": "BLM453",
-    "CourseName": "Da\u011F\u0131t\u0131k Sistemler",
-    "Credit": 3,
-    "Ects": 5,
-    "Term": 7,
-    "IsMandatory": false,
-    "Prerequisites": [
-      "BLM301"
-    ]
-  },
-  {
-    "CourseCode": "BLM404",
-    "CourseName": "Bitirme Projesi II",
-    "Credit": 4,
-    "Ects": 8,
-    "Term": 8,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "BLM403"
-    ]
-  },
-  {
-    "CourseCode": "BLM405",
-    "CourseName": "Yaz\u0131l\u0131m Kalite G\u00FCvencesi",
-    "Credit": 3,
-    "Ects": 5,
-    "Term": 8,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "BLM303"
-    ]
-  },
-  {
-    "CourseCode": "BLM406",
-    "CourseName": "Paralel Hesaplama",
-    "Credit": 3,
-    "Ects": 5,
-    "Term": 8,
-    "IsMandatory": true,
-    "Prerequisites": [
-      "BLM305"
-    ]
-  },
-  {
-    "CourseCode": "GIR101",
-    "CourseName": "Giri\u015Fimcilik",
-    "Credit": 2,
-    "Ects": 3,
-    "Term": 8,
-    "IsMandatory": true,
     "Prerequisites": []
   },
   {
-    "CourseCode": "BLM454",
-    "CourseName": "Do\u011Fal Dil \u0130\u015Fleme",
-    "Credit": 3,
-    "Ects": 5,
-    "Term": 8,
-    "IsMandatory": false,
-    "Prerequisites": [
-      "BLM306"
-    ]
-  },
-  {
-    "CourseCode": "BLM455",
+    "CourseCode": "3301663",
     "CourseName": "G\u00F6m\u00FCl\u00FC Sistemler",
     "Credit": 3,
-    "Ects": 5,
-    "Term": 8,
+    "Ects": 4,
+    "Term": 6,
     "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301664",
+    "CourseName": "\u0130\u015F Zekas\u0131",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301665",
+    "CourseName": "Robotik",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301666",
+    "CourseName": "\u0130\u015Fletim Sistemleri Y\u00F6netimi",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301667",
+    "CourseName": "Web Servisleri",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301668",
+    "CourseName": "Mikrobilgisayarl\u0131 Sistem Tasar\u0131m\u0131",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301669",
+    "CourseName": "Mesleki \u0130ngilizce",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301670",
+    "CourseName": "Kriptoloji",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301671",
+    "CourseName": "Bilgisayar Bilimlerinde \u0130novasyon ve Ara\u015Ft\u0131rma Teknikleri",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301672",
+    "CourseName": "Disiplinleraras\u0131 \u00C7al\u0131\u015Fma",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301673",
+    "CourseName": "Ger\u00E7ek\u00E7i Modelleme ve Sim\u00FClasyon Tasar\u0131m\u0131",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301674",
+    "CourseName": "Web Programlama",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301675",
+    "CourseName": "S\u00FCrd\u00FCr\u00FClebilir Bili\u015Fim Teknolojileri",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301676",
+    "CourseName": "Steganografi",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 6,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301751",
+    "CourseName": "Bilgisayar M\u00FChendisli\u011Fi Uygulamalar\u0131",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301752",
+    "CourseName": "Bilgisayar Mimarisi ve Organizasyonu",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": true,
     "Prerequisites": [
-      "BLM305"
+      "3301453"
     ]
   },
   {
-    "CourseCode": "BLM456",
-    "CourseName": "Blok Zinciri Teknolojileri",
+    "CourseCode": "3301753",
+    "CourseName": "Veri Bilimi",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": true,
+    "Prerequisites": [
+      "3301357"
+    ]
+  },
+  {
+    "CourseCode": "3301754",
+    "CourseName": "Giri\u015Fimcilik ve Proje Y\u00F6netimi",
+    "Credit": 2,
+    "Ects": 3,
+    "Term": 7,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301761",
+    "CourseName": "Prog. Mant\u0131k Kontroll\u00F6r",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301762",
+    "CourseName": "Paralel \u0130\u015Flemcili Sistemler",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301763",
+    "CourseName": "Kontrol Sistemleri",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301764",
+    "CourseName": "Bilgisayar Destekli Tasar\u0131m",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301765",
+    "CourseName": "Y\u00F6neylem Ara\u015Ft\u0131rmas\u0131",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301766",
+    "CourseName": "Kablosuz A\u011Flar",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301767",
+    "CourseName": "Bulut Bili\u015Fim",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301768",
+    "CourseName": "Paket Programlar",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301769",
+    "CourseName": "Bilgisayar Grafikleri",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301770",
+    "CourseName": "Veri \u0130leti\u015Fim Teknikleri",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301771",
+    "CourseName": "Oyun Programlama",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301772",
+    "CourseName": "E-ticaret ve Uygulamalar\u0131",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301773",
+    "CourseName": "Paralel Programlama",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301774",
+    "CourseName": "MVC Tabanl\u0131 Web Mimarisi",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301775",
+    "CourseName": "Ye\u015Fil Bili\u015Fim",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301776",
+    "CourseName": "\u00C7evre ve Enerji",
+    "Credit": 4,
+    "Ects": 6,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301777",
+    "CourseName": "Blokzincir Temelleri",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301778",
+    "CourseName": "B\u00FCy\u00FCk Veri Analiti\u011Fi",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301779",
+    "CourseName": "Bilgisayarla G\u00F6rme",
+    "Credit": 3,
+    "Ects": 4,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301782",
+    "CourseName": "Kalite ve G\u00FCvence Sistemleri",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301783",
+    "CourseName": "M\u00FChendislik Ekonomisi",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301784",
+    "CourseName": "\u0130\u015Faret Dili",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301785",
+    "CourseName": "D\u0131\u015F Ticaret",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301786",
+    "CourseName": "Topluma Hizmet Uygulamalar\u0131",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301787",
+    "CourseName": "Reklamc\u0131l\u0131k ve Stratejileri",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301788",
+    "CourseName": "Ara\u015Ft\u0131rma ve Rapor Yazma Teknikleri",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301789",
+    "CourseName": "M\u00FChendislik Eti\u011Fi",
+    "Credit": 2,
+    "Ects": 2,
+    "Term": 7,
+    "IsMandatory": false,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301851",
+    "CourseName": "\u0130\u015Fletmede Mesleki E\u011Fitim",
+    "Credit": 6,
+    "Ects": 20,
+    "Term": 8,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301852",
+    "CourseName": "Staj-1",
     "Credit": 3,
     "Ects": 5,
     "Term": 8,
-    "IsMandatory": false,
+    "IsMandatory": true,
+    "Prerequisites": []
+  },
+  {
+    "CourseCode": "3301853",
+    "CourseName": "Staj-2",
+    "Credit": 3,
+    "Ects": 5,
+    "Term": 8,
+    "IsMandatory": true,
     "Prerequisites": []
   }
 ]

@@ -1,10 +1,12 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { api } from '../api/client'
-import type { RiskLevel, RiskRow } from '../api/types'
+import type { ManagedAdvisor, RiskLevel, RiskRow } from '../api/types'
+import { useAuth } from '../auth/AuthContext'
 import { EmptyState, ErrorState, Loading } from '../components/Feedback'
 import { formatGpa } from '../components/format'
 import { RISK_LEVEL_LABELS } from '../components/labels'
+import { MANAGEMENT_ROLES } from '../components/nav'
 import { RiskBadge } from '../components/RiskBadge'
 import { useAsync } from '../components/useAsync'
 
@@ -12,7 +14,17 @@ type Filter = 'all' | RiskLevel
 
 /** Riskli öğrenciler: puana göre sıralı liste, seviyeye göre renkli; her gösterge ayrı ve açıklamalıdır. */
 export function RiskPage() {
-  const { state, retry } = useAsync(() => api.get<RiskRow[]>('/api/analytics/risk'), [])
+  const { user } = useAuth()
+  const isManagement = !!user && MANAGEMENT_ROLES.includes(user.role)
+  const [advisorId, setAdvisorId] = useState('')
+  const advisors = useAsync(
+    () => (isManagement ? api.get<ManagedAdvisor[]>('/api/management/advisors') : Promise.resolve([])),
+    [isManagement],
+  )
+  const { state, retry } = useAsync(
+    () => api.get<RiskRow[]>(`/api/analytics/risk${advisorId ? `?advisorId=${encodeURIComponent(advisorId)}` : ''}`),
+    [advisorId],
+  )
   const [filter, setFilter] = useState<Filter>('all')
   const [query, setQuery] = useState('')
 
@@ -35,6 +47,19 @@ export function RiskPage() {
       </p>
 
       <div className="card toolbar">
+        {isManagement && advisors.state.status === 'ready' && (
+          <label className="field">
+            <span>Danışman</span>
+            <select value={advisorId} onChange={(e) => setAdvisorId(e.target.value)}>
+              <option value="">Tüm danışmanlar</option>
+              {advisors.state.data.map((a) => (
+                <option key={a.advisorId} value={a.advisorId}>
+                  {a.title} {a.fullName} ({a.studentCount})
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
         <label className="field">
           <span>Risk seviyesi</span>
           <select value={filter} onChange={(e) => setFilter(e.target.value as Filter)}>

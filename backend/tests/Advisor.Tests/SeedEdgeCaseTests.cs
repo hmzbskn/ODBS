@@ -31,9 +31,20 @@ internal class SeedObisClient : IObisClient
     private List<T> Load<T>(string file) =>
         JsonSerializer.Deserialize<List<T>>(File.ReadAllText(Path.Combine(_dir, file)), Json)!;
 
-    public Task<List<ObisStudent>> GetStudentsAsync(CancellationToken ct = default) => Task.FromResult(Load<ObisStudent>("students.json"));
+    /// <summary>Testlerin çoğu "danisman1 bütün demo öğrencilerin (ogrenci1-4) danışmanı" varsayımıyla yazıldı.
+    /// Gerçek seed artık sınıf başına tek danışman verdiği için bu fixture eski dağılımı yeniden kurar:
+    /// öğrenci numarasının son üç hanesi sıra numarasıdır, her danışman 21 öğrenci (ADV1 = 1-21, ADV2 = 22-42, ADV3 = 43-63).
+    /// Sınıf başına tek danışman kuralı ayrıca `AdvisorPerClassYearTests` ile gerçek seed üzerinde sınanır.</summary>
+    private static ObisStudent LegacyAdvisor(ObisStudent s) =>
+        s with { AdvisorId = $"ADV{(int.Parse(s.StudentNo[^3..]) - 1) / 21 + 1}" };
+
+    /// <summary>Seed dosyasındaki gerçek (sınıfa göre dağıtılmış) danışman atamaları.</summary>
+    public List<ObisStudent> GetSeedStudents() => Load<ObisStudent>("students.json");
+
+    public Task<List<ObisStudent>> GetStudentsAsync(CancellationToken ct = default) =>
+        Task.FromResult(Load<ObisStudent>("students.json").Select(LegacyAdvisor).ToList());
     public Task<ObisStudent?> GetStudentAsync(string studentNo, CancellationToken ct = default) =>
-        Task.FromResult(Load<ObisStudent>("students.json").FirstOrDefault(s => s.StudentNo == studentNo));
+        Task.FromResult(Load<ObisStudent>("students.json").Where(s => s.StudentNo == studentNo).Select(LegacyAdvisor).FirstOrDefault());
     public Task<List<ObisTranscriptEntry>> GetTranscriptAsync(string studentNo, CancellationToken ct = default) =>
         Task.FromResult(Load<ObisTranscriptEntry>("transcripts.json").Where(t => t.StudentNo == studentNo).ToList());
     public Task<List<ObisRegistration>> GetRegistrationsAsync(string studentNo, int? term = null, CancellationToken ct = default) =>
@@ -81,18 +92,18 @@ public class SeedEdgeCaseTests
     {
         var r = await Validate("20241011");
         var issue = Assert.Single(r.Issues, i => i.RuleCode == TimeConflictRule.RuleCode);
-        Assert.Contains("MAT101", issue.CourseCodes);
-        Assert.Contains("BLM301", issue.CourseCodes);
+        Assert.Contains("3301151", issue.CourseCodes);
+        Assert.Contains("3301551", issue.CourseCodes);
     }
 
     [Fact]
     public async Task Edge02_PrerequisiteViolation_IsDetected()
     {
         var r = await Validate("20251006");
-        // BLM201 ve BLM202 ikisi de BLM103'e bağlı; her biri ayrı bulgu.
+        // Nesneye Yönelik Prog., İşletim Sistemleri ve Veri Yapıları aynı önkoşula (Programlama Dili-1) bağlı; her biri ayrı bulgu.
         var issues = r.Issues.Where(i => i.RuleCode == PrerequisiteRule.RuleCode).ToList();
-        var blm201 = Assert.Single(issues, i => i.CourseCodes[0] == "BLM201");
-        Assert.Contains("BLM103", blm201.CourseCodes);
+        var dataStructures = Assert.Single(issues, i => i.CourseCodes[0] == "3301354");
+        Assert.Contains("3301256", dataStructures.CourseCodes);
     }
 
     [Fact]
@@ -100,7 +111,7 @@ public class SeedEdgeCaseTests
     {
         var r = await Validate("20241012");
         var issue = Assert.Single(r.Issues, i => i.RuleCode == LowerSemesterPriorityRule.RuleCode && i.Message.Contains("kalınmış"));
-        Assert.Contains("FIZ102", issue.CourseCodes);
+        Assert.Contains("3301252", issue.CourseCodes);
     }
 
     [Fact]
@@ -116,8 +127,8 @@ public class SeedEdgeCaseTests
     {
         var r = await Validate("20231016");
         var issue = Assert.Single(r.Issues, i => i.RuleCode == ExamConflictRule.RuleCode);
-        Assert.Contains("BLM203", issue.CourseCodes);
-        Assert.Contains("BLM401", issue.CourseCodes);
+        Assert.Contains("3301353", issue.CourseCodes);
+        Assert.Contains("3301752", issue.CourseCodes);
     }
 
     [Fact]
@@ -125,7 +136,7 @@ public class SeedEdgeCaseTests
     {
         var r = await Validate("20231017");
         var issue = Assert.Single(r.Issues, i => i.RuleCode == RetakeRule.RuleCode);
-        Assert.Contains("BLM201", issue.CourseCodes);
+        Assert.Contains("3301354", issue.CourseCodes);
         Assert.Equal(IssueSeverity.Info, issue.Severity);
     }
 

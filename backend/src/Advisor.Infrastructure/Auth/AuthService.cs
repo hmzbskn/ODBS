@@ -14,6 +14,7 @@ public static class ClaimNames
 {
     public const string LinkedAdvisorId = "advisor_id";
     public const string LinkedStudentNo = "student_no";
+    public const string Department = "department";
 }
 
 public class AuthService
@@ -41,7 +42,7 @@ public class AuthService
     }
 
     public static UserInfo ToInfo(AppUser u) =>
-        new(u.Id, u.Username, u.DisplayName, u.Role, u.LinkedAdvisorId, u.LinkedStudentNo);
+        new(u.Id, u.Username, u.DisplayName, u.Role, u.LinkedAdvisorId, u.LinkedStudentNo, u.Department);
 
     private string CreateToken(AppUser user, DateTime expiresUtc)
     {
@@ -53,6 +54,7 @@ public class AuthService
         };
         if (user.LinkedAdvisorId is not null) claims.Add(new(ClaimNames.LinkedAdvisorId, user.LinkedAdvisorId));
         if (user.LinkedStudentNo is not null) claims.Add(new(ClaimNames.LinkedStudentNo, user.LinkedStudentNo));
+        if (user.Department is not null) claims.Add(new(ClaimNames.Department, user.Department));
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SigningKey));
         var token = new JwtSecurityToken(

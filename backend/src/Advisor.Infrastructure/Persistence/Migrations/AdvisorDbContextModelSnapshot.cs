@@ -17,6 +17,43 @@ namespace Advisor.Infrastructure.Persistence.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.32");
 
+            modelBuilder.Entity("Advisor.Domain.Entities.AdvisorAssignment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AdvisorId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("AssignedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AssignedByName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("AssignedByUserId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PreviousAdvisorId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StudentNo")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdvisorId");
+
+                    b.HasIndex("StudentNo")
+                        .IsUnique();
+
+                    b.ToTable("AdvisorAssignments");
+                });
+
             modelBuilder.Entity("Advisor.Domain.Entities.Announcement", b =>
                 {
                     b.Property<Guid>("Id")
@@ -89,6 +126,9 @@ namespace Advisor.Infrastructure.Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Department")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DisplayName")

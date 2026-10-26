@@ -2,6 +2,7 @@ using Advisor.Application.Analytics;
 using Advisor.Application.Auth;
 using Advisor.Application.Common;
 using Advisor.Application.Communication;
+using Advisor.Application.Management;
 using Advisor.Application.Obis;
 using Advisor.Domain.Entities;
 using Advisor.Domain.Enums;
@@ -19,14 +20,16 @@ public class AnnouncementService
 
     private readonly AdvisorDbContext _db;
     private readonly IObisClient _obis;
+    private readonly IStudentDirectory _students;
     private readonly IAnalyticsService _analytics;
     private readonly ICurrentUser _user;
     private readonly TimeProvider _time;
 
-    public AnnouncementService(AdvisorDbContext db, IObisClient obis, IAnalyticsService analytics, ICurrentUser user, TimeProvider time)
+    public AnnouncementService(AdvisorDbContext db, IObisClient obis, IStudentDirectory students, IAnalyticsService analytics, ICurrentUser user, TimeProvider time)
     {
         _db = db;
         _obis = obis;
+        _students = students;
         _analytics = analytics;
         _user = user;
         _time = time;
@@ -93,7 +96,7 @@ public class AnnouncementService
         if (_user.Role != UserRole.Admin && a.AdvisorId != _user.LinkedAdvisorId)
             throw AppException.Forbidden("Bu duyuru size ait değil.");
 
-        var names = (await _obis.GetStudentsAsync(ct)).ToDictionary(s => s.StudentNo, s => $"{s.FirstName} {s.LastName}");
+        var names = (await _students.GetStudentsAsync(ct)).ToDictionary(s => s.StudentNo, s => $"{s.FirstName} {s.LastName}");
         var recipients = a.Recipients
             .Select(r => new RecipientStatus(r.StudentNo, names.GetValueOrDefault(r.StudentNo, r.StudentNo), r.ReadAt))
             .OrderBy(r => r.ReadAt.HasValue).ThenBy(r => r.StudentNo, StringComparer.Ordinal)
@@ -108,7 +111,7 @@ public class AnnouncementService
         EnsureStaff();
         ValidateFilter(f);
 
-        var students = await _obis.GetStudentsAsync(ct);
+        var students = await _students.GetStudentsAsync(ct);
         var scope = _user.Role == UserRole.Danisman
             ? students.Where(s => s.AdvisorId == _user.LinkedAdvisorId).ToList()
             : students;

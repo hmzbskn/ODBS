@@ -158,6 +158,6 @@ public class AuthTests : IClassFixture<AuthFactory>
         var before = await db.Users.CountAsync();
         await DemoDataSeeder.SeedAsync(db);
         Assert.Equal(before, await db.Users.CountAsync());
-        Assert.Equal(8, before);
+        Assert.Equal(11, before);
     }
 }

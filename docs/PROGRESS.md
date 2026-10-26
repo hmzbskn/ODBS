@@ -368,3 +368,12 @@ Ayrıntılı kontrol listesi: [ARCHITECTURE.md → Gerçek OBİS'e geçiş](ARCH
 4. Eşiklerin (GANO bantları, AKTS limitleri, azami süre, devamsızlık sınırı, müfredat sayıları) üniversite yönetmeliğine göre ayarlanması.
 5. Hesapların kurumsal kimlik sağlayıcıdan (SSO/LDAP) gelmesi ve `LinkedStudentNo`/`LinkedAdvisorId` eşlemesi.
 6. Ölçek için toplu uç noktalar ya da arka plan ön hesaplaması.
+
+## Aşama 13 — Yönetim katmanı (2026-10-26)
+
+Bölüm Başkanı ve Dekan rolleri, öğrencileri danışmanlara atama ve danışman bazlı genel bakış eklendi. Ayrıntı ve gerekçeler: `docs/DECISIONS.md`
+(Aşama 13). 347 test yeşil (14 yeni yönetim testi); canlı API'de atama, erişimin yeni danışmana geçişi ve geri alma elle doğrulandı.
+
+## Aşama 14: Gerçek müfredat (2026-10-26)
+Mock OBİS müfredatı Selçuk Bilgisayar Mühendisliği'nin gerçek 118 dersiyle değiştirildi; ayrıntı ve varsayımlar `DECISIONS.md` (Aşama 14).
+Önceki bölümlerdeki BLM/MAT kodları tarihsel kayıttır. 355 test yeşil.

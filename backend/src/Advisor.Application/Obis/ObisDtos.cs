@@ -12,7 +12,8 @@ public record ObisAdvisor(string AdvisorId, string FirstName, string LastName, s
 
 public record ObisStudent(
     string StudentNo, string FirstName, string LastName, int ClassYear,
-    string Department, string AdvisorId, double Gpa, string Status);
+    string Department, string AdvisorId, double Gpa, string Status,
+    string? Email = null, string? Phone = null, string? Residence = null, string? Program = null);
 
 public record ObisCourse(
     string CourseCode, string CourseName, int Credit, int Ects, int Term,

@@ -61,8 +61,8 @@ public class AnalyticsSeedTests
         Assert.False(g.CanGraduate);
         Assert.True(g.ProjectedCanGraduate);
         Assert.All(g.MissingMandatory, m => Assert.Equal("InProgress", m.Status));
-        Assert.Single(g.MissingMandatory); // kalan 2 dersten biri zorunlu, biri seçmeli
-        Assert.Equal("GIR101", g.MissingMandatory[0].CourseCode);
+        // Dönem 8'in 3 dersinden biri (İşletmede Mesleki Eğitim) geçilmiş sayılır; Staj-1 ve Staj-2 kalır.
+        Assert.Equal(new[] { "3301852", "3301853" }, g.MissingMandatory.Select(m => m.CourseCode).OrderBy(c => c));
         Assert.Equal(40, g.InternshipDays);
         Assert.Equal(1, g.EstimatedRemainingTerms);
     }
