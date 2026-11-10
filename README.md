@@ -7,8 +7,6 @@ puanlama (anket)**, **erken uyarı ve mezuniyet analizi** ve **iletişim/talep**
 
 > Tüm veriler kurgusaldır; gerçek kişisel veri içermez. Bitirme projesi olarak geliştirilmiştir.
 
-![Danışman paneli](docs/screenshots/02-danisman-panel.png)
-
 ## İçindekiler
 
 1. [Hızlı başlangıç](#hızlı-başlangıç)
@@ -94,10 +92,6 @@ Danışman ekranı: dönem seçimi → öğrenci listesi (hata/uyarı/bilgi roze
 (çakışanlar **kırmızı**), kural bulguları ve **Onayla / Düzeltme iste (not zorunlu)** kararı. Karar ana uygulamanın kendi
 veritabanında geçmişiyle birlikte tutulur. Öğrenci kendi kaydını ve danışman kararını `Kayıt Durumum`dan görür.
 
-| Danışman: öğrenci listesi | Danışman: doğrulama sonucu |
-| --- | --- |
-| ![Liste](docs/screenshots/03-ders-kayitlari-liste.png) | ![Doğrulama](docs/screenshots/04-ders-kaydi-dogrulama.png) |
-
 ### 2. Anket ve ihtiyaç puanlama
 
 Danışman anket oluşturur (tek seçim, çoklu seçim, sayı, metin; tarih aralığı; hedef sınıf). Öğrenci **KVKK aydınlatma
@@ -108,10 +102,6 @@ puanın **hangi cevaptan geldiği** gösterilir; "ilk N öğrenci" ya da "puanı
 atanır ve **CSV olarak dışa aktarılır**. Yanıtları yalnızca anketin sahibi danışman ve yönetici görür; istatistik ekranı kimlik
 içermez.
 
-| Anket oluşturma | Sonuçlar, kırılım ve destek ataması | Öğrenci formu (KVKK) |
-| --- | --- | --- |
-| ![Oluşturma](docs/screenshots/05-anket-olusturma.png) | ![Sonuç](docs/screenshots/06-anket-sonuc-siralama.png) | ![Form](docs/screenshots/15-ogrenci-anket-formu-kvkk.png) |
-
 ### 3. Erken uyarı ve mezuniyet analizi
 
 * **Risk puanı (0-100, kurala dayalı):** düşük/sınırda GANO, son iki dönem ortalamasında düşüş, aynı dersten tekrar kalma ve
@@ -120,10 +110,6 @@ içermez.
 * **Mezuniyet analizi:** eksik zorunlu dersler (Kaldı / Alınmadı / Bu dönem alıyor), seçmeli kredi, toplam AKTS ilerlemesi, staj
   günü, GANO ve **"bu dönem aldığı dersleri geçerse mezun olur mu?"** projeksiyonu. Öğrenci kendi analizini görür.
 * **Danışman paneli (Recharts):** öğrenci sayısı, ortalama GANO, risk dağılımı, dönem bazlı GANO eğilimi, başarı oranı en düşük dersler.
-
-| Risk listesi | Risk gerekçesi | Mezuniyet analizi |
-| --- | --- | --- |
-| ![Risk](docs/screenshots/07-risk-listesi.png) | ![Detay](docs/screenshots/08-risk-detay.png) | ![Mezuniyet](docs/screenshots/09-mezuniyet-analizi.png) |
 
 ### 4. İletişim ve talepler
 
@@ -135,21 +121,7 @@ içermez.
 * **Talep/dilekçe:** ders ekle-bırak, kayıt dondurma, muafiyet, diğer; açıklama + dosya eki (PDF/PNG/JPG/DOCX, 5 MB); durum akışı
   Beklemede → İnceleniyor → Onaylandı/Reddedildi (reddederken gerekçe zorunlu); her değişiklik öğrenciye bildirim gönderir.
 
-| Randevular (danışman) | Öğrenci dosyası | Duyuru hedef kitlesi | Talepler (danışman) |
-| --- | --- | --- | --- |
-| ![Randevu](docs/screenshots/10-randevular-danisman.png) | ![Dosya](docs/screenshots/11-ogrenci-dosyasi.png) | ![Duyuru](docs/screenshots/12-duyuru-hedef-kitle.png) | ![Talep](docs/screenshots/17-talepler-danisman.png) |
-
 ### Öğrenci ekranları ve mobil
-
-| Ders kaydım | Mezuniyet analizim | Randevu | Gelen kutusu | Talepler |
-| --- | --- | --- | --- | --- |
-| ![](docs/screenshots/14-ogrenci-ders-kaydi.png) | ![](docs/screenshots/13-ogrenci-mezuniyet.png) | ![](docs/screenshots/16-ogrenci-randevu.png) | ![](docs/screenshots/18-ogrenci-gelen-kutusu.png) | ![](docs/screenshots/19-ogrenci-talepler.png) |
-
-Arayüz masaüstü öncelikli ama mobilde bozulmaz (menü çekmeceye dönüşür, tablolar yatay kayar):
-
-| Mobil sayfa | Mobil menü |
-| --- | --- |
-| ![](docs/screenshots/20-mobil-ogrenci-ders-kaydi.png) | ![](docs/screenshots/21-mobil-menu.png) |
 
 ## Seed uç durumları
 
@@ -259,8 +231,7 @@ OgrenciDanismanOtomasyonu/
 ├─ docs/
 │  ├─ ARCHITECTURE.md              Katmanlar, diyagramlar, gerekçeler
 │  ├─ DECISIONS.md                 Belirsiz noktalarda alınan kararlar
-│  ├─ PROGRESS.md                  Aşama aşama ilerleme + final özet
-│  └─ screenshots/                 Bu belgedeki ekran görüntüleri
+│  └─ PROGRESS.md                  Aşama aşama ilerleme + final özet
 ├─ start-all.ps1 / start-all.sh    Tek komutla başlatma
 └─ stop-all.ps1  / stop-all.sh     Durdurma
 ```
