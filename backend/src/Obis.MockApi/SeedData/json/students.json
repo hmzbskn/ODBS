@@ -53,7 +53,7 @@
     "Email": "duyguyildiz@ogr.selcuk.edu.tr",
     "Phone": "0534 276 44 78",
     "Residence": "Sel\u00E7uklu / Akademi Mah.",
-    "Program": "\u0130kinci \u00D6\u011Fretim"
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261005",
@@ -76,7 +76,7 @@
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV3",
-    "Gpa": 2.8,
+    "Gpa": 3,
     "Status": "Aktif",
     "Email": "selinkilic@ogr.selcuk.edu.tr",
     "Phone": "0536 814 16 22",
@@ -90,7 +90,7 @@
     "ClassYear": 2,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV3",
-    "Gpa": 1.51,
+    "Gpa": 1.16,
     "Status": "Aktif",
     "Email": "sudekaya@ogr.selcuk.edu.tr",
     "Phone": "0537 633 47 39",
@@ -109,7 +109,7 @@
     "Email": "hakanyilmaz@ogr.selcuk.edu.tr",
     "Phone": "0538 452 78 56",
     "Residence": "Sel\u00E7uklu / Bosna Hersek Mah.",
-    "Program": "\u0130kinci \u00D6\u011Fretim"
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251009",
@@ -146,7 +146,7 @@
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV1",
-    "Gpa": 2.64,
+    "Gpa": 2.8,
     "Status": "Aktif",
     "Email": "buseates@ogr.selcuk.edu.tr",
     "Phone": "0541 809 81 17",
@@ -160,12 +160,12 @@
     "ClassYear": 3,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV1",
-    "Gpa": 2.81,
+    "Gpa": 2.76,
     "Status": "Aktif",
     "Email": "duygusahin@ogr.selcuk.edu.tr",
     "Phone": "0542 628 22 34",
     "Residence": "Sel\u00E7uklu / Akademi Mah.",
-    "Program": "\u0130kinci \u00D6\u011Fretim"
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241013",
@@ -216,7 +216,7 @@
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV4",
-    "Gpa": 2.91,
+    "Gpa": 2.9,
     "Status": "Aktif",
     "Email": "canerpolat@ogr.selcuk.edu.tr",
     "Phone": "0546 804 56 12",
@@ -230,7 +230,7 @@
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV4",
-    "Gpa": 2.98,
+    "Gpa": 2.97,
     "Status": "Aktif",
     "Email": "kaanaksoy@ogr.selcuk.edu.tr",
     "Phone": "0547 623 87 29",
@@ -244,7 +244,7 @@
     "ClassYear": 4,
     "Department": "Bilgisayar M\u00FChendisli\u011Fi",
     "AdvisorId": "ADV4",
-    "Gpa": 2.93,
+    "Gpa": 2.95,
     "Status": "Aktif",
     "Email": "yusufkaraca@ogr.selcuk.edu.tr",
     "Phone": "0548 442 28 46",
@@ -333,7 +333,7 @@
     "Email": "cancetin@ogr.selcuk.edu.tr",
     "Phone": "0534 256 34 58",
     "Residence": "Sel\u00E7uklu / Bosna Hersek Mah.",
-    "Program": "\u0130kinci \u00D6\u011Fretim"
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261025",
@@ -389,7 +389,7 @@
     "Email": "senaozdemir@ogr.selcuk.edu.tr",
     "Phone": "0538 432 68 36",
     "Residence": "Sel\u00E7uklu / Akademi Mah.",
-    "Program": "\u0130kinci \u00D6\u011Fretim"
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251029",
@@ -445,7 +445,7 @@
     "Email": "gizemerdogan@ogr.selcuk.edu.tr",
     "Phone": "0542 608 12 14",
     "Residence": "Sel\u00E7uklu / Bosna Hersek Mah.",
-    "Program": "\u0130kinci \u00D6\u011Fretim"
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241033",
@@ -501,7 +501,7 @@
     "Email": "yusufozdemir@ogr.selcuk.edu.tr",
     "Phone": "0546 784 46 82",
     "Residence": "Sel\u00E7uklu / Akademi Mah.",
-    "Program": "\u0130kinci \u00D6\u011Fretim"
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20231037",
@@ -613,7 +613,7 @@
     "Email": "onurkaya@ogr.selcuk.edu.tr",
     "Phone": "0534 236 24 38",
     "Residence": "Sel\u00E7uklu / Akademi Mah.",
-    "Program": "\u0130kinci \u00D6\u011Fretim"
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20261045",
@@ -669,7 +669,7 @@
     "Email": "meliserdogan@ogr.selcuk.edu.tr",
     "Phone": "0538 412 58 16",
     "Residence": "Sel\u00E7uklu / Bosna Hersek Mah.",
-    "Program": "\u0130kinci \u00D6\u011Fretim"
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20251049",
@@ -725,7 +725,7 @@
     "Email": "busecetin@ogr.selcuk.edu.tr",
     "Phone": "0542 588 92 84",
     "Residence": "Sel\u00E7uklu / Akademi Mah.",
-    "Program": "\u0130kinci \u00D6\u011Fretim"
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241053",
@@ -781,7 +781,7 @@
     "Email": "elifkoc@ogr.selcuk.edu.tr",
     "Phone": "0546 764 36 62",
     "Residence": "Sel\u00E7uklu / Bosna Hersek Mah.",
-    "Program": "\u0130kinci \u00D6\u011Fretim"
+    "Program": "Birinci \u00D6\u011Fretim"
   },
   {
     "StudentNo": "20241057",

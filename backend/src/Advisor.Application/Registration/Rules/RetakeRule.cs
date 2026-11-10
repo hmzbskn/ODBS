@@ -1,7 +1,7 @@
 namespace Advisor.Application.Registration.Rules;
 
-/// <summary>Daha önce yüksek notla (varsayılan BB ve üstü) geçilmiş dersin yeniden seçilmesi
-/// için Bilgi. Engellemez; danışmanın dikkatini çeker.</summary>
+/// <summary>Geçilmiş ders yalnızca not yükseltmek için ve yalnızca CB ve altı notla geçildiyse tekrar alınabilir.
+/// BB ve üstüyle (varsayılan eşik <see cref="RegistrationRuleOptions.RetakeHighGrade"/>) geçilmiş dersin yeniden seçilmesi Hata.</summary>
 public class RetakeRule : IRegistrationRule
 {
     public const string RuleCode = "RETAKE";
@@ -18,8 +18,8 @@ public class RetakeRule : IRegistrationRule
             if (best is null || !GradeScale.IsAtLeast(best.LetterGrade, ctx.Options.RetakeHighGrade)) continue;
 
             yield return new RegistrationIssue(
-                Code, IssueSeverity.Info,
-                $"{ctx.Label(reg.CourseCode)} daha önce {best.Term}. dönemde {best.LetterGrade} ile geçilmiş; ders yeniden seçilmiş.",
+                Code, IssueSeverity.Error,
+                $"{ctx.Name(reg.CourseCode)} daha önce {best.LetterGrade} ile geçilmiş; yalnızca CB ve altı notla geçilen dersler tekrar alınabilir.",
                 new[] { reg.CourseCode });
         }
     }

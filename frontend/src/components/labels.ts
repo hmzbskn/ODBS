@@ -14,11 +14,10 @@ export const SEVERITY_LABELS: Record<IssueSeverity, string> = {
 
 export const RULE_LABELS: Record<string, string> = {
   TIME_CONFLICT: 'Ders saati çakışması',
-  PREREQUISITE: 'Önkoşul',
   LOWER_SEMESTER_PRIORITY: 'Alttan ders önceliği',
   CREDIT_LIMIT: 'AKTS limiti',
-  EXAM_CONFLICT: 'Sınav çakışması',
   RETAKE: 'Tekrar alma',
+  SECTION_PROGRAM: 'Öğretim türü',
 }
 
 export const DAY_LABELS: Record<DayName, string> = {

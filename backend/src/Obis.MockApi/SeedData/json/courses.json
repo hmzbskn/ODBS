@@ -78,9 +78,7 @@
     "Ects": 6,
     "Term": 2,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301151"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301252",
@@ -89,9 +87,7 @@
     "Ects": 6,
     "Term": 2,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301152"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301253",
@@ -100,9 +96,7 @@
     "Ects": 2,
     "Term": 2,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301153"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301254",
@@ -111,9 +105,7 @@
     "Ects": 2,
     "Term": 2,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301154"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301255",
@@ -122,9 +114,7 @@
     "Ects": 2,
     "Term": 2,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301155"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301256",
@@ -142,9 +132,7 @@
     "Ects": 2,
     "Term": 2,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301157"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301258",
@@ -162,9 +150,7 @@
     "Ects": 4,
     "Term": 3,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301256"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301352",
@@ -173,9 +159,7 @@
     "Ects": 4,
     "Term": 3,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301256"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301353",
@@ -193,9 +177,7 @@
     "Ects": 4,
     "Term": 3,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301256"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301355",
@@ -204,9 +186,7 @@
     "Ects": 4,
     "Term": 3,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301152"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301356",
@@ -215,9 +195,7 @@
     "Ects": 5,
     "Term": 3,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301158"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301357",
@@ -226,9 +204,7 @@
     "Ects": 5,
     "Term": 3,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301151"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301451",
@@ -237,9 +213,7 @@
     "Ects": 7,
     "Term": 4,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301251"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301452",
@@ -248,9 +222,7 @@
     "Ects": 4,
     "Term": 4,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301351"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301453",
@@ -259,9 +231,7 @@
     "Ects": 4,
     "Term": 4,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301353"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301454",
@@ -270,9 +240,7 @@
     "Ects": 5,
     "Term": 4,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301354"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301455",
@@ -281,9 +249,7 @@
     "Ects": 4,
     "Term": 4,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301351"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301456",
@@ -292,9 +258,7 @@
     "Ects": 4,
     "Term": 4,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301351"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301461",
@@ -420,9 +384,7 @@
     "Ects": 5,
     "Term": 5,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301453"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301552",
@@ -431,9 +393,7 @@
     "Ects": 5,
     "Term": 5,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301452"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301553",
@@ -451,9 +411,7 @@
     "Ects": 3,
     "Term": 5,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301255"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301561",
@@ -624,9 +582,7 @@
     "Ects": 4,
     "Term": 6,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301354"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301652",
@@ -635,9 +591,7 @@
     "Ects": 4,
     "Term": 6,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301258"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301653",
@@ -646,9 +600,7 @@
     "Ects": 4,
     "Term": 6,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301356"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301654",
@@ -657,9 +609,7 @@
     "Ects": 6,
     "Term": 6,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301455"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301661",
@@ -821,9 +771,7 @@
     "Ects": 4,
     "Term": 7,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301453"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301753",
@@ -832,9 +780,7 @@
     "Ects": 4,
     "Term": 7,
     "IsMandatory": true,
-    "Prerequisites": [
-      "3301357"
-    ]
+    "Prerequisites": []
   },
   {
     "CourseCode": "3301754",

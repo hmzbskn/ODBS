@@ -3,91 +3,451 @@
     "Term": 1,
     "CourseCode": "3301151",
     "CourseName": "Matematik-1",
-    "Section": "A",
+    "Section": "N\u00D6/\u0130\u00D6",
     "Day": "Monday",
-    "StartTime": "08:00:00",
-    "EndTime": "10:00:00",
-    "Room": "D-101"
-  },
-  {
-    "Term": 1,
-    "CourseCode": "3301151",
-    "CourseName": "Matematik-1",
-    "Section": "B",
-    "Day": "Thursday",
-    "StartTime": "10:00:00",
+    "StartTime": "08:30:00",
     "EndTime": "12:00:00",
-    "Room": "D-116"
-  },
-  {
-    "Term": 1,
-    "CourseCode": "3301152",
-    "CourseName": "Fizik-1",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "08:00:00",
-    "EndTime": "10:00:00",
-    "Room": "D-102"
-  },
-  {
-    "Term": 1,
-    "CourseCode": "3301153",
-    "CourseName": "T\u00FCrk Dili I",
-    "Section": "A",
-    "Day": "Wednesday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-103"
+    "Room": "212"
   },
   {
     "Term": 1,
     "CourseCode": "3301154",
     "CourseName": "Atat\u00FCrk \u0130lkeleri ve \u0130nk\u0131lap Tarihi-1",
-    "Section": "A",
-    "Day": "Thursday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-104"
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Monday",
+    "StartTime": "13:25:00",
+    "EndTime": "15:05:00",
+    "Room": "212"
   },
   {
     "Term": 1,
-    "CourseCode": "3301155",
-    "CourseName": "Yabanc\u0131 Dil-1",
-    "Section": "A",
-    "Day": "Friday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-105"
+    "CourseCode": "3301152",
+    "CourseName": "Fizik-1",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Tuesday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:55:00",
+    "Room": "212"
   },
   {
     "Term": 1,
     "CourseCode": "3301156",
     "CourseName": "Bilgisayar M\u00FChendisli\u011Fine Giri\u015F",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-106"
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Wednesday",
+    "StartTime": "09:25:00",
+    "EndTime": "12:00:00",
+    "Room": "212"
   },
   {
     "Term": 1,
     "CourseCode": "3301157",
     "CourseName": "\u0130\u015F Sa\u011Fl\u0131\u011F\u0131 ve G\u00FCvenli\u011Fi-1",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-107"
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Wednesday",
+    "StartTime": "13:25:00",
+    "EndTime": "15:05:00",
+    "Room": "212"
   },
   {
     "Term": 1,
     "CourseCode": "3301158",
     "CourseName": "Lineer Cebir",
-    "Section": "A",
-    "Day": "Wednesday",
-    "StartTime": "10:00:00",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Thursday",
+    "StartTime": "09:25:00",
     "EndTime": "12:00:00",
-    "Room": "D-108"
+    "Room": "212"
+  },
+  {
+    "Term": 1,
+    "CourseCode": "3301153",
+    "CourseName": "T\u00FCrk Dili I",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Friday",
+    "StartTime": "08:30:00",
+    "EndTime": "10:10:00",
+    "Room": "212"
+  },
+  {
+    "Term": 1,
+    "CourseCode": "3301155",
+    "CourseName": "Yabanc\u0131 Dil-1",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Friday",
+    "StartTime": "10:20:00",
+    "EndTime": "12:00:00",
+    "Room": "212"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "3301353",
+    "CourseName": "Mant\u0131k Devreleri-1",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Monday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:55:00",
+    "Room": "209"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "3301356",
+    "CourseName": "Say\u0131sal Y\u00F6ntemler",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Tuesday",
+    "StartTime": "09:25:00",
+    "EndTime": "12:00:00",
+    "Room": "209"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "3301352",
+    "CourseName": "\u0130\u015Fletim Sistemleri",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Tuesday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:55:00",
+    "Room": "209"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "3301357",
+    "CourseName": "\u0130statistik ve Olas\u0131l\u0131k",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Wednesday",
+    "StartTime": "09:25:00",
+    "EndTime": "12:00:00",
+    "Room": "209"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "3301354",
+    "CourseName": "Veri Yap\u0131lar\u0131 ve Uygulamalar\u0131",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Wednesday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:55:00",
+    "Room": "209"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "3301351",
+    "CourseName": "Nesneye Y\u00F6nelik Programlama Dili",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Thursday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:55:00",
+    "Room": "211"
+  },
+  {
+    "Term": 3,
+    "CourseCode": "3301355",
+    "CourseName": "Elektronik Devre Elemanlar\u0131 ve \u00D6l\u00E7me",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Friday",
+    "StartTime": "08:30:00",
+    "EndTime": "12:00:00",
+    "Room": "209"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "3301552",
+    "CourseName": "Programlama Dili-3",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Monday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:55:00",
+    "Room": "210"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "3301551",
+    "CourseName": "Mikroi\u015Flemciler ve Mikrodenetleyiciler",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Tuesday",
+    "StartTime": "08:30:00",
+    "EndTime": "12:00:00",
+    "Room": "210"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "3301553",
+    "CourseName": "Veri Haberle\u015Fmesi ve A\u011Flar",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Wednesday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:55:00",
+    "Room": "210"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "3301568",
+    "CourseName": "Veri Madencili\u011Fi",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Thursday",
+    "StartTime": "09:25:00",
+    "EndTime": "12:00:00",
+    "Room": "210"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "3301573",
+    "CourseName": "Do\u011Fal Dil \u0130\u015Fleme Temelleri",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Thursday",
+    "StartTime": "09:25:00",
+    "EndTime": "12:00:00",
+    "Room": "LAB3"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "3301564",
+    "CourseName": "Biyomedikal Sistemler",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Thursday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:00:00",
+    "Room": "210"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "3301562",
+    "CourseName": "Tasar\u0131m Desenleri",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Thursday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:00:00",
+    "Room": "LAB3"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "3301570",
+    "CourseName": "Veri Taban\u0131 Programlama",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Friday",
+    "StartTime": "09:25:00",
+    "EndTime": "12:00:00",
+    "Room": "210"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "3301571",
+    "CourseName": "Makine \u00D6\u011Frenmesi",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Friday",
+    "StartTime": "09:25:00",
+    "EndTime": "12:00:00",
+    "Room": "211"
+  },
+  {
+    "Term": 5,
+    "CourseCode": "3301554",
+    "CourseName": "Teknik \u0130ngilizce",
+    "Section": "N\u00D6/\u0130\u00D6",
+    "Day": "Friday",
+    "StartTime": "14:20:00",
+    "EndTime": "16:55:00",
+    "Room": "210"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301788",
+    "CourseName": "Ara\u015Ft\u0131rma ve Rapor Yazma Teknikleri",
+    "Section": "N\u00D6",
+    "Day": "Monday",
+    "StartTime": "10:20:00",
+    "EndTime": "12:00:00",
+    "Room": "210"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301786",
+    "CourseName": "Topluma Hizmet Uygulamalar\u0131",
+    "Section": "N\u00D6",
+    "Day": "Monday",
+    "StartTime": "10:20:00",
+    "EndTime": "12:00:00",
+    "Room": "209"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301770",
+    "CourseName": "Veri \u0130leti\u015Fim Teknikleri",
+    "Section": "N\u00D6",
+    "Day": "Monday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:00:00",
+    "Room": "211"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301761",
+    "CourseName": "Prog. Mant\u0131k Kontroll\u00F6r",
+    "Section": "N\u00D6",
+    "Day": "Monday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:00:00",
+    "Room": "LAB2"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301788",
+    "CourseName": "Ara\u015Ft\u0131rma ve Rapor Yazma Teknikleri",
+    "Section": "\u0130\u00D6",
+    "Day": "Monday",
+    "StartTime": "17:00:00",
+    "EndTime": "18:35:00",
+    "Room": "210"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301786",
+    "CourseName": "Topluma Hizmet Uygulamalar\u0131",
+    "Section": "\u0130\u00D6",
+    "Day": "Monday",
+    "StartTime": "17:00:00",
+    "EndTime": "18:35:00",
+    "Room": "209"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301770",
+    "CourseName": "Veri \u0130leti\u015Fim Teknikleri",
+    "Section": "\u0130\u00D6",
+    "Day": "Monday",
+    "StartTime": "18:40:00",
+    "EndTime": "21:05:00",
+    "Room": "211"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301761",
+    "CourseName": "Prog. Mant\u0131k Kontroll\u00F6r",
+    "Section": "\u0130\u00D6",
+    "Day": "Monday",
+    "StartTime": "18:40:00",
+    "EndTime": "21:05:00",
+    "Room": "LAB2"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301767",
+    "CourseName": "Bulut Bili\u015Fim",
+    "Section": "N\u00D6",
+    "Day": "Tuesday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:00:00",
+    "Room": "210"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301766",
+    "CourseName": "Kablosuz A\u011Flar",
+    "Section": "N\u00D6",
+    "Day": "Tuesday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:00:00",
+    "Room": "211"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301767",
+    "CourseName": "Bulut Bili\u015Fim",
+    "Section": "\u0130\u00D6",
+    "Day": "Tuesday",
+    "StartTime": "17:00:00",
+    "EndTime": "19:25:00",
+    "Room": "210"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301766",
+    "CourseName": "Kablosuz A\u011Flar",
+    "Section": "\u0130\u00D6",
+    "Day": "Tuesday",
+    "StartTime": "17:00:00",
+    "EndTime": "19:25:00",
+    "Room": "211"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301753",
+    "CourseName": "Veri Bilimi",
+    "Section": "N\u00D6",
+    "Day": "Wednesday",
+    "StartTime": "13:25:00",
+    "EndTime": "16:00:00",
+    "Room": "211"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301753",
+    "CourseName": "Veri Bilimi",
+    "Section": "\u0130\u00D6",
+    "Day": "Wednesday",
+    "StartTime": "17:00:00",
+    "EndTime": "19:25:00",
+    "Room": "211"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301752",
+    "CourseName": "Bilgisayar Mimarisi ve Organizasyonu",
+    "Section": "N\u00D6",
+    "Day": "Thursday",
+    "StartTime": "08:30:00",
+    "EndTime": "12:00:00",
+    "Room": "211"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301752",
+    "CourseName": "Bilgisayar Mimarisi ve Organizasyonu",
+    "Section": "\u0130\u00D6",
+    "Day": "Thursday",
+    "StartTime": "17:00:00",
+    "EndTime": "20:15:00",
+    "Room": "211"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301778",
+    "CourseName": "B\u00FCy\u00FCk Veri Analiti\u011Fi",
+    "Section": "N\u00D6",
+    "Day": "Friday",
+    "StartTime": "14:20:00",
+    "EndTime": "16:55:00",
+    "Room": "211"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301773",
+    "CourseName": "Paralel Programlama",
+    "Section": "N\u00D6",
+    "Day": "Friday",
+    "StartTime": "14:20:00",
+    "EndTime": "16:55:00",
+    "Room": "LAB3"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301778",
+    "CourseName": "B\u00FCy\u00FCk Veri Analiti\u011Fi",
+    "Section": "\u0130\u00D6",
+    "Day": "Friday",
+    "StartTime": "17:00:00",
+    "EndTime": "19:25:00",
+    "Room": "211"
+  },
+  {
+    "Term": 7,
+    "CourseCode": "3301773",
+    "CourseName": "Paralel Programlama",
+    "Section": "\u0130\u00D6",
+    "Day": "Friday",
+    "StartTime": "17:00:00",
+    "EndTime": "19:25:00",
+    "Room": "LAB3"
   },
   {
     "Term": 2,
@@ -188,106 +548,6 @@
     "StartTime": "10:00:00",
     "EndTime": "12:00:00",
     "Room": "D-108"
-  },
-  {
-    "Term": 3,
-    "CourseCode": "3301351",
-    "CourseName": "Nesneye Y\u00F6nelik Programlama Dili",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-101"
-  },
-  {
-    "Term": 3,
-    "CourseCode": "3301351",
-    "CourseName": "Nesneye Y\u00F6nelik Programlama Dili",
-    "Section": "B",
-    "Day": "Wednesday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-115"
-  },
-  {
-    "Term": 3,
-    "CourseCode": "3301352",
-    "CourseName": "\u0130\u015Fletim Sistemleri",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-102"
-  },
-  {
-    "Term": 3,
-    "CourseCode": "3301353",
-    "CourseName": "Mant\u0131k Devreleri-1",
-    "Section": "A",
-    "Day": "Wednesday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-103"
-  },
-  {
-    "Term": 3,
-    "CourseCode": "3301353",
-    "CourseName": "Mant\u0131k Devreleri-1",
-    "Section": "B",
-    "Day": "Thursday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-116"
-  },
-  {
-    "Term": 3,
-    "CourseCode": "3301354",
-    "CourseName": "Veri Yap\u0131lar\u0131 ve Uygulamalar\u0131",
-    "Section": "A",
-    "Day": "Thursday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-104"
-  },
-  {
-    "Term": 3,
-    "CourseCode": "3301354",
-    "CourseName": "Veri Yap\u0131lar\u0131 ve Uygulamalar\u0131",
-    "Section": "B",
-    "Day": "Friday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-117"
-  },
-  {
-    "Term": 3,
-    "CourseCode": "3301355",
-    "CourseName": "Elektronik Devre Elemanlar\u0131 ve \u00D6l\u00E7me",
-    "Section": "A",
-    "Day": "Friday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-105"
-  },
-  {
-    "Term": 3,
-    "CourseCode": "3301356",
-    "CourseName": "Say\u0131sal Y\u00F6ntemler",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-106"
-  },
-  {
-    "Term": 3,
-    "CourseCode": "3301357",
-    "CourseName": "\u0130statistik ve Olas\u0131l\u0131k",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-107"
   },
   {
     "Term": 4,
@@ -500,226 +760,6 @@
     "Room": "D-119"
   },
   {
-    "Term": 5,
-    "CourseCode": "3301551",
-    "CourseName": "Mikroi\u015Flemciler ve Mikrodenetleyiciler",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-101"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301552",
-    "CourseName": "Programlama Dili-3",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-102"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301553",
-    "CourseName": "Veri Haberle\u015Fmesi ve A\u011Flar",
-    "Section": "A",
-    "Day": "Wednesday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-103"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301554",
-    "CourseName": "Teknik \u0130ngilizce",
-    "Section": "A",
-    "Day": "Thursday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-104"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301561",
-    "CourseName": "Sinyal \u0130\u015Fleme",
-    "Section": "A",
-    "Day": "Friday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-105"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301562",
-    "CourseName": "Tasar\u0131m Desenleri",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-106"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301563",
-    "CourseName": "\u0130nsan Bilgisayar Etkile\u015Fimi",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-107"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301564",
-    "CourseName": "Biyomedikal Sistemler",
-    "Section": "A",
-    "Day": "Wednesday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-108"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301565",
-    "CourseName": "Sim\u00FClasyon ve Modelleme",
-    "Section": "A",
-    "Day": "Thursday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-109"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301566",
-    "CourseName": "Bilgisayar Donan\u0131m\u0131",
-    "Section": "A",
-    "Day": "Friday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-110"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301567",
-    "CourseName": "Web Tasar\u0131m\u0131",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "12:00:00",
-    "EndTime": "13:30:00",
-    "Room": "D-111"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301568",
-    "CourseName": "Veri Madencili\u011Fi",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "12:00:00",
-    "EndTime": "13:30:00",
-    "Room": "D-112"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301569",
-    "CourseName": "Adli Bili\u015Fim",
-    "Section": "A",
-    "Day": "Wednesday",
-    "StartTime": "12:00:00",
-    "EndTime": "13:30:00",
-    "Room": "D-113"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301570",
-    "CourseName": "Veri Taban\u0131 Programlama",
-    "Section": "A",
-    "Day": "Thursday",
-    "StartTime": "12:00:00",
-    "EndTime": "13:30:00",
-    "Room": "D-114"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301571",
-    "CourseName": "Makine \u00D6\u011Frenmesi",
-    "Section": "A",
-    "Day": "Friday",
-    "StartTime": "12:00:00",
-    "EndTime": "13:30:00",
-    "Room": "D-115"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301572",
-    "CourseName": "Algoritma Analizi",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "14:00:00",
-    "EndTime": "15:30:00",
-    "Room": "D-116"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301573",
-    "CourseName": "Do\u011Fal Dil \u0130\u015Fleme Temelleri",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "14:00:00",
-    "EndTime": "15:30:00",
-    "Room": "D-117"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301574",
-    "CourseName": "Nesnelerin \u0130nterneti",
-    "Section": "A",
-    "Day": "Wednesday",
-    "StartTime": "14:00:00",
-    "EndTime": "15:30:00",
-    "Room": "D-118"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301575",
-    "CourseName": "\u0130leri Dijital Sistemler",
-    "Section": "A",
-    "Day": "Thursday",
-    "StartTime": "14:00:00",
-    "EndTime": "15:30:00",
-    "Room": "D-119"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301576",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Finde \u00D6zel Konular",
-    "Section": "A",
-    "Day": "Friday",
-    "StartTime": "14:00:00",
-    "EndTime": "15:30:00",
-    "Room": "D-120"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301577",
-    "CourseName": "Siber Sistemler ve Bilgi G\u00FCvenli\u011Fi",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "16:00:00",
-    "EndTime": "17:30:00",
-    "Room": "D-121"
-  },
-  {
-    "Term": 5,
-    "CourseCode": "3301578",
-    "CourseName": "S\u00FCrd\u00FCr\u00FClebilir Yaz\u0131l\u0131m M\u00FChendisli\u011Fi",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "16:00:00",
-    "EndTime": "17:30:00",
-    "Room": "D-122"
-  },
-  {
     "Term": 6,
     "CourseCode": "3301651",
     "CourseName": "Yapay Zeka",
@@ -920,316 +960,6 @@
     "Room": "D-120"
   },
   {
-    "Term": 7,
-    "CourseCode": "3301751",
-    "CourseName": "Bilgisayar M\u00FChendisli\u011Fi Uygulamalar\u0131",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-101"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301752",
-    "CourseName": "Bilgisayar Mimarisi ve Organizasyonu",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-102"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301753",
-    "CourseName": "Veri Bilimi",
-    "Section": "A",
-    "Day": "Wednesday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-103"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301754",
-    "CourseName": "Giri\u015Fimcilik ve Proje Y\u00F6netimi",
-    "Section": "A",
-    "Day": "Thursday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-104"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301761",
-    "CourseName": "Prog. Mant\u0131k Kontroll\u00F6r",
-    "Section": "A",
-    "Day": "Friday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-105"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301762",
-    "CourseName": "Paralel \u0130\u015Flemcili Sistemler",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-106"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301763",
-    "CourseName": "Kontrol Sistemleri",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-107"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301764",
-    "CourseName": "Bilgisayar Destekli Tasar\u0131m",
-    "Section": "A",
-    "Day": "Wednesday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-108"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301765",
-    "CourseName": "Y\u00F6neylem Ara\u015Ft\u0131rmas\u0131",
-    "Section": "A",
-    "Day": "Thursday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-109"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301766",
-    "CourseName": "Kablosuz A\u011Flar",
-    "Section": "A",
-    "Day": "Friday",
-    "StartTime": "10:00:00",
-    "EndTime": "11:30:00",
-    "Room": "D-110"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301767",
-    "CourseName": "Bulut Bili\u015Fim",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "12:00:00",
-    "EndTime": "13:30:00",
-    "Room": "D-111"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301768",
-    "CourseName": "Paket Programlar",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "12:00:00",
-    "EndTime": "13:30:00",
-    "Room": "D-112"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301769",
-    "CourseName": "Bilgisayar Grafikleri",
-    "Section": "A",
-    "Day": "Wednesday",
-    "StartTime": "12:00:00",
-    "EndTime": "13:30:00",
-    "Room": "D-113"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301770",
-    "CourseName": "Veri \u0130leti\u015Fim Teknikleri",
-    "Section": "A",
-    "Day": "Thursday",
-    "StartTime": "12:00:00",
-    "EndTime": "13:30:00",
-    "Room": "D-114"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301771",
-    "CourseName": "Oyun Programlama",
-    "Section": "A",
-    "Day": "Friday",
-    "StartTime": "12:00:00",
-    "EndTime": "13:30:00",
-    "Room": "D-115"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301772",
-    "CourseName": "E-ticaret ve Uygulamalar\u0131",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "14:00:00",
-    "EndTime": "15:30:00",
-    "Room": "D-116"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301773",
-    "CourseName": "Paralel Programlama",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "14:00:00",
-    "EndTime": "15:30:00",
-    "Room": "D-117"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301774",
-    "CourseName": "MVC Tabanl\u0131 Web Mimarisi",
-    "Section": "A",
-    "Day": "Wednesday",
-    "StartTime": "14:00:00",
-    "EndTime": "15:30:00",
-    "Room": "D-118"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301775",
-    "CourseName": "Ye\u015Fil Bili\u015Fim",
-    "Section": "A",
-    "Day": "Thursday",
-    "StartTime": "14:00:00",
-    "EndTime": "15:30:00",
-    "Room": "D-119"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301776",
-    "CourseName": "\u00C7evre ve Enerji",
-    "Section": "A",
-    "Day": "Friday",
-    "StartTime": "14:00:00",
-    "EndTime": "16:00:00",
-    "Room": "D-120"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301777",
-    "CourseName": "Blokzincir Temelleri",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "16:00:00",
-    "EndTime": "17:30:00",
-    "Room": "D-121"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301778",
-    "CourseName": "B\u00FCy\u00FCk Veri Analiti\u011Fi",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "16:00:00",
-    "EndTime": "17:30:00",
-    "Room": "D-122"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301779",
-    "CourseName": "Bilgisayarla G\u00F6rme",
-    "Section": "A",
-    "Day": "Wednesday",
-    "StartTime": "16:00:00",
-    "EndTime": "17:30:00",
-    "Room": "D-123"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301782",
-    "CourseName": "Kalite ve G\u00FCvence Sistemleri",
-    "Section": "A",
-    "Day": "Thursday",
-    "StartTime": "16:00:00",
-    "EndTime": "17:30:00",
-    "Room": "D-124"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301783",
-    "CourseName": "M\u00FChendislik Ekonomisi",
-    "Section": "A",
-    "Day": "Friday",
-    "StartTime": "16:00:00",
-    "EndTime": "17:30:00",
-    "Room": "D-101"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301784",
-    "CourseName": "\u0130\u015Faret Dili",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "18:00:00",
-    "EndTime": "19:30:00",
-    "Room": "D-102"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301785",
-    "CourseName": "D\u0131\u015F Ticaret",
-    "Section": "A",
-    "Day": "Tuesday",
-    "StartTime": "18:00:00",
-    "EndTime": "19:30:00",
-    "Room": "D-103"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301786",
-    "CourseName": "Topluma Hizmet Uygulamalar\u0131",
-    "Section": "A",
-    "Day": "Wednesday",
-    "StartTime": "18:00:00",
-    "EndTime": "19:30:00",
-    "Room": "D-104"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301787",
-    "CourseName": "Reklamc\u0131l\u0131k ve Stratejileri",
-    "Section": "A",
-    "Day": "Thursday",
-    "StartTime": "18:00:00",
-    "EndTime": "19:30:00",
-    "Room": "D-105"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301788",
-    "CourseName": "Ara\u015Ft\u0131rma ve Rapor Yazma Teknikleri",
-    "Section": "A",
-    "Day": "Friday",
-    "StartTime": "18:00:00",
-    "EndTime": "19:30:00",
-    "Room": "D-106"
-  },
-  {
-    "Term": 7,
-    "CourseCode": "3301789",
-    "CourseName": "M\u00FChendislik Eti\u011Fi",
-    "Section": "A",
-    "Day": "Monday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-107"
-  },
-  {
     "Term": 8,
     "CourseCode": "3301851",
     "CourseName": "\u0130\u015Fletmede Mesleki E\u011Fitim",
@@ -1258,35 +988,5 @@
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
     "Room": "D-103"
-  },
-  {
-    "Term": 1,
-    "CourseCode": "3301151",
-    "CourseName": "Matematik-1",
-    "Section": "C",
-    "Day": "Monday",
-    "StartTime": "08:00:00",
-    "EndTime": "10:00:00",
-    "Room": "D-101"
-  },
-  {
-    "Term": 3,
-    "CourseCode": "3301353",
-    "CourseName": "Mant\u0131k Devreleri-1",
-    "Section": "C",
-    "Day": "Friday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-103"
-  },
-  {
-    "Term": 3,
-    "CourseCode": "3301354",
-    "CourseName": "Veri Yap\u0131lar\u0131 ve Uygulamalar\u0131",
-    "Section": "C",
-    "Day": "Friday",
-    "StartTime": "08:00:00",
-    "EndTime": "09:30:00",
-    "Room": "D-104"
   }
 ]

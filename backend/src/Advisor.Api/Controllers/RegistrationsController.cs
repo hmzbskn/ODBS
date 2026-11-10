@@ -21,9 +21,12 @@ public record AdvisorStudentList(int? Term, IReadOnlyList<int> AvailableTerms, I
 public record RegisteredCourseDto(
     string CourseCode, string CourseName, string Section, int Ects, int CourseTerm, bool InConflict);
 
+/// <summary>Haftalık programdaki bir ders bloğu. <see cref="Status"/>: "ok" alındı, çakışma yok; "soft" alındı, çakışıyor
+/// ama derslerden birinde devam şartı yok (çakışma sayılmaz); "conflict" alındı ve iki dersin de devam şartı var;
+/// "notTaken" öğrencinin dönemindeki ya da seçtiği dersin başka şubesi, alınmadı.</summary>
 public record WeeklySlotDto(
     string CourseCode, string CourseName, string Section, DayOfWeek Day,
-    string StartTime, string EndTime, string Room, bool InConflict);
+    string StartTime, string EndTime, string Room, bool InConflict, string Status = "ok");
 
 public record ReviewDto(
     Guid Id, RegistrationDecision Decision, string? Note, string ReviewedByAdvisorId, DateTime ReviewedAt);
@@ -122,10 +125,6 @@ public class RegistrationsController : ControllerBase
             .Where(i => i.RuleCode is "TIME_CONFLICT")
             .SelectMany(i => i.CourseCodes)
             .ToHashSet();
-        var examConflictCodes = result.Issues
-            .Where(i => i.RuleCode is "EXAM_CONFLICT")
-            .SelectMany(i => i.CourseCodes)
-            .ToHashSet();
 
         var courseDtos = result.Selected
             .Select(r =>
@@ -133,20 +132,11 @@ public class RegistrationsController : ControllerBase
                 courses.TryGetValue(r.CourseCode, out var c);
                 return new RegisteredCourseDto(
                     r.CourseCode, c?.CourseName ?? r.CourseCode, r.Section, c?.Ects ?? 0, c?.Term ?? 0,
-                    conflictCodes.Contains(r.CourseCode) || examConflictCodes.Contains(r.CourseCode));
+                    conflictCodes.Contains(r.CourseCode));
             })
             .ToList();
 
-        var weekly = result.Selected
-            .SelectMany(r => schedule
-                .Where(s => s.CourseCode == r.CourseCode && s.Section == r.Section)
-                .Select(s => new WeeklySlotDto(
-                    s.CourseCode, s.CourseName, s.Section, s.Day,
-                    s.StartTime.ToString("HH\\:mm"), s.EndTime.ToString("HH\\:mm"), s.Room,
-                    conflictCodes.Contains(s.CourseCode) && OverlapsOther(s, r, result.Selected, schedule))))
-            .OrderBy(s => s.Day == DayOfWeek.Sunday ? 7 : (int)s.Day)
-            .ThenBy(s => s.StartTime, StringComparer.Ordinal)
-            .ToList();
+        var weekly = BuildWeekly(result.Selected, result.Term, schedule, courses, result.Student.Program);
 
         var reviews = await _db.RegistrationReviews
             .Where(r => r.StudentNo == studentNo && r.Term == result.Term)
@@ -214,13 +204,43 @@ public class RegistrationsController : ControllerBase
 
     // Bir ders yuvası, yalnızca seçimdeki BAŞKA bir dersin yuvasıyla gerçekten kesişiyorsa kırmızı olur
     // (aynı derste çakışmayan ikinci yuva boşuna işaretlenmesin).
-    private static bool OverlapsOther(
-        ObisScheduleSlot slot, ObisRegistration self,
-        IReadOnlyList<ObisRegistration> selected, IReadOnlyList<ObisScheduleSlot> schedule)
+    /// <summary>Öğrencinin seçtiği dersler (yeşil/turuncu/kırmızı) ile dönemindeki alınmayan dersler ve seçtiği derslerin
+    /// diğer şubeleri (gri). Gri dersler yalnızca öğrencinin öğretim türünün alabileceği şubelerdir.</summary>
+    internal static List<WeeklySlotDto> BuildWeekly(
+        IReadOnlyList<ObisRegistration> selected, int term,
+        IReadOnlyList<ObisScheduleSlot> schedule, IReadOnlyDictionary<string, ObisCourse> courses, string? program = null)
     {
-        return selected
-            .Where(o => o.CourseCode != self.CourseCode)
-            .SelectMany(o => schedule.Where(s => s.CourseCode == o.CourseCode && s.Section == o.Section))
-            .Any(o => o.Day == slot.Day && slot.StartTime < o.EndTime && o.StartTime < slot.EndTime);
+        var taken = selected
+            .SelectMany(r => schedule.Where(s => s.CourseCode == r.CourseCode && s.Section == r.Section).Select(s => (Reg: r, Slot: s)))
+            .ToList();
+
+        var rows = taken.Select(t =>
+        {
+            var clashes = taken.Where(o => o.Reg.CourseCode != t.Reg.CourseCode && Overlaps(o.Slot, t.Slot)).ToList();
+            var status = clashes.Count == 0 ? "ok"
+                : clashes.Any(o => o.Reg.AttendanceRequired && t.Reg.AttendanceRequired) ? "conflict"
+                : "soft";
+            return Dto(t.Slot, status);
+        }).ToList();
+
+        var selectedCodes = selected.Select(r => r.CourseCode).ToHashSet();
+        var takenKeys = taken.Select(t => (t.Slot.CourseCode, t.Slot.Section)).ToHashSet();
+        rows.AddRange(schedule
+            .Where(s => !takenKeys.Contains((s.CourseCode, s.Section)) && EducationType.SectionAllowed(program, s.Section))
+            .Where(s => selectedCodes.Contains(s.CourseCode) || (courses.TryGetValue(s.CourseCode, out var c) && c.Term == term))
+            .Select(s => Dto(s, "notTaken")));
+
+        return rows
+            .OrderBy(s => s.Day == DayOfWeek.Sunday ? 7 : (int)s.Day)
+            .ThenBy(s => s.StartTime, StringComparer.Ordinal)
+            .ThenBy(s => s.Status == "notTaken")
+            .ToList();
+
+        static WeeklySlotDto Dto(ObisScheduleSlot s, string status) => new(
+            s.CourseCode, s.CourseName, s.Section, s.Day,
+            s.StartTime.ToString("HH\\:mm"), s.EndTime.ToString("HH\\:mm"), s.Room, status == "conflict", status);
     }
+
+    private static bool Overlaps(ObisScheduleSlot a, ObisScheduleSlot b) =>
+        a.Day == b.Day && a.StartTime < b.EndTime && b.StartTime < a.EndTime;
 }

@@ -113,6 +113,17 @@ export function RegistrationDetailPage() {
                   </tr>
                 ))}
               </tbody>
+              <tfoot>
+                <tr>
+                  <th colSpan={4} scope="row">
+                    Toplam ({d.courses.length} ders)
+                  </th>
+                  <td>
+                    <strong className={d.totalEcts > d.maxEcts ? 'count-error' : undefined}>{d.totalEcts} AKTS</strong>
+                    <span className="muted"> / sınır {d.maxEcts}</span>
+                  </td>
+                </tr>
+              </tfoot>
             </table>
           </div>
         )}

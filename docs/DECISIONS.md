@@ -61,12 +61,12 @@ düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
 
 | Etiket | Öğrenci No | Senaryo |
 | --- | --- | --- |
-| EDGE-01 | 20241011 | Saat çakışması (Matematik-1 tekrar, özel C şubesi + Mikroişlemciler/A aynı gün/saat) |
-| EDGE-02 | 20251006 | Önkoşul ihlali (Programlama Dili-1 kalmış, Veri Yapıları'na kayıtlı) |
-| EDGE-03 | 20241012 | Alttan ders önceliği (Fizik-2 kalmış, dönem5 dersleri alıyor) |
+| EDGE-01 | 20241011 | Saat çakışması, alternatifsiz (alttan Mantık Devreleri-1 ile Programlama Dili-3, Pazartesi 13:25) — Aşama 16 |
+| EDGE-02 | 20251006 | Devam şartı olmayan çakışma (alttan Atatürk İlkeleri-1 ile Mantık Devreleri-1) — Aşama 16 |
+| EDGE-03 | 20241012 | Alttan ders önceliği (Fizik-1 kalmış, bu güz açık, seçilmemiş) |
 | EDGE-04 | 20251007 | Kredi/AKTS limiti aşımı (düşük GANO + 3 ekstra ders) |
-| EDGE-05 | 20231016 | Sınav çakışması (Mantık Devreleri-1 ve Bilgisayar Mimarisi final'leri aynı an) |
-| EDGE-06 | 20231017 | Tekrar alma (Veri Yapıları'nı AA ile geçmiş, yine kayıtlı) |
+| EDGE-05 | 20231016 | Alternatifli çakışma (alttan Veri Haberleşmesi ile Veri Bilimi/NÖ; İÖ şubesi önerilir) — Aşama 16 |
+| EDGE-06 | 20231017 | Tekrar alma hatası (Mikroişlemciler'i AA ile geçmiş, yine kayıtlı) — Aşama 18 |
 | EDGE-07 | 20241013 | GANO düşüşü (dönem3 AA ortalama → dönem4 DD ortalama) |
 | EDGE-08 | 20231018 | Azami süreye yaklaşma (dönem9'da, 3 ders tekrarı) |
 | EDGE-09 | 20231019 | Mezuniyete az kalan (dönem8, 5 dersten sadece 2'si eksik) |
@@ -189,7 +189,7 @@ düz metin tutmamak için; hafif, yaygın, tek iş yapan bir paket.
   (kullanılmış saat silinince pasife alınır, kaybolmaz).
 - **Randevu sınırları (sabit):** 28 gün ufuk, 60 dk asgari önceden bildirim, 2 aktif randevu. Randevu kaparak
   başkalarını engellemeyi önler; ayarlanabilir yapmaya gerek görülmedi (bitirme projesi kapsamı).
-- **Çifte rezervasyon iki katmanlı engellenir:** uygulama kontrolü + SQLite kısmi tekil indeks. Yalnızca uygulama kontrolü
+- **Çifte rezervasyon iki katmanlı engellenir:** uygulama kontrolü + kısmi tekil indeks (SQLite'ta, sonra MSSQL'de). Yalnızca uygulama kontrolü
   eşzamanlı iki istekte yetmez.
 - **Notlar öğrenciye kapalı, ders kaydı kararındaki not açık:** Prompt "görüşme notları öğrenciye kapalı" der. Ders kaydında
   "düzeltme iste" notu ve talep yanıt notu ise öğrenciye iletilmek üzere yazıldığından öğrenci görür.
@@ -267,3 +267,87 @@ bilgi paketindeki GERÇEK 118 dersle değiştirildi (`CourseCatalog.cs`: kod, ad
   seçebildiği derslerle sınırlı olduğundan seçimler çakışmaz. Uç durum şubeleri (özel "C") öğrencinin kendi programındaki boş saate eklenir.
 - **Taban başarısızlık oranı** %8 → %6: ders sayısı arttığı için öğrenci başına rastgele "kaldı" gürültüsü büyümesin.
 - **EDGE-09:** 8. dönemde 3 ders var (İşletmede Mesleki Eğitim, Staj-1, Staj-2); biri geçilmiş sayılır, 2'si kalır.
+
+## Aşama 15: Çakışma kuralları sadeleştirildi (2026-10-26)
+
+Hamza'nın kararı: dersler arasında **bağımlılık (önkoşul) yok** ve **sınav çakışması diye bir kontrol yok**. Sistem yalnızca OBİS'ten
+gelen ders programı ile öğrencinin dönem başında seçtiği dersleri karşılaştırır.
+
+- `PrerequisiteRule` ve `ExamConflictRule` silindi (kural sayısı 6 → 4); seed'deki önkoşullar boşaltıldı, sınav çakışması uç durumu kaldırıldı.
+- **Devam şartı:** `ObisRegistration.AttendanceRequired` (varsayılan true). İki dersin saati çakışsa bile **en az birinde devam şartı yoksa**
+  (ör. alttan alınan ve önceki denemede devamı sağlanmış ders) çakışma SAYILMAZ. Gerçek OBİS'te bu alanın hangi veriden geleceği
+  netleşmedi; mock'ta kayıt satırında bayrak olarak tutuluyor (varsayım).
+- **Alttan/üstten önceliği (`TimeConflictRule`):** çakışmada daha önce kalınmış (alttan) ders temeldir ve kesinlikle alınır; çakışan
+  üstten ders için, öğrencinin diğer (devam şartı olan) seçimleriyle çakışmayan diğer şubeleri **alternatif olarak önerilir**
+  (mesajda "B şubesi (Cuma 08:00-09:30)"). Uygun şube yoksa "alternatif şube bulunamadı" denir. İkisi de alttan ya da ikisi de üstten ise
+  alt dönem dersi temel sayılır.
+- Bir ders çiftinin birden çok saat kesişimi tek bulgu üretir (önceden kesişen her saat için ayrı bulgu).
+- Uç durumlar: EDGE-01 artık alternatif şube (Mikroişlemciler/B) öneriyor; EDGE-02 devam şartı olmayan çakışma (bulgu çıkmaz);
+  EDGE-05 alternatifsiz çakışma. 346 test yeşil.
+
+## Aşama 16: Gerçek güz ders programı ve renkli haftalık program (2026-10-26)
+
+Hamza bölümün 2026-2027 güz haftalık ders programını (PDF, 31.08.2026) verdi; mock OBİS'in güz dersleri (1-3-5-7. dönem) artık bu
+programın gerçek gün/saat/dersliklerini kullanıyor (`FallSchedule.cs`, PDF'ten ayrıştırılıp elle doğrulandı).
+
+- **Şubeler:** "NÖ/İÖ" iki öğretim birlikte; ayrı ise "NÖ" (normal) ve "İÖ" (ikinci öğretim). Öğrenci öğretim türüne göre şube alır;
+  seçtiği bir dersle çakışan şubeyi seed'de almaz (öğrenci kayıtta çakışmayan şubeyi seçer). Alternatif şube önerisi bu şubelerden gelir.
+- **Sabit saati olmayan dersler** (Bilgisayar Mühendisliği Uygulamaları, Girişimcilik, İşletmede Mesleki Eğitim; PDF'te "tüm öğretim
+  elemanları") programa konmadı; çakışma üretmezler. Bahar dersleri (2-4-6-8) için kurgusal saatler sürüyor.
+- **Seçmeliler:** güzde yalnızca programda açılan seçmeliler seçilir; aynı saatteki seçmeliler bir grup, her gruptan bir ders. 7. dönemde
+  2 AKTS'lik sosyal seçmeli çiftinin ikisi de alınır (biri diğer öğretimin şubesinden), dönem 31 AKTS, toplam 240 AKTS tutar.
+- **Alttan ders uyarısı** yalnızca bu yarıyılda açılan dersleri sayar (güz: tek, bahar: çift dönem); bahar dersi güzde seçilemez.
+- **Kısa bulgu metinleri:** kural kontrolü kartları sorunun ne olduğunu tek cümlede söyler (ders adı, kod yok).
+- **Haftalık program:** gerçek saat ölçeğinde ızgara. Yeşil: alındı, çakışma yok; turuncu: çakışıyor ama birinde devam şartı yok;
+  kırmızı: çakışıyor, ikisinde de devam şartı var; gri: öğrencinin döneminde alınmayan dersler ve seçtiği derslerin diğer şubeleri.
+  Her bloğun altında kısa açıklama (Çakışma yok / Devam şartı yok / Çakışma / Alınmadı). 348 test yeşil.
+
+## Aşama 17: Öğretim türü kuralı ve toplam AKTS (2026-10-26)
+
+- **Kural (`SECTION_PROGRAM`, Hata):** normal öğretim öğrencisi yalnızca "NÖ" ya da "NÖ/İÖ", ikinci öğretim öğrencisi yalnızca "İÖ" ya da
+  "NÖ/İÖ" şubesinden ders alabilir (`EducationType`). Öğretim türü OBİS öğrenci kaydındaki `Program` alanından okunur; bilinmiyorsa kısıt yok.
+- Çakışma kuralının alternatif şube önerisi ve haftalık programın gri (alınmadı) blokları da yalnızca öğrencinin alabileceği şubeleri gösterir.
+  Gerçek güz programında her dersin öğretim türü başına tek şubesi olduğundan, alternatif çoğunlukla yalnızca yanlış öğretim şubesi seçildiğinde çıkar.
+- **Seed:** öğrenci artık diğer öğretimin şubesini almaz. 7. dönemde 2 AKTS'lik sosyal seçmeli çifti bırakıldı; 4 AKTS'lik üç grup + açık
+  olan 5. dönem seçmelilerinden öğrencinin almadığı ve programına uyan biri seçilir (15 + 16 = 31 AKTS, toplam 240).
+- **EDGE-05:** ikinci öğretim öğrencisi Veri Bilimi'ni NÖ şubesinden seçmiş: öğretim türü hatası + çakışma, İÖ şubesi önerilir.
+- **Seçilen dersler** tablosunun altında toplam ders sayısı ve AKTS (sınırı aşarsa kırmızı). 356 test yeşil.
+
+## Aşama 18: Tekrar alma kuralı sıkılaştı (2026-10-26)
+
+Hamza: "AA ile geçilen ders tekrar alınmaz, BC ve altındaki dersler sadece tekrar alınabilir." Sistemin harf ölçeğinde (Selçuk:
+AA, BA, BB, CB, CC, DC, DD, FD, FF) Hamza'nın "BC"si **CB**'dir.
+
+- `RETAKE` artık **Hata**: BB ve üstüyle (BB, BA, AA; eşik `RetakeHighGrade`, varsayılan BB) geçilmiş dersin yeniden seçilmesi engellenir.
+- CB ve altı (CB, CC, DC, DD) notla geçilmiş dersin tekrarı serbesttir, bulgu üretmez; kalınmış (FD/FF) ders zaten alttan derstir.
+- Seed: EDGE-04'ün ek dersleri artık 1. dönemde kalınmış derslerin tekrarı (önceden biri AA ile geçilmişti); EDGE-06 dışında hiçbir öğrenci
+  bu kuralı ihlal etmez (test). 360 test yeşil.
+
+## Aşama 19: İkinci öğretim yalnızca 4. sınıfta (2026-10-26)
+
+Hamza: "İÖ ile NÖ aynı ders saatinde değil, ders saatleri ayrı." Güz programında NÖ saatleri 1-9. saat (08:30-16:55), İÖ saatleri 10-15. saat
+(17:00-21:55). Ayrı İÖ saatleri yalnızca 4. sınıfta var; 1-3. sınıf dersleri "(NÖ/İÖ)" olarak yalnızca gündüz açılıyor ve akşam satırları boş.
+Hamza'nın onayıyla: **ikinci öğretim yalnızca 4. sınıfta sürüyor.**
+
+- Seed: İÖ öğrencisi yalnızca 4. sınıfta (18 öğrenciden 4'ü); 1-3. sınıfın tamamı normal öğretim.
+- "NÖ/İÖ" şubesi iki öğretimin aynı anda birlikte ders yaptığı anlamına gelmez: 1-3. sınıf dersinin tek (gündüz) şubesidir. O dersi alttan
+  alan 4. sınıf İÖ öğrencisi gündüz saatine girer (öğretim türü kuralı bu şubeye izin verir). 361 test yeşil.
+- **Haftalık program ızgarası** artık sabit 08:30 başlangıçlı değil: gösterilen derslerin gerçek ilk/son saatine kırpılır (dersleri 13:25'te başlayan öğrencide 08:30-13:25 boşluğu çizilmez).
+
+## Aşama 20: Bölüm Başkanı / Dekan yetki açığı kapatıldı (2026-11-09)
+
+- **Bulgu:** rol şeması rapor için koddan çıkarılırken görüldü. `GET api/appointments`, `POST api/appointments/{id}/cancel` ve
+  `GET api/petitions` uç noktalarında rol kısıtı yoktu; servisler yalnızca Öğrenci ve Danışman'ı süzüyordu. Aşama 13'te eklenen
+  Bölüm Başkanı ve Dekan, varsayılan dala düşüp **tüm** randevuları ve talepleri (kendi bölümü dışındakiler dahil) görebiliyor,
+  herhangi bir randevuyu iptal edebiliyordu. Arayüz bu sayfaları onlara göstermediği için yalnızca doğrudan API ile erişilebilirdi.
+- **Karar:** bu üç uç nokta `Ogrenci, Danisman, Admin` ile sınırlandı (arayüzdeki rota korumasıyla aynı). Bölüm Başkanı / Dekan
+  randevu ve talep modülünü kullanmaz; izleme ve atama rolüdür.
+- **Test:** `RoleRestrictedEndpoints_RejectEveryOtherRole_With403` taraması artık Bölüm Başkanı ve Dekan hesaplarıyla da koşuyor;
+  rol kısıtsız uç nokta listesinden üç uç nokta çıkarıldı. 361 test yeşil; canlı sistemde bolumbaskani1/dekan1 → 403, danisman1 → 200.
+
+## Aşama 21: Veritabanı SQLite'tan MSSQL'e geçti (2026-11-08)
+
+- **Neden:** hocanın proje listesindeki teknoloji seçeneği "ASP.NET Core + MSSQL". Arka yüz zaten ASP.NET Core'du; yalnızca veritabanı değişti.
+- **Ne değişti:** `UseSqlite` yerine `UseSqlServer` (`Microsoft.EntityFrameworkCore.SqlServer`), bağlantı dizesi yerel `AdvisorDb`. SQLite migration'ları silindi, tek `InitialSqlServer` migration'ı üretildi (16 tablo). Randevu için kısmi tekil indeks MSSQL'de `[Status]=(0)` filtresiyle çalışıyor.
+- **Doğrulama (2026-11-09):** `AdvisorDb` içinde 16 tablo + migration geçmişi, demo hesaplar ve filtreli indeks var; sistem MSSQL'e bağlı ayağa kalktı, girişler çalışıyor.
+- **MSSQL testleri (2026-11-09):** `SqlServerIntegrationTests` 8 test, gerçek SQL Server'a karşı çalışır; geri kalan testler hâlâ EF InMemory kullanır (hızlı, ama indeks/kısıt/tür eşlemesini sınamaz). Her çalıştırma kendi geçici `AdvisorDb_Test_*` veritabanını migration'larla kurar ve siler, canlı `AdvisorDb`'ye dokunmaz. Sınananlar: tüm tabloların migration'la kurulması ve bekleyen migration/model farkı olmaması, randevu kısmi tekil indeksi (planlı çifte randevu reddedilir, iptaller serbest), kullanıcı adı / öğrenci başına atama / anket yanıtı tekilliği, Türkçe ve uzun metnin kayıpsız saklanması, giriş ve randevu akışının MSSQL üzerinde uçtan uca çalışması. SQL Server yoksa bu testler hata vermeden atlanır. Başka sunucu için `ODBS_TEST_SQLSERVER` ortam değişkeni bağlantı dizesini verir. 369 test yeşil.

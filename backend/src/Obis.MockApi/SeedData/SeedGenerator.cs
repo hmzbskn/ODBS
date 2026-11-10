@@ -9,8 +9,8 @@ namespace Obis.MockApi.SeedData;
 ///
 /// Bilinçli olarak hazırlanmış uç durum öğrencileri (ApplyEdgeCases içinde,
 /// StudentNo'ya göre aranabilir, docs/PROGRESS.md'de de listelenir):
-///   EDGE-01 saat çakışması, EDGE-02 önkoşul ihlali, EDGE-03 alttan ders önceliği,
-///   EDGE-04 kredi/AKTS limiti aşımı, EDGE-05 sınav çakışması, EDGE-06 tekrar alma,
+///   EDGE-01 saat çakışması, EDGE-02 devam şartı olmayan çakışma, EDGE-03 alttan ders önceliği,
+///   EDGE-04 kredi/AKTS limiti aşımı, EDGE-05 alternatif şubeli çakışma, EDGE-06 tekrar alma,
 ///   EDGE-07 GANO düşüşü, EDGE-08 azami süreye yaklaşma, EDGE-09 mezuniyete az kalan,
 ///   EDGE-10 devamsızlık sınırına yaklaşma.
 /// </summary>
@@ -52,7 +52,10 @@ public static class SeedGenerator
         var advisors = BuildAdvisors();
         var plans = BuildStudentPlans(advisors, rnd);
 
-        var schedule = BuildSchedule(courses, rnd);
+        // Güz dersleri (1-3-5-7) bölümün gerçek 2026-2027 güz programından; bahar dersleri için kurgusal saatler.
+        var schedule = FallSchedule.Build(courses.ToDictionary(c => c.CourseCode))
+            .Concat(BuildSchedule(courses.Where(c => c.Term % 2 == 0).ToList(), rnd))
+            .ToList();
         var sectionsByCourse = schedule
             .GroupBy(s => s.CourseCode)
             .ToDictionary(g => g.Key, g => g.Select(s => s.Section).Distinct().ToList());
@@ -69,13 +72,12 @@ public static class SeedGenerator
         ApplyEdgeCases(plans, coursesByTerm, sectionsByCourse, schedule, transcripts, registrations, attendance, rnd);
 
         var exams = BuildExams(schedule, rnd);
-        ApplyExamConflictEdgeCase(exams, registrations);
 
         var students = plans
             .Select(p => new StudentInfo(
                 p.StudentNo, p.FirstName, p.LastName, p.ClassYear, Department, p.AdvisorId,
                 ComputeGpa(p.StudentNo, transcripts), p.Status,
-                StudentEmail(p), StudentPhone(p.StudentNo), StudentResidence(p.StudentNo), StudentProgram(p.StudentNo)))
+                StudentEmail(p), StudentPhone(p.StudentNo), StudentResidence(p.StudentNo), StudentProgram(p)))
             .ToList();
 
         var curriculum = BuildCurriculum(courses);
@@ -116,7 +118,9 @@ public static class SeedGenerator
 
     private static string StudentResidence(string studentNo) => Residences[Ordinal(studentNo) % Residences.Length];
 
-    private static string StudentProgram(string studentNo) => Ordinal(studentNo) % 4 == 0 ? "İkinci Öğretim" : "Birinci Öğretim";
+    /// <summary>Bölümde ikinci öğretim yalnızca 4. sınıfta sürüyor (güz programında 1-3. sınıfın İÖ saati yok; Hamza onayı).</summary>
+    private static string StudentProgram(StudentPlan p) =>
+        p.ClassYear == 4 && Ordinal(p.StudentNo) % 4 == 0 ? "İkinci Öğretim" : "Birinci Öğretim";
 
     private static List<AdvisorInfo> BuildAdvisors() =>
         NamePools.Advisors
@@ -210,7 +214,7 @@ public static class SeedGenerator
                     course.Credit, course.Ects, grade, passed));
 
                 registrations.Add(new RegistrationEntry(
-                    plan.StudentNo, term, course.CourseCode, PickSection(sectionsByCourse, course.CourseCode, rnd),
+                    plan.StudentNo, term, course.CourseCode, SectionFor(plan, term, registrations, sectionsByCourse, course.CourseCode, rnd),
                     "Onaylandı"));
             }
         }
@@ -220,7 +224,7 @@ public static class SeedGenerator
         {
             foreach (var course in CoursesForTerm(coursesByTerm, effectiveCurrentTerm, plan, rnd))
             {
-                var section = PickSection(sectionsByCourse, course.CourseCode, rnd);
+                var section = SectionFor(plan, plan.CurrentTerm, registrations, sectionsByCourse, course.CourseCode, rnd);
                 registrations.Add(new RegistrationEntry(plan.StudentNo, plan.CurrentTerm, course.CourseCode, section, "Beklemede"));
 
                 var attended = 14 - rnd.Next(0, 3);
@@ -243,20 +247,76 @@ public static class SeedGenerator
             return mandatory;
         }
 
-        // Dönem 4-7: zorunlular + seçmeli havuzundan öğrenciye özgü deterministik seçim. Havuz, dönemin en sık AKTS'li
-        // seçmelileridir (dönem yükü ~30 AKTS kalsın); aynı dönemin tüm dersleri ayrı saat dilimindedir, seçimler çakışmaz.
         var electives = all.Where(c => !c.IsMandatory).ToList();
-        var modalEcts = electives.GroupBy(c => c.Ects).OrderByDescending(g => g.Count()).First().Key;
-        var pool = electives.Where(c => c.Ects == modalEcts).OrderBy(c => c.CourseCode).ToList();
-
         var hash = int.Parse(plan.StudentNo) ^ term; // string.GetHashCode() süreç başına rastgeledir, seed tekrarlanabilir olmaz
         var start = hash & 0x7FFFFFFF; // her zaman negatif olmayan deterministik indeks
+
+        // Güz dönemi: yalnızca gerçek programda açılan seçmeliler. Aynı saatteki seçmeliler bir grup oluşturur ve her
+        // gruptan bir ders seçilir; böylece öğrencinin seçmelileri kendi aralarında çakışmaz.
+        var opened = FallSchedule.Slots.Value.Where(s => electives.Any(e => e.CourseCode == s.CourseCode)).ToList();
+        if (opened.Count > 0)
+        {
+            var groups = opened
+                .GroupBy(s => s.CourseCode)
+                .Select(g => g.OrderBy(s => s.Section, StringComparer.Ordinal).First())
+                .GroupBy(s => (s.Day, s.StartTime))
+                .OrderBy(g => g.Key.Day).ThenBy(g => g.Key.StartTime)
+                .Select(g => g.Select(s => s.CourseCode).OrderBy(c => c, StringComparer.Ordinal).ToList())
+                .ToList();
+            // 2 AKTS'lik sosyal seçmeliler yerine 4 AKTS'lik gruplar seçilir; gruplar yetmezse açık olan önceki güz dönemi
+            // seçmelilerinden öğrencinin almadığı, programına uyan biri eklenir (7. dönem: 15 zorunlu + 4x4 = 31 AKTS, toplam 240).
+            var ects = all.ToDictionary(c => c.CourseCode, c => c.Ects);
+            var picked = groups.Where(g => g.All(c => ects[c] >= 4)).Take(electiveCount)
+                .Select((g, i) => g[(start + i) % g.Count]).ToList();
+            var result = mandatory.Concat(electives.Where(e => picked.Contains(e.CourseCode))).ToList();
+            if (picked.Count < electiveCount && coursesByTerm.ContainsKey(term - 2))
+            {
+                var takenBefore = CoursesForTerm(coursesByTerm, term - 2, plan, rnd).Select(c => c.CourseCode).ToHashSet();
+                var busy = result.SelectMany(c => OwnFallSlots(plan, c.CourseCode)).ToList();
+                foreach (var extra in coursesByTerm[term - 2].Where(c => !c.IsMandatory && !takenBefore.Contains(c.CourseCode)).OrderBy(c => c.CourseCode))
+                {
+                    if (picked.Count >= electiveCount) break;
+                    var slots = OwnFallSlots(plan, extra.CourseCode).ToList();
+                    if (slots.Count == 0 || slots.Any(x => busy.Any(b => b.Day == x.Day && b.StartTime < x.EndTime && x.StartTime < b.EndTime))) continue;
+                    picked.Add(extra.CourseCode);
+                    busy.AddRange(slots);
+                    result.Add(extra);
+                }
+            }
+
+            return result;
+        }
+
+        // Bahar dönemi: zorunlular + seçmeli havuzundan öğrenciye özgü deterministik seçim. Havuz, dönemin en sık AKTS'li
+        // seçmelileridir (dönem yükü ~30 AKTS kalsın); kurgusal programda aynı dönemin dersleri ayrı saat dilimindedir.
+        var modalEcts = electives.GroupBy(c => c.Ects).OrderByDescending(g => g.Count()).First().Key;
+        var pool = electives.Where(c => c.Ects == modalEcts).OrderBy(c => c.CourseCode).ToList();
         var chosen = Enumerable.Range(0, Math.Min(electiveCount, pool.Count)).Select(i => pool[(start + i) % pool.Count]);
         return mandatory.Concat(chosen).ToList();
     }
 
     /// <summary>Dönem başına öğrencinin aldığı seçmeli sayısı (gerçek müfredatta seçmeliler 4-7. dönemlerde).</summary>
     private static readonly Dictionary<int, int> ElectivesPerTerm = new() { [4] = 1, [5] = 3, [6] = 3, [7] = 4 };
+
+    /// <summary>Öğrencinin öğretim türüne uygun şube: iki öğretim birlikteyse "NÖ/İÖ", ayrıysa ikinci öğretim öğrencisi
+    /// "İÖ", normal öğretim öğrencisi "NÖ" (öğrenci başka öğretimin şubesinden ders alamaz). Rastgele akış her derste yine bir
+    /// kez ilerler; diğer seed çıktıları kararlı kalır.</summary>
+    private static string SectionFor(
+        StudentPlan plan, int term, List<RegistrationEntry> registrations,
+        Dictionary<string, List<string>> sectionsByCourse, string courseCode, Random rnd)
+    {
+        var random = PickSection(sectionsByCourse, courseCode, rnd);
+        if (!sectionsByCourse.TryGetValue(courseCode, out var list)) return "NÖ/İÖ"; // sabit saati olmayan ders (uygulama, staj...)
+        if (list.Contains("NÖ/İÖ")) return "NÖ/İÖ";
+        var own = OwnSection(plan);
+        return list.Contains(own) ? own : random;
+    }
+
+    private static string OwnSection(StudentPlan plan) => StudentProgram(plan) == "İkinci Öğretim" ? "İÖ" : "NÖ";
+
+    /// <summary>Dersin, öğrencinin öğretim türünün alabileceği şubelerindeki güz programı saatleri.</summary>
+    private static IEnumerable<ScheduleSlot> OwnFallSlots(StudentPlan plan, string courseCode) =>
+        FallSchedule.Slots.Value.Where(s => s.CourseCode == courseCode && (s.Section == "NÖ/İÖ" || s.Section == OwnSection(plan)));
 
     private static string PickSection(Dictionary<string, List<string>> sectionsByCourse, string courseCode, Random rnd)
     {
@@ -412,28 +472,28 @@ public static class SeedGenerator
 
         var byClass = plans.GroupBy(p => p.ClassYear).ToDictionary(g => g.Key, g => g.ToList());
 
-        // EDGE-01: Saat çakışması — sınıf3 öğrencisi, MAT101'i (dönem1, geçmemiş) tekrar
-        // almak için kaydoluyor; özel MAT101 Section C, dönem5 BLM301/A ile aynı gün/saate denk geliyor.
+        // EDGE-01: Saat çakışması (alternatifsiz) — sınıf3 öğrencisi dönem3'te Mantık Devreleri-1'den kaldı ve alttan alıyor.
+        // Gerçek programda Mantık Devreleri-1 ile Programlama Dili-3 ikisi de Pazartesi 13:25-16:55; iki dersin de devam şartı
+        // var ve Programlama Dili-3'ün başka şubesi yok: sistem çakışmayı gösterir, alternatif bulamaz.
         var s1 = byClass[3][0];
         s1.EdgeCaseTag = "EDGE-01 saat-çakışması";
-        MarkAsFailed(transcripts, s1.StudentNo, 1, CourseCatalog.Math1);
-        // Ortak şubeleri bozmamak için MAT101'e yalnızca bu öğrencinin seçtiği özel bir "C"
-        // şubesi eklenir; saati BLM301/A ile aynıdır.
-        AddSectionOverlapping(schedule, CourseCatalog.Math1, "C", CourseCatalog.Microprocessors);
-        registrations.Add(new RegistrationEntry(s1.StudentNo, s1.CurrentTerm, CourseCatalog.Math1, "C", "Beklemede"));
+        MarkAsFailed(transcripts, s1.StudentNo, 3, CourseCatalog.LogicCircuits1);
+        EnsureRegistered(registrations, s1.StudentNo, s1.CurrentTerm, CourseCatalog.LogicCircuits1, "NÖ/İÖ", "Beklemede");
+        DropOneElective(registrations, attendance, coursesByTerm, s1); // tekrar dersi AKTS limitini aşırmasın
 
-        // EDGE-02: Önkoşul ihlali — sınıf2 öğrencisi BLM103'ü (dönem2) hiç geçemedi (FF),
-        // ama dönem3'te BLM103'e bağımlı BLM201'e kayıtlı.
+        // EDGE-02: Devam şartı yok — sınıf2 öğrencisi Atatürk İlkeleri-1'den (dönem1) kaldı ve tekrar alıyor; önceki
+        // denemede devam şartını sağladığı için OBİS "devam aranmaz" döner. Ders Pazartesi 13:25-15:05'te Mantık
+        // Devreleri-1 ile çakışır ama birinde devam şartı olmadığından çakışma SAYILMAZ (programda turuncu).
         var s2 = byClass[2][0];
-        s2.EdgeCaseTag = "EDGE-02 önkoşul-ihlali";
-        MarkAsFailed(transcripts, s2.StudentNo, 2, CourseCatalog.Programming1);
-        EnsureRegistered(registrations, s2.StudentNo, s2.CurrentTerm, CourseCatalog.DataStructures, "A", "Beklemede");
+        s2.EdgeCaseTag = "EDGE-02 devam-şartı-yok";
+        MarkAsFailed(transcripts, s2.StudentNo, 1, CourseCatalog.Ataturk1);
+        registrations.Add(new RegistrationEntry(s2.StudentNo, s2.CurrentTerm, CourseCatalog.Ataturk1, "NÖ/İÖ", "Beklemede", AttendanceRequired: false));
 
-        // EDGE-03: Alttan ders önceliği — sınıf3 öğrencisi dönem2 FIZ102'yi geçemedi
-        // ama alttan tamamlamadan dönem5 derslerine devam ediyor (retake kaydı yok).
+        // EDGE-03: Alttan ders önceliği — sınıf3 öğrencisi dönem1 Fizik-1'i geçemedi; ders bu güz açık (Salı 13:25,
+        // öğrencinin programında boş) ama alttan almadan dönem5 derslerine devam ediyor (tekrar kaydı yok).
         var s3 = byClass[3][1];
         s3.EdgeCaseTag = "EDGE-03 alttan-ders";
-        MarkAsFailed(transcripts, s3.StudentNo, 2, CourseCatalog.Physics2);
+        MarkAsFailed(transcripts, s3.StudentNo, 1, CourseCatalog.Physics1);
 
         // EDGE-04: Kredi/AKTS limiti aşımı — düşük GANO'lu sınıf2 öğrencisi normal
         // dönem yüküne ek olarak üç ekstra ders daha almış (toplam kredi limiti aşıyor).
@@ -444,31 +504,34 @@ public static class SeedGenerator
         var s4Course = coursesByTerm[s4.CurrentTerm].First(c => c.IsMandatory).CourseCode;
         attendance.RemoveAll(a => a.StudentNo == s4.StudentNo && a.CourseCode == s4Course);
         attendance.Add(new AttendanceRecord(s4.StudentNo, s4.CurrentTerm, s4Course, 14, 9));
-        foreach (var extra in new[] { CourseCatalog.Microprocessors, CourseCatalog.Programming3, CourseCatalog.DataCommunication })
+        // Ek dersler 1. dönemden kalınmış derslerin tekrarı, öğrencinin programındaki boş saatlerde (Pazartesi ve Perşembe sabahı):
+        // tek bulgu AKTS limiti olsun.
+        foreach (var extra in new[] { CourseCatalog.Math1, CourseCatalog.LinearAlgebra })
         {
-            EnsureRegistered(registrations, s4.StudentNo, s4.CurrentTerm, extra, "A", "Beklemede");
+            MarkAsFailed(transcripts, s4.StudentNo, 1, extra);
+            EnsureRegistered(registrations, s4.StudentNo, s4.CurrentTerm, extra, "NÖ/İÖ", "Beklemede");
         }
 
-        // EDGE-05: Sınav çakışması — sınıf4 öğrencisi hem BLM401 hem de (geçmemiş) BLM203'ü
-        // tekrar alıyor; final tarihleri aynı güne denk getirilecek (ApplyExamConflictEdgeCase).
+        // EDGE-05: Yanlış öğretim şubesi + alternatifli çakışma — ikinci öğretim (İÖ) öğrencisi Veri Haberleşmesi ve Ağlar'dan
+        // (dönem5) kaldı ve alttan alıyor (NÖ/İÖ, Çarşamba 13:25-16:55). Veri Bilimi'ni kendi öğretimi yerine NÖ şubesinden
+        // seçmiş: hem öğretim türü hatası hem saat çakışması var; sistem kendi öğretiminin İÖ şubesini (Çarşamba 17:00-19:25) önerir.
         var s5 = byClass[4][0];
-        s5.EdgeCaseTag = "EDGE-05 sınav-çakışması";
-        MarkAsFailed(transcripts, s5.StudentNo, 3, CourseCatalog.LogicCircuits1);
-        // Yalnızca bu öğrencinin seçtiği özel "C" şubesi: ders saati öğrencinin dönem programında
-        // boş bir yerde (saat çakışması olmasın, tek bulgu sınav çakışması olsun).
-        AddSectionAtFreeSlot(schedule, CourseCatalog.LogicCircuits1, "C", s5.CurrentTerm, registrations.Where(x => x.StudentNo == s5.StudentNo));
-        EnsureRegistered(registrations, s5.StudentNo, s5.CurrentTerm, CourseCatalog.LogicCircuits1, "C", "Beklemede");
-        DropOneElective(registrations, attendance, coursesByTerm, s5); // tekrar dersi AKTS limitini aşırmasın: tek bulgu sınav çakışması
+        s5.EdgeCaseTag = "EDGE-05 alternatifli-çakışma";
+        MarkAsFailed(transcripts, s5.StudentNo, 5, CourseCatalog.DataCommunication);
+        EnsureRegistered(registrations, s5.StudentNo, s5.CurrentTerm, CourseCatalog.DataCommunication, "NÖ/İÖ", "Beklemede");
+        var dataScience = registrations.FindIndex(x => x.StudentNo == s5.StudentNo && x.Term == s5.CurrentTerm && x.CourseCode == CourseCatalog.DataScience);
+        if (dataScience >= 0) registrations[dataScience] = registrations[dataScience] with { Section = "NÖ" };
+        DropOneElective(registrations, attendance, coursesByTerm, s5); // tekrar dersi (5 AKTS) AKTS limitini aşırmasın
+        DropOneElective(registrations, attendance, coursesByTerm, s5);
 
-        // EDGE-06: Tekrar alma (bilgi) — sınıf4 öğrencisi dönem3'te BLM201'i AA ile geçmişken
-        // bu dönem tekrar BLM201'e kayıtlı (GANO yükseltme amaçlı — bilgi seviyesi uyarı).
+        // EDGE-06: Tekrar alma (hata) — sınıf4 öğrencisi dönem5'te Mikroişlemciler'i AA ile geçmişken bu dönem yeniden
+        // seçmiş. Yalnızca CB ve altı notla geçilen ders tekrar alınabilir. Ders Salı 08:30-12:00'de, programında boş.
         var s6 = byClass[4][1];
         s6.EdgeCaseTag = "EDGE-06 tekrar-alma";
-        ForceGrade(transcripts, s6.StudentNo, 3, CourseCatalog.DataStructures, "AA");
-        // Tekrar dersi, öğrencinin programında boş bir saatteki özel "C" şubesine yazılır: tek bulgu bilgi seviyesindeki tekrar uyarısı olsun.
-        AddSectionAtFreeSlot(schedule, CourseCatalog.DataStructures, "C", s6.CurrentTerm, registrations.Where(x => x.StudentNo == s6.StudentNo));
-        EnsureRegistered(registrations, s6.StudentNo, s6.CurrentTerm, CourseCatalog.DataStructures, "C", "Beklemede");
+        ForceGrade(transcripts, s6.StudentNo, 5, CourseCatalog.Microprocessors, "AA");
+        EnsureRegistered(registrations, s6.StudentNo, s6.CurrentTerm, CourseCatalog.Microprocessors, "NÖ/İÖ", "Beklemede");
         DropOneElective(registrations, attendance, coursesByTerm, s6);
+        DropOneElective(registrations, attendance, coursesByTerm, s6); // 5 AKTS tekrar dersi: tek hata tekrar alma olsun
 
         // EDGE-07: GANO düşüşü — sınıf3 öğrencisinin son tamamlanan dönemi (dönem4) zayıf
         // notlarla dolu, önceki dönem (dönem3) yüksek notluydu -> görünür düşüş.
@@ -482,14 +545,14 @@ public static class SeedGenerator
         var s8 = byClass[4][2];
         s8.EdgeCaseTag = "EDGE-08 azami-süre";
         MarkAsFailed(transcripts, s8.StudentNo, 1, CourseCatalog.Math1);
-        MarkAsFailed(transcripts, s8.StudentNo, 2, CourseCatalog.Programming1);
-        MarkAsFailed(transcripts, s8.StudentNo, 4, CourseCatalog.Programming2);
+        MarkAsFailed(transcripts, s8.StudentNo, 1, CourseCatalog.Physics1);
+        MarkAsFailed(transcripts, s8.StudentNo, 3, CourseCatalog.DataStructures);
         PromoteCurrentTermToHistory(s8, registrations, transcripts, coursesByTerm, rnd);
         s8.CurrentTerm = 9;
-        // Dönem9'da kalan zorunluları ve tekrarları alıyor.
-        foreach (var retake in new[] { CourseCatalog.Math1, CourseCatalog.Programming1, CourseCatalog.Programming2 })
+        // Dönem9 (güz) kalan güz derslerini alttan alıyor; gerçek programda üçü de farklı saatlerde.
+        foreach (var retake in new[] { CourseCatalog.Math1, CourseCatalog.Physics1, CourseCatalog.DataStructures })
         {
-            EnsureRegistered(registrations, s8.StudentNo, 9, retake, "A", "Beklemede");
+            EnsureRegistered(registrations, s8.StudentNo, 9, retake, "NÖ/İÖ", "Beklemede");
         }
 
         // EDGE-09: Mezuniyete az kalan — sınıf4 öğrencisi dönem8'de sadece 2 dersi eksik,
@@ -609,58 +672,6 @@ public static class SeedGenerator
         }
     }
 
-    /// <summary><paramref name="courseCode"/> dersine, <paramref name="overlapWithCourse"/> dersinin A
-    /// şubesiyle aynı gün/saatte yeni bir özel şube ekler. Mevcut şubelere dokunulmaz; yalnızca bu
-    /// şubeyi seçen öğrenci çakışma görür.</summary>
-    private static void AddSectionOverlapping(List<ScheduleSlot> schedule, string courseCode, string section, string overlapWithCourse)
-    {
-        var template = schedule.FirstOrDefault(s => s.CourseCode == courseCode && s.Section == "A");
-        var target = schedule.FirstOrDefault(s => s.CourseCode == overlapWithCourse && s.Section == "A");
-        if (template is null || target is null)
-        {
-            return;
-        }
-
-        var duration = template.EndTime - template.StartTime;
-        schedule.Add(template with
-        {
-            Section = section, Day = target.Day, StartTime = target.StartTime,
-            EndTime = target.StartTime.Add(duration), Room = target.Room,
-        });
-    }
-
-    /// <summary><paramref name="courseCode"/> dersine, <paramref name="term"/> dönemi dersleriyle çakışmayan
-    /// (boş bir gün/saatte) yeni bir özel şube ekler.</summary>
-    /// <summary>Şubeyi, öğrencinin o dönemki mevcut kayıtlarıyla çakışmayan ilk (gün, saat) kombinasyonuna ekler.
-    /// Dönemin tüm dersleri (zorunlu + geniş seçmeli havuzu) ızgarayı doldurabildiği için "boş" kombinasyon
-    /// dönem genelinde değil, öğrencinin kendi programına göre aranır.</summary>
-    private static void AddSectionAtFreeSlot(
-        List<ScheduleSlot> schedule, string courseCode, string section, int term, IEnumerable<RegistrationEntry> studentRegistrations)
-    {
-        var template = schedule.FirstOrDefault(s => s.CourseCode == courseCode && s.Section == "A");
-        if (template is null)
-        {
-            return;
-        }
-
-        var registered = studentRegistrations.Where(x => x.Term == term).Select(x => (x.CourseCode, x.Section)).ToHashSet();
-        var used = schedule.Where(s => registered.Contains((s.CourseCode, s.Section))).Select(s => (s.Day, s.StartTime)).ToHashSet();
-        foreach (var start in Slots)
-        {
-            foreach (var day in Days)
-            {
-                if (used.Contains((day, start)))
-                {
-                    continue;
-                }
-
-                var duration = template.EndTime - template.StartTime;
-                schedule.Add(template with { Section = section, Day = day, StartTime = start, EndTime = start.Add(duration) });
-                return;
-            }
-        }
-    }
-
     /// <summary>Baseline bir öğrenciyi CurrentTerm=t ile "bekleyen kayıt" olarak işlemişken,
     /// edge-case sonradan o öğrenciyi daha ileri bir döneme taşıyorsa, eski dönemin
     /// kayıtları önce notlandırılmış geçmişe dönüştürülmeli — aksi halde geçmişte
@@ -680,7 +691,8 @@ public static class SeedGenerator
 
         foreach (var (reg, i) in pending)
         {
-            var course = coursesByTerm[term].FirstOrDefault(c => c.CourseCode == reg.CourseCode);
+            // Ders başka dönemin seçmelisi olabilir (7. dönemde alınan 5. dönem seçmelisi): tüm katalogda aranır.
+            var course = coursesByTerm.Values.SelectMany(c => c).FirstOrDefault(c => c.CourseCode == reg.CourseCode);
             if (course is null)
             {
                 continue;
@@ -704,24 +716,11 @@ public static class SeedGenerator
         foreach (var course in CoursesForTerm(coursesByTerm, plan.CurrentTerm, plan, rnd))
         {
             EnsureRegistered(registrations, plan.StudentNo, plan.CurrentTerm, course.CourseCode,
-                PickSection(sectionsByCourse, course.CourseCode, rnd), "Beklemede");
+                SectionFor(plan, plan.CurrentTerm, registrations, sectionsByCourse, course.CourseCode, rnd), "Beklemede");
             if (!attendance.Any(a => a.StudentNo == plan.StudentNo && a.Term == plan.CurrentTerm && a.CourseCode == course.CourseCode))
             {
                 attendance.Add(new AttendanceRecord(plan.StudentNo, plan.CurrentTerm, course.CourseCode, 14, 14 - rnd.Next(0, 3)));
             }
-        }
-    }
-
-    private static void ApplyExamConflictEdgeCase(List<ExamSlot> exams, List<RegistrationEntry> registrations)
-    {
-        // EDGE-05 öğrencisinin Mantık Devreleri-1 final'ini, aynı dönemdeki Bilgisayar Mimarisi final'iyle aynı
-        // tarih/saate taşı (ikisi de bu öğrencinin kayıtlı olduğu dersler).
-        var blm401Final = exams.FindIndex(e => e.CourseCode == CourseCatalog.ComputerArchitecture && e.Section == "A" && e.Type == ExamType.Final);
-        var blm203FinalIdx = exams.FindIndex(e => e.CourseCode == CourseCatalog.LogicCircuits1 && e.Section == "C" && e.Type == ExamType.Final);
-        if (blm401Final >= 0 && blm203FinalIdx >= 0)
-        {
-            var target = exams[blm401Final];
-            exams[blm203FinalIdx] = exams[blm203FinalIdx] with { Date = target.Date, StartTime = target.StartTime, EndTime = target.EndTime };
         }
     }
 }

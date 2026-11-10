@@ -17,7 +17,8 @@ public record RegistrationEntry(
     int Term,
     string CourseCode,
     string Section,
-    string ApprovalStatus);
+    string ApprovalStatus,
+    bool AttendanceRequired = true);
 
 /// <summary>Bir öğrencinin bir dönem/ders bazında devamsızlık bilgisi.</summary>
 public record AttendanceRecord(

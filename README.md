@@ -25,7 +25,7 @@ puanlama (anket)**, **erken uyarı ve mezuniyet analizi** ve **iletişim/talep**
 
 ## Hızlı başlangıç
 
-**Gereksinimler:** .NET SDK 8 ya da üstü, Node.js 20 ya da üstü (npm ile).
+**Gereksinimler:** .NET SDK 8 ya da üstü, Node.js 20 ya da üstü (npm ile), SQL Server (yerel `localhost` örneği yeterli, Windows kimlik doğrulaması).
 
 Tek komutla Mock OBİS + backend API + frontend'i başlatır (ilk çalıştırmada `npm install` ve derleme de yapılır):
 
@@ -50,8 +50,8 @@ Hazır olunca:
 | Backend API + Swagger | http://localhost:5154/swagger |
 | Mock OBİS + Swagger | http://localhost:5280/swagger |
 
-Günlükler `.run/` klasörüne yazılır. Veritabanı (SQLite) `backend/src/Advisor.Api/advisor.db` dosyasında oluşur;
-silinirse bir sonraki açılışta yeniden kurulur ve demo hesaplar tekrar eklenir. Yüklenen talep ekleri
+Günlükler `.run/` klasörüne yazılır. Veritabanı (MSSQL) yerel SQL Server'da `AdvisorDb` adıyla oluşur; migration'lar açılışta otomatik uygulanır.
+Veritabanı silinirse bir sonraki açılışta yeniden kurulur ve demo hesaplar tekrar eklenir. Yüklenen talep ekleri
 `backend/src/Advisor.Api/App_Data/uploads/` altında tutulur.
 
 ## Demo hesaplar
@@ -67,9 +67,9 @@ Tüm hesapların şifresi: **`Demo123!`** (yalnızca geliştirme amaçlı).
 | `bolumbaskani1` | Bölüm Başkanı | Bilgisayar Mühendisliği — kendi bölümünün öğrencilerini danışmanlara atar, her danışmanın analizlerini görür |
 | `dekan1` | Dekan | Tüm bölümler — atama yapar, tüm danışmanların analizlerini görür |
 | `ogrenci1` | Öğrenci | 20261001 Can Şahin (1. sınıf, henüz notlandırılmış dersi yok) |
-| `ogrenci2` | Öğrenci | 20241011 Buse Ateş (3. sınıf — **saat çakışması** uç durumu) |
-| `ogrenci3` | Öğrenci | 20251006 Selin Kılıç (2. sınıf — **önkoşul ihlali** uç durumu) |
-| `ogrenci4` | Öğrenci | 20231016 Caner Polat (4. sınıf — **sınav çakışması** uç durumu) |
+| `ogrenci2` | Öğrenci | 20241011 Buse Ateş (3. sınıf — **alternatifsiz saat çakışması** uç durumu) |
+| `ogrenci3` | Öğrenci | 20251006 Selin Kılıç (2. sınıf — **devam şartı olmayan alttan ders** uç durumu: çakışma sayılmaz) |
+| `ogrenci4` | Öğrenci | 20231016 Caner Polat (4. sınıf, ikinci öğretim — **yanlış öğretim şubesi + alternatif şube önerilen çakışma** uç durumu) |
 
 Giriş ekranında üç hesap için tek tıkla doldurma düğmeleri vardır. Mock OBİS'teki diğer öğrenciler (63 kişi)
 danışman ve yönetici ekranlarında görünür; hepsi için hesap açılmamıştır.
@@ -83,12 +83,12 @@ arayüzüyle yazılır; **yeni kural eklemek yalnızca yeni bir sınıf yazmakt�
 
 | Kural | Seviye | Ne yakalar |
 | --- | --- | --- |
-| Ders saati çakışması | Hata | Seçilen şubelerin aynı gün ve kesişen saatte olması |
+| Ders saati çakışması | Hata | Seçilen şubeler aynı saatte ve iki dersin de devam şartı var; alttan ders temel, üstten ders için başka şube önerilir |
 | Önkoşul | Hata | Önkoşulu geçilmemiş ders (aynı dönemde birlikte alınan geçerli değildir) |
 | Alttan ders önceliği | Uyarı | Kalınmış/hiç alınmamış alt dönem dersi varken üst dönem dersi seçmek |
 | AKTS limiti | Hata | GANO'ya bağlı üst sınır (<2.00: 24, 2.00-2.99: 31, ≥3.00: 37; ayarlanabilir) |
-| Sınav çakışması | Hata | Aynı tarih ve saatte iki sınav |
-| Tekrar alma | Bilgi | Daha önce BB ve üstüyle geçilmiş dersi yeniden seçmek |
+| Tekrar alma | Hata | BB ve üstüyle geçilmiş dersi yeniden seçmek (yalnızca CB ve altı notla geçilen ders tekrar alınabilir) |
+| Öğretim türü | Hata | Normal öğretim öğrencisinin İÖ, ikinci öğretim öğrencisinin NÖ şubesinden ders seçmesi (NÖ/İÖ ortak şube serbest) |
 
 Danışman ekranı: dönem seçimi → öğrenci listesi (hata/uyarı/bilgi rozetleri) → öğrenci detayında haftalık program
 (çakışanlar **kırmızı**), kural bulguları ve **Onayla / Düzeltme iste (not zorunlu)** kararı. Karar ana uygulamanın kendi
@@ -158,12 +158,12 @@ doğru yakalanır ve testlerle doğrulanmıştır. Hepsi `danisman1`'in öğrenc
 
 | Uç durum | Öğrenci | Nerede görünür |
 | --- | --- | --- |
-| EDGE-01 Saat çakışması | 20241011 Buse Ateş | Ders Kayıtları → detay (Matematik-1/C ile Mikroişlemciler kırmızı) |
-| EDGE-02 Önkoşul ihlali | 20251006 Selin Kılıç | Ders Kayıtları (Programlama Dili-1 kalmış, Veri Yapıları seçilmiş) |
-| EDGE-03 Alttan ders önceliği | 20241012 Duygu Şahin | Ders Kayıtları (Fizik-2 kalmış) |
+| EDGE-01 Saat çakışması | 20241011 Buse Ateş | Ders Kayıtları → detay (alttan Mantık Devreleri-1 ile Programlama Dili-3 kırmızı, başka şube yok) |
+| EDGE-02 Devam şartı yok | 20251006 Selin Kılıç | Ders Kayıtları (alttan Atatürk İlkeleri-1 ile Mantık Devreleri-1 turuncu, bulgu yok) |
+| EDGE-03 Alttan ders önceliği | 20241012 Duygu Şahin | Ders Kayıtları (Fizik-1 kalmış, bu güz açık ama seçilmemiş) |
 | EDGE-04 AKTS limiti + yüksek risk | 20251007 Sude Kaya | Ders Kayıtları (44 AKTS) ve Risk (puan 85: düşük GANO, art arda kalma, devamsızlık) |
-| EDGE-05 Sınav çakışması | 20231016 Caner Polat | Ders Kayıtları (Bilgisayar Mimarisi ve Mantık Devreleri-1 finalleri) |
-| EDGE-06 Tekrar alma | 20231017 Kaan Aksoy | Ders Kayıtları (Veri Yapıları, AA ile geçilmiş) |
+| EDGE-05 Alternatifli çakışma | 20231016 Caner Polat | Ders Kayıtları (İÖ öğrencisi Veri Bilimi'ni NÖ şubesinden seçmiş; alttan Veri Haberleşmesi ile çakışıyor, İÖ şubesi önerilir) |
+| EDGE-06 Tekrar alma | 20231017 Kaan Aksoy | Ders Kayıtları (Mikroişlemciler, AA ile geçilmiş) |
 | EDGE-07 GANO düşüşü | 20241013 Volkan Kurt | Risk (dönem ortalaması AA → DD) |
 | EDGE-08 Azami süreye yaklaşma | 20231018 Yusuf Karaca | Risk (9. dönem) |
 | EDGE-09 Mezuniyete az kalan | 20231019 Oğuz Erdoğan | Mezuniyet analizi (bu dönemi geçerse mezun) |
@@ -224,7 +224,7 @@ Ana ayarlar `backend/src/Advisor.Api/appsettings.json` içindedir; ortam değiş
 
 | Anahtar | Varsayılan | Anlamı |
 | --- | --- | --- |
-| `ConnectionStrings:Default` | `Data Source=advisor.db` | SQLite dosyası |
+| `ConnectionStrings:Default` | `Server=localhost;Database=AdvisorDb;Trusted_Connection=True;TrustServerCertificate=True` | MSSQL bağlantısı |
 | `Obis:BaseUrl` / `Obis:CacheSeconds` | `http://localhost:5280` / `30` | OBİS adresi ve kısa önbellek süresi |
 | `Jwt:SigningKey` / `Jwt:AccessTokenMinutes` | geliştirme anahtarı / `120` | Token imzası ve süresi |
 | `RegistrationRules:*` | bkz. dosya | GANO bantları, AKTS sınırları, tekrar alma not eşiği |
@@ -251,7 +251,7 @@ OgrenciDanismanOtomasyonu/
 │  ├─ src/
 │  │  ├─ Advisor.Domain/           Entity'ler, enum'lar (bağımlılığı yok)
 │  │  ├─ Advisor.Application/      Arayüzler, DTO'lar, saf iş mantığı (kural motoru, puanlama, risk, mezuniyet, CSV)
-│  │  ├─ Advisor.Infrastructure/   EF Core + SQLite, HttpObisClient, servisler (anket, randevu, duyuru, talep...)
+│  │  ├─ Advisor.Infrastructure/   EF Core + MSSQL, HttpObisClient, servisler (anket, randevu, duyuru, talep...)
 │  │  ├─ Advisor.Api/              Controller'lar, JWT, Swagger, middleware
 │  │  └─ Obis.MockApi/             Bağımsız mock OBİS (Minimal API + JSON seed)
 │  └─ tests/Advisor.Tests/         xUnit

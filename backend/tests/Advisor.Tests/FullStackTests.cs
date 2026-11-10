@@ -118,15 +118,14 @@ public class FullStackTests : IClassFixture<FullStackFactory>
         var d = await Get<RegistrationDetail_>(adv, "/api/registrations/20241011");
 
         Assert.Contains(d.Issues, i => i.RuleCode == "TIME_CONFLICT");
-        Assert.Contains(d.WeeklySchedule, s => s.CourseCode == "3301151" && s.InConflict);
-        Assert.Contains(d.WeeklySchedule, s => s.CourseCode == "3301551" && s.InConflict);
+        Assert.Contains(d.WeeklySchedule, s => s.CourseCode == "3301353" && s.InConflict);
+        Assert.Contains(d.WeeklySchedule, s => s.CourseCode == "3301552" && s.InConflict);
     }
 
     [Theory]
-    [InlineData("20251006", "PREREQUISITE")]
     [InlineData("20241012", "LOWER_SEMESTER_PRIORITY")]
     [InlineData("20251007", "CREDIT_LIMIT")]
-    [InlineData("20231016", "EXAM_CONFLICT")]
+    [InlineData("20231016", "TIME_CONFLICT")]
     [InlineData("20231017", "RETAKE")]
     public async Task RegistrationEdgeCases_AreCaughtThroughTheApi(string studentNo, string rule)
     {

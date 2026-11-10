@@ -33,7 +33,7 @@ flowchart LR
     end
     subgraph Ana["Ana uygulama (.NET)"]
         API["Advisor.Api<br/>ASP.NET Core Web API<br/>JWT, Swagger, middleware"]
-        DB[("SQLite<br/>hesaplar, kararlar, anketler,<br/>randevu, duyuru, talep")]
+        DB[("MSSQL<br/>hesaplar, kararlar, anketler,<br/>randevu, duyuru, talep")]
         FS[("Dosya deposu<br/>talep ekleri")]
     end
     subgraph Obis["OBİS (harici sistem)"]
@@ -56,7 +56,7 @@ değişmesidir.
 flowchart BT
     Domain["<b>Advisor.Domain</b><br/>Entity'ler, enum'lar<br/>(hiçbir bağımlılığı yok)"]
     Application["<b>Advisor.Application</b><br/>Arayüzler (IObisClient, IRegistrationRule...),<br/>DTO'lar, SAF iş mantığı:<br/>kural motoru, puanlama, risk, mezuniyet, CSV"]
-    Infrastructure["<b>Advisor.Infrastructure</b><br/>EF Core + SQLite, HttpObisClient,<br/>servisler (anket, randevu, duyuru, talep),<br/>dosya deposu, JWT üretimi"]
+    Infrastructure["<b>Advisor.Infrastructure</b><br/>EF Core + MSSQL, HttpObisClient,<br/>servisler (anket, randevu, duyuru, talep),<br/>dosya deposu, JWT üretimi"]
     Api["<b>Advisor.Api</b><br/>Controller'lar (ince), yetkilendirme,<br/>DI kompozisyonu, middleware"]
     Tests["<b>Advisor.Tests</b>"]
     Mock["<b>Obis.MockApi</b><br/>(bağımsız, hiçbir projeye bağlı değil)"]
@@ -408,7 +408,7 @@ flowchart TB
     C["API testleri (bellek içi host, sahte/seed OBİS)<br/>yetki, sahiplik, doğrulama, durum akışları"]
     D["Tam yığın uçtan uca (bellek içi, GERÇEK HttpObisClient + gerçek mock OBİS)<br/>HTTP sözleşmesi, 63 öğrencinin tamamı"]
     E["Otomatik güvenlik taraması<br/>her endpoint: anonim 401, rol dışı 403, onaylı istisna listesi"]
-    F["Canlı tarayıcı doğrulaması (Playwright, her arayüz aşamasında)<br/>gerçek SQLite, gerçek disk, mobil görünüm"]
+    F["Canlı tarayıcı doğrulaması (Playwright, her arayüz aşamasında)<br/>gerçek MSSQL, gerçek disk, mobil görünüm"]
     A --> B --> C --> D --> E --> F
 ```
 
@@ -424,7 +424,7 @@ flowchart LR
     U["Kullanıcı tarayıcısı"] -- HTTPS --> P["Ters proxy<br/>(TLS, X-Forwarded-For)"]
     P -- "/ (statik)" --> S["frontend/dist"]
     P -- "/api" --> A["Advisor.Api<br/>(Kestrel)"]
-    A --> D[("SQLite / ileride<br/>başka RDBMS")]
+    A --> D[("MSSQL / ileride<br/>başka RDBMS")]
     A --> F[("Uploads klasörü<br/>web kökü dışında")]
     A -- "IObisClient" --> O["OBİS API'si"]
 ```
@@ -447,7 +447,7 @@ Mock OBİS yalnızca geliştirme ve gösterim içindir. Gerçek OBİS'e geçerke
 5. **Veri sözleşmesi doğrulaması:** gerçek OBİS'ten `ObisAttendance`, staj günü ve ders şube/saat verisinin hangi uç noktadan nasıl geldiği
    netleştirilmeli. Bu üç alan mock'ta basitleştirilmiştir: devamsızlık (ders başına oturum sayıları), staj (tamamlanan gün toplamı),
    program (şube başına tek haftalık yuva; birden fazla yuva destekleniyor ama seed'de tek).
-6. **Eşikler:** GANO bantları, AKTS sınırları, azami süre, devamsızlık sınırı, müfredat (212 AKTS, 12 seçmeli kredi, 40 gün staj) üniversitenin
+6. **Eşikler:** GANO bantları, AKTS sınırları, azami süre, devamsızlık sınırı, müfredat (240 AKTS, 30 seçmeli kredi, 40 gün staj) üniversitenin
    gerçek yönetmeliğine göre `appsettings.json`/OBİS müfredat verisinden ayarlanmalı. Seed'deki sayılar kurgusaldır.
 7. **Ölçek:** `AnalyticsService` ve toplu listeler her öğrenci için ayrı OBİS çağrısı yapar (8 paralel, önbellekli). Binlerce öğrencide toplu
    uç noktalar ya da gece çalışan bir ön hesaplama (arka plan işi) gerekir.

@@ -18,8 +18,8 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("Default") ?? "Data Source=advisor.db";
-        services.AddDbContext<AdvisorDbContext>(options => options.UseSqlite(connectionString));
+        var connectionString = configuration.GetConnectionString("Default") ?? "Server=localhost;Database=AdvisorDb;Trusted_Connection=True;TrustServerCertificate=True";
+        services.AddDbContext<AdvisorDbContext>(options => options.UseSqlServer(connectionString));
 
         services.AddMemoryCache();
         services.Configure<ObisOptions>(configuration.GetSection(ObisOptions.SectionName));

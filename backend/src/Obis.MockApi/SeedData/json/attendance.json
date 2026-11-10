@@ -618,7 +618,7 @@
   {
     "StudentNo": "20241011",
     "Term": 5,
-    "CourseCode": "3301575",
+    "CourseCode": "3301568",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -626,15 +626,7 @@
   {
     "StudentNo": "20241011",
     "Term": 5,
-    "CourseCode": "3301576",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20241011",
-    "Term": 5,
-    "CourseCode": "3301577",
+    "CourseCode": "3301570",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -674,7 +666,7 @@
   {
     "StudentNo": "20241012",
     "Term": 5,
-    "CourseCode": "3301570",
+    "CourseCode": "3301562",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -690,7 +682,7 @@
   {
     "StudentNo": "20241012",
     "Term": 5,
-    "CourseCode": "3301572",
+    "CourseCode": "3301573",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -730,7 +722,15 @@
   {
     "StudentNo": "20241013",
     "Term": 5,
-    "CourseCode": "3301569",
+    "CourseCode": "3301564",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20241013",
+    "Term": 5,
+    "CourseCode": "3301568",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -740,14 +740,6 @@
     "Term": 5,
     "CourseCode": "3301570",
     "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20241013",
-    "Term": 5,
-    "CourseCode": "3301571",
-    "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
   },
@@ -786,10 +778,18 @@
   {
     "StudentNo": "20241014",
     "Term": 5,
-    "CourseCode": "3301572",
+    "CourseCode": "3301562",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20241014",
+    "Term": 5,
+    "CourseCode": "3301571",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
   },
   {
     "StudentNo": "20241014",
@@ -800,14 +800,6 @@
     "AbsenceRate": 0.07
   },
   {
-    "StudentNo": "20241014",
-    "Term": 5,
-    "CourseCode": "3301574",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
     "StudentNo": "20241015",
     "Term": 5,
     "CourseCode": "3301551",
@@ -842,7 +834,7 @@
   {
     "StudentNo": "20241015",
     "Term": 5,
-    "CourseCode": "3301571",
+    "CourseCode": "3301564",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -850,7 +842,7 @@
   {
     "StudentNo": "20241015",
     "Term": 5,
-    "CourseCode": "3301572",
+    "CourseCode": "3301568",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -858,7 +850,7 @@
   {
     "StudentNo": "20241015",
     "Term": 5,
-    "CourseCode": "3301573",
+    "CourseCode": "3301570",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -894,22 +886,6 @@
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231016",
-    "Term": 7,
-    "CourseCode": "3301775",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231016",
-    "Term": 7,
-    "CourseCode": "3301777",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
   },
   {
     "StudentNo": "20231016",
@@ -920,6 +896,14 @@
     "AbsenceRate": 0.07
   },
   {
+    "StudentNo": "20231016",
+    "Term": 7,
+    "CourseCode": "3301564",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
     "StudentNo": "20231017",
     "Term": 7,
     "CourseCode": "3301751",
@@ -953,80 +937,16 @@
   },
   {
     "StudentNo": "20231017",
-    "Term": 7,
-    "CourseCode": "3301774",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20231017",
-    "Term": 7,
-    "CourseCode": "3301775",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231017",
-    "Term": 7,
-    "CourseCode": "3301777",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 7,
-    "CourseCode": "3301751",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 7,
-    "CourseCode": "3301752",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 7,
-    "CourseCode": "3301753",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 7,
-    "CourseCode": "3301754",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231018",
-    "Term": 7,
-    "CourseCode": "3301772",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20231018",
     "Term": 7,
     "CourseCode": "3301773",
     "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
   },
   {
-    "StudentNo": "20231018",
+    "StudentNo": "20231017",
     "Term": 7,
-    "CourseCode": "3301774",
+    "CourseCode": "3301562",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -1034,7 +954,63 @@
   {
     "StudentNo": "20231018",
     "Term": 7,
-    "CourseCode": "3301775",
+    "CourseCode": "3301751",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 7,
+    "CourseCode": "3301752",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 7,
+    "CourseCode": "3301753",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 7,
+    "CourseCode": "3301754",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 7,
+    "CourseCode": "3301766",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 7,
+    "CourseCode": "3301770",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 7,
+    "CourseCode": "3301778",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20231018",
+    "Term": 7,
+    "CourseCode": "3301564",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -1074,7 +1050,7 @@
   {
     "StudentNo": "20231019",
     "Term": 7,
-    "CourseCode": "3301771",
+    "CourseCode": "3301761",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -1082,7 +1058,7 @@
   {
     "StudentNo": "20231019",
     "Term": 7,
-    "CourseCode": "3301772",
+    "CourseCode": "3301767",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -1098,7 +1074,7 @@
   {
     "StudentNo": "20231019",
     "Term": 7,
-    "CourseCode": "3301774",
+    "CourseCode": "3301562",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -1131,6 +1107,14 @@
     "StudentNo": "20231020",
     "Term": 7,
     "CourseCode": "3301754",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20231020",
+    "Term": 7,
+    "CourseCode": "3301766",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -1140,21 +1124,13 @@
     "Term": 7,
     "CourseCode": "3301770",
     "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20231020",
-    "Term": 7,
-    "CourseCode": "3301771",
-    "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
   },
   {
     "StudentNo": "20231020",
     "Term": 7,
-    "CourseCode": "3301772",
+    "CourseCode": "3301778",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -1162,7 +1138,7 @@
   {
     "StudentNo": "20231020",
     "Term": 7,
-    "CourseCode": "3301773",
+    "CourseCode": "3301564",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -1202,7 +1178,7 @@
   {
     "StudentNo": "20231021",
     "Term": 7,
-    "CourseCode": "3301769",
+    "CourseCode": "3301761",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -1210,7 +1186,7 @@
   {
     "StudentNo": "20231021",
     "Term": 7,
-    "CourseCode": "3301770",
+    "CourseCode": "3301767",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -1218,7 +1194,7 @@
   {
     "StudentNo": "20231021",
     "Term": 7,
-    "CourseCode": "3301771",
+    "CourseCode": "3301773",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -1226,7 +1202,7 @@
   {
     "StudentNo": "20231021",
     "Term": 7,
-    "CourseCode": "3301772",
+    "CourseCode": "3301562",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -1874,7 +1850,7 @@
   {
     "StudentNo": "20241032",
     "Term": 5,
-    "CourseCode": "3301563",
+    "CourseCode": "3301571",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -1882,7 +1858,7 @@
   {
     "StudentNo": "20241032",
     "Term": 5,
-    "CourseCode": "3301564",
+    "CourseCode": "3301573",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -1922,71 +1898,71 @@
   {
     "StudentNo": "20241033",
     "Term": 5,
-    "CourseCode": "3301561",
+    "CourseCode": "3301564",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
   },
   {
     "StudentNo": "20241033",
+    "Term": 5,
+    "CourseCode": "3301568",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20241033",
+    "Term": 5,
+    "CourseCode": "3301570",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20241034",
+    "Term": 5,
+    "CourseCode": "3301551",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20241034",
+    "Term": 5,
+    "CourseCode": "3301552",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20241034",
+    "Term": 5,
+    "CourseCode": "3301553",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20241034",
+    "Term": 5,
+    "CourseCode": "3301554",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20241034",
     "Term": 5,
     "CourseCode": "3301562",
     "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20241033",
-    "Term": 5,
-    "CourseCode": "3301563",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20241034",
-    "Term": 5,
-    "CourseCode": "3301551",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20241034",
-    "Term": 5,
-    "CourseCode": "3301552",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20241034",
-    "Term": 5,
-    "CourseCode": "3301553",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20241034",
-    "Term": 5,
-    "CourseCode": "3301554",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20241034",
-    "Term": 5,
-    "CourseCode": "3301564",
-    "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
   },
   {
     "StudentNo": "20241034",
     "Term": 5,
-    "CourseCode": "3301565",
+    "CourseCode": "3301571",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -1994,7 +1970,7 @@
   {
     "StudentNo": "20241034",
     "Term": 5,
-    "CourseCode": "3301566",
+    "CourseCode": "3301573",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -2030,14 +2006,6 @@
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20241035",
-    "Term": 5,
-    "CourseCode": "3301563",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
   },
   {
     "StudentNo": "20241035",
@@ -2050,7 +2018,15 @@
   {
     "StudentNo": "20241035",
     "Term": 5,
-    "CourseCode": "3301565",
+    "CourseCode": "3301568",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20241035",
+    "Term": 5,
+    "CourseCode": "3301570",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -2090,7 +2066,7 @@
   {
     "StudentNo": "20241036",
     "Term": 5,
-    "CourseCode": "3301576",
+    "CourseCode": "3301562",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -2098,7 +2074,7 @@
   {
     "StudentNo": "20241036",
     "Term": 5,
-    "CourseCode": "3301577",
+    "CourseCode": "3301571",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -2106,7 +2082,7 @@
   {
     "StudentNo": "20241036",
     "Term": 5,
-    "CourseCode": "3301578",
+    "CourseCode": "3301573",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -2146,6 +2122,14 @@
   {
     "StudentNo": "20231037",
     "Term": 7,
+    "CourseCode": "3301761",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20231037",
+    "Term": 7,
     "CourseCode": "3301767",
     "TotalSessions": 14,
     "AttendedSessions": 14,
@@ -2154,7 +2138,7 @@
   {
     "StudentNo": "20231037",
     "Term": 7,
-    "CourseCode": "3301768",
+    "CourseCode": "3301773",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -2162,13 +2146,53 @@
   {
     "StudentNo": "20231037",
     "Term": 7,
-    "CourseCode": "3301769",
+    "CourseCode": "3301562",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20231038",
+    "Term": 7,
+    "CourseCode": "3301751",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20231038",
+    "Term": 7,
+    "CourseCode": "3301752",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
   },
   {
-    "StudentNo": "20231037",
+    "StudentNo": "20231038",
+    "Term": 7,
+    "CourseCode": "3301753",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20231038",
+    "Term": 7,
+    "CourseCode": "3301754",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20231038",
+    "Term": 7,
+    "CourseCode": "3301766",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20231038",
     "Term": 7,
     "CourseCode": "3301770",
     "TotalSessions": 14,
@@ -2178,7 +2202,7 @@
   {
     "StudentNo": "20231038",
     "Term": 7,
-    "CourseCode": "3301751",
+    "CourseCode": "3301778",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -2186,55 +2210,7 @@
   {
     "StudentNo": "20231038",
     "Term": 7,
-    "CourseCode": "3301752",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231038",
-    "Term": 7,
-    "CourseCode": "3301753",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20231038",
-    "Term": 7,
-    "CourseCode": "3301754",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20231038",
-    "Term": 7,
-    "CourseCode": "3301766",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231038",
-    "Term": 7,
-    "CourseCode": "3301767",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20231038",
-    "Term": 7,
-    "CourseCode": "3301768",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20231038",
-    "Term": 7,
-    "CourseCode": "3301769",
+    "CourseCode": "3301564",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -2274,31 +2250,31 @@
   {
     "StudentNo": "20231039",
     "Term": 7,
-    "CourseCode": "3301765",
+    "CourseCode": "3301761",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231039",
-    "Term": 7,
-    "CourseCode": "3301766",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
   },
   {
     "StudentNo": "20231039",
     "Term": 7,
     "CourseCode": "3301767",
     "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20231039",
+    "Term": 7,
+    "CourseCode": "3301773",
+    "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
   },
   {
     "StudentNo": "20231039",
     "Term": 7,
-    "CourseCode": "3301768",
+    "CourseCode": "3301562",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -2338,7 +2314,7 @@
   {
     "StudentNo": "20231040",
     "Term": 7,
-    "CourseCode": "3301762",
+    "CourseCode": "3301766",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -2346,7 +2322,7 @@
   {
     "StudentNo": "20231040",
     "Term": 7,
-    "CourseCode": "3301763",
+    "CourseCode": "3301770",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -2354,7 +2330,7 @@
   {
     "StudentNo": "20231040",
     "Term": 7,
-    "CourseCode": "3301764",
+    "CourseCode": "3301778",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -2362,7 +2338,7 @@
   {
     "StudentNo": "20231040",
     "Term": 7,
-    "CourseCode": "3301765",
+    "CourseCode": "3301564",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -2410,7 +2386,7 @@
   {
     "StudentNo": "20231041",
     "Term": 7,
-    "CourseCode": "3301762",
+    "CourseCode": "3301767",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -2418,7 +2394,7 @@
   {
     "StudentNo": "20231041",
     "Term": 7,
-    "CourseCode": "3301763",
+    "CourseCode": "3301773",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -2426,7 +2402,7 @@
   {
     "StudentNo": "20231041",
     "Term": 7,
-    "CourseCode": "3301764",
+    "CourseCode": "3301562",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -2466,7 +2442,7 @@
   {
     "StudentNo": "20231042",
     "Term": 7,
-    "CourseCode": "3301779",
+    "CourseCode": "3301766",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -2474,7 +2450,7 @@
   {
     "StudentNo": "20231042",
     "Term": 7,
-    "CourseCode": "3301761",
+    "CourseCode": "3301770",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -2482,7 +2458,7 @@
   {
     "StudentNo": "20231042",
     "Term": 7,
-    "CourseCode": "3301762",
+    "CourseCode": "3301778",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -2490,7 +2466,7 @@
   {
     "StudentNo": "20231042",
     "Term": 7,
-    "CourseCode": "3301763",
+    "CourseCode": "3301564",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -3130,189 +3106,133 @@
   {
     "StudentNo": "20241053",
     "Term": 5,
-    "CourseCode": "3301573",
+    "CourseCode": "3301564",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
   },
   {
     "StudentNo": "20241053",
-    "Term": 5,
-    "CourseCode": "3301574",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20241053",
-    "Term": 5,
-    "CourseCode": "3301575",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 5,
-    "CourseCode": "3301551",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 5,
-    "CourseCode": "3301552",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 5,
-    "CourseCode": "3301553",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 5,
-    "CourseCode": "3301554",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 5,
-    "CourseCode": "3301576",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 5,
-    "CourseCode": "3301577",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20241054",
-    "Term": 5,
-    "CourseCode": "3301578",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 5,
-    "CourseCode": "3301551",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 5,
-    "CourseCode": "3301552",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 5,
-    "CourseCode": "3301553",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 5,
-    "CourseCode": "3301554",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 5,
-    "CourseCode": "3301575",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 5,
-    "CourseCode": "3301576",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20241055",
-    "Term": 5,
-    "CourseCode": "3301577",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 5,
-    "CourseCode": "3301551",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 5,
-    "CourseCode": "3301552",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 5,
-    "CourseCode": "3301553",
-    "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20241056",
-    "Term": 5,
-    "CourseCode": "3301554",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20241056",
     "Term": 5,
     "CourseCode": "3301568",
     "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
   },
   {
-    "StudentNo": "20241056",
+    "StudentNo": "20241053",
     "Term": 5,
-    "CourseCode": "3301569",
+    "CourseCode": "3301570",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
   },
   {
-    "StudentNo": "20241056",
+    "StudentNo": "20241054",
+    "Term": 5,
+    "CourseCode": "3301551",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 5,
+    "CourseCode": "3301552",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 5,
+    "CourseCode": "3301553",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 5,
+    "CourseCode": "3301554",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 5,
+    "CourseCode": "3301562",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 5,
+    "CourseCode": "3301571",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20241054",
+    "Term": 5,
+    "CourseCode": "3301573",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 5,
+    "CourseCode": "3301551",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 5,
+    "CourseCode": "3301552",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 5,
+    "CourseCode": "3301553",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 5,
+    "CourseCode": "3301554",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 5,
+    "CourseCode": "3301564",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20241055",
+    "Term": 5,
+    "CourseCode": "3301568",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20241055",
     "Term": 5,
     "CourseCode": "3301570",
     "TotalSessions": 14,
@@ -3320,6 +3240,62 @@
     "AbsenceRate": 0.14
   },
   {
+    "StudentNo": "20241056",
+    "Term": 5,
+    "CourseCode": "3301551",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 5,
+    "CourseCode": "3301552",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 5,
+    "CourseCode": "3301553",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 5,
+    "CourseCode": "3301554",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 5,
+    "CourseCode": "3301562",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 5,
+    "CourseCode": "3301571",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20241056",
+    "Term": 5,
+    "CourseCode": "3301573",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
     "StudentNo": "20241057",
     "Term": 5,
     "CourseCode": "3301551",
@@ -3354,7 +3330,7 @@
   {
     "StudentNo": "20241057",
     "Term": 5,
-    "CourseCode": "3301567",
+    "CourseCode": "3301564",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -3370,7 +3346,7 @@
   {
     "StudentNo": "20241057",
     "Term": 5,
-    "CourseCode": "3301569",
+    "CourseCode": "3301570",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -3410,7 +3386,15 @@
   {
     "StudentNo": "20231058",
     "Term": 7,
-    "CourseCode": "3301777",
+    "CourseCode": "3301766",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20231058",
+    "Term": 7,
+    "CourseCode": "3301770",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -3420,29 +3404,61 @@
     "Term": 7,
     "CourseCode": "3301778",
     "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
-  },
-  {
-    "StudentNo": "20231058",
-    "Term": 7,
-    "CourseCode": "3301779",
-    "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
   },
   {
     "StudentNo": "20231058",
+    "Term": 7,
+    "CourseCode": "3301564",
+    "TotalSessions": 14,
+    "AttendedSessions": 12,
+    "AbsenceRate": 0.14
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 7,
+    "CourseCode": "3301751",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 7,
+    "CourseCode": "3301752",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 7,
+    "CourseCode": "3301753",
+    "TotalSessions": 14,
+    "AttendedSessions": 13,
+    "AbsenceRate": 0.07
+  },
+  {
+    "StudentNo": "20231059",
+    "Term": 7,
+    "CourseCode": "3301754",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20231059",
     "Term": 7,
     "CourseCode": "3301761",
     "TotalSessions": 14,
-    "AttendedSessions": 12,
-    "AbsenceRate": 0.14
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
   },
   {
     "StudentNo": "20231059",
     "Term": 7,
-    "CourseCode": "3301751",
+    "CourseCode": "3301767",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -3450,47 +3466,7 @@
   {
     "StudentNo": "20231059",
     "Term": 7,
-    "CourseCode": "3301752",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 7,
-    "CourseCode": "3301753",
-    "TotalSessions": 14,
-    "AttendedSessions": 13,
-    "AbsenceRate": 0.07
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 7,
-    "CourseCode": "3301754",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 7,
-    "CourseCode": "3301775",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 7,
-    "CourseCode": "3301777",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231059",
-    "Term": 7,
-    "CourseCode": "3301778",
+    "CourseCode": "3301773",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -3498,7 +3474,7 @@
   {
     "StudentNo": "20231059",
     "Term": 7,
-    "CourseCode": "3301779",
+    "CourseCode": "3301562",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -3538,7 +3514,7 @@
   {
     "StudentNo": "20231060",
     "Term": 7,
-    "CourseCode": "3301774",
+    "CourseCode": "3301766",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -3546,15 +3522,7 @@
   {
     "StudentNo": "20231060",
     "Term": 7,
-    "CourseCode": "3301775",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231060",
-    "Term": 7,
-    "CourseCode": "3301777",
+    "CourseCode": "3301770",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -3568,6 +3536,14 @@
     "AbsenceRate": 0
   },
   {
+    "StudentNo": "20231060",
+    "Term": 7,
+    "CourseCode": "3301564",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
     "StudentNo": "20231061",
     "Term": 7,
     "CourseCode": "3301751",
@@ -3602,23 +3578,23 @@
   {
     "StudentNo": "20231061",
     "Term": 7,
+    "CourseCode": "3301761",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 7,
+    "CourseCode": "3301767",
+    "TotalSessions": 14,
+    "AttendedSessions": 14,
+    "AbsenceRate": 0
+  },
+  {
+    "StudentNo": "20231061",
+    "Term": 7,
     "CourseCode": "3301773",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231061",
-    "Term": 7,
-    "CourseCode": "3301774",
-    "TotalSessions": 14,
-    "AttendedSessions": 14,
-    "AbsenceRate": 0
-  },
-  {
-    "StudentNo": "20231061",
-    "Term": 7,
-    "CourseCode": "3301775",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -3626,7 +3602,7 @@
   {
     "StudentNo": "20231061",
     "Term": 7,
-    "CourseCode": "3301777",
+    "CourseCode": "3301562",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -3666,7 +3642,7 @@
   {
     "StudentNo": "20231062",
     "Term": 7,
-    "CourseCode": "3301772",
+    "CourseCode": "3301766",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -3674,7 +3650,7 @@
   {
     "StudentNo": "20231062",
     "Term": 7,
-    "CourseCode": "3301773",
+    "CourseCode": "3301770",
     "TotalSessions": 14,
     "AttendedSessions": 13,
     "AbsenceRate": 0.07
@@ -3682,7 +3658,7 @@
   {
     "StudentNo": "20231062",
     "Term": 7,
-    "CourseCode": "3301774",
+    "CourseCode": "3301778",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -3690,7 +3666,7 @@
   {
     "StudentNo": "20231062",
     "Term": 7,
-    "CourseCode": "3301775",
+    "CourseCode": "3301564",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -3730,7 +3706,7 @@
   {
     "StudentNo": "20231063",
     "Term": 7,
-    "CourseCode": "3301771",
+    "CourseCode": "3301761",
     "TotalSessions": 14,
     "AttendedSessions": 14,
     "AbsenceRate": 0
@@ -3738,7 +3714,7 @@
   {
     "StudentNo": "20231063",
     "Term": 7,
-    "CourseCode": "3301772",
+    "CourseCode": "3301767",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14
@@ -3754,7 +3730,7 @@
   {
     "StudentNo": "20231063",
     "Term": 7,
-    "CourseCode": "3301774",
+    "CourseCode": "3301562",
     "TotalSessions": 14,
     "AttendedSessions": 12,
     "AbsenceRate": 0.14

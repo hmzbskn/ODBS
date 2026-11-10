@@ -51,6 +51,52 @@ public class RegistrationRuleTests
             options ?? new RegistrationRuleOptions());
     }
 
+    // ---- SectionProgramRule ----
+
+    private static RegistrationContext CtxFor(string program, params ObisRegistration[] selected) =>
+        RegistrationValidationService.BuildContext(
+            new ObisStudent("1", "Test", "Öğrenci", 4, "BLM", "ADV1", 0, "Aktif", Program: program),
+            3, selected, Array.Empty<ObisTranscriptEntry>(), new[] { Course("A1", 3), Course("B1", 3) },
+            Array.Empty<ObisScheduleSlot>(), Array.Empty<ObisExamSlot>(),
+            new ObisCurriculum("BLM", new List<string>(), 0, 240, 30), new RegistrationRuleOptions());
+
+    [Theory]
+    [InlineData("Birinci Öğretim", "İÖ")]
+    [InlineData("İkinci Öğretim", "NÖ")]
+    public void SectionProgram_OtherProgramsSection_IsError(string program, string section)
+    {
+        var issue = Assert.Single(new SectionProgramRule().Evaluate(CtxFor(program, Reg("A1", section))));
+        Assert.Equal(IssueSeverity.Error, issue.Severity);
+    }
+
+    [Theory]
+    [InlineData("Birinci Öğretim", "NÖ")]
+    [InlineData("İkinci Öğretim", "İÖ")]
+    [InlineData("Birinci Öğretim", "NÖ/İÖ")]
+    [InlineData("İkinci Öğretim", "NÖ/İÖ")]
+    public void SectionProgram_OwnOrSharedSection_NoIssue(string program, string section) =>
+        Assert.Empty(new SectionProgramRule().Evaluate(CtxFor(program, Reg("A1", section))));
+
+    [Fact]
+    public void TimeConflict_AlternativeFromOtherProgram_IsNotSuggested()
+    {
+        // İkinci öğretim öğrencisine NÖ şubesi önerilmez.
+        var ctx = RegistrationValidationService.BuildContext(
+            new ObisStudent("1", "Test", "Öğrenci", 4, "BLM", "ADV1", 0, "Aktif", Program: "İkinci Öğretim"),
+            3, new[] { Reg("A1", "NÖ/İÖ"), Reg("B1", "İÖ") }, Array.Empty<ObisTranscriptEntry>(),
+            new[] { Course("A1", 1), Course("B1", 3) },
+            new[]
+            {
+                Slot("A1", DayOfWeek.Monday, "17:00", "19:00", "NÖ/İÖ"),
+                Slot("B1", DayOfWeek.Monday, "17:00", "19:00", "İÖ"),
+                Slot("B1", DayOfWeek.Tuesday, "09:00", "11:00", "NÖ"),
+            },
+            Array.Empty<ObisExamSlot>(), new ObisCurriculum("BLM", new List<string>(), 0, 240, 30), new RegistrationRuleOptions());
+
+        var issue = Assert.Single(new TimeConflictRule().Evaluate(ctx));
+        Assert.Contains("alternatif şube bulunamadı", issue.Message);
+    }
+
     // ---- TimeConflictRule ----
 
     [Fact]
@@ -68,6 +114,77 @@ public class RegistrationRuleTests
         Assert.Equal(IssueSeverity.Error, issue.Severity);
         Assert.Contains("A1", issue.CourseCodes);
         Assert.Contains("B1", issue.CourseCodes);
+    }
+
+    [Fact]
+    public void TimeConflict_NoAttendanceRequirement_IsNotConflict()
+    {
+        // İki dersten birinde devam şartı yoksa çakışma sayılmaz.
+        var ctx = Ctx(
+            new[] { Reg("A1") with { AttendanceRequired = false }, Reg("B1") },
+            schedule: new[]
+            {
+                Slot("A1", DayOfWeek.Monday, "09:00", "11:00"),
+                Slot("B1", DayOfWeek.Monday, "10:00", "12:00"),
+            });
+
+        Assert.Empty(new TimeConflictRule().Evaluate(ctx));
+    }
+
+    [Fact]
+    public void TimeConflict_RetakeIsBase_AndAlternativeSectionIsSuggested()
+    {
+        // L1 daha önce kalınmış (alttan); H1 üstten. H1'in B şubesi başka saatte: öneri olarak verilir.
+        var courses = new[] { Course("L1", 1), Course("H1", 5) };
+        var ctx = Ctx(
+            new[] { Reg("H1"), Reg("L1") }, courses,
+            history: new[] { Failed("L1", 2) },
+            schedule: new[]
+            {
+                Slot("L1", DayOfWeek.Monday, "09:00", "11:00"),
+                Slot("H1", DayOfWeek.Monday, "10:00", "12:00", "A"),
+                Slot("H1", DayOfWeek.Tuesday, "14:00", "16:00", "B"),
+            });
+
+        var issue = Assert.Single(new TimeConflictRule().Evaluate(ctx));
+        Assert.Equal(new[] { "L1", "H1" }, issue.CourseCodes);
+        Assert.Contains("alttan", issue.Message);
+        Assert.Contains("B şubesi (Salı 14:00-16:00)", issue.Message);
+    }
+
+    [Fact]
+    public void TimeConflict_AlternativeThatClashesWithOtherCourse_IsNotSuggested()
+    {
+        var courses = new[] { Course("L1", 1), Course("H1", 5), Course("X1", 5) };
+        var ctx = Ctx(
+            new[] { Reg("H1"), Reg("L1"), Reg("X1") }, courses,
+            history: new[] { Failed("L1", 2) },
+            schedule: new[]
+            {
+                Slot("L1", DayOfWeek.Monday, "09:00", "11:00"),
+                Slot("H1", DayOfWeek.Monday, "10:00", "12:00", "A"),
+                Slot("H1", DayOfWeek.Tuesday, "14:00", "16:00", "B"),
+                Slot("X1", DayOfWeek.Tuesday, "15:00", "17:00"),
+            });
+
+        var issue = Assert.Single(new TimeConflictRule().Evaluate(ctx));
+        Assert.Contains("alternatif şube bulunamadı", issue.Message);
+    }
+
+    [Fact]
+    public void TimeConflict_NoRetake_LowerTermCourseIsBase()
+    {
+        var courses = new[] { Course("L1", 3), Course("H1", 6) };
+        var ctx = Ctx(
+            new[] { Reg("H1"), Reg("L1") }, courses,
+            schedule: new[]
+            {
+                Slot("L1", DayOfWeek.Monday, "09:00", "11:00"),
+                Slot("H1", DayOfWeek.Monday, "10:00", "12:00"),
+            });
+
+        var issue = Assert.Single(new TimeConflictRule().Evaluate(ctx));
+        Assert.Equal(new[] { "L1", "H1" }, issue.CourseCodes);
     }
 
     [Fact]
@@ -128,81 +245,12 @@ public class RegistrationRuleTests
         Assert.Empty(new TimeConflictRule().Evaluate(ctx));
     }
 
-    // ---- PrerequisiteRule ----
-
-    [Fact]
-    public void Prerequisite_NotPassed_IsError()
-    {
-        var ctx = Ctx(
-            new[] { Reg("B2") },
-            courses: new[] { Course("B1", 1), Course("B2", 2, 5, "B1") },
-            history: new[] { Failed("B1", 1) });
-
-        var issue = Assert.Single(new PrerequisiteRule().Evaluate(ctx));
-        Assert.Equal(IssueSeverity.Error, issue.Severity);
-        Assert.Contains("B1", issue.CourseCodes);
-    }
-
-    [Fact]
-    public void Prerequisite_NeverTaken_IsError()
-    {
-        var ctx = Ctx(
-            new[] { Reg("B2") },
-            courses: new[] { Course("B1", 1), Course("B2", 2, 5, "B1") });
-
-        Assert.Single(new PrerequisiteRule().Evaluate(ctx));
-    }
-
-    [Fact]
-    public void Prerequisite_Passed_NoIssue()
-    {
-        var ctx = Ctx(
-            new[] { Reg("B2") },
-            courses: new[] { Course("B1", 1), Course("B2", 2, 5, "B1") },
-            history: new[] { Passed("B1", 1, "DD") });
-
-        Assert.Empty(new PrerequisiteRule().Evaluate(ctx));
-    }
-
-    [Fact]
-    public void Prerequisite_TakenInSameTerm_DoesNotCount()
-    {
-        var ctx = Ctx(
-            new[] { Reg("B1"), Reg("B2") },
-            courses: new[] { Course("B1", 1), Course("B2", 2, 5, "B1") });
-
-        Assert.Single(new PrerequisiteRule().Evaluate(ctx));
-    }
-
-    [Fact]
-    public void Prerequisite_PassedOnlyInLaterTerm_DoesNotCountForEarlierTerm()
-    {
-        // Dönem 3 doğrulanırken dönem 4'te geçilen ders önkoşul sayılmamalı.
-        var ctx = Ctx(
-            new[] { Reg("B2") },
-            courses: new[] { Course("B1", 1), Course("B2", 2, 5, "B1") },
-            history: new[] { Passed("B1", 4) });
-
-        Assert.Single(new PrerequisiteRule().Evaluate(ctx));
-    }
-
-    [Fact]
-    public void Prerequisite_FailedThenPassed_Counts()
-    {
-        var ctx = Ctx(
-            new[] { Reg("B2") },
-            courses: new[] { Course("B1", 1), Course("B2", 2, 5, "B1") },
-            history: new[] { Failed("B1", 1), Passed("B1", 2) });
-
-        Assert.Empty(new PrerequisiteRule().Evaluate(ctx));
-    }
-
     // ---- LowerSemesterPriorityRule ----
 
     [Fact]
     public void LowerSemester_FailedLowerCourse_WithHigherSelected_IsWarning()
     {
-        var courses = new[] { Course("L1", 2), Course("H1", 5) };
+        var courses = new[] { Course("L1", 1), Course("H1", 5) };
         var ctx = Ctx(new[] { Reg("H1") }, courses, history: new[] { Failed("L1", 2) });
 
         var issue = Assert.Single(new LowerSemesterPriorityRule().Evaluate(ctx));
@@ -215,7 +263,7 @@ public class RegistrationRuleTests
     [Fact]
     public void LowerSemester_NeverTakenLowerCourse_IsWarningWithDifferentWording()
     {
-        var courses = new[] { Course("L1", 2), Course("H1", 5) };
+        var courses = new[] { Course("L1", 1), Course("H1", 5) };
         var ctx = Ctx(new[] { Reg("H1") }, courses);
 
         var issue = Assert.Single(new LowerSemesterPriorityRule().Evaluate(ctx));
@@ -225,7 +273,7 @@ public class RegistrationRuleTests
     [Fact]
     public void LowerSemester_LowerCourseAlsoSelected_NoIssue()
     {
-        var courses = new[] { Course("L1", 2), Course("H1", 5) };
+        var courses = new[] { Course("L1", 1), Course("H1", 5) };
         var ctx = Ctx(new[] { Reg("L1"), Reg("H1") }, courses, history: new[] { Failed("L1", 2) });
 
         Assert.Empty(new LowerSemesterPriorityRule().Evaluate(ctx));
@@ -234,7 +282,7 @@ public class RegistrationRuleTests
     [Fact]
     public void LowerSemester_OnlyLowerOrSameTermSelected_NoIssue()
     {
-        var courses = new[] { Course("L1", 2), Course("L2", 2) };
+        var courses = new[] { Course("L1", 1), Course("L2", 1) };
         var ctx = Ctx(new[] { Reg("L2") }, courses, history: new[] { Failed("L1", 2) });
 
         Assert.Empty(new LowerSemesterPriorityRule().Evaluate(ctx));
@@ -243,8 +291,18 @@ public class RegistrationRuleTests
     [Fact]
     public void LowerSemester_ElectiveNotInMandatoryList_IsIgnored()
     {
-        var courses = new[] { Course("E1", 2), Course("H1", 5) };
+        var courses = new[] { Course("E1", 1), Course("H1", 5) };
         var ctx = Ctx(new[] { Reg("H1") }, courses, history: new[] { Failed("E1", 2) }, mandatory: new[] { "H1" });
+
+        Assert.Empty(new LowerSemesterPriorityRule().Evaluate(ctx));
+    }
+
+    [Fact]
+    public void LowerSemester_CourseOfOtherSemester_IsIgnored()
+    {
+        // Ctx dönemi 3 (güz); 2. dönem dersi (bahar) bu yarıyılda açılmadığı için uyarı üretmez.
+        var courses = new[] { Course("L1", 2), Course("H1", 5) };
+        var ctx = Ctx(new[] { Reg("H1") }, courses, history: new[] { Failed("L1", 2) });
 
         Assert.Empty(new LowerSemesterPriorityRule().Evaluate(ctx));
     }
@@ -252,7 +310,7 @@ public class RegistrationRuleTests
     [Fact]
     public void LowerSemester_PassedLowerCourse_NoIssue()
     {
-        var courses = new[] { Course("L1", 2), Course("H1", 5) };
+        var courses = new[] { Course("L1", 1), Course("H1", 5) };
         var ctx = Ctx(new[] { Reg("H1") }, courses, history: new[] { Passed("L1", 2) });
 
         Assert.Empty(new LowerSemesterPriorityRule().Evaluate(ctx));
@@ -330,98 +388,32 @@ public class RegistrationRuleTests
         Assert.Equal(31, CreditLimitRule.MaxEctsFor(ctx));
     }
 
-    // ---- ExamConflictRule ----
-
-    [Fact]
-    public void ExamConflict_SameDateOverlappingTime_IsError()
-    {
-        var ctx = Ctx(
-            new[] { Reg("A1"), Reg("B1") },
-            exams: new[]
-            {
-                Exam("A1", "2027-01-10", "09:00", "11:00"),
-                Exam("B1", "2027-01-10", "10:30", "12:00"),
-            });
-
-        var issue = Assert.Single(new ExamConflictRule().Evaluate(ctx));
-        Assert.Equal(IssueSeverity.Error, issue.Severity);
-    }
-
-    [Fact]
-    public void ExamConflict_DifferentDates_NoIssue()
-    {
-        var ctx = Ctx(
-            new[] { Reg("A1"), Reg("B1") },
-            exams: new[]
-            {
-                Exam("A1", "2027-01-10", "09:00", "11:00"),
-                Exam("B1", "2027-01-11", "09:00", "11:00"),
-            });
-
-        Assert.Empty(new ExamConflictRule().Evaluate(ctx));
-    }
-
-    [Fact]
-    public void ExamConflict_SameDayNonOverlapping_NoIssue()
-    {
-        var ctx = Ctx(
-            new[] { Reg("A1"), Reg("B1") },
-            exams: new[]
-            {
-                Exam("A1", "2027-01-10", "09:00", "11:00"),
-                Exam("B1", "2027-01-10", "11:00", "13:00"),
-            });
-
-        Assert.Empty(new ExamConflictRule().Evaluate(ctx));
-    }
-
-    [Fact]
-    public void ExamConflict_MidtermVsFinalOfDifferentCourses_IsAlsoConflict()
-    {
-        var ctx = Ctx(
-            new[] { Reg("A1"), Reg("B1") },
-            exams: new[]
-            {
-                Exam("A1", "2026-11-16", "09:00", "10:00", ObisExamType.Midterm),
-                Exam("B1", "2026-11-16", "09:30", "10:30", ObisExamType.Final),
-            });
-
-        Assert.Single(new ExamConflictRule().Evaluate(ctx));
-    }
-
-    [Fact]
-    public void ExamConflict_SameCourseTwoExams_IsNotSelfConflict()
-    {
-        var ctx = Ctx(
-            new[] { Reg("A1") },
-            exams: new[]
-            {
-                Exam("A1", "2027-01-10", "09:00", "11:00", ObisExamType.Midterm),
-                Exam("A1", "2027-01-10", "09:00", "11:00", ObisExamType.Final),
-            });
-
-        Assert.Empty(new ExamConflictRule().Evaluate(ctx));
-    }
-
     // ---- RetakeRule ----
 
     [Fact]
-    public void Retake_HighGradeCourseSelectedAgain_IsInfo()
+    public void Retake_HighGradeCourseSelectedAgain_IsError()
     {
         var ctx = Ctx(new[] { Reg("A1") }, history: new[] { Passed("A1", 1, "AA") });
 
         var issue = Assert.Single(new RetakeRule().Evaluate(ctx));
-        Assert.Equal(IssueSeverity.Info, issue.Severity);
+        Assert.Equal(IssueSeverity.Error, issue.Severity);
         Assert.Contains("AA", issue.Message);
     }
 
     [Fact]
-    public void Retake_GradeAtThreshold_IsInfo()
+    public void Retake_GradeAtThreshold_IsError()
     {
         var ctx = Ctx(new[] { Reg("A1") }, history: new[] { Passed("A1", 1, "BB") });
 
         Assert.Single(new RetakeRule().Evaluate(ctx));
     }
+
+    [Theory]
+    [InlineData("CB")]
+    [InlineData("CC")]
+    [InlineData("DD")]
+    public void Retake_CbOrLowerGrade_IsAllowed(string grade) =>
+        Assert.Empty(new RetakeRule().Evaluate(Ctx(new[] { Reg("A1") }, history: new[] { Passed("A1", 1, grade) })));
 
     [Fact]
     public void Retake_LowPassingGrade_NoIssue()
@@ -466,22 +458,27 @@ public class RegistrationRuleTests
     [Fact]
     public void Validator_OrdersIssuesBySeverity_AndCountsThem()
     {
-        var courses = new[] { Course("L1", 2), Course("H1", 5, 5, "L1") };
+        var courses = new[] { Course("L1", 1), Course("H1", 5), Course("X1", 5) };
         var ctx = Ctx(
-            new[] { Reg("H1") }, courses,
-            history: new[] { Failed("L1", 2), Passed("H1", 1, "AA") });
+            new[] { Reg("H1"), Reg("X1") }, courses,
+            history: new[] { Failed("L1", 2), Passed("H1", 1, "AA") },
+            schedule: new[]
+            {
+                Slot("H1", DayOfWeek.Monday, "09:00", "11:00"),
+                Slot("X1", DayOfWeek.Monday, "10:00", "12:00"),
+            });
 
         var validator = new RegistrationValidator(new IRegistrationRule[]
         {
-            new RetakeRule(), new LowerSemesterPriorityRule(), new PrerequisiteRule(),
+            new RetakeRule(), new LowerSemesterPriorityRule(), new TimeConflictRule(),
         });
         var result = validator.Validate(ctx);
 
-        Assert.Equal(1, result.ErrorCount);
+        Assert.Equal(2, result.ErrorCount); // saat çakışması + AA ile geçilmiş dersin tekrarı
         Assert.Equal(1, result.WarningCount);
-        Assert.Equal(1, result.InfoCount);
+        Assert.Equal(0, result.InfoCount);
         Assert.Equal(IssueSeverity.Error, result.Issues[0].Severity);
-        Assert.Equal(IssueSeverity.Info, result.Issues[^1].Severity);
+        Assert.Equal(IssueSeverity.Warning, result.Issues[^1].Severity);
     }
 
     [Fact]
@@ -494,6 +491,6 @@ public class RegistrationRuleTests
             .Select(d => d.ImplementationType!)
             .ToHashSet();
 
-        Assert.Equal(6, codes.Count);
+        Assert.Equal(5, codes.Count);
     }
 }

@@ -12,6 +12,7 @@ namespace Advisor.Api.Controllers;
 public class AppointmentsController : ControllerBase
 {
     private const string Staff = nameof(UserRole.Danisman) + "," + nameof(UserRole.Admin);
+    private const string Participants = nameof(UserRole.Ogrenci) + "," + Staff;
 
     private readonly AppointmentService _appointments;
 
@@ -59,10 +60,13 @@ public class AppointmentsController : ControllerBase
     // ---- ortak ----
 
     /// <summary>Öğrenci kendi, danışman kendi saatlerindeki, yönetici tüm randevuları görür.</summary>
+    // Bölüm Başkanı / Dekan randevu modülünü kullanmaz; servis onları süzmediği için rol burada sınırlanır.
     [HttpGet]
+    [Authorize(Roles = Participants)]
     public async Task<ActionResult<List<AppointmentDto>>> List(CancellationToken ct) => Ok(await _appointments.ListAppointmentsAsync(ct));
 
     [HttpPost("{id:guid}/cancel")]
+    [Authorize(Roles = Participants)]
     public async Task<IActionResult> Cancel(Guid id, CancelRequest? request, CancellationToken ct)
     {
         await _appointments.CancelAsync(id, request ?? new CancelRequest(null), ct);

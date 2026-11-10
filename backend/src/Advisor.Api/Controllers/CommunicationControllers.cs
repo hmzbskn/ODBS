@@ -100,7 +100,9 @@ public class PetitionsController : ControllerBase
         return Ok(await _petitions.CreateAsync(form.Type, form.Description, upload, ct));
     }
 
+    // Bölüm Başkanı / Dekan talep modülünü kullanmaz; servisin varsayılan dalı tüm talepleri döndürdüğü için rol burada sınırlanır.
     [HttpGet]
+    [Authorize(Roles = nameof(UserRole.Ogrenci) + "," + nameof(UserRole.Danisman) + "," + nameof(UserRole.Admin))]
     public async Task<ActionResult<List<PetitionDto>>> List([FromQuery] PetitionStatus? status, CancellationToken ct) =>
         Ok(await _petitions.ListAsync(status, ct));
 

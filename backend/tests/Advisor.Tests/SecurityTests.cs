@@ -61,10 +61,9 @@ public class EndpointSecurityTests : IClassFixture<SeedApiFactory>
         "GET api/registrations/{studentNo}",                  // IStudentAccessGuard
         "GET api/analytics/students/{studentNo}/graduation",   // IStudentAccessGuard
         "GET api/access/students/{studentNo}",                // IStudentAccessGuard (rol/sahiplik örneği)
-        "GET api/appointments",                               // role göre kapsamlı liste
-        "POST api/appointments/{id:guid}/cancel",             // servis: sahip öğrenci / ilgili danışman
-        "GET api/petitions",                                  // role göre kapsamlı liste
         "GET api/petitions/{id:guid}/attachment",             // servis: IStudentAccessGuard
+        // Randevu listesi/iptali ve talep listesi artık Ogrenci/Danisman/Admin ile sınırlı:
+        // servisler Bölüm Başkanı / Dekan'ı süzmüyordu, kapsam dışı tüm kayıtları döndürüyordu.
     };
 
     private readonly SeedApiFactory _factory;
@@ -142,6 +141,8 @@ public class EndpointSecurityTests : IClassFixture<SeedApiFactory>
             ["Admin"] = await LoginAs("admin"),
             ["Danisman"] = await LoginAs("danisman1"),
             ["Ogrenci"] = await LoginAs("ogrenci1"),
+            ["BolumBaskani"] = await LoginAs("bolumbaskani1"),
+            ["Dekan"] = await LoginAs("dekan1"),
         };
         var failures = new List<string>();
         var checkedEndpoints = 0;

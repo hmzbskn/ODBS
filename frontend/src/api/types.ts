@@ -101,7 +101,11 @@ export interface WeeklySlot {
   endTime: string
   room: string
   inConflict: boolean
+  status: SlotStatus
 }
+
+/** ok: alındı, çakışma yok · soft: çakışıyor ama birinde devam şartı yok · conflict: çakışma · notTaken: alınmadı */
+export type SlotStatus = 'ok' | 'soft' | 'conflict' | 'notTaken'
 
 export interface RegistrationReview {
   id: string

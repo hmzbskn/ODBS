@@ -15,6 +15,8 @@ public class LowerSemesterPriorityRule : IRegistrationRule
         var unmet = ctx.Curriculum.MandatoryCourseCodes
             .Where(code => ctx.Courses.ContainsKey(code))
             .Where(code => !ctx.IsPassed(code) && !selectedCodes.Contains(code))
+            // Dersler yalnızca kendi yarıyılında (güz: tek, bahar: çift dönem) açılır; diğer yarıyılın dersi bu dönem seçilemez.
+            .Where(code => ctx.Courses[code].Term % 2 == ctx.Term % 2)
             .ToList();
         if (unmet.Count == 0) yield break;
 
@@ -45,8 +47,9 @@ public class LowerSemesterPriorityRule : IRegistrationRule
 
         return new RegistrationIssue(
             Code, IssueSeverity.Warning,
-            $"Alt dönemden {kind} zorunlu ders(ler) var: {ctx.Labels(lowerCodes)}. " +
-            $"Bunlar seçilmeden üst dönem dersleri seçilmiş: {ctx.Labels(higher)}.",
+            kind == "kalınmış"
+                ? $"Alttan alınması gereken kalınmış ders(ler) seçilmemiş: {ctx.Names(lowerCodes)}."
+                : $"Alt dönemden hiç alınmamış zorunlu ders(ler) var: {ctx.Names(lowerCodes)}.",
             lowerCodes.Concat(higher).ToList());
     }
 }

@@ -77,6 +77,14 @@ public class RegistrationContext
         Courses.TryGetValue(courseCode, out var c) ? $"{courseCode} ({c.CourseName})" : courseCode;
 
     public string Labels(IEnumerable<string> codes) => string.Join(", ", codes.Select(Label));
+
+    /// <summary>Şube öğrencinin öğretim türüne uygun mu (bkz. <see cref="EducationType"/>).</summary>
+    public bool SectionAllowed(string section) => EducationType.SectionAllowed(Student.Program, section);
+
+    /// <summary>Kısa bulgu metinleri için yalnızca ders adı.</summary>
+    public string Name(string courseCode) => Courses.TryGetValue(courseCode, out var c) ? c.CourseName : courseCode;
+
+    public string Names(IEnumerable<string> codes) => string.Join(", ", codes.Select(Name));
 }
 
 public class RegistrationValidationResult

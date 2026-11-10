@@ -39,9 +39,7 @@ export function LoginPage() {
     <div className="login-page login-split">
       <aside className="login-aside">
         <div className="brand">
-          <span className="brand-mark" aria-hidden="true">
-            O
-          </span>
+          <img className="brand-logo" src="/selcuk-logo.png" alt="" />
           <span>Öğrenci - Danışman Bilgi Sistemi (ODBS)</span>
         </div>
         <h2 className="login-tagline">Öğrenci danışmanlığını tek ekrandan yönetin.</h2>

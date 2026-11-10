@@ -27,7 +27,10 @@ public record ObisTranscriptEntry(
     string StudentNo, int Term, string CourseCode, string CourseName,
     int Credit, int Ects, string LetterGrade, bool Passed);
 
-public record ObisRegistration(string StudentNo, int Term, string CourseCode, string Section, string ApprovalStatus);
+/// <summary><paramref name="AttendanceRequired"/>: öğrencinin bu ders için devam şartı var mı. Alttan alınan ve geçmişte
+/// devam şartı sağlanmış derslerde OBİS "aranmaz" döner; bu durumda ders saati çakışması sayılmaz.</summary>
+public record ObisRegistration(
+    string StudentNo, int Term, string CourseCode, string Section, string ApprovalStatus, bool AttendanceRequired = true);
 
 public record ObisAttendance(string StudentNo, int Term, string CourseCode, int TotalSessions, int AttendedSessions)
 {

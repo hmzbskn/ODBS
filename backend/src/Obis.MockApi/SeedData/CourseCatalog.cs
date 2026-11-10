@@ -7,15 +7,17 @@ namespace Obis.MockApi.SeedData;
 /// kod, ad, AKTS, zorunlu/seçmeli (Bologna bilgi paketi). Bologna sayfası yalnızca bunları verir; aşağıdakiler
 /// kural motorunun çalışması için SEED'E ÖZGÜ varsayımlardır ve gerçek müfredatla birebir değildir:
 /// <list type="bullet">
-/// <item>Önkoşullar (sayfada yok): yalnızca zorunlu ders zincirleri tanımlıdır, seçmeliler önkoşulsuzdur.</item>
+/// <item>Önkoşul YOKTUR (Hamza kararı, 2026-10-26): hiçbir dersin bağımlılığı tanımlı değildir.</item>
 /// <item>Kredi (sayfada yok): AKTS'den türetilir (6+ → 4, 4-5 → 3, ≤3 → 2; mesleki eğitim 6).</item>
 /// </list>
-/// Önkoşul zincirleri: Matematik-1 → Matematik-2 → Mühendislik Matematiği; Programlama Dili-1 → NYPD → PD-2 → PD-3;
-/// Programlama Dili-1 → Veri Yapıları → {Veritabanı, Yapay Zeka}; Mantık Devreleri-1 → -2 → Mikroişlemciler.</summary>
+/// </summary>
 public static class CourseCatalog
 {
     // Kolay referans: kenar durum senaryoları ve testler bu kodları kullanır.
     public const string Math1 = "3301151";
+    public const string Physics1 = "3301152";
+    public const string Ataturk1 = "3301154";
+    public const string LinearAlgebra = "3301158";
     public const string Physics2 = "3301252";
     public const string Programming1 = "3301256";
     public const string ObjectOriented = "3301351";
@@ -26,6 +28,7 @@ public static class CourseCatalog
     public const string Programming3 = "3301552";
     public const string DataCommunication = "3301553";
     public const string ComputerArchitecture = "3301752";
+    public const string DataScience = "3301753";
     public const string Entrepreneurship = "3301754";
 
     // dönem | kod | ad (Bologna'daki büyük harfli yazım) | AKTS | Z=zorunlu S=seçmeli | önkoşul kodları
@@ -38,27 +41,27 @@ public static class CourseCatalog
 1|3301156|BİLGİSAYAR MÜHENDİSLİĞİNE GİRİŞ|4|Z|
 1|3301157|İŞ SAĞLIĞI VE GÜVENLİĞİ-1|2|Z|
 1|3301158|LİNEER CEBİR|6|Z|
-2|3301251|MATEMATİK-2|6|Z|3301151
-2|3301252|FİZİK-2|6|Z|3301152
-2|3301253|TÜRK DİLİ II|2|Z|3301153
-2|3301254|ATATÜRK İLKELERİ VE İNKILAP TARİHİ-2|2|Z|3301154
-2|3301255|YABANCI DİL-2|2|Z|3301155
+2|3301251|MATEMATİK-2|6|Z|
+2|3301252|FİZİK-2|6|Z|
+2|3301253|TÜRK DİLİ II|2|Z|
+2|3301254|ATATÜRK İLKELERİ VE İNKILAP TARİHİ-2|2|Z|
+2|3301255|YABANCI DİL-2|2|Z|
 2|3301256|PROGRAMLAMA DİLİ-1|4|Z|
-2|3301257|İŞ SAĞLIĞI VE GÜVENLİĞİ-2|2|Z|3301157
+2|3301257|İŞ SAĞLIĞI VE GÜVENLİĞİ-2|2|Z|
 2|3301258|AYRIK MATEMATİK|6|Z|
-3|3301351|NESNEYE YÖNELİK PROGRAMLAMA DİLİ|4|Z|3301256
-3|3301352|İŞLETİM SİSTEMLERİ|4|Z|3301256
+3|3301351|NESNEYE YÖNELİK PROGRAMLAMA DİLİ|4|Z|
+3|3301352|İŞLETİM SİSTEMLERİ|4|Z|
 3|3301353|MANTIK DEVRELERİ-1|4|Z|
-3|3301354|VERİ YAPILARI VE UYGULAMALARI|4|Z|3301256
-3|3301355|ELEKTRONİK DEVRE ELEMANLARI VE ÖLÇME|4|Z|3301152
-3|3301356|SAYISAL YÖNTEMLER|5|Z|3301158
-3|3301357|İSTATİSTİK VE OLASILIK|5|Z|3301151
-4|3301451|MÜHENDİSLİK MATEMATİĞİ|7|Z|3301251
-4|3301452|PROGRAMLAMA DİLİ-2|4|Z|3301351
-4|3301453|MANTIK DEVRELERİ-2|4|Z|3301353
-4|3301454|VERİTABANI YÖNETİM SİSTEMLERİ|5|Z|3301354
-4|3301455|YAZILIM MÜHENDİSLİĞİ|4|Z|3301351
-4|3301456|MOBİL PROGRAMLAMA|4|Z|3301351
+3|3301354|VERİ YAPILARI VE UYGULAMALARI|4|Z|
+3|3301355|ELEKTRONİK DEVRE ELEMANLARI VE ÖLÇME|4|Z|
+3|3301356|SAYISAL YÖNTEMLER|5|Z|
+3|3301357|İSTATİSTİK VE OLASILIK|5|Z|
+4|3301451|MÜHENDİSLİK MATEMATİĞİ|7|Z|
+4|3301452|PROGRAMLAMA DİLİ-2|4|Z|
+4|3301453|MANTIK DEVRELERİ-2|4|Z|
+4|3301454|VERİTABANI YÖNETİM SİSTEMLERİ|5|Z|
+4|3301455|YAZILIM MÜHENDİSLİĞİ|4|Z|
+4|3301456|MOBİL PROGRAMLAMA|4|Z|
 4|3301461|TEKNOLOJİ TARİHİ|2|S|
 4|3301462|İŞ HUKUKU VE ETİK|2|S|
 4|3301463|İLETİŞİM BECERİLERİ VE AKADEMİK RAPORLAMA|2|S|
@@ -72,10 +75,10 @@ public static class CourseCatalog
 4|3301471|GÖNÜLLÜLÜK ÇALIŞMALARI|2|S|
 4|3301472|DİJİTAL DÖNÜŞÜM|2|S|
 4|3301473|SOSYAL İNGİLİZCE|2|S|
-5|3301551|MİKROİŞLEMCİLER VE MİKRODENETLEYİCİLER|5|Z|3301453
-5|3301552|PROGRAMLAMA DİLİ-3|5|Z|3301452
+5|3301551|MİKROİŞLEMCİLER VE MİKRODENETLEYİCİLER|5|Z|
+5|3301552|PROGRAMLAMA DİLİ-3|5|Z|
 5|3301553|VERİ HABERLEŞMESİ VE AĞLAR|5|Z|
-5|3301554|TEKNİK İNGİLİZCE|3|Z|3301255
+5|3301554|TEKNİK İNGİLİZCE|3|Z|
 5|3301561|SİNYAL İŞLEME|4|S|
 5|3301562|TASARIM DESENLERİ|4|S|
 5|3301563|İNSAN BİLGİSAYAR ETKİLEŞİMİ|4|S|
@@ -94,10 +97,10 @@ public static class CourseCatalog
 5|3301576|BİLGİSAYAR MÜHENDİSLİĞİNDE ÖZEL KONULAR|4|S|
 5|3301577|SİBER SİSTEMLER VE BİLGİ GÜVENLİĞİ|4|S|
 5|3301578|SÜRDÜRÜLEBİLİR YAZILIM MÜHENDİSLİĞİ|4|S|
-6|3301651|YAPAY ZEKA|4|Z|3301354
-6|3301652|OTOMATA TEORİSİ VE BİÇİMSEL DİLLER|4|Z|3301258
-6|3301653|GÖRÜNTÜ İŞLEME|4|Z|3301356
-6|3301654|MÜHENDİSLİK TASARIMI|6|Z|3301455
+6|3301651|YAPAY ZEKA|4|Z|
+6|3301652|OTOMATA TEORİSİ VE BİÇİMSEL DİLLER|4|Z|
+6|3301653|GÖRÜNTÜ İŞLEME|4|Z|
+6|3301654|MÜHENDİSLİK TASARIMI|6|Z|
 6|3301661|SİSTEM PROGRAMLAMA|4|S|
 6|3301662|BİLGİSAYAR VE AĞ GÜVENLİĞİ|4|S|
 6|3301663|GÖMÜLÜ SİSTEMLER|4|S|
@@ -115,8 +118,8 @@ public static class CourseCatalog
 6|3301675|SÜRDÜRÜLEBİLİR BİLİŞİM TEKNOLOJİLERİ|4|S|
 6|3301676|STEGANOGRAFİ|4|S|
 7|3301751|BİLGİSAYAR MÜHENDİSLİĞİ UYGULAMALARI|4|Z|
-7|3301752|BİLGİSAYAR MİMARİSİ VE ORGANİZASYONU|4|Z|3301453
-7|3301753|VERİ BİLİMİ|4|Z|3301357
+7|3301752|BİLGİSAYAR MİMARİSİ VE ORGANİZASYONU|4|Z|
+7|3301753|VERİ BİLİMİ|4|Z|
 7|3301754|GİRİŞİMCİLİK VE PROJE YÖNETİMİ|3|Z|
 7|3301761|PROG. MANTIK KONTROLLÖR|4|S|
 7|3301762|PARALEL İŞLEMCİLİ SİSTEMLER|4|S|

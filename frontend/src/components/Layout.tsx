@@ -59,9 +59,7 @@ export function Layout() {
     <div className="shell">
       <aside className={`sidebar${menuOpen ? ' open' : ''}`} aria-label="Ana menü">
         <div className="brand">
-          <span className="brand-mark" aria-hidden="true">
-            O
-          </span>
+          <img className="brand-logo" src="/selcuk-logo.png" alt="" />
           <span title="Öğrenci Danışman Bilgi Sistemi">ODBS</span>
         </div>
         <nav>

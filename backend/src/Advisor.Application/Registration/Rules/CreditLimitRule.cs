@@ -20,7 +20,7 @@ public class CreditLimitRule : IRegistrationRule
 
         yield return new RegistrationIssue(
             Code, IssueSeverity.Error,
-            $"AKTS limiti aşıldı: seçilen derslerin toplamı {total} AKTS, GANO {ctx.Gpa:0.00} ({band}) için üst sınır {max} AKTS.",
+            $"Seçilen dersler {total} AKTS; GANO {ctx.Gpa:0.00} ({band}) için sınır {max} AKTS.",
             ctx.Selected.Select(r => r.CourseCode).ToList());
     }
 

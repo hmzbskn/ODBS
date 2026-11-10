@@ -377,3 +377,17 @@ Bölüm Başkanı ve Dekan rolleri, öğrencileri danışmanlara atama ve danı�
 ## Aşama 14: Gerçek müfredat (2026-10-26)
 Mock OBİS müfredatı Selçuk Bilgisayar Mühendisliği'nin gerçek 118 dersiyle değiştirildi; ayrıntı ve varsayımlar `DECISIONS.md` (Aşama 14).
 Önceki bölümlerdeki BLM/MAT kodları tarihsel kayıttır. 355 test yeşil.
+
+## Aşama 15: Çakışma kuralları sadeleştirildi (2026-10-26)
+Önkoşul ve sınav çakışması kuralları kaldırıldı; ders saati çakışması devam şartı ve alttan/üstten önceliğiyle yeniden yazıldı, alternatif şube önerir.
+Ayrıntı `DECISIONS.md` (Aşama 15). Önceki bölümlerdeki PREREQUISITE/EXAM_CONFLICT anlatımları tarihsel kayıttır. 346 test yeşil.
+
+## Aşama 16: Gerçek güz programı, renkli haftalık program (2026-10-26)
+Güz dersleri bölümün gerçek 2026-2027 güz programıyla; haftalık program yeşil/turuncu/kırmızı/gri dört durumlu ızgara; kural metinleri kısaldı.
+Ayrıntı `DECISIONS.md` (Aşama 16). 348 test yeşil.
+
+## Aşama 17: Öğretim türü kuralı, toplam AKTS (2026-10-26)
+NÖ öğrencisi yalnızca NÖ veya NÖ/İÖ, İÖ öğrencisi yalnızca İÖ veya NÖ/İÖ şubesinden ders alabilir (`SECTION_PROGRAM`); seçilen derslerde toplam AKTS. 356 test yeşil.
+
+## Aşama 18: Tekrar alma kuralı (2026-10-26)
+BB ve üstüyle geçilen ders tekrar alınamaz (Hata); yalnızca CB ve altı notla geçilen dersler tekrar alınabilir. 360 test yeşil.

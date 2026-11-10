@@ -88,22 +88,21 @@ public class SeedEdgeCaseTests
     private static bool Has(RegistrationValidationResult r, string ruleCode) => r.Issues.Any(i => i.RuleCode == ruleCode);
 
     [Fact]
-    public async Task Edge01_TimeConflict_IsDetected()
+    public async Task Edge01_TimeConflict_WithoutAlternative_IsDetected()
     {
+        // Gerçek güz programı: Mantık Devreleri-1 (alttan) ve Programlama Dili-3 ikisi de Pazartesi 13:25-16:55.
         var r = await Validate("20241011");
         var issue = Assert.Single(r.Issues, i => i.RuleCode == TimeConflictRule.RuleCode);
-        Assert.Contains("3301151", issue.CourseCodes);
-        Assert.Contains("3301551", issue.CourseCodes);
+        Assert.Equal(new[] { "3301353", "3301552" }, issue.CourseCodes);
+        Assert.Contains("alternatif şube bulunamadı", issue.Message);
     }
 
     [Fact]
-    public async Task Edge02_PrerequisiteViolation_IsDetected()
+    public async Task Edge02_NoAttendanceRequirement_IsNotAConflict()
     {
         var r = await Validate("20251006");
-        // Nesneye Yönelik Prog., İşletim Sistemleri ve Veri Yapıları aynı önkoşula (Programlama Dili-1) bağlı; her biri ayrı bulgu.
-        var issues = r.Issues.Where(i => i.RuleCode == PrerequisiteRule.RuleCode).ToList();
-        var dataStructures = Assert.Single(issues, i => i.CourseCodes[0] == "3301354");
-        Assert.Contains("3301256", dataStructures.CourseCodes);
+        Assert.DoesNotContain(r.Issues, i => i.RuleCode == TimeConflictRule.RuleCode);
+        Assert.Contains(r.Selected, x => x.CourseCode == "3301154" && !x.AttendanceRequired);
     }
 
     [Fact]
@@ -111,7 +110,7 @@ public class SeedEdgeCaseTests
     {
         var r = await Validate("20241012");
         var issue = Assert.Single(r.Issues, i => i.RuleCode == LowerSemesterPriorityRule.RuleCode && i.Message.Contains("kalınmış"));
-        Assert.Contains("3301252", issue.CourseCodes);
+        Assert.Contains("3301152", issue.CourseCodes);
     }
 
     [Fact]
@@ -123,12 +122,47 @@ public class SeedEdgeCaseTests
     }
 
     [Fact]
-    public async Task Edge05_ExamConflict_IsDetected()
+    public async Task Edge05_ConflictWithAlternativeSection_IsDetected()
     {
+        // Alttan Veri Haberleşmesi temel; Veri Bilimi NÖ ile çakışır, İÖ şubesi önerilir.
         var r = await Validate("20231016");
-        var issue = Assert.Single(r.Issues, i => i.RuleCode == ExamConflictRule.RuleCode);
-        Assert.Contains("3301353", issue.CourseCodes);
-        Assert.Contains("3301752", issue.CourseCodes);
+        var issue = Assert.Single(r.Issues, i => i.RuleCode == TimeConflictRule.RuleCode);
+        Assert.Equal(new[] { "3301553", "3301753" }, issue.CourseCodes);
+        Assert.Contains("İÖ şubesi (Çarşamba 17:00-19:25)", issue.Message);
+        // İkinci öğretim öğrencisi Veri Bilimi'ni NÖ şubesinden seçmiş.
+        var section = Assert.Single(r.Issues, i => i.RuleCode == SectionProgramRule.RuleCode);
+        Assert.Equal(new[] { "3301753" }, section.CourseCodes);
+    }
+
+    [Fact]
+    public async Task OnlyEdge06_RetakesACoursePassedWithBbOrHigher()
+    {
+        var students = await new SeedObisClient().GetStudentsAsync();
+        foreach (var s in students.Where(s => s.StudentNo != "20231017"))
+        {
+            var r = await Validate(s.StudentNo);
+            Assert.DoesNotContain(r.Issues, i => i.RuleCode == RetakeRule.RuleCode);
+        }
+    }
+
+    [Fact]
+    public async Task EveningProgramStudents_AreOnlyInFourthYear()
+    {
+        // Güz programında 1-3. sınıfın İÖ saati yok: ikinci öğretim yalnızca 4. sınıfta.
+        var students = await new SeedObisClient().GetStudentsAsync();
+        Assert.Contains(students, s => s.Program == "İkinci Öğretim");
+        Assert.All(students.Where(s => s.Program == "İkinci Öğretim"), s => Assert.Equal(4, s.ClassYear));
+    }
+
+    [Fact]
+    public async Task OnlyEdge05_TakesASectionOfTheOtherProgram()
+    {
+        var students = await new SeedObisClient().GetStudentsAsync();
+        foreach (var s in students.Where(s => s.StudentNo != "20231016"))
+        {
+            var r = await Validate(s.StudentNo);
+            Assert.DoesNotContain(r.Issues, i => i.RuleCode == SectionProgramRule.RuleCode);
+        }
     }
 
     [Fact]
@@ -136,8 +170,8 @@ public class SeedEdgeCaseTests
     {
         var r = await Validate("20231017");
         var issue = Assert.Single(r.Issues, i => i.RuleCode == RetakeRule.RuleCode);
-        Assert.Contains("3301354", issue.CourseCodes);
-        Assert.Equal(IssueSeverity.Info, issue.Severity);
+        Assert.Contains("3301551", issue.CourseCodes);
+        Assert.Equal(IssueSeverity.Error, issue.Severity);
     }
 
     [Fact]
@@ -148,16 +182,8 @@ public class SeedEdgeCaseTests
         foreach (var s in students.Where(s => s.ClassYear == 1))
         {
             var r = await Validate(s.StudentNo);
-            Assert.DoesNotContain(r.Issues, i => i.RuleCode is TimeConflictRule.RuleCode or ExamConflictRule.RuleCode);
+            Assert.DoesNotContain(r.Issues, i => i.RuleCode == TimeConflictRule.RuleCode);
         }
-    }
-
-    [Fact]
-    public async Task Edge05_HasExamConflict_ButNoTimeConflict()
-    {
-        var r = await Validate("20231016");
-        Assert.True(Has(r, ExamConflictRule.RuleCode));
-        Assert.False(Has(r, TimeConflictRule.RuleCode));
     }
 
     [Fact]
@@ -167,10 +193,9 @@ public class SeedEdgeCaseTests
         var expected = new Dictionary<string, string>
         {
             ["20241011"] = TimeConflictRule.RuleCode,
-            ["20251006"] = PrerequisiteRule.RuleCode,
             ["20241012"] = LowerSemesterPriorityRule.RuleCode,
             ["20251007"] = CreditLimitRule.RuleCode,
-            ["20231016"] = ExamConflictRule.RuleCode,
+            ["20231016"] = TimeConflictRule.RuleCode,
             ["20231017"] = RetakeRule.RuleCode,
         };
         foreach (var (studentNo, rule) in expected)

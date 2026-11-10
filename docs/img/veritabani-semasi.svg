@@ -1,0 +1,491 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1610" height="935" viewBox="0 0 1610 935" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1610" height="935" fill="#ffffff"/>
+<text x="30" y="40" font-size="24" font-weight="700" fill="#0b3d6e">ODBS Planlanan Veritabanı Şeması (MSSQL, EF Core)</text>
+<text x="30" y="64" font-size="13" fill="#444">16 tablo. OBİS verisi (öğrenci, danışman, ders, not) bu veritabanında tutulmaz; OBİS kayıtlarına StudentNo / AdvisorId metin anahtarıyla bağlanılır, yabancı anahtar yoktur.</text>
+<rect x="30" y="88" width="262" height="22" rx="4" fill="#2f6fb0" opacity="0.12"/>
+<text x="40" y="104" font-size="13" font-weight="700" fill="#2f6fb0">Kimlik ve yönetim</text>
+<rect x="352" y="88" width="584" height="22" rx="4" fill="#7a4fb0" opacity="0.12"/>
+<text x="362" y="104" font-size="13" font-weight="700" fill="#7a4fb0">Anket ve ihtiyaç puanlama</text>
+<rect x="996" y="88" width="584" height="22" rx="4" fill="#1f8a6a" opacity="0.12"/>
+<text x="1006" y="104" font-size="13" font-weight="700" fill="#1f8a6a">İletişim</text>
+<rect x="30" y="118" width="262" height="197" rx="6" fill="#fff" stroke="#2f6fb0" stroke-width="1.6"/>
+<path d="M30 124 Q30 118 36 118 L286 118 Q292 118 292 124 L292 152 L30 152 Z" fill="#2f6fb0"/>
+<text x="40" y="134" font-size="13.5" font-weight="700" fill="#fff">AppUser</text>
+<text x="40" y="147" font-size="10.5" fill="#fff" opacity="0.9">Kullanıcı hesabı ve rol</text>
+<text x="40" y="168.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="180" y="168.5" font-size="10.5" fill="#666">guid</text>
+<rect x="262" y="158.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="272.0" y="168" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="31" y="173" width="260" height="17" fill="#f5f7fa"/>
+<text x="40" y="185.5" font-size="11.5" fill="#1a1a1a">Username</text>
+<text x="180" y="185.5" font-size="10.5" fill="#666">string</text>
+<rect x="262" y="175.5" width="20" height="12" rx="3" fill="#555" opacity="0.14"/>
+<text x="272.0" y="185" font-size="9.5" font-weight="700" fill="#555" text-anchor="middle">UK</text>
+<text x="40" y="202.5" font-size="11.5" fill="#1a1a1a">PasswordHash</text>
+<text x="180" y="202.5" font-size="10.5" fill="#666">string</text>
+<rect x="31" y="207" width="260" height="17" fill="#f5f7fa"/>
+<text x="40" y="219.5" font-size="11.5" fill="#1a1a1a">DisplayName</text>
+<text x="180" y="219.5" font-size="10.5" fill="#666">string</text>
+<text x="40" y="236.5" font-size="11.5" fill="#1a1a1a">Role</text>
+<text x="180" y="236.5" font-size="10.5" fill="#666">enum</text>
+<rect x="31" y="241" width="260" height="17" fill="#f5f7fa"/>
+<text x="40" y="253.5" font-size="11.5" fill="#1a1a1a">LinkedAdvisorId</text>
+<text x="180" y="253.5" font-size="10.5" fill="#666">string?</text>
+<rect x="248" y="243.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="265.0" y="253" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<text x="40" y="270.5" font-size="11.5" fill="#1a1a1a">LinkedStudentNo</text>
+<text x="180" y="270.5" font-size="10.5" fill="#666">string?</text>
+<rect x="248" y="260.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="265.0" y="270" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<rect x="31" y="275" width="260" height="17" fill="#f5f7fa"/>
+<text x="40" y="287.5" font-size="11.5" fill="#1a1a1a">Department</text>
+<text x="180" y="287.5" font-size="10.5" fill="#666">string?</text>
+<text x="40" y="304.5" font-size="11.5" fill="#1a1a1a">CreatedAt</text>
+<text x="180" y="304.5" font-size="10.5" fill="#666">datetime</text>
+<rect x="30" y="341" width="262" height="163" rx="6" fill="#fff" stroke="#2f6fb0" stroke-width="1.6"/>
+<path d="M30 347 Q30 341 36 341 L286 341 Q292 341 292 347 L292 375 L30 375 Z" fill="#2f6fb0"/>
+<text x="40" y="357" font-size="13.5" font-weight="700" fill="#fff">AdvisorAssignment</text>
+<text x="40" y="370" font-size="10.5" fill="#fff" opacity="0.9">Yönetici ataması (OBİS'i ezer)</text>
+<text x="40" y="391.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="180" y="391.5" font-size="10.5" fill="#666">guid</text>
+<rect x="262" y="381.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="272.0" y="391" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="31" y="396" width="260" height="17" fill="#f5f7fa"/>
+<text x="40" y="408.5" font-size="11.5" fill="#1a1a1a">StudentNo</text>
+<text x="180" y="408.5" font-size="10.5" fill="#666">string</text>
+<rect x="262" y="398.5" width="20" height="12" rx="3" fill="#555" opacity="0.14"/>
+<text x="272.0" y="408" font-size="9.5" font-weight="700" fill="#555" text-anchor="middle">UK</text>
+<rect x="226" y="398.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="243.0" y="408" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<text x="40" y="425.5" font-size="11.5" fill="#1a1a1a">AdvisorId</text>
+<text x="180" y="425.5" font-size="10.5" fill="#666">string</text>
+<rect x="248" y="415.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="265.0" y="425" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<rect x="31" y="430" width="260" height="17" fill="#f5f7fa"/>
+<text x="40" y="442.5" font-size="11.5" fill="#1a1a1a">PreviousAdvisorId</text>
+<text x="180" y="442.5" font-size="10.5" fill="#666">string?</text>
+<rect x="248" y="432.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="265.0" y="442" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<text x="40" y="459.5" font-size="11.5" fill="#1a1a1a">AssignedByUserId</text>
+<text x="180" y="459.5" font-size="10.5" fill="#666">guid</text>
+<rect x="255" y="449.5" width="27" height="12" rx="3" fill="#2f6fb0" opacity="0.14"/>
+<text x="268.5" y="459" font-size="9.5" font-weight="700" fill="#2f6fb0" text-anchor="middle">FK*</text>
+<rect x="31" y="464" width="260" height="17" fill="#f5f7fa"/>
+<text x="40" y="476.5" font-size="11.5" fill="#1a1a1a">AssignedByName</text>
+<text x="180" y="476.5" font-size="10.5" fill="#666">string</text>
+<text x="40" y="493.5" font-size="11.5" fill="#1a1a1a">AssignedAt</text>
+<text x="180" y="493.5" font-size="10.5" fill="#666">datetime</text>
+<rect x="30" y="530" width="262" height="163" rx="6" fill="#fff" stroke="#2f6fb0" stroke-width="1.6"/>
+<path d="M30 536 Q30 530 36 530 L286 530 Q292 530 292 536 L292 564 L30 564 Z" fill="#2f6fb0"/>
+<text x="40" y="546" font-size="13.5" font-weight="700" fill="#fff">RegistrationReview</text>
+<text x="40" y="559" font-size="10.5" fill="#fff" opacity="0.9">Ders kaydı kararı</text>
+<text x="40" y="580.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="180" y="580.5" font-size="10.5" fill="#666">guid</text>
+<rect x="262" y="570.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="272.0" y="580" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="31" y="585" width="260" height="17" fill="#f5f7fa"/>
+<text x="40" y="597.5" font-size="11.5" fill="#1a1a1a">StudentNo</text>
+<text x="180" y="597.5" font-size="10.5" fill="#666">string</text>
+<rect x="248" y="587.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="265.0" y="597" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<text x="40" y="614.5" font-size="11.5" fill="#1a1a1a">Term</text>
+<text x="180" y="614.5" font-size="10.5" fill="#666">int</text>
+<rect x="31" y="619" width="260" height="17" fill="#f5f7fa"/>
+<text x="40" y="631.5" font-size="11.5" fill="#1a1a1a">Decision</text>
+<text x="180" y="631.5" font-size="10.5" fill="#666">enum</text>
+<text x="40" y="648.5" font-size="11.5" fill="#1a1a1a">Note</text>
+<text x="180" y="648.5" font-size="10.5" fill="#666">string?</text>
+<rect x="31" y="653" width="260" height="17" fill="#f5f7fa"/>
+<text x="40" y="665.5" font-size="11.5" fill="#1a1a1a">ReviewedByAdvisorId</text>
+<text x="180" y="665.5" font-size="10.5" fill="#666">string</text>
+<rect x="248" y="655.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="265.0" y="665" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<text x="40" y="682.5" font-size="11.5" fill="#1a1a1a">ReviewedAt</text>
+<text x="180" y="682.5" font-size="10.5" fill="#666">datetime</text>
+<rect x="352" y="118" width="262" height="163" rx="6" fill="#fff" stroke="#7a4fb0" stroke-width="1.6"/>
+<path d="M352 124 Q352 118 358 118 L608 118 Q614 118 614 124 L614 152 L352 152 Z" fill="#7a4fb0"/>
+<text x="362" y="134" font-size="13.5" font-weight="700" fill="#fff">Survey</text>
+<text x="362" y="147" font-size="10.5" fill="#fff" opacity="0.9">İhtiyaç anketi</text>
+<text x="362" y="168.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="502" y="168.5" font-size="10.5" fill="#666">guid</text>
+<rect x="584" y="158.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="594.0" y="168" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="353" y="173" width="260" height="17" fill="#f5f7fa"/>
+<text x="362" y="185.5" font-size="11.5" fill="#1a1a1a">Title</text>
+<text x="502" y="185.5" font-size="10.5" fill="#666">string</text>
+<text x="362" y="202.5" font-size="11.5" fill="#1a1a1a">Description</text>
+<text x="502" y="202.5" font-size="10.5" fill="#666">string?</text>
+<rect x="353" y="207" width="260" height="17" fill="#f5f7fa"/>
+<text x="362" y="219.5" font-size="11.5" fill="#1a1a1a">StartDate</text>
+<text x="502" y="219.5" font-size="10.5" fill="#666">datetime</text>
+<text x="362" y="236.5" font-size="11.5" fill="#1a1a1a">EndDate</text>
+<text x="502" y="236.5" font-size="10.5" fill="#666">datetime</text>
+<rect x="353" y="241" width="260" height="17" fill="#f5f7fa"/>
+<text x="362" y="253.5" font-size="11.5" fill="#1a1a1a">CreatedByAdvisorId</text>
+<text x="502" y="253.5" font-size="10.5" fill="#666">string</text>
+<rect x="570" y="243.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="587.0" y="253" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<text x="362" y="270.5" font-size="11.5" fill="#1a1a1a">TargetClassYear</text>
+<text x="502" y="270.5" font-size="10.5" fill="#666">int?</text>
+<rect x="352" y="307" width="262" height="163" rx="6" fill="#fff" stroke="#7a4fb0" stroke-width="1.6"/>
+<path d="M352 313 Q352 307 358 307 L608 307 Q614 307 614 313 L614 341 L352 341 Z" fill="#7a4fb0"/>
+<text x="362" y="323" font-size="13.5" font-weight="700" fill="#fff">SurveyQuestion</text>
+<text x="362" y="336" font-size="10.5" fill="#fff" opacity="0.9">Anket sorusu</text>
+<text x="362" y="357.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="502" y="357.5" font-size="10.5" fill="#666">guid</text>
+<rect x="584" y="347.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="594.0" y="357" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="353" y="362" width="260" height="17" fill="#f5f7fa"/>
+<text x="362" y="374.5" font-size="11.5" fill="#1a1a1a">SurveyId</text>
+<text x="502" y="374.5" font-size="10.5" fill="#666">guid</text>
+<rect x="584" y="364.5" width="20" height="12" rx="3" fill="#2f6fb0" opacity="0.14"/>
+<text x="594.0" y="374" font-size="9.5" font-weight="700" fill="#2f6fb0" text-anchor="middle">FK</text>
+<text x="362" y="391.5" font-size="11.5" fill="#1a1a1a">Text</text>
+<text x="502" y="391.5" font-size="10.5" fill="#666">string</text>
+<rect x="353" y="396" width="260" height="17" fill="#f5f7fa"/>
+<text x="362" y="408.5" font-size="11.5" fill="#1a1a1a">Type</text>
+<text x="502" y="408.5" font-size="10.5" fill="#666">enum</text>
+<text x="362" y="425.5" font-size="11.5" fill="#1a1a1a">Order</text>
+<text x="502" y="425.5" font-size="10.5" fill="#666">int</text>
+<rect x="353" y="430" width="260" height="17" fill="#f5f7fa"/>
+<text x="362" y="442.5" font-size="11.5" fill="#1a1a1a">Weight</text>
+<text x="502" y="442.5" font-size="10.5" fill="#666">double</text>
+<text x="362" y="459.5" font-size="11.5" fill="#1a1a1a">Required</text>
+<text x="502" y="459.5" font-size="10.5" fill="#666">bool</text>
+<rect x="352" y="496" width="262" height="112" rx="6" fill="#fff" stroke="#7a4fb0" stroke-width="1.6"/>
+<path d="M352 502 Q352 496 358 496 L608 496 Q614 496 614 502 L614 530 L352 530 Z" fill="#7a4fb0"/>
+<text x="362" y="512" font-size="13.5" font-weight="700" fill="#fff">SurveyQuestionOption</text>
+<text x="362" y="525" font-size="10.5" fill="#fff" opacity="0.9">Seçenek ve puanı</text>
+<text x="362" y="546.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="502" y="546.5" font-size="10.5" fill="#666">guid</text>
+<rect x="584" y="536.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="594.0" y="546" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="353" y="551" width="260" height="17" fill="#f5f7fa"/>
+<text x="362" y="563.5" font-size="11.5" fill="#1a1a1a">QuestionId</text>
+<text x="502" y="563.5" font-size="10.5" fill="#666">guid</text>
+<rect x="584" y="553.5" width="20" height="12" rx="3" fill="#2f6fb0" opacity="0.14"/>
+<text x="594.0" y="563" font-size="9.5" font-weight="700" fill="#2f6fb0" text-anchor="middle">FK</text>
+<text x="362" y="580.5" font-size="11.5" fill="#1a1a1a">Text</text>
+<text x="502" y="580.5" font-size="10.5" fill="#666">string</text>
+<rect x="353" y="585" width="260" height="17" fill="#f5f7fa"/>
+<text x="362" y="597.5" font-size="11.5" fill="#1a1a1a">Score</text>
+<text x="502" y="597.5" font-size="10.5" fill="#666">double</text>
+<rect x="674" y="118" width="262" height="163" rx="6" fill="#fff" stroke="#7a4fb0" stroke-width="1.6"/>
+<path d="M674 124 Q674 118 680 118 L930 118 Q936 118 936 124 L936 152 L674 152 Z" fill="#7a4fb0"/>
+<text x="684" y="134" font-size="13.5" font-weight="700" fill="#fff">SurveyResponse</text>
+<text x="684" y="147" font-size="10.5" fill="#fff" opacity="0.9">Öğrenci yanıtı</text>
+<text x="684" y="168.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="824" y="168.5" font-size="10.5" fill="#666">guid</text>
+<rect x="906" y="158.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="916.0" y="168" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="675" y="173" width="260" height="17" fill="#f5f7fa"/>
+<text x="684" y="185.5" font-size="11.5" fill="#1a1a1a">SurveyId</text>
+<text x="824" y="185.5" font-size="10.5" fill="#666">guid</text>
+<rect x="906" y="175.5" width="20" height="12" rx="3" fill="#2f6fb0" opacity="0.14"/>
+<text x="916.0" y="185" font-size="9.5" font-weight="700" fill="#2f6fb0" text-anchor="middle">FK</text>
+<text x="684" y="202.5" font-size="11.5" fill="#1a1a1a">StudentNo</text>
+<text x="824" y="202.5" font-size="10.5" fill="#666">string</text>
+<rect x="892" y="192.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="909.0" y="202" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<rect x="675" y="207" width="260" height="17" fill="#f5f7fa"/>
+<text x="684" y="219.5" font-size="11.5" fill="#1a1a1a">ConsentAccepted</text>
+<text x="824" y="219.5" font-size="10.5" fill="#666">bool</text>
+<text x="684" y="236.5" font-size="11.5" fill="#1a1a1a">ConsentAcceptedAt</text>
+<text x="824" y="236.5" font-size="10.5" fill="#666">datetime?</text>
+<rect x="675" y="241" width="260" height="17" fill="#f5f7fa"/>
+<text x="684" y="253.5" font-size="11.5" fill="#1a1a1a">SubmittedAt</text>
+<text x="824" y="253.5" font-size="10.5" fill="#666">datetime?</text>
+<text x="684" y="270.5" font-size="11.5" fill="#1a1a1a">ImportedExternally</text>
+<text x="824" y="270.5" font-size="10.5" fill="#666">bool</text>
+<rect x="674" y="307" width="262" height="146" rx="6" fill="#fff" stroke="#7a4fb0" stroke-width="1.6"/>
+<path d="M674 313 Q674 307 680 307 L930 307 Q936 307 936 313 L936 341 L674 341 Z" fill="#7a4fb0"/>
+<text x="684" y="323" font-size="13.5" font-weight="700" fill="#fff">SurveyAnswer</text>
+<text x="684" y="336" font-size="10.5" fill="#fff" opacity="0.9">Soru cevabı</text>
+<text x="684" y="357.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="824" y="357.5" font-size="10.5" fill="#666">guid</text>
+<rect x="906" y="347.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="916.0" y="357" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="675" y="362" width="260" height="17" fill="#f5f7fa"/>
+<text x="684" y="374.5" font-size="11.5" fill="#1a1a1a">ResponseId</text>
+<text x="824" y="374.5" font-size="10.5" fill="#666">guid</text>
+<rect x="906" y="364.5" width="20" height="12" rx="3" fill="#2f6fb0" opacity="0.14"/>
+<text x="916.0" y="374" font-size="9.5" font-weight="700" fill="#2f6fb0" text-anchor="middle">FK</text>
+<text x="684" y="391.5" font-size="11.5" fill="#1a1a1a">QuestionId</text>
+<text x="824" y="391.5" font-size="10.5" fill="#666">guid</text>
+<rect x="899" y="381.5" width="27" height="12" rx="3" fill="#2f6fb0" opacity="0.14"/>
+<text x="912.5" y="391" font-size="9.5" font-weight="700" fill="#2f6fb0" text-anchor="middle">FK*</text>
+<rect x="675" y="396" width="260" height="17" fill="#f5f7fa"/>
+<text x="684" y="408.5" font-size="11.5" fill="#1a1a1a">SelectedOptionIds</text>
+<text x="824" y="408.5" font-size="10.5" fill="#666">string?</text>
+<text x="684" y="425.5" font-size="11.5" fill="#1a1a1a">NumberValue</text>
+<text x="824" y="425.5" font-size="10.5" fill="#666">double?</text>
+<rect x="675" y="430" width="260" height="17" fill="#f5f7fa"/>
+<text x="684" y="442.5" font-size="11.5" fill="#1a1a1a">TextValue</text>
+<text x="824" y="442.5" font-size="10.5" fill="#666">string?</text>
+<rect x="674" y="479" width="262" height="146" rx="6" fill="#fff" stroke="#7a4fb0" stroke-width="1.6"/>
+<path d="M674 485 Q674 479 680 479 L930 479 Q936 479 936 485 L936 513 L674 513 Z" fill="#7a4fb0"/>
+<text x="684" y="495" font-size="13.5" font-weight="700" fill="#fff">NeedScoreResult</text>
+<text x="684" y="508" font-size="10.5" fill="#fff" opacity="0.9">İhtiyaç puanı (denetim izi)</text>
+<text x="684" y="529.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="824" y="529.5" font-size="10.5" fill="#666">guid</text>
+<rect x="906" y="519.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="916.0" y="529" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="675" y="534" width="260" height="17" fill="#f5f7fa"/>
+<text x="684" y="546.5" font-size="11.5" fill="#1a1a1a">SurveyId</text>
+<text x="824" y="546.5" font-size="10.5" fill="#666">guid</text>
+<rect x="899" y="536.5" width="27" height="12" rx="3" fill="#2f6fb0" opacity="0.14"/>
+<text x="912.5" y="546" font-size="9.5" font-weight="700" fill="#2f6fb0" text-anchor="middle">FK*</text>
+<text x="684" y="563.5" font-size="11.5" fill="#1a1a1a">StudentNo</text>
+<text x="824" y="563.5" font-size="10.5" fill="#666">string</text>
+<rect x="892" y="553.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="909.0" y="563" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<rect x="675" y="568" width="260" height="17" fill="#f5f7fa"/>
+<text x="684" y="580.5" font-size="11.5" fill="#1a1a1a">TotalScore</text>
+<text x="824" y="580.5" font-size="10.5" fill="#666">double</text>
+<text x="684" y="597.5" font-size="11.5" fill="#1a1a1a">ComputedAt</text>
+<text x="824" y="597.5" font-size="10.5" fill="#666">datetime</text>
+<rect x="675" y="602" width="260" height="17" fill="#f5f7fa"/>
+<text x="684" y="614.5" font-size="11.5" fill="#1a1a1a">SupportAssigned</text>
+<text x="824" y="614.5" font-size="10.5" fill="#666">string?</text>
+<rect x="996" y="118" width="262" height="146" rx="6" fill="#fff" stroke="#1f8a6a" stroke-width="1.6"/>
+<path d="M996 124 Q996 118 1002 118 L1252 118 Q1258 118 1258 124 L1258 152 L996 152 Z" fill="#1f8a6a"/>
+<text x="1006" y="134" font-size="13.5" font-weight="700" fill="#fff">AppointmentSlot</text>
+<text x="1006" y="147" font-size="10.5" fill="#fff" opacity="0.9">Haftalık randevu saati</text>
+<text x="1006" y="168.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="1146" y="168.5" font-size="10.5" fill="#666">guid</text>
+<rect x="1228" y="158.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="1238.0" y="168" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="997" y="173" width="260" height="17" fill="#f5f7fa"/>
+<text x="1006" y="185.5" font-size="11.5" fill="#1a1a1a">AdvisorId</text>
+<text x="1146" y="185.5" font-size="10.5" fill="#666">string</text>
+<rect x="1214" y="175.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="1231.0" y="185" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<text x="1006" y="202.5" font-size="11.5" fill="#1a1a1a">DayOfWeek</text>
+<text x="1146" y="202.5" font-size="10.5" fill="#666">enum</text>
+<rect x="997" y="207" width="260" height="17" fill="#f5f7fa"/>
+<text x="1006" y="219.5" font-size="11.5" fill="#1a1a1a">StartTime</text>
+<text x="1146" y="219.5" font-size="10.5" fill="#666">time</text>
+<text x="1006" y="236.5" font-size="11.5" fill="#1a1a1a">EndTime</text>
+<text x="1146" y="236.5" font-size="10.5" fill="#666">time</text>
+<rect x="997" y="241" width="260" height="17" fill="#f5f7fa"/>
+<text x="1006" y="253.5" font-size="11.5" fill="#1a1a1a">IsActive</text>
+<text x="1146" y="253.5" font-size="10.5" fill="#666">bool</text>
+<rect x="996" y="290" width="262" height="163" rx="6" fill="#fff" stroke="#1f8a6a" stroke-width="1.6"/>
+<path d="M996 296 Q996 290 1002 290 L1252 290 Q1258 290 1258 296 L1258 324 L996 324 Z" fill="#1f8a6a"/>
+<text x="1006" y="306" font-size="13.5" font-weight="700" fill="#fff">Appointment</text>
+<text x="1006" y="319" font-size="10.5" fill="#fff" opacity="0.9">Randevu</text>
+<text x="1006" y="340.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="1146" y="340.5" font-size="10.5" fill="#666">guid</text>
+<rect x="1228" y="330.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="1238.0" y="340" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="997" y="345" width="260" height="17" fill="#f5f7fa"/>
+<text x="1006" y="357.5" font-size="11.5" fill="#1a1a1a">SlotId</text>
+<text x="1146" y="357.5" font-size="10.5" fill="#666">guid</text>
+<rect x="1228" y="347.5" width="20" height="12" rx="3" fill="#2f6fb0" opacity="0.14"/>
+<text x="1238.0" y="357" font-size="9.5" font-weight="700" fill="#2f6fb0" text-anchor="middle">FK</text>
+<text x="1006" y="374.5" font-size="11.5" fill="#1a1a1a">StudentNo</text>
+<text x="1146" y="374.5" font-size="10.5" fill="#666">string</text>
+<rect x="1214" y="364.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="1231.0" y="374" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<rect x="997" y="379" width="260" height="17" fill="#f5f7fa"/>
+<text x="1006" y="391.5" font-size="11.5" fill="#1a1a1a">Date</text>
+<text x="1146" y="391.5" font-size="10.5" fill="#666">date</text>
+<text x="1006" y="408.5" font-size="11.5" fill="#1a1a1a">Status</text>
+<text x="1146" y="408.5" font-size="10.5" fill="#666">enum</text>
+<rect x="997" y="413" width="260" height="17" fill="#f5f7fa"/>
+<text x="1006" y="425.5" font-size="11.5" fill="#1a1a1a">BookedAt</text>
+<text x="1146" y="425.5" font-size="10.5" fill="#666">datetime</text>
+<text x="1006" y="442.5" font-size="11.5" fill="#1a1a1a">CancellationReason</text>
+<text x="1146" y="442.5" font-size="10.5" fill="#666">string?</text>
+<rect x="996" y="479" width="262" height="214" rx="6" fill="#fff" stroke="#1f8a6a" stroke-width="1.6"/>
+<path d="M996 485 Q996 479 1002 479 L1252 479 Q1258 479 1258 485 L1258 513 L996 513 Z" fill="#1f8a6a"/>
+<text x="1006" y="495" font-size="13.5" font-weight="700" fill="#fff">Announcement</text>
+<text x="1006" y="508" font-size="10.5" fill="#fff" opacity="0.9">Filtreli duyuru</text>
+<text x="1006" y="529.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="1146" y="529.5" font-size="10.5" fill="#666">guid</text>
+<rect x="1228" y="519.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="1238.0" y="529" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="997" y="534" width="260" height="17" fill="#f5f7fa"/>
+<text x="1006" y="546.5" font-size="11.5" fill="#1a1a1a">AdvisorId</text>
+<text x="1146" y="546.5" font-size="10.5" fill="#666">string</text>
+<rect x="1214" y="536.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="1231.0" y="546" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<text x="1006" y="563.5" font-size="11.5" fill="#1a1a1a">Title</text>
+<text x="1146" y="563.5" font-size="10.5" fill="#666">string</text>
+<rect x="997" y="568" width="260" height="17" fill="#f5f7fa"/>
+<text x="1006" y="580.5" font-size="11.5" fill="#1a1a1a">Body</text>
+<text x="1146" y="580.5" font-size="10.5" fill="#666">string</text>
+<text x="1006" y="597.5" font-size="11.5" fill="#1a1a1a">CreatedAt</text>
+<text x="1146" y="597.5" font-size="10.5" fill="#666">datetime</text>
+<rect x="997" y="602" width="260" height="17" fill="#f5f7fa"/>
+<text x="1006" y="614.5" font-size="11.5" fill="#1a1a1a">FilterClassYear</text>
+<text x="1146" y="614.5" font-size="10.5" fill="#666">int?</text>
+<text x="1006" y="631.5" font-size="11.5" fill="#1a1a1a">FilterMinGpa</text>
+<text x="1146" y="631.5" font-size="10.5" fill="#666">double?</text>
+<rect x="997" y="636" width="260" height="17" fill="#f5f7fa"/>
+<text x="1006" y="648.5" font-size="11.5" fill="#1a1a1a">FilterMaxGpa</text>
+<text x="1146" y="648.5" font-size="10.5" fill="#666">double?</text>
+<text x="1006" y="665.5" font-size="11.5" fill="#1a1a1a">FilterRiskLevel</text>
+<text x="1146" y="665.5" font-size="10.5" fill="#666">enum?</text>
+<rect x="997" y="670" width="260" height="17" fill="#f5f7fa"/>
+<text x="1006" y="682.5" font-size="11.5" fill="#1a1a1a">FilterInternshipComplete</text>
+<text x="1146" y="682.5" font-size="10.5" fill="#666">bool?</text>
+<rect x="996" y="719" width="262" height="112" rx="6" fill="#fff" stroke="#1f8a6a" stroke-width="1.6"/>
+<path d="M996 725 Q996 719 1002 719 L1252 719 Q1258 719 1258 725 L1258 753 L996 753 Z" fill="#1f8a6a"/>
+<text x="1006" y="735" font-size="13.5" font-weight="700" fill="#fff">AnnouncementRecipient</text>
+<text x="1006" y="748" font-size="10.5" fill="#fff" opacity="0.9">Duyuru alıcısı</text>
+<text x="1006" y="769.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="1146" y="769.5" font-size="10.5" fill="#666">guid</text>
+<rect x="1228" y="759.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="1238.0" y="769" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="997" y="774" width="260" height="17" fill="#f5f7fa"/>
+<text x="1006" y="786.5" font-size="11.5" fill="#1a1a1a">AnnouncementId</text>
+<text x="1146" y="786.5" font-size="10.5" fill="#666">guid</text>
+<rect x="1228" y="776.5" width="20" height="12" rx="3" fill="#2f6fb0" opacity="0.14"/>
+<text x="1238.0" y="786" font-size="9.5" font-weight="700" fill="#2f6fb0" text-anchor="middle">FK</text>
+<text x="1006" y="803.5" font-size="11.5" fill="#1a1a1a">StudentNo</text>
+<text x="1146" y="803.5" font-size="10.5" fill="#666">string</text>
+<rect x="1214" y="793.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="1231.0" y="803" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<rect x="997" y="808" width="260" height="17" fill="#f5f7fa"/>
+<text x="1006" y="820.5" font-size="11.5" fill="#1a1a1a">ReadAt</text>
+<text x="1146" y="820.5" font-size="10.5" fill="#666">datetime?</text>
+<rect x="1318" y="118" width="262" height="129" rx="6" fill="#fff" stroke="#1f8a6a" stroke-width="1.6"/>
+<path d="M1318 124 Q1318 118 1324 118 L1574 118 Q1580 118 1580 124 L1580 152 L1318 152 Z" fill="#1f8a6a"/>
+<text x="1328" y="134" font-size="13.5" font-weight="700" fill="#fff">MeetingNote</text>
+<text x="1328" y="147" font-size="10.5" fill="#fff" opacity="0.9">Görüşme notu (öğrenciye kapalı)</text>
+<text x="1328" y="168.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="1468" y="168.5" font-size="10.5" fill="#666">guid</text>
+<rect x="1550" y="158.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="1560.0" y="168" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="1319" y="173" width="260" height="17" fill="#f5f7fa"/>
+<text x="1328" y="185.5" font-size="11.5" fill="#1a1a1a">AdvisorId</text>
+<text x="1468" y="185.5" font-size="10.5" fill="#666">string</text>
+<rect x="1536" y="175.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="1553.0" y="185" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<text x="1328" y="202.5" font-size="11.5" fill="#1a1a1a">StudentNo</text>
+<text x="1468" y="202.5" font-size="10.5" fill="#666">string</text>
+<rect x="1536" y="192.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="1553.0" y="202" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<rect x="1319" y="207" width="260" height="17" fill="#f5f7fa"/>
+<text x="1328" y="219.5" font-size="11.5" fill="#1a1a1a">Content</text>
+<text x="1468" y="219.5" font-size="10.5" fill="#666">string</text>
+<text x="1328" y="236.5" font-size="11.5" fill="#1a1a1a">CreatedAt</text>
+<text x="1468" y="236.5" font-size="10.5" fill="#666">datetime</text>
+<rect x="1318" y="273" width="262" height="248" rx="6" fill="#fff" stroke="#1f8a6a" stroke-width="1.6"/>
+<path d="M1318 279 Q1318 273 1324 273 L1574 273 Q1580 273 1580 279 L1580 307 L1318 307 Z" fill="#1f8a6a"/>
+<text x="1328" y="289" font-size="13.5" font-weight="700" fill="#fff">PetitionRequest</text>
+<text x="1328" y="302" font-size="10.5" fill="#fff" opacity="0.9">Dilekçe / talep</text>
+<text x="1328" y="323.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="1468" y="323.5" font-size="10.5" fill="#666">guid</text>
+<rect x="1550" y="313.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="1560.0" y="323" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="1319" y="328" width="260" height="17" fill="#f5f7fa"/>
+<text x="1328" y="340.5" font-size="11.5" fill="#1a1a1a">StudentNo</text>
+<text x="1468" y="340.5" font-size="10.5" fill="#666">string</text>
+<rect x="1536" y="330.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="1553.0" y="340" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<text x="1328" y="357.5" font-size="11.5" fill="#1a1a1a">Type</text>
+<text x="1468" y="357.5" font-size="10.5" fill="#666">enum</text>
+<rect x="1319" y="362" width="260" height="17" fill="#f5f7fa"/>
+<text x="1328" y="374.5" font-size="11.5" fill="#1a1a1a">Description</text>
+<text x="1468" y="374.5" font-size="10.5" fill="#666">string</text>
+<text x="1328" y="391.5" font-size="11.5" fill="#1a1a1a">AttachmentPath</text>
+<text x="1468" y="391.5" font-size="10.5" fill="#666">string?</text>
+<rect x="1319" y="396" width="260" height="17" fill="#f5f7fa"/>
+<text x="1328" y="408.5" font-size="11.5" fill="#1a1a1a">AttachmentFileName</text>
+<text x="1468" y="408.5" font-size="10.5" fill="#666">string?</text>
+<text x="1328" y="425.5" font-size="11.5" fill="#1a1a1a">AttachmentContentType</text>
+<text x="1468" y="425.5" font-size="10.5" fill="#666">string?</text>
+<rect x="1319" y="430" width="260" height="17" fill="#f5f7fa"/>
+<text x="1328" y="442.5" font-size="11.5" fill="#1a1a1a">Status</text>
+<text x="1468" y="442.5" font-size="10.5" fill="#666">enum</text>
+<text x="1328" y="459.5" font-size="11.5" fill="#1a1a1a">AdvisorNote</text>
+<text x="1468" y="459.5" font-size="10.5" fill="#666">string?</text>
+<rect x="1319" y="464" width="260" height="17" fill="#f5f7fa"/>
+<text x="1328" y="476.5" font-size="11.5" fill="#1a1a1a">HandledByAdvisorId</text>
+<text x="1468" y="476.5" font-size="10.5" fill="#666">string?</text>
+<rect x="1536" y="466.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="1553.0" y="476" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<text x="1328" y="493.5" font-size="11.5" fill="#1a1a1a">CreatedAt</text>
+<text x="1468" y="493.5" font-size="10.5" fill="#666">datetime</text>
+<rect x="1319" y="498" width="260" height="17" fill="#f5f7fa"/>
+<text x="1328" y="510.5" font-size="11.5" fill="#1a1a1a">UpdatedAt</text>
+<text x="1468" y="510.5" font-size="10.5" fill="#666">datetime?</text>
+<rect x="1318" y="547" width="262" height="129" rx="6" fill="#fff" stroke="#1f8a6a" stroke-width="1.6"/>
+<path d="M1318 553 Q1318 547 1324 547 L1574 547 Q1580 547 1580 553 L1580 581 L1318 581 Z" fill="#1f8a6a"/>
+<text x="1328" y="563" font-size="13.5" font-weight="700" fill="#fff">Notification</text>
+<text x="1328" y="576" font-size="10.5" fill="#fff" opacity="0.9">Öğrenci bildirimi</text>
+<text x="1328" y="597.5" font-size="11.5" fill="#1a1a1a" font-weight="700">Id</text>
+<text x="1468" y="597.5" font-size="10.5" fill="#666">guid</text>
+<rect x="1550" y="587.5" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="1560.0" y="597" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<rect x="1319" y="602" width="260" height="17" fill="#f5f7fa"/>
+<text x="1328" y="614.5" font-size="11.5" fill="#1a1a1a">StudentNo</text>
+<text x="1468" y="614.5" font-size="10.5" fill="#666">string</text>
+<rect x="1536" y="604.5" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="1553.0" y="614" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<text x="1328" y="631.5" font-size="11.5" fill="#1a1a1a">Message</text>
+<text x="1468" y="631.5" font-size="10.5" fill="#666">string</text>
+<rect x="1319" y="636" width="260" height="17" fill="#f5f7fa"/>
+<text x="1328" y="648.5" font-size="11.5" fill="#1a1a1a">CreatedAt</text>
+<text x="1468" y="648.5" font-size="10.5" fill="#666">datetime</text>
+<text x="1328" y="665.5" font-size="11.5" fill="#1a1a1a">ReadAt</text>
+<text x="1468" y="665.5" font-size="10.5" fill="#666">datetime?</text>
+<path d="M352 165.5 L340 165.5 L340 371.5 L352 371.5" stroke="#333" stroke-width="1.4" fill="none"/>
+<path d="M346 159.5 L346 171.5 M342 159.5 L342 171.5" stroke="#333" stroke-width="1.4"/>
+<path d="M352 371.5 L342 365.5 M352 371.5 L342 377.5 M352 371.5 L342 371.5" stroke="#333" stroke-width="1.4" fill="none"/><circle cx="337" cy="371.5" r="3.2" fill="#fff" stroke="#333" stroke-width="1.3"/>
+<path d="M352 354.5 L332 354.5 L332 560.5 L352 560.5" stroke="#333" stroke-width="1.4" fill="none"/>
+<path d="M346 348.5 L346 360.5 M342 348.5 L342 360.5" stroke="#333" stroke-width="1.4"/>
+<path d="M352 560.5 L342 554.5 M352 560.5 L342 566.5 M352 560.5 L342 560.5" stroke="#333" stroke-width="1.4" fill="none"/><circle cx="337" cy="560.5" r="3.2" fill="#fff" stroke="#333" stroke-width="1.3"/>
+<path d="M614 165.5 L632 165.5 L632 182.5 L674 182.5" stroke="#333" stroke-width="1.4" fill="none"/>
+<path d="M620 159.5 L620 171.5 M624 159.5 L624 171.5" stroke="#333" stroke-width="1.4"/>
+<path d="M674 182.5 L664 176.5 M674 182.5 L664 188.5 M674 182.5 L664 182.5" stroke="#333" stroke-width="1.4" fill="none"/><circle cx="659" cy="182.5" r="3.2" fill="#fff" stroke="#333" stroke-width="1.3"/>
+<path d="M614 165.5 L644 165.5 L644 543.5 L674 543.5" stroke="#333" stroke-width="1.4" fill="none" stroke-dasharray="6 4"/>
+<path d="M620 159.5 L620 171.5 M624 159.5 L624 171.5" stroke="#333" stroke-width="1.4"/>
+<path d="M674 543.5 L664 537.5 M674 543.5 L664 549.5 M674 543.5 L664 543.5" stroke="#333" stroke-width="1.4" fill="none"/><circle cx="659" cy="543.5" r="3.2" fill="#fff" stroke="#333" stroke-width="1.3"/>
+<path d="M614 354.5 L656 354.5 L656 388.5 L674 388.5" stroke="#333" stroke-width="1.4" fill="none" stroke-dasharray="6 4"/>
+<path d="M620 348.5 L620 360.5 M624 348.5 L624 360.5" stroke="#333" stroke-width="1.4"/>
+<path d="M674 388.5 L664 382.5 M674 388.5 L664 394.5 M674 388.5 L664 388.5" stroke="#333" stroke-width="1.4" fill="none"/><circle cx="659" cy="388.5" r="3.2" fill="#fff" stroke="#333" stroke-width="1.3"/>
+<path d="M936 165.5 L950 165.5 L950 371.5 L936 371.5" stroke="#333" stroke-width="1.4" fill="none"/>
+<path d="M942 159.5 L942 171.5 M946 159.5 L946 171.5" stroke="#333" stroke-width="1.4"/>
+<path d="M936 371.5 L946 365.5 M936 371.5 L946 377.5 M936 371.5 L946 371.5" stroke="#333" stroke-width="1.4" fill="none"/><circle cx="951" cy="371.5" r="3.2" fill="#fff" stroke="#333" stroke-width="1.3"/>
+<path d="M996 165.5 L984 165.5 L984 354.5 L996 354.5" stroke="#333" stroke-width="1.4" fill="none"/>
+<path d="M990 159.5 L990 171.5 M986 159.5 L986 171.5" stroke="#333" stroke-width="1.4"/>
+<path d="M996 354.5 L986 348.5 M996 354.5 L986 360.5 M996 354.5 L986 354.5" stroke="#333" stroke-width="1.4" fill="none"/><circle cx="981" cy="354.5" r="3.2" fill="#fff" stroke="#333" stroke-width="1.3"/>
+<path d="M996 526.5 L984 526.5 L984 783.5 L996 783.5" stroke="#333" stroke-width="1.4" fill="none"/>
+<path d="M990 520.5 L990 532.5 M986 520.5 L986 532.5" stroke="#333" stroke-width="1.4"/>
+<path d="M996 783.5 L986 777.5 M996 783.5 L986 789.5 M996 783.5 L986 783.5" stroke="#333" stroke-width="1.4" fill="none"/><circle cx="981" cy="783.5" r="3.2" fill="#fff" stroke="#333" stroke-width="1.3"/>
+<path d="M30 165.5 L18 165.5 L18 456.5 L30 456.5" stroke="#333" stroke-width="1.4" fill="none" stroke-dasharray="6 4"/>
+<path d="M24 159.5 L24 171.5 M20 159.5 L20 171.5" stroke="#333" stroke-width="1.4"/>
+<path d="M30 456.5 L20 450.5 M30 456.5 L20 462.5 M30 456.5 L20 456.5" stroke="#333" stroke-width="1.4" fill="none"/><circle cx="15" cy="456.5" r="3.2" fill="#fff" stroke="#333" stroke-width="1.3"/>
+<rect x="30" y="723" width="262" height="196" rx="6" fill="#fafbfc" stroke="#ccd"/>
+<text x="40" y="743" font-size="12.5" font-weight="700" fill="#333">Gösterim</text>
+<rect x="40" y="751" width="20" height="12" rx="3" fill="#b8860b" opacity="0.14"/>
+<text x="50.0" y="761" font-size="9.5" font-weight="700" fill="#b8860b" text-anchor="middle">PK</text>
+<text x="82" y="761" font-size="10.5" fill="#333">Birincil anahtar (guid)</text>
+<rect x="40" y="769" width="20" height="12" rx="3" fill="#2f6fb0" opacity="0.14"/>
+<text x="50.0" y="779" font-size="9.5" font-weight="700" fill="#2f6fb0" text-anchor="middle">FK</text>
+<text x="82" y="779" font-size="10.5" fill="#333">Yabancı anahtar, veritabanında tanımlı</text>
+<rect x="40" y="787" width="27" height="12" rx="3" fill="#2f6fb0" opacity="0.14"/>
+<text x="53.5" y="797" font-size="9.5" font-weight="700" fill="#2f6fb0" text-anchor="middle">FK*</text>
+<text x="82" y="797" font-size="10.5" fill="#333">Mantıksal bağ (DB'de FK yok)</text>
+<rect x="40" y="805" width="20" height="12" rx="3" fill="#555" opacity="0.14"/>
+<text x="50.0" y="815" font-size="9.5" font-weight="700" fill="#555" text-anchor="middle">UK</text>
+<text x="82" y="815" font-size="10.5" fill="#333">Tekil</text>
+<rect x="40" y="823" width="34" height="12" rx="3" fill="#c0392b" opacity="0.14"/>
+<text x="57.0" y="833" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="middle">OBİS</text>
+<text x="82" y="833" font-size="10.5" fill="#333">OBİS kaydına metin anahtar</text>
+<path d="M42 859 L74 859" stroke="#333" stroke-width="1.4"/>
+<text x="82" y="863" font-size="10.5" fill="#333">1 - çok ilişki (FK)</text>
+<path d="M42 879 L74 879" stroke="#333" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="82" y="883" font-size="10.5" fill="#333">mantıksal ilişki (FK*)</text>
+<text x="40" y="905" font-size="10" fill="#666">Çift çizgi: bir · çatal + halka: sıfır veya çok</text>
+<rect x="352" y="655" width="584" height="122" rx="6" fill="#fafbfc" stroke="#ccd"/>
+<text x="364" y="677" font-size="11.5" fill="#333" font-weight="700">Tekillik kuralları:</text>
+<text x="364" y="694" font-size="11.5" fill="#333">• Users.Username</text>
+<text x="364" y="711" font-size="11.5" fill="#333">• AdvisorAssignments.StudentNo (öğrenci başına 1 atama)</text>
+<text x="364" y="728" font-size="11.5" fill="#333">• (SurveyId, StudentNo): SurveyResponses, NeedScoreResults</text>
+<text x="364" y="745" font-size="11.5" fill="#333">• (AnnouncementId, StudentNo): AnnouncementRecipients</text>
+<text x="364" y="762" font-size="11.5" fill="#333">• (SlotId, Date) yalnızca Status = Planlı: çifte randevu engeli</text>
+</svg>

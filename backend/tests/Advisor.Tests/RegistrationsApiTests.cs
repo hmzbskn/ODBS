@@ -75,9 +75,9 @@ public class RegistrationsApiTests : IClassFixture<SeedApiFactory>
         Assert.Equal(all.Count(s => s.AdvisorId == "ADV1"), list!.Students.Count);
 
         var edge01 = list.Students.Single(s => s.StudentNo == "20241011");
-        Assert.True(edge01.ErrorCount >= 2); // saat çakışması + AKTS limiti
+        Assert.True(edge01.ErrorCount >= 1); // saat çakışması
         var edge06 = list.Students.Single(s => s.StudentNo == "20231017");
-        Assert.True(edge06.InfoCount >= 1);
+        Assert.True(edge06.ErrorCount >= 1); // AA ile geçilmiş ders tekrar seçilmiş
     }
 
     [Fact]
@@ -98,10 +98,28 @@ public class RegistrationsApiTests : IClassFixture<SeedApiFactory>
 
         Assert.Contains(detail!.Issues, i => i.RuleCode == "TIME_CONFLICT");
         var conflicting = detail.WeeklySchedule.Where(s => s.InConflict).Select(s => s.CourseCode).ToHashSet();
-        Assert.Contains("3301151", conflicting);
-        Assert.Contains("3301551", conflicting);
-        Assert.Contains(detail.Courses, c => c.CourseCode == "3301151" && c.InConflict);
+        Assert.Contains("3301353", conflicting);
+        Assert.Contains("3301552", conflicting);
+        Assert.Contains(detail.Courses, c => c.CourseCode == "3301353" && c.InConflict);
         Assert.Contains(detail.WeeklySchedule, s => !s.InConflict);
+    }
+
+    [Fact]
+    public async Task Detail_WeeklySchedule_ColorsTakenSoftConflictAndNotTakenCourses()
+    {
+        var admin = await LoginAs("admin");
+
+        // EDGE-02: Atatürk İlkeleri-1 (devam şartı yok) Mantık Devreleri-1 ile çakışır: ikisi de "soft", bulgu yok.
+        var soft = await admin.GetFromJsonAsync<RegistrationDetail>("/api/registrations/20251006", TestJson.Options);
+        Assert.Contains(soft!.WeeklySchedule, s => s.CourseCode == "3301154" && s.Status == "soft");
+        Assert.Contains(soft.WeeklySchedule, s => s.CourseCode == "3301353" && s.Status == "soft");
+        Assert.Contains(soft.WeeklySchedule, s => s.Status == "ok");
+        Assert.DoesNotContain(soft.WeeklySchedule, s => s.Status == "conflict");
+
+        // EDGE-05: çakışan dersler kırmızı; dönemin alınmayan dersleri ve Veri Bilimi'nin İÖ şubesi gri.
+        var hard = await admin.GetFromJsonAsync<RegistrationDetail>("/api/registrations/20231016", TestJson.Options);
+        Assert.Contains(hard!.WeeklySchedule, s => s.CourseCode == "3301753" && s.Section == "NÖ" && s.Status == "conflict");
+        Assert.Contains(hard.WeeklySchedule, s => s.CourseCode == "3301753" && s.Section == "İÖ" && s.Status == "notTaken");
     }
 
     [Fact]

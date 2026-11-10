@@ -74,7 +74,7 @@ public class SurveyAnswer
     public SurveyResponse? Response { get; set; }
     public Guid QuestionId { get; set; }
 
-    /// <summary>Seçim tipi: seçilen seçenek id'leri virgülle ayrılmış (basit, SQLite'ta
+    /// <summary>Seçim tipi: seçilen seçenek id'leri virgülle ayrılmış (basit, SQL'de
     /// ayrı bir ilişki tablosu yerine; sorgu hacmi küçük olduğu için kabul edilebilir).</summary>
     public string? SelectedOptionIds { get; set; }
 
