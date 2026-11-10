@@ -385,6 +385,24 @@ export interface ManagedStudent {
   isReassigned: boolean
 }
 
+/** Yönetim ekranı: okuldaki tüm derslerin haftalık programı (öğretim elemanıyla). term: yarıyıl 1-8. */
+export interface SchoolScheduleSlot {
+  term: number
+  courseCode: string
+  courseName: string
+  section: string
+  day: DayName
+  startTime: string
+  endTime: string
+  room: string
+  instructor: string | null
+}
+
+export interface SchoolSchedule {
+  semester: 'fall' | 'spring'
+  slots: SchoolScheduleSlot[]
+}
+
 export interface ManagedAdvisor {
   advisorId: string
   fullName: string

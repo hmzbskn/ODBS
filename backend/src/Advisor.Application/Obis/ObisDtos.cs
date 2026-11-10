@@ -39,7 +39,7 @@ public record ObisAttendance(string StudentNo, int Term, string CourseCode, int 
 
 public record ObisScheduleSlot(
     int Term, string CourseCode, string CourseName, string Section,
-    DayOfWeek Day, TimeOnly StartTime, TimeOnly EndTime, string Room);
+    DayOfWeek Day, TimeOnly StartTime, TimeOnly EndTime, string Room, string? Instructor = null);
 
 public enum ObisExamType { Midterm, Final }
 

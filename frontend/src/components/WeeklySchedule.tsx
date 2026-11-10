@@ -4,9 +4,9 @@ import { DAY_LABELS } from './labels'
 const WEEK_DAYS: DayName[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 
 /** Bölüm programının ders saatleri (45 dk ders + ara); ızgara çizgileri ve sol sütun etiketleri. */
-const PERIODS = ['08:30', '09:25', '10:20', '11:15', '12:10', '13:25', '14:20', '15:15', '16:10', '17:00', '17:50', '18:40', '19:30', '20:20', '21:10']
+export const PERIODS = ['08:30', '09:25', '10:20', '11:15', '12:10', '13:25', '14:20', '15:15', '16:10', '17:00', '17:50', '18:40', '19:30', '20:20', '21:10']
 
-const PX_PER_MIN = 1.15
+export const PX_PER_MIN = 1.9
 
 export const STATUS_INFO: Record<SlotStatus, { label: string; caption: string }> = {
   ok: { label: 'Alındı, çakışma yok', caption: 'Çakışma yok' },
@@ -15,19 +15,17 @@ export const STATUS_INFO: Record<SlotStatus, { label: string; caption: string }>
   notTaken: { label: 'Alınmadı', caption: 'Alınmadı' },
 }
 
-const toMin = (t: string) => {
+export const toMin = (t: string) => {
   const [h, m] = t.split(':').map(Number)
   return h * 60 + m
 }
 
 /** Aynı gündeki blokları şeritlere dağıtır: birbiriyle (dolaylı da olsa) kesişen dersler bir küme oluşturur ve
  *  yan yana durur; kesişmeyen ders sütunun tamamını kullanır. */
-function assignLanes(slots: WeeklySlot[]) {
-  const sorted = [...slots].sort(
-    (a, b) => toMin(a.startTime) - toMin(b.startTime) || Number(a.status === 'notTaken') - Number(b.status === 'notTaken'),
-  )
-  const placed: { slot: WeeklySlot; lane: number; lanes: number }[] = []
-  let cluster: { slot: WeeklySlot; lane: number; lanes: number }[] = []
+export function assignLanes<T extends { startTime: string; endTime: string }>(slots: T[], tieBreak: (s: T) => number = () => 0) {
+  const sorted = [...slots].sort((a, b) => toMin(a.startTime) - toMin(b.startTime) || tieBreak(a) - tieBreak(b))
+  const placed: { slot: T; lane: number; lanes: number }[] = []
+  let cluster: { slot: T; lane: number; lanes: number }[] = []
   let laneEnds: number[] = []
   let clusterEnd = -1
   const flush = () => {
@@ -77,7 +75,7 @@ export function WeeklySchedule({ slots }: { slots: WeeklySlot[] }) {
         ))}
       </ul>
       <div className="table-wrap">
-        <div className="wk-grid" style={{ gridTemplateColumns: `52px repeat(${days.length}, minmax(150px, 1fr))` }}>
+        <div className="wk-grid" style={{ gridTemplateColumns: `72px repeat(${days.length}, minmax(235px, 1fr))` }}>
           <div className="wk-head" />
           {days.map((d) => (
             <div key={d} className="wk-head">
@@ -94,7 +92,10 @@ export function WeeklySchedule({ slots }: { slots: WeeklySlot[] }) {
           </div>
 
           {days.map((day) => {
-            const placed = assignLanes(slots.filter((s) => s.day === day))
+            const placed = assignLanes(
+              slots.filter((s) => s.day === day),
+              (s) => Number(s.status === 'notTaken'),
+            )
             return (
               <div key={day} className="wk-day" style={{ height }}>
                 {marks.map((m) => (

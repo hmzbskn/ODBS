@@ -56,6 +56,7 @@ public static class SeedGenerator
         var schedule = FallSchedule.Build(courses.ToDictionary(c => c.CourseCode))
             .Concat(BuildSchedule(courses.Where(c => c.Term % 2 == 0).ToList(), rnd))
             .ToList();
+        schedule = AssignInstructors(schedule);
         var sectionsByCourse = schedule
             .GroupBy(s => s.CourseCode)
             .ToDictionary(g => g.Key, g => g.Select(s => s.Section).Distinct().ToList());
@@ -324,6 +325,29 @@ public static class SeedGenerator
             ? list
             : new List<string> { "A" };
         return options[rnd.Next(options.Count)];
+    }
+
+    /// <summary>Her derse (tüm şubeleriyle) bir öğretim elemanı atar; aynı hocanın iki dersi aynı saate düşmesin diye
+    /// çakışmayan ilk hocayı seçer. Rastgelelik kullanmaz, seed'in geri kalanını etkilemez.</summary>
+    private static List<ScheduleSlot> AssignInstructors(List<ScheduleSlot> schedule)
+    {
+        var pool = NamePools.Instructors;
+        var busy = pool.ToDictionary(n => n, _ => new List<ScheduleSlot>());
+        var byCourse = new Dictionary<string, string>();
+        var start = 0;
+        foreach (var group in schedule.GroupBy(s => s.CourseCode).OrderBy(g => g.Key, StringComparer.Ordinal))
+        {
+            var slots = group.ToList();
+            var chosen = Enumerable.Range(0, pool.Length)
+                .Select(i => pool[(start + i) % pool.Length])
+                .FirstOrDefault(n => !slots.Any(s => busy[n].Any(o => o.Day == s.Day && o.StartTime < s.EndTime && s.StartTime < o.EndTime)))
+                ?? pool[start % pool.Length];
+            busy[chosen].AddRange(slots);
+            byCourse[group.Key] = chosen;
+            start++;
+        }
+
+        return schedule.Select(s => s with { Instructor = byCourse[s.CourseCode] }).ToList();
     }
 
     private static List<ScheduleSlot> BuildSchedule(List<CourseInfo> courses, Random rnd)

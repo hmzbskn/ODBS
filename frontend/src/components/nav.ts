@@ -16,6 +16,7 @@ export const MANAGEMENT_ROLES = MANAGEMENT
 export const NAV_ITEMS: NavItem[] = [
   { to: '/', label: 'Genel Bakış', icon: 'dashboard', roles: ['Admin', 'Danisman', 'Ogrenci', 'BolumBaskani', 'Dekan'] },
   { to: '/atamalar', label: 'Danışman Atamaları', icon: 'users', roles: MANAGEMENT },
+  { to: '/ders-programi', label: 'Ders Programı', icon: 'schedule', roles: MANAGEMENT },
   { to: '/ogrenciler', label: 'Öğrenciler', icon: 'users', roles: ANALYTICS_ROLES },
   { to: '/kayitlar', label: 'Ders Kayıtları', icon: 'clipboard', roles: STAFF },
   { to: '/kayitlarim', label: 'Kayıt Durumum', icon: 'clipboard', roles: ['Ogrenci'] },

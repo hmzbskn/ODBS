@@ -9,7 +9,8 @@ public record ScheduleSlot(
     DayOfWeek Day,
     TimeOnly StartTime,
     TimeOnly EndTime,
-    string Room);
+    string Room,
+    string? Instructor = null);
 
 public enum ExamType
 {

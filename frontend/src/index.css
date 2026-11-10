@@ -44,73 +44,17 @@
 body {
   margin: 0;
   min-width: 320px;
-  background:
-    radial-gradient(900px 600px at 8% 10%, rgba(250, 204, 21, 0.1), transparent 60%),
-    radial-gradient(800px 600px at 95% 55%, rgba(255, 255, 255, 0.07), transparent 60%),
-    var(--bg);
-  background-attachment: fixed;
+  background: var(--bg);
 }
 
-/* Selçuklu çinisi: 8 katlı rozet, dik ızgara ve çaprazlardan oluşan karo (public/selcuk-motif.png), karolar kenardan taşan yaylarla
-   birbirine bağlanır. Renk sol üstten sağ alta sarıdan beyaza geçer; amblemin çevresinde desen sönükleşir. */
-:root {
-  --emb-x: 50%;
-  --emb-y: 50%;
-  --pattern-tile: 300px 300px;
-  --emb-w: min(70vmin, 640px);
-}
-html::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(135deg, rgba(250, 204, 21, 0.3) 0%, rgba(255, 244, 200, 0.22) 50%, rgba(255, 255, 255, 0.18) 100%);
-  -webkit-mask-image: url('/selcuk-motif.png'), radial-gradient(ellipse calc(var(--emb-w) * 0.9) calc(var(--emb-w) * 0.76) at var(--emb-x) var(--emb-y), transparent 0, transparent 59%, #000 76%);
-  mask-image: url('/selcuk-motif.png'), radial-gradient(ellipse calc(var(--emb-w) * 0.9) calc(var(--emb-w) * 0.76) at var(--emb-x) var(--emb-y), transparent 0, transparent 59%, #000 76%);
-  -webkit-mask-size: var(--pattern-tile), 100% 100%;
-  mask-size: var(--pattern-tile), 100% 100%;
-  -webkit-mask-repeat: repeat, no-repeat;
-  mask-repeat: repeat, no-repeat;
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-}
-/* Amblemin merkezi: giriş sonrası içerik alanının (sol menüden sonrası) ortası; giriş sayfasında sol bölmenin ortası. */
-@media (min-width: 801px) {
-  html:has(.shell) { --emb-x: calc(50% + 124px); }
-  html:has(.login-split) { --emb-x: calc(37.5vw - 105px); --emb-y: calc(50% + 4rem); }
-}
-
-/* Selçuk amblemi: tüm uygulamanın arkasında sabit, kendisi de bulanık; cam yüzeyler üstünden ayrıca bulandırır. */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: url('/selcuk-logo.png') center / var(--emb-w) no-repeat;
-  opacity: 0.45;
-  filter: blur(1.5px);
-}
+/* Arka plan düz renk (--bg). */
 #root {
   position: relative;
   z-index: 1;
 }
-/* Kaydırma çubuğu belirip kaybolunca (sekmeler arası) görünüm alanı genişliği değişir ve amblem kayardı; çubuk alanı hep ayrılır. */
+/* Kaydırma çubuğu belirip kaybolunca görünüm alanı genişliği değişmesin; çubuk alanı hep ayrılır. */
 html {
   overflow-y: scroll;
-}
-/* Giriş sonrası: amblem tam ekrana değil, sol menünün (248px) bittiği yerden sağ kenara kadar olan içerik alanına göre ortalanır. */
-@media (min-width: 801px) {
-  body:has(.shell)::before {
-    left: 248px;
-  }
-}
-/* Giriş sayfası: amblem, ekranın solu ile giriş kutusunun sol kenarı arasında ortalanır (kutu sağ yarıda, en çok 420px). */
-@media (min-width: 801px) {
-  body:has(.login-split)::before {
-    background-position: calc(37.5vw - 105px - min(35vmin, 320px)) calc(50% + 4rem);
-  }
 }
 
 h1 {
@@ -531,7 +475,7 @@ th {
   margin: 0 0 0.9rem;
   padding: 0;
   list-style: none;
-  font-size: 0.85rem;
+  font-size: 1.15rem;
   color: var(--muted);
 }
 
@@ -550,12 +494,12 @@ th {
 
 .wk-grid {
   display: grid;
-  min-width: 820px;
+  min-width: 1250px;
 }
 
 .wk-head {
   padding: 0.4rem 0.3rem 0.6rem;
-  font-size: 0.75rem;
+  font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -570,7 +514,7 @@ th {
   position: absolute;
   left: 0;
   transform: translateY(-50%);
-  font-size: 0.72rem;
+  font-size: 1rem;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
@@ -596,17 +540,17 @@ th {
   overflow: hidden;
   border: 1px solid;
   border-radius: 7px;
-  font-size: 0.74rem;
-  line-height: 1.25;
+  font-size: 1.05rem;
+  line-height: 1.3;
   z-index: 1;
 }
 
 .wk-name {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-size: 0.78rem;
+  font-size: 1.15rem;
 }
 
 .wk-meta {
@@ -621,7 +565,7 @@ th {
   margin-top: auto;
   padding: 0.05rem 0.4rem;
   border-radius: 999px;
-  font-size: 0.68rem;
+  font-size: 0.92rem;
   font-weight: 600;
   background: rgba(0, 0, 0, 0.22);
 }
@@ -1609,15 +1553,19 @@ select {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
 }
+/* Açılır liste yarı saydam zeminle beyaz çiziliyordu; opak koyu zemin ver. */
+select,
+select option,
+select optgroup {
+  background-color: #0f1a33;
+  color: var(--text);
+}
+.field select,
+.toolbar select {
+  background-color: #0f1a33;
+}
 .login-page {
   background: transparent;
-}
-body:has(.login-split) {
-  background:
-    radial-gradient(800px 600px at 15% 20%, rgba(250, 204, 21, 0.14), transparent 60%),
-    radial-gradient(700px 600px at 90% 70%, rgba(255, 255, 255, 0.08), transparent 60%),
-    var(--bg);
-  background-attachment: fixed;
 }
 .login-card {
   background: rgba(255, 255, 255, 0.06);
@@ -1877,4 +1825,141 @@ body:has(.login-split) {
   .profile-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---- yönetim: okul ders programı ---- */
+.seg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.seg-btn {
+  font: inherit;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.seg-btn:hover {
+  background: var(--row-hover);
+}
+
+.seg-on {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-text);
+}
+
+.seg-today:not(.seg-on) {
+  border-color: var(--accent);
+}
+
+.seg-count {
+  margin-left: 0.25rem;
+  font-size: 0.8em;
+  opacity: 0.75;
+}
+
+.sc-now {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sc-clock {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.sc-time {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.sc-day {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.sc-now-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 1.1rem;
+}
+
+.sc-active-list {
+  flex-basis: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sc-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.sc-grid {
+  display: grid;
+  min-width: 900px;
+}
+
+.sc-instructor {
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+.sc-nowline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  border-top: 2px solid var(--accent);
+  pointer-events: none;
+}
+
+.sc-live {
+  box-shadow: 0 0 0 2px var(--accent);
+  z-index: 2;
+}
+
+.sc-y1 {
+  background: rgba(79, 141, 255, 0.16);
+  border-color: #4f8dff;
+  color: #9cc0ff;
+}
+
+.sc-y2 {
+  background: var(--ok-bg);
+  border-color: var(--ok);
+  color: var(--ok);
+}
+
+.sc-y3 {
+  background: var(--warn-bg);
+  border-color: var(--warn);
+  color: var(--warn);
+}
+
+.sc-y4 {
+  background: rgba(192, 132, 252, 0.16);
+  border-color: #c084fc;
+  color: #d8b4fe;
 }

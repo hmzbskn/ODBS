@@ -13,6 +13,7 @@ import { GraduationPage } from './pages/GraduationPage'
 import { PetitionsPage } from './pages/PetitionsPage'
 import { RegistrationDetailPage } from './pages/RegistrationDetailPage'
 import { RegistrationsPage } from './pages/RegistrationsPage'
+import { SchoolSchedulePage } from './pages/SchoolSchedulePage'
 import { RiskDetailPage } from './pages/RiskDetailPage'
 import { RiskPage } from './pages/RiskPage'
 import { StudentProfilePage } from './pages/StudentProfilePage'
@@ -54,6 +55,7 @@ export default function App() {
               </Route>
               <Route element={<RequireAuth roles={MANAGEMENT_ROLES} />}>
                 <Route path="/atamalar" element={<AssignmentsPage />} />
+                <Route path="/ders-programi" element={<SchoolSchedulePage />} />
               </Route>
               <Route element={<RequireAuth roles={['Ogrenci']} />}>
                 <Route path="/kayitlarim" element={<RegistrationDetailPage />} />

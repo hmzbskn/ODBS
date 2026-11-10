@@ -71,6 +71,42 @@ public class ManagementApiTests : IClassFixture<SeedApiFactory>
             Assert.Equal(row.StudentCount, row.Risk.Low + row.Risk.Medium + row.Risk.High);
     }
 
+    [Theory]
+    [InlineData("admin")]
+    [InlineData("dekan1")]
+    public async Task Schedule_ListsAllCoursesWithInstructorsAndNoInstructorDoubleBooking(string username)
+    {
+        var client = await LoginAs(username);
+
+        var fall = (await client.GetFromJsonAsync<SchoolScheduleDto>("/api/management/schedule?semester=fall", TestJson.Options))!;
+        var spring = (await client.GetFromJsonAsync<SchoolScheduleDto>("/api/management/schedule?semester=spring", TestJson.Options))!;
+
+        Assert.Equal("fall", fall.Semester);
+        Assert.All(fall.Slots, s => Assert.Equal(1, s.Term % 2));
+        Assert.All(spring.Slots, s => Assert.Equal(0, s.Term % 2));
+        Assert.All(fall.Slots.Concat(spring.Slots), s => Assert.False(string.IsNullOrWhiteSpace(s.Instructor)));
+        Assert.Contains(fall.Slots, s => s.CourseCode == "3301151" && s.StartTime == "08:30");
+
+        // Bir hoca aynı saatte iki farklı derste görünmemeli (aynı dersin NÖ/İÖ şubeleri farklı saatte olduğundan ders bazında bakılır).
+        var clashes = fall.Slots.Concat(spring.Slots)
+            .GroupBy(s => (s.Instructor, s.Day))
+            .SelectMany(g => g.SelectMany(a => g.Where(b => a.CourseCode != b.CourseCode &&
+                string.CompareOrdinal(a.StartTime, b.EndTime) < 0 && string.CompareOrdinal(b.StartTime, a.EndTime) < 0)));
+        Assert.Empty(clashes);
+    }
+
+    [Theory]
+    [InlineData("danisman1")]
+    [InlineData("ogrenci1")]
+    public async Task Schedule_IsForbiddenForAdvisorAndStudent(string username)
+    {
+        var client = await LoginAs(username);
+        Assert.Equal(HttpStatusCode.Forbidden, (await client.GetAsync("/api/management/schedule")).StatusCode);
+    }
+
+    private record SchoolSlotDto(int Term, string CourseCode, string Section, string Day, string StartTime, string EndTime, string? Instructor);
+    private record SchoolScheduleDto(string Semester, List<SchoolSlotDto> Slots);
+
     [Fact]
     public async Task AdvisorDashboard_MatchesWhatTheAdvisorSeesAboutOwnStudents()
     {

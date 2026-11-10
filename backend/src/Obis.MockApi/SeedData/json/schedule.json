@@ -7,7 +7,8 @@
     "Day": "Monday",
     "StartTime": "08:30:00",
     "EndTime": "12:00:00",
-    "Room": "212"
+    "Room": "212",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Elif Y\u0131ld\u0131z"
   },
   {
     "Term": 1,
@@ -17,7 +18,8 @@
     "Day": "Monday",
     "StartTime": "13:25:00",
     "EndTime": "15:05:00",
-    "Room": "212"
+    "Room": "212",
+    "Instructor": "Prof. Dr. Ali \u00C7elik"
   },
   {
     "Term": 1,
@@ -27,7 +29,8 @@
     "Day": "Tuesday",
     "StartTime": "13:25:00",
     "EndTime": "16:55:00",
-    "Room": "212"
+    "Room": "212",
+    "Instructor": "Do\u00E7. Dr. Mehmet Arslan"
   },
   {
     "Term": 1,
@@ -37,7 +40,8 @@
     "Day": "Wednesday",
     "StartTime": "09:25:00",
     "EndTime": "12:00:00",
-    "Room": "212"
+    "Room": "212",
+    "Instructor": "Do\u00E7. Dr. Selin Korkmaz"
   },
   {
     "Term": 1,
@@ -47,7 +51,8 @@
     "Day": "Wednesday",
     "StartTime": "13:25:00",
     "EndTime": "15:05:00",
-    "Room": "212"
+    "Room": "212",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Murat Demir"
   },
   {
     "Term": 1,
@@ -57,7 +62,8 @@
     "Day": "Thursday",
     "StartTime": "09:25:00",
     "EndTime": "12:00:00",
-    "Room": "212"
+    "Room": "212",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Ay\u015Fe Polat"
   },
   {
     "Term": 1,
@@ -67,7 +73,8 @@
     "Day": "Friday",
     "StartTime": "08:30:00",
     "EndTime": "10:10:00",
-    "Room": "212"
+    "Room": "212",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Zeynep Kara"
   },
   {
     "Term": 1,
@@ -77,7 +84,8 @@
     "Day": "Friday",
     "StartTime": "10:20:00",
     "EndTime": "12:00:00",
-    "Room": "212"
+    "Room": "212",
+    "Instructor": "Prof. Dr. Hasan Ayd\u0131n"
   },
   {
     "Term": 3,
@@ -87,7 +95,8 @@
     "Day": "Monday",
     "StartTime": "13:25:00",
     "EndTime": "16:55:00",
-    "Room": "209"
+    "Room": "209",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Murat Demir"
   },
   {
     "Term": 3,
@@ -97,7 +106,8 @@
     "Day": "Tuesday",
     "StartTime": "09:25:00",
     "EndTime": "12:00:00",
-    "Room": "209"
+    "Room": "209",
+    "Instructor": "Ar\u015F. G\u00F6r. Dr. Merve \u00D6zt\u00FCrk"
   },
   {
     "Term": 3,
@@ -107,7 +117,8 @@
     "Day": "Tuesday",
     "StartTime": "13:25:00",
     "EndTime": "16:55:00",
-    "Room": "209"
+    "Room": "209",
+    "Instructor": "Do\u00E7. Dr. Selin Korkmaz"
   },
   {
     "Term": 3,
@@ -117,7 +128,8 @@
     "Day": "Wednesday",
     "StartTime": "09:25:00",
     "EndTime": "12:00:00",
-    "Room": "209"
+    "Room": "209",
+    "Instructor": "\u00D6\u011Fr. G\u00F6r. Dr. Okan Yal\u00E7\u0131n"
   },
   {
     "Term": 3,
@@ -127,7 +139,8 @@
     "Day": "Wednesday",
     "StartTime": "13:25:00",
     "EndTime": "16:55:00",
-    "Room": "209"
+    "Room": "209",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Ay\u015Fe Polat"
   },
   {
     "Term": 3,
@@ -137,7 +150,8 @@
     "Day": "Thursday",
     "StartTime": "13:25:00",
     "EndTime": "16:55:00",
-    "Room": "211"
+    "Room": "211",
+    "Instructor": "Prof. Dr. Hasan Ayd\u0131n"
   },
   {
     "Term": 3,
@@ -147,7 +161,8 @@
     "Day": "Friday",
     "StartTime": "08:30:00",
     "EndTime": "12:00:00",
-    "Room": "209"
+    "Room": "209",
+    "Instructor": "Do\u00E7. Dr. Emre Kaya"
   },
   {
     "Term": 5,
@@ -157,7 +172,8 @@
     "Day": "Monday",
     "StartTime": "13:25:00",
     "EndTime": "16:55:00",
-    "Room": "210"
+    "Room": "210",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Ay\u015Fe Polat"
   },
   {
     "Term": 5,
@@ -167,7 +183,8 @@
     "Day": "Tuesday",
     "StartTime": "08:30:00",
     "EndTime": "12:00:00",
-    "Room": "210"
+    "Room": "210",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Murat Demir"
   },
   {
     "Term": 5,
@@ -177,7 +194,8 @@
     "Day": "Wednesday",
     "StartTime": "13:25:00",
     "EndTime": "16:55:00",
-    "Room": "210"
+    "Room": "210",
+    "Instructor": "Do\u00E7. Dr. Emre Kaya"
   },
   {
     "Term": 5,
@@ -187,7 +205,8 @@
     "Day": "Thursday",
     "StartTime": "09:25:00",
     "EndTime": "12:00:00",
-    "Room": "210"
+    "Room": "210",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Elif Y\u0131ld\u0131z"
   },
   {
     "Term": 5,
@@ -197,7 +216,8 @@
     "Day": "Thursday",
     "StartTime": "09:25:00",
     "EndTime": "12:00:00",
-    "Room": "LAB3"
+    "Room": "LAB3",
+    "Instructor": "Prof. Dr. Ali \u00C7elik"
   },
   {
     "Term": 5,
@@ -207,7 +227,8 @@
     "Day": "Thursday",
     "StartTime": "13:25:00",
     "EndTime": "16:00:00",
-    "Room": "210"
+    "Room": "210",
+    "Instructor": "\u00D6\u011Fr. G\u00F6r. Dr. Okan Yal\u00E7\u0131n"
   },
   {
     "Term": 5,
@@ -217,7 +238,8 @@
     "Day": "Thursday",
     "StartTime": "13:25:00",
     "EndTime": "16:00:00",
-    "Room": "LAB3"
+    "Room": "LAB3",
+    "Instructor": "Ar\u015F. G\u00F6r. Dr. Merve \u00D6zt\u00FCrk"
   },
   {
     "Term": 5,
@@ -227,7 +249,8 @@
     "Day": "Friday",
     "StartTime": "09:25:00",
     "EndTime": "12:00:00",
-    "Room": "210"
+    "Room": "210",
+    "Instructor": "Do\u00E7. Dr. Selin Korkmaz"
   },
   {
     "Term": 5,
@@ -237,7 +260,8 @@
     "Day": "Friday",
     "StartTime": "09:25:00",
     "EndTime": "12:00:00",
-    "Room": "211"
+    "Room": "211",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Murat Demir"
   },
   {
     "Term": 5,
@@ -247,7 +271,8 @@
     "Day": "Friday",
     "StartTime": "14:20:00",
     "EndTime": "16:55:00",
-    "Room": "210"
+    "Room": "210",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Burak \u015Eahin"
   },
   {
     "Term": 7,
@@ -257,7 +282,8 @@
     "Day": "Monday",
     "StartTime": "10:20:00",
     "EndTime": "12:00:00",
-    "Room": "210"
+    "Room": "210",
+    "Instructor": "Ar\u015F. G\u00F6r. Dr. Merve \u00D6zt\u00FCrk"
   },
   {
     "Term": 7,
@@ -267,7 +293,8 @@
     "Day": "Monday",
     "StartTime": "10:20:00",
     "EndTime": "12:00:00",
-    "Room": "209"
+    "Room": "209",
+    "Instructor": "Do\u00E7. Dr. Emre Kaya"
   },
   {
     "Term": 7,
@@ -277,7 +304,8 @@
     "Day": "Monday",
     "StartTime": "13:25:00",
     "EndTime": "16:00:00",
-    "Room": "211"
+    "Room": "211",
+    "Instructor": "Do\u00E7. Dr. Selin Korkmaz"
   },
   {
     "Term": 7,
@@ -287,7 +315,8 @@
     "Day": "Monday",
     "StartTime": "13:25:00",
     "EndTime": "16:00:00",
-    "Room": "LAB2"
+    "Room": "LAB2",
+    "Instructor": "Prof. Dr. Hasan Ayd\u0131n"
   },
   {
     "Term": 7,
@@ -297,7 +326,8 @@
     "Day": "Monday",
     "StartTime": "17:00:00",
     "EndTime": "18:35:00",
-    "Room": "210"
+    "Room": "210",
+    "Instructor": "Ar\u015F. G\u00F6r. Dr. Merve \u00D6zt\u00FCrk"
   },
   {
     "Term": 7,
@@ -307,7 +337,8 @@
     "Day": "Monday",
     "StartTime": "17:00:00",
     "EndTime": "18:35:00",
-    "Room": "209"
+    "Room": "209",
+    "Instructor": "Do\u00E7. Dr. Emre Kaya"
   },
   {
     "Term": 7,
@@ -317,7 +348,8 @@
     "Day": "Monday",
     "StartTime": "18:40:00",
     "EndTime": "21:05:00",
-    "Room": "211"
+    "Room": "211",
+    "Instructor": "Do\u00E7. Dr. Selin Korkmaz"
   },
   {
     "Term": 7,
@@ -327,7 +359,8 @@
     "Day": "Monday",
     "StartTime": "18:40:00",
     "EndTime": "21:05:00",
-    "Room": "LAB2"
+    "Room": "LAB2",
+    "Instructor": "Prof. Dr. Hasan Ayd\u0131n"
   },
   {
     "Term": 7,
@@ -337,7 +370,8 @@
     "Day": "Tuesday",
     "StartTime": "13:25:00",
     "EndTime": "16:00:00",
-    "Room": "210"
+    "Room": "210",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Murat Demir"
   },
   {
     "Term": 7,
@@ -347,7 +381,8 @@
     "Day": "Tuesday",
     "StartTime": "13:25:00",
     "EndTime": "16:00:00",
-    "Room": "211"
+    "Room": "211",
+    "Instructor": "Prof. Dr. Hasan Ayd\u0131n"
   },
   {
     "Term": 7,
@@ -357,7 +392,8 @@
     "Day": "Tuesday",
     "StartTime": "17:00:00",
     "EndTime": "19:25:00",
-    "Room": "210"
+    "Room": "210",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Murat Demir"
   },
   {
     "Term": 7,
@@ -367,7 +403,8 @@
     "Day": "Tuesday",
     "StartTime": "17:00:00",
     "EndTime": "19:25:00",
-    "Room": "211"
+    "Room": "211",
+    "Instructor": "Prof. Dr. Hasan Ayd\u0131n"
   },
   {
     "Term": 7,
@@ -377,7 +414,8 @@
     "Day": "Wednesday",
     "StartTime": "13:25:00",
     "EndTime": "16:00:00",
-    "Room": "211"
+    "Room": "211",
+    "Instructor": "Do\u00E7. Dr. Mehmet Arslan"
   },
   {
     "Term": 7,
@@ -387,7 +425,8 @@
     "Day": "Wednesday",
     "StartTime": "17:00:00",
     "EndTime": "19:25:00",
-    "Room": "211"
+    "Room": "211",
+    "Instructor": "Do\u00E7. Dr. Mehmet Arslan"
   },
   {
     "Term": 7,
@@ -397,7 +436,8 @@
     "Day": "Thursday",
     "StartTime": "08:30:00",
     "EndTime": "12:00:00",
-    "Room": "211"
+    "Room": "211",
+    "Instructor": "Prof. Dr. Hasan Ayd\u0131n"
   },
   {
     "Term": 7,
@@ -407,7 +447,8 @@
     "Day": "Thursday",
     "StartTime": "17:00:00",
     "EndTime": "20:15:00",
-    "Room": "211"
+    "Room": "211",
+    "Instructor": "Prof. Dr. Hasan Ayd\u0131n"
   },
   {
     "Term": 7,
@@ -417,7 +458,8 @@
     "Day": "Friday",
     "StartTime": "14:20:00",
     "EndTime": "16:55:00",
-    "Room": "211"
+    "Room": "211",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Ay\u015Fe Polat"
   },
   {
     "Term": 7,
@@ -427,7 +469,8 @@
     "Day": "Friday",
     "StartTime": "14:20:00",
     "EndTime": "16:55:00",
-    "Room": "LAB3"
+    "Room": "LAB3",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Murat Demir"
   },
   {
     "Term": 7,
@@ -437,7 +480,8 @@
     "Day": "Friday",
     "StartTime": "17:00:00",
     "EndTime": "19:25:00",
-    "Room": "211"
+    "Room": "211",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Ay\u015Fe Polat"
   },
   {
     "Term": 7,
@@ -447,7 +491,8 @@
     "Day": "Friday",
     "StartTime": "17:00:00",
     "EndTime": "19:25:00",
-    "Room": "LAB3"
+    "Room": "LAB3",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Murat Demir"
   },
   {
     "Term": 2,
@@ -457,7 +502,8 @@
     "Day": "Monday",
     "StartTime": "08:00:00",
     "EndTime": "10:00:00",
-    "Room": "D-101"
+    "Room": "D-101",
+    "Instructor": "Do\u00E7. Dr. Emre Kaya"
   },
   {
     "Term": 2,
@@ -467,7 +513,8 @@
     "Day": "Thursday",
     "StartTime": "10:00:00",
     "EndTime": "12:00:00",
-    "Room": "D-116"
+    "Room": "D-116",
+    "Instructor": "Do\u00E7. Dr. Emre Kaya"
   },
   {
     "Term": 2,
@@ -477,7 +524,8 @@
     "Day": "Tuesday",
     "StartTime": "08:00:00",
     "EndTime": "10:00:00",
-    "Room": "D-102"
+    "Room": "D-102",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Burak \u015Eahin"
   },
   {
     "Term": 2,
@@ -487,7 +535,8 @@
     "Day": "Wednesday",
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
-    "Room": "D-103"
+    "Room": "D-103",
+    "Instructor": "Ar\u015F. G\u00F6r. Dr. Merve \u00D6zt\u00FCrk"
   },
   {
     "Term": 2,
@@ -497,7 +546,8 @@
     "Day": "Thursday",
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
-    "Room": "D-104"
+    "Room": "D-104",
+    "Instructor": "\u00D6\u011Fr. G\u00F6r. Dr. Okan Yal\u00E7\u0131n"
   },
   {
     "Term": 2,
@@ -507,7 +557,8 @@
     "Day": "Friday",
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
-    "Room": "D-105"
+    "Room": "D-105",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Elif Y\u0131ld\u0131z"
   },
   {
     "Term": 2,
@@ -517,7 +568,8 @@
     "Day": "Monday",
     "StartTime": "10:00:00",
     "EndTime": "11:30:00",
-    "Room": "D-106"
+    "Room": "D-106",
+    "Instructor": "Do\u00E7. Dr. Mehmet Arslan"
   },
   {
     "Term": 2,
@@ -527,7 +579,8 @@
     "Day": "Friday",
     "StartTime": "10:00:00",
     "EndTime": "11:30:00",
-    "Room": "D-117"
+    "Room": "D-117",
+    "Instructor": "Do\u00E7. Dr. Mehmet Arslan"
   },
   {
     "Term": 2,
@@ -537,7 +590,8 @@
     "Day": "Tuesday",
     "StartTime": "10:00:00",
     "EndTime": "11:30:00",
-    "Room": "D-107"
+    "Room": "D-107",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Zeynep Kara"
   },
   {
     "Term": 2,
@@ -547,7 +601,8 @@
     "Day": "Wednesday",
     "StartTime": "10:00:00",
     "EndTime": "12:00:00",
-    "Room": "D-108"
+    "Room": "D-108",
+    "Instructor": "Prof. Dr. Ali \u00C7elik"
   },
   {
     "Term": 4,
@@ -557,7 +612,8 @@
     "Day": "Monday",
     "StartTime": "08:00:00",
     "EndTime": "10:00:00",
-    "Room": "D-101"
+    "Room": "D-101",
+    "Instructor": "\u00D6\u011Fr. G\u00F6r. Dr. Okan Yal\u00E7\u0131n"
   },
   {
     "Term": 4,
@@ -567,7 +623,8 @@
     "Day": "Tuesday",
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
-    "Room": "D-102"
+    "Room": "D-102",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Elif Y\u0131ld\u0131z"
   },
   {
     "Term": 4,
@@ -577,7 +634,8 @@
     "Day": "Friday",
     "StartTime": "14:00:00",
     "EndTime": "15:30:00",
-    "Room": "D-103"
+    "Room": "D-103",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Elif Y\u0131ld\u0131z"
   },
   {
     "Term": 4,
@@ -587,7 +645,8 @@
     "Day": "Wednesday",
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
-    "Room": "D-103"
+    "Room": "D-103",
+    "Instructor": "Do\u00E7. Dr. Mehmet Arslan"
   },
   {
     "Term": 4,
@@ -597,7 +656,8 @@
     "Day": "Monday",
     "StartTime": "16:00:00",
     "EndTime": "17:30:00",
-    "Room": "D-104"
+    "Room": "D-104",
+    "Instructor": "Do\u00E7. Dr. Mehmet Arslan"
   },
   {
     "Term": 4,
@@ -607,7 +667,8 @@
     "Day": "Thursday",
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
-    "Room": "D-104"
+    "Room": "D-104",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Zeynep Kara"
   },
   {
     "Term": 4,
@@ -617,7 +678,8 @@
     "Day": "Friday",
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
-    "Room": "D-105"
+    "Room": "D-105",
+    "Instructor": "Prof. Dr. Ali \u00C7elik"
   },
   {
     "Term": 4,
@@ -627,7 +689,8 @@
     "Day": "Monday",
     "StartTime": "10:00:00",
     "EndTime": "11:30:00",
-    "Room": "D-106"
+    "Room": "D-106",
+    "Instructor": "Prof. Dr. Hasan Ayd\u0131n"
   },
   {
     "Term": 4,
@@ -637,7 +700,8 @@
     "Day": "Tuesday",
     "StartTime": "10:00:00",
     "EndTime": "11:30:00",
-    "Room": "D-107"
+    "Room": "D-107",
+    "Instructor": "Do\u00E7. Dr. Selin Korkmaz"
   },
   {
     "Term": 4,
@@ -647,7 +711,8 @@
     "Day": "Wednesday",
     "StartTime": "10:00:00",
     "EndTime": "11:30:00",
-    "Room": "D-108"
+    "Room": "D-108",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Murat Demir"
   },
   {
     "Term": 4,
@@ -657,7 +722,8 @@
     "Day": "Thursday",
     "StartTime": "10:00:00",
     "EndTime": "11:30:00",
-    "Room": "D-109"
+    "Room": "D-109",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Burak \u015Eahin"
   },
   {
     "Term": 4,
@@ -667,7 +733,8 @@
     "Day": "Friday",
     "StartTime": "10:00:00",
     "EndTime": "11:30:00",
-    "Room": "D-110"
+    "Room": "D-110",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Burak \u015Eahin"
   },
   {
     "Term": 4,
@@ -677,7 +744,8 @@
     "Day": "Monday",
     "StartTime": "12:00:00",
     "EndTime": "13:30:00",
-    "Room": "D-111"
+    "Room": "D-111",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Burak \u015Eahin"
   },
   {
     "Term": 4,
@@ -687,7 +755,8 @@
     "Day": "Tuesday",
     "StartTime": "12:00:00",
     "EndTime": "13:30:00",
-    "Room": "D-112"
+    "Room": "D-112",
+    "Instructor": "Ar\u015F. G\u00F6r. Dr. Merve \u00D6zt\u00FCrk"
   },
   {
     "Term": 4,
@@ -697,7 +766,8 @@
     "Day": "Wednesday",
     "StartTime": "12:00:00",
     "EndTime": "13:30:00",
-    "Room": "D-113"
+    "Room": "D-113",
+    "Instructor": "\u00D6\u011Fr. G\u00F6r. Dr. Okan Yal\u00E7\u0131n"
   },
   {
     "Term": 4,
@@ -707,7 +777,8 @@
     "Day": "Thursday",
     "StartTime": "12:00:00",
     "EndTime": "13:30:00",
-    "Room": "D-114"
+    "Room": "D-114",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Elif Y\u0131ld\u0131z"
   },
   {
     "Term": 4,
@@ -717,7 +788,8 @@
     "Day": "Friday",
     "StartTime": "12:00:00",
     "EndTime": "13:30:00",
-    "Room": "D-115"
+    "Room": "D-115",
+    "Instructor": "Do\u00E7. Dr. Mehmet Arslan"
   },
   {
     "Term": 4,
@@ -727,7 +799,8 @@
     "Day": "Monday",
     "StartTime": "14:00:00",
     "EndTime": "15:30:00",
-    "Room": "D-116"
+    "Room": "D-116",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Zeynep Kara"
   },
   {
     "Term": 4,
@@ -737,7 +810,8 @@
     "Day": "Tuesday",
     "StartTime": "14:00:00",
     "EndTime": "15:30:00",
-    "Room": "D-117"
+    "Room": "D-117",
+    "Instructor": "Prof. Dr. Ali \u00C7elik"
   },
   {
     "Term": 4,
@@ -747,7 +821,8 @@
     "Day": "Wednesday",
     "StartTime": "14:00:00",
     "EndTime": "15:30:00",
-    "Room": "D-118"
+    "Room": "D-118",
+    "Instructor": "Prof. Dr. Hasan Ayd\u0131n"
   },
   {
     "Term": 4,
@@ -757,7 +832,8 @@
     "Day": "Thursday",
     "StartTime": "14:00:00",
     "EndTime": "15:30:00",
-    "Room": "D-119"
+    "Room": "D-119",
+    "Instructor": "Do\u00E7. Dr. Selin Korkmaz"
   },
   {
     "Term": 6,
@@ -767,7 +843,8 @@
     "Day": "Monday",
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
-    "Room": "D-101"
+    "Room": "D-101",
+    "Instructor": "Prof. Dr. Hasan Ayd\u0131n"
   },
   {
     "Term": 6,
@@ -777,7 +854,8 @@
     "Day": "Tuesday",
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
-    "Room": "D-102"
+    "Room": "D-102",
+    "Instructor": "Do\u00E7. Dr. Selin Korkmaz"
   },
   {
     "Term": 6,
@@ -787,7 +865,8 @@
     "Day": "Wednesday",
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
-    "Room": "D-103"
+    "Room": "D-103",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Murat Demir"
   },
   {
     "Term": 6,
@@ -797,7 +876,8 @@
     "Day": "Thursday",
     "StartTime": "08:00:00",
     "EndTime": "10:00:00",
-    "Room": "D-104"
+    "Room": "D-104",
+    "Instructor": "Do\u00E7. Dr. Emre Kaya"
   },
   {
     "Term": 6,
@@ -807,7 +887,8 @@
     "Day": "Friday",
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
-    "Room": "D-105"
+    "Room": "D-105",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Burak \u015Eahin"
   },
   {
     "Term": 6,
@@ -817,7 +898,8 @@
     "Day": "Monday",
     "StartTime": "10:00:00",
     "EndTime": "11:30:00",
-    "Room": "D-106"
+    "Room": "D-106",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Burak \u015Eahin"
   },
   {
     "Term": 6,
@@ -827,7 +909,8 @@
     "Day": "Tuesday",
     "StartTime": "10:00:00",
     "EndTime": "11:30:00",
-    "Room": "D-107"
+    "Room": "D-107",
+    "Instructor": "\u00D6\u011Fr. G\u00F6r. Dr. Okan Yal\u00E7\u0131n"
   },
   {
     "Term": 6,
@@ -837,7 +920,8 @@
     "Day": "Wednesday",
     "StartTime": "10:00:00",
     "EndTime": "11:30:00",
-    "Room": "D-108"
+    "Room": "D-108",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Elif Y\u0131ld\u0131z"
   },
   {
     "Term": 6,
@@ -847,7 +931,8 @@
     "Day": "Thursday",
     "StartTime": "10:00:00",
     "EndTime": "11:30:00",
-    "Room": "D-109"
+    "Room": "D-109",
+    "Instructor": "Do\u00E7. Dr. Mehmet Arslan"
   },
   {
     "Term": 6,
@@ -857,7 +942,8 @@
     "Day": "Friday",
     "StartTime": "10:00:00",
     "EndTime": "11:30:00",
-    "Room": "D-110"
+    "Room": "D-110",
+    "Instructor": "Prof. Dr. Ali \u00C7elik"
   },
   {
     "Term": 6,
@@ -867,7 +953,8 @@
     "Day": "Monday",
     "StartTime": "12:00:00",
     "EndTime": "13:30:00",
-    "Room": "D-111"
+    "Room": "D-111",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Zeynep Kara"
   },
   {
     "Term": 6,
@@ -877,7 +964,8 @@
     "Day": "Tuesday",
     "StartTime": "12:00:00",
     "EndTime": "13:30:00",
-    "Room": "D-112"
+    "Room": "D-112",
+    "Instructor": "Prof. Dr. Ali \u00C7elik"
   },
   {
     "Term": 6,
@@ -887,7 +975,8 @@
     "Day": "Wednesday",
     "StartTime": "12:00:00",
     "EndTime": "13:30:00",
-    "Room": "D-113"
+    "Room": "D-113",
+    "Instructor": "Prof. Dr. Hasan Ayd\u0131n"
   },
   {
     "Term": 6,
@@ -897,7 +986,8 @@
     "Day": "Thursday",
     "StartTime": "12:00:00",
     "EndTime": "13:30:00",
-    "Room": "D-114"
+    "Room": "D-114",
+    "Instructor": "Do\u00E7. Dr. Selin Korkmaz"
   },
   {
     "Term": 6,
@@ -907,7 +997,8 @@
     "Day": "Friday",
     "StartTime": "12:00:00",
     "EndTime": "13:30:00",
-    "Room": "D-115"
+    "Room": "D-115",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Murat Demir"
   },
   {
     "Term": 6,
@@ -917,7 +1008,8 @@
     "Day": "Monday",
     "StartTime": "14:00:00",
     "EndTime": "15:30:00",
-    "Room": "D-116"
+    "Room": "D-116",
+    "Instructor": "Do\u00E7. Dr. Emre Kaya"
   },
   {
     "Term": 6,
@@ -927,7 +1019,8 @@
     "Day": "Tuesday",
     "StartTime": "14:00:00",
     "EndTime": "15:30:00",
-    "Room": "D-117"
+    "Room": "D-117",
+    "Instructor": "Do\u00E7. Dr. Emre Kaya"
   },
   {
     "Term": 6,
@@ -937,7 +1030,8 @@
     "Day": "Wednesday",
     "StartTime": "14:00:00",
     "EndTime": "15:30:00",
-    "Room": "D-118"
+    "Room": "D-118",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Burak \u015Eahin"
   },
   {
     "Term": 6,
@@ -947,7 +1041,8 @@
     "Day": "Thursday",
     "StartTime": "14:00:00",
     "EndTime": "15:30:00",
-    "Room": "D-119"
+    "Room": "D-119",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Elif Y\u0131ld\u0131z"
   },
   {
     "Term": 6,
@@ -957,7 +1052,8 @@
     "Day": "Friday",
     "StartTime": "14:00:00",
     "EndTime": "15:30:00",
-    "Room": "D-120"
+    "Room": "D-120",
+    "Instructor": "\u00D6\u011Fr. G\u00F6r. Dr. Okan Yal\u00E7\u0131n"
   },
   {
     "Term": 8,
@@ -967,7 +1063,8 @@
     "Day": "Monday",
     "StartTime": "08:00:00",
     "EndTime": "10:00:00",
-    "Room": "D-101"
+    "Room": "D-101",
+    "Instructor": "Ar\u015F. G\u00F6r. Dr. Merve \u00D6zt\u00FCrk"
   },
   {
     "Term": 8,
@@ -977,7 +1074,8 @@
     "Day": "Tuesday",
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
-    "Room": "D-102"
+    "Room": "D-102",
+    "Instructor": "\u00D6\u011Fr. G\u00F6r. Dr. Okan Yal\u00E7\u0131n"
   },
   {
     "Term": 8,
@@ -987,6 +1085,7 @@
     "Day": "Wednesday",
     "StartTime": "08:00:00",
     "EndTime": "09:30:00",
-    "Room": "D-103"
+    "Room": "D-103",
+    "Instructor": "Dr. \u00D6\u011Fr. \u00DCyesi Elif Y\u0131ld\u0131z"
   }
 ]

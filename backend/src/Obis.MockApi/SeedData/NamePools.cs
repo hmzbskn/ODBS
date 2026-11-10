@@ -25,4 +25,12 @@ public static class NamePools
         ("Zeynep", "Kara", "Dr. Öğr. Üyesi"),
         ("Ali", "Çelik", "Prof. Dr."),
     };
+
+    /// <summary>Ders veren öğretim elemanları (kurgusal). İlk dördü danışmanlarla aynı kişilerdir.</summary>
+    public static readonly string[] Instructors =
+    {
+        "Dr. Öğr. Üyesi Elif Yıldız", "Doç. Dr. Mehmet Arslan", "Dr. Öğr. Üyesi Zeynep Kara", "Prof. Dr. Ali Çelik",
+        "Prof. Dr. Hasan Aydın", "Doç. Dr. Selin Korkmaz", "Dr. Öğr. Üyesi Murat Demir", "Dr. Öğr. Üyesi Ayşe Polat",
+        "Doç. Dr. Emre Kaya", "Dr. Öğr. Üyesi Burak Şahin", "Arş. Gör. Dr. Merve Öztürk", "Öğr. Gör. Dr. Okan Yalçın",
+    };
 }
