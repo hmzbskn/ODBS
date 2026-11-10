@@ -7,6 +7,8 @@ puanlama (anket)**, **erken uyarı ve mezuniyet analizi** ve **iletişim/talep**
 
 > Tüm veriler kurgusaldır; gerçek kişisel veri içermez. Bitirme projesi olarak geliştirilmiştir.
 
+![Danışman paneli](docs/screenshots/02-danisman-panel.png)
+
 ## İçindekiler
 
 1. [Hızlı başlangıç](#hızlı-başlangıç)
@@ -123,6 +125,36 @@ içermez.
 
 ### Öğrenci ekranları ve mobil
 
+## Ekran görüntüleri
+
+Güncel ODBS arayüzünden, mock OBİS verisiyle alınmıştır.
+
+| Giriş | Danışman: ders kayıtları |
+| --- | --- |
+| ![Giriş](docs/screenshots/01-giris.png) | ![Ders kayıtları](docs/screenshots/03-ders-kayitlari.png) |
+
+| Ders kaydı kural kontrolü (alternatifsiz çakışma) |
+| --- |
+| ![Doğrulama](docs/screenshots/04-ders-kaydi-dogrulama.png) |
+
+| Risk listesi | Risk gerekçesi ve mezuniyet analizi |
+| --- | --- |
+| ![Risk](docs/screenshots/06-risk-listesi.png) | ![Detay](docs/screenshots/07-risk-detay.png) |
+
+| Öğrenci listesi | Yönetici: danışman atamaları |
+| --- | --- |
+| ![Öğrenciler](docs/screenshots/08-ogrenci-listesi.png) | ![Atamalar](docs/screenshots/13-atamalar.png) |
+
+| Öğrenci: kayıt durumum | Öğrenci: mezuniyet analizim |
+| --- | --- |
+| ![](docs/screenshots/14-ogrenci-ders-kaydi.png) | ![](docs/screenshots/15-ogrenci-mezuniyet.png) |
+
+Mobilde menü çekmeceye dönüşür:
+
+| Mobil sayfa | Mobil menü |
+| --- | --- |
+| ![](docs/screenshots/19-mobil-ogrenci-ders-kaydi.png) | ![](docs/screenshots/20-mobil-menu.png) |
+
 ## Seed uç durumları
 
 Mock OBİS'in deterministik seed verisi (63 öğrenci, 118 derslik gerçek 8 dönemlik Bilgisayar Mühendisliği müfredatı) 10 bilinçli uç durum içerir; her biri ilgili modülde
@@ -231,7 +263,8 @@ OgrenciDanismanOtomasyonu/
 ├─ docs/
 │  ├─ ARCHITECTURE.md              Katmanlar, diyagramlar, gerekçeler
 │  ├─ DECISIONS.md                 Belirsiz noktalarda alınan kararlar
-│  └─ PROGRESS.md                  Aşama aşama ilerleme + final özet
+│  ├─ PROGRESS.md                  Aşama aşama ilerleme + final özet
+│  └─ screenshots/                 Bu belgedeki ekran görüntüleri
 ├─ start-all.ps1 / start-all.sh    Tek komutla başlatma
 └─ stop-all.ps1  / stop-all.sh     Durdurma
 ```
